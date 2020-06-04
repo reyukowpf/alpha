@@ -225,3 +225,27 @@ D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.CoreCompi
 D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.CopyComplete
 D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.dll
 D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\RichTextBoxToolBar.dll.config
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\RichTextBoxToolBar.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\RichTextBoxToolBar.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\EntityFramework.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\System.Data.SQLite.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\EntityFramework.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\System.Data.SQLite.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\System.Data.SQLite.dll.config
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csprojAssemblyReference.cache
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar_MarkupCompile.cache
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar_MarkupCompile.lref
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.g.resources
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.Properties.Resources.resources
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.GenerateResource.cache
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.CoreCompileInputs.cache
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.CopyComplete
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.pdb

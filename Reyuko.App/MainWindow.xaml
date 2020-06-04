@@ -63,15 +63,15 @@
     Title="REYUKO"
     HorizontalAlignment="Center"
     VerticalAlignment="Center"
-    HorizontalContentAlignment="Center"
-    VerticalContentAlignment="Center"
-    d:DesignHeight="768"
-    d:DesignWidth="1024"
+    HorizontalContentAlignment="Stretch"
+    VerticalContentAlignment="Stretch"
+    d:DesignHeight="800"
+    d:DesignWidth="1280"
     ActiveGlowColor="{x:Null}"
     Background="White"
     Icon="Icons/reyuko-blue.png"
     ShowBackButton="True"
-    mc:Ignorable="d">
+    mc:Ignorable="d" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" Width="1280" Height="800">
 
     <dxwui:HamburgerMenu
         
@@ -80,7 +80,7 @@
         NavigationTarget="{Binding ElementName=service}"
         OpenPaneWidth="200"
         PaneBackground="#FF143A66"
-        SelectedItem="{Binding HamburgerMenuSelectedItem, Mode=TwoWay}">
+        SelectedItem="{Binding HamburgerMenuSelectedItem, Mode=TwoWay}" Width="1280">
         <dxwui:HamburgerMenu.Content>
             <dxwui:NavigationFrame Source="{x:Type local:Home}">
                 <dxmvvm:Interaction.Behaviors>
