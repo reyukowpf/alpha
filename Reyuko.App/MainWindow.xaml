@@ -71,7 +71,7 @@
     Background="White"
     Icon="Icons/reyuko-blue.png"
     ShowBackButton="True"
-    mc:Ignorable="d" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen" Width="1280" Height="800">
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen" Width="1280" Height="800">
 
     <dxwui:HamburgerMenu
         
@@ -80,7 +80,7 @@
         NavigationTarget="{Binding ElementName=service}"
         OpenPaneWidth="200"
         PaneBackground="#FF143A66"
-        SelectedItem="{Binding HamburgerMenuSelectedItem, Mode=TwoWay}" Width="1280">
+        SelectedItem="{Binding HamburgerMenuSelectedItem, Mode=TwoWay}">
         <dxwui:HamburgerMenu.Content>
             <dxwui:NavigationFrame Source="{x:Type local:Home}">
                 <dxmvvm:Interaction.Behaviors>
