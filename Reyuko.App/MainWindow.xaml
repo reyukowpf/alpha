@@ -63,15 +63,15 @@
     Title="REYUKO"
     HorizontalAlignment="Center"
     VerticalAlignment="Center"
-    HorizontalContentAlignment="Center"
-    VerticalContentAlignment="Center"
-    d:DesignHeight="768"
-    d:DesignWidth="1024"
+    HorizontalContentAlignment="Stretch"
+    VerticalContentAlignment="Stretch"
+    d:DesignHeight="800"
+    d:DesignWidth="1280"
     ActiveGlowColor="{x:Null}"
     Background="White"
     Icon="Icons/reyuko-blue.png"
     ShowBackButton="True"
-    mc:Ignorable="d">
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen" Width="1280" Height="800">
 
     <dxwui:HamburgerMenu
         
