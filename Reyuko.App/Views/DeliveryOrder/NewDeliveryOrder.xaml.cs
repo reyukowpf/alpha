@@ -45,6 +45,7 @@ namespace Reyuko.App.Views.DeliveryOrder
         public Lokasi lokasiSelected { get; set; }
         public IEnumerable<SalesOrder> SalesOrders { get; set; }
         public SalesOrder SalesOrderSelected { get; set; }
+        public IEnumerable<OrderProdukJual> orderProdukJuals { get; set; }
         public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
         public DataDepartemen Selectdepartment { get; set; }
         public IEnumerable<DataProyek> dataProyeks { get; set; }
@@ -226,6 +227,52 @@ namespace Reyuko.App.Views.DeliveryOrder
                 txthp.Text = this.kontakSelected.NoHPA;
             }
 
+        }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.Checkbokaktif == true);
+                DGSKU.ItemsSource = this.orderProdukJuals;
+                int sum = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajak);
+                }
+                txtTotalTax.Text = sum.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).HargaJual);
+                }
+                txtTotalbeforeTax.Text = sumar.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    suma += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                }
+                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+                txtOutstanding.Text = txtAfterTotalTax.Text;
+            }
+        }
+        private void btnsku(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
+            }
         }
 
         private void StockList_Click(object sender, RoutedEventArgs e)
