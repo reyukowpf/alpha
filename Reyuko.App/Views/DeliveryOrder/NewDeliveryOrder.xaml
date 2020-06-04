@@ -257,7 +257,7 @@
             x:Name="DGSKU"
             Height="Auto"
             MinWidth="400"
-            Margin="10,265,0,214"
+            Margin="10,265,300,214"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
