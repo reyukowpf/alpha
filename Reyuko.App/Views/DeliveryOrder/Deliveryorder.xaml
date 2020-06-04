@@ -142,11 +142,9 @@
         <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="420,143,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="currency_selectedchange"/>
         <DataGrid
             x:Name="DGDeliveryOrder"
-            Height="280"
-            Width="780"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Margin="10,185,0,0"
+            Height="Auto"
+            MinWidth="400"
+            Margin="10,185,0,-18"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
