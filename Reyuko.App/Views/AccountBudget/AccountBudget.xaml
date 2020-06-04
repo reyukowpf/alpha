@@ -1,0 +1,341 @@
+﻿<UserControl
+    x:Class="Reyuko.App.Views.AccountBudget.AccountBudget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Reyuko.App"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="800"
+    VerticalAlignment="Top"
+    Background="White"
+    mc:Ignorable="d" >
+    <UserControl.DataContext>
+        <local:MainWindowViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid Margin="0,0,0,0">
+        <TextBlock
+            Width="400"
+            Height="43"
+            Margin="20,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="Budget VS Realization"
+            TextWrapping="Wrap" />
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,10,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <materialDesign:PopupBox ToggleContent="View" Height="22" FontSize="12.5" HorizontalAlignment="Right" Margin="0,20,130,0"  VerticalAlignment="Top" Width="60">
+            <StackPanel
+            Margin="10,0,0,0"
+            Width="150"
+            VerticalAlignment="Top"         
+            HorizontalAlignment="Left">
+                <CheckBox x:Name="chkdate"
+                IsChecked="{Binding Path=DateColumnChecked, Mode=TwoWay}"
+                Content="Month" />
+                <CheckBox x:Name="chkkodebudget"
+                IsChecked="{Binding Path=ReferenceColumnChecked, Mode=TwoWay}"
+                Content="Budget Code" />
+                <CheckBox x:Name="chkdepartment"
+                IsChecked="{Binding Path=DepartmenColumnChecked, Mode=TwoWay}"
+                Content="Departement" />
+                <CheckBox x:Name="chkproject"
+                IsChecked="{Binding Path=ProjectColumnChecked, Mode=TwoWay}"
+                Content="Project" />
+                <CheckBox x:Name="chklokasi"
+                IsChecked="{Binding Path=LokasiColumnChecked, Mode=TwoWay}"
+                Content="Location" />
+                <CheckBox x:Name="chkdeskripsi"
+                IsChecked="{Binding Path=DeskripsiColumnChecked, Mode=TwoWay}"
+                Content="Description" />
+                <CheckBox x:Name="chkbudget"
+                IsChecked="{Binding Path=CustomerColumnChecked, Mode=TwoWay}"
+                Content="Budget" />
+                <CheckBox x:Name="chkrealization"
+                IsChecked="{Binding Path=KreditColumnChecked, Mode=TwoWay}"
+                Content="Realization" />
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <Button HorizontalAlignment="Right" Margin="0,20,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="65" Click="Print_Clicks">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/print.png" Height="20"/>
+                <TextBlock Text=" Print" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Label x:Name="lblnama" HorizontalAlignment="Left" Margin="234,57,0,0" VerticalAlignment="Top" FontSize="12.5"/>
+
+        <DataGrid
+            x:Name="DGBudget"
+            Height="Auto"
+            MinWidth="400"
+            Margin="235,105,0,-10"
+            AutoGenerateColumns="False"
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            BorderThickness="0"
+            CanUserResizeRows="False"
+            ColumnHeaderHeight="32"
+            FontSize="12.5"
+            GridLinesVisibility="None"
+            HeadersVisibility="Column"
+            IsReadOnly="True"
+            RowDetailsVisibilityMode="Visible"
+            RowHeight="30"
+            SelectionMode="Single">
+            <DataGrid.Resources>
+                <local:BindingProxy x:Key="ColumnCheckedProxy" Data="{Binding DateColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy1" Data="{Binding ReferenceColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy2" Data="{Binding DepartmenColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy3" Data="{Binding ProjectColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy4" Data="{Binding LokasiColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy5" Data="{Binding DeskripsiColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy6" Data="{Binding CustomerColumnChecked}"/>
+                <local:BindingProxy x:Key="ColumnCheckedProxy7" Data="{Binding KreditColumnChecked}"/>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Background" Value="#FF5684C3" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="90"
+                    Binding="{Binding TanggalAwal,StringFormat=\{0:MMMM\}}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="  Month"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="100"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Budget Code"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy1}}">
+                    <DataGridTextColumn.Binding>
+                        <MultiBinding StringFormat="{}{0}.{1}.{2}">
+                            <Binding Path="Id" />
+                            <Binding Path="NomorAnggaran" />
+                            <Binding Path="IdRekeningPerkiraan"/>
+                        </MultiBinding>
+                    </DataGridTextColumn.Binding>
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding IdDepartemen}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Department"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy2}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Idproyek}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Project"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy3}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding IdLokasi}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Location"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy4}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Deskripsi}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Description"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy5}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="100"
+                    Binding="{Binding Anggaran}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Budget"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy6}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Realization}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Realization"
+                    Visibility="{Binding Data, Converter={StaticResource BoolToVisibilityConverter}, Source={StaticResource ColumnCheckedProxy7}}">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TreeView x:Name="tvAccountBudget" HorizontalAlignment="Left" Margin="22,100,0,-590" Width="190" Height="Auto"
+                  SelectedItemChanged="tvAccountBudget_SelectedItemChanged">
+        </TreeView>
+        <Label Content="Accounting Periode" FontSize="12.5" HorizontalAlignment="Right" Margin="0,73,181,0" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Right" FontSize="12.5" Margin="0,73,50,0" VerticalAlignment="Top" Width="120"/>
+
+
+
+    </Grid>
+
+</UserControl>

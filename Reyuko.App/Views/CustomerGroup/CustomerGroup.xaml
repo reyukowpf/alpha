@@ -1,0 +1,147 @@
+﻿<UserControl
+    x:Class="Reyuko.App.Views.CustomerGroup.CustomerGroup"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="800"
+    VerticalAlignment="Top"
+    Background="White"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="90" Click="Delete_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/delete.png" Height="23" Width="23"/>
+                        <TextBlock Text="Delete" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="playtutorial_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+        <ListView
+            x:Name="LICustomerGroup"
+            Width="200"
+            Height="600"
+            Margin="8,99,0,0"
+            HorizontalAlignment="Left" SelectionChanged="LICustomerGroup_SelectionChanged"
+  >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel
+                        Height="46"
+                        Margin="0,0,0,0"
+                        Orientation="Horizontal">
+                        <TextBlock
+                            Width="44"
+                            Height="26"
+                            Margin="0,10,1,8"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Text="{Binding NamaGroupDiskon}" />
+                        <!--<TextBlock
+                            Grid.Row="2"
+                            Width="121"
+                            Margin="0,2,0,10"
+                            TextWrapping="Wrap">
+                            <TextBlock Text="{Binding NamaCustomerGroup}" /><LineBreak />
+                            
+                        </TextBlock>-->
+
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <TextBlock
+            Width="282"
+            Height="46"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="Customer Group"
+            TextWrapping="Wrap" />
+
+        <Button HorizontalAlignment="Right" Margin="0,12,120,0" Background="Transparent" BorderThickness="0"
+           Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnNewCustomerGroup_Clicks">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
+                <TextBlock Text=" New" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="0,12,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnEditCustomerGroup_Clicks">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/edit.png" Height="20"/>
+                <TextBlock Text=" Edit" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Label Content="ID Customer Group" FontSize="12.5" HorizontalAlignment="Left" Margin="224,93,0,0" VerticalAlignment="Top"/>
+        <Label Content="Group Name" FontSize="12.5" HorizontalAlignment="Left" Margin="224,133,0,0" VerticalAlignment="Top"/>
+        <Label Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="224,173,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="224,213,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="344,93,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="344,133,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="344,173,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="344,213,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtIDCustomerGroup" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="354,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBlock x:Name="txtGroupName" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="354,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBlock x:Name="txtDiscount" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="354,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"/>
+        <TextBlock x:Name="txtNote" FontSize="12.5" HorizontalAlignment="Left" Height="70" Margin="224,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="10,64,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="177">
+                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="118" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NamaPelanggan}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,0,0,0"/>
+            </DockPanel>
+        </Border>
+    </Grid>
+
+</UserControl>

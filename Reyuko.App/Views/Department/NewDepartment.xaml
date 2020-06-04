@@ -1,0 +1,84 @@
+﻿<Window
+    x:Class="Reyuko.App.Views.Department.NewDepartment"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                                                 
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"               
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Height="380"
+    Width="550"
+    FontSize="14"
+    BorderBrush="Black"
+    WindowStyle="None"
+    ShowInTaskbar="False"
+    WindowStartupLocation="CenterScreen"
+    Background="White"
+    mc:Ignorable="d" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="1" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,100,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnSave_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
+                <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,20,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="BtnCancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
+                <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Label Content="Department Code" FontSize="12.5" HorizontalAlignment="Left" Margin="52,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Department Name" FontSize="12.5" HorizontalAlignment="Left" Margin="51,104,0,0" VerticalAlignment="Top"/>
+        <Label Content="Sub Department" FontSize="12.5" HorizontalAlignment="Left" Margin="51,144,0,0" VerticalAlignment="Top"/>
+        <Label Content="PIC" HorizontalAlignment="Left" FontSize="12.5" Margin="51,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Remarks" HorizontalAlignment="Left" FontSize="12.5" Margin="51,224,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="182,64,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="182,104,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="182,144,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="182,184,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="182,224,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDepartmentCode" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="192,64,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtDepartmentCode_TextChanged"/>
+        <TextBox x:Name="txtDepartmentName" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="192,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtDepartmentName_TextChanged"/>
+        <ComboBox x:Name="CbSubDepartment" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="192,144,0,0" VerticalAlignment="Top" Width="170" SelectionChanged="CbSubDepartment_SelectionChanged"/>
+        <ComboBox x:Name="CbPIC" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="192,184,0,0" VerticalAlignment="Top" Width="170" SelectionChanged="CbPIC_SelectionChanged"/>
+        <TextBox x:Name="txtRemarks" HorizontalAlignment="Left" Height="70" FontSize="12.5" Margin="192,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtRemarks_TextChanged"/>
+        <TextBlock
+            Width="288"
+            Height="49"
+            Margin="50,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="New Department"
+            TextWrapping="Wrap" />
+        <CheckBox Content="InActive" FontSize="12.5" HorizontalAlignment="Left" Margin="192,304,0,0" VerticalAlignment="Top"/>
+    </Grid>
+
+</Window>

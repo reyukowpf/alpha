@@ -1,0 +1,125 @@
+﻿<UserControl
+    x:Class="Reyuko.App.Views.ContactClasification.ContactClasification"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="800"
+    VerticalAlignment="Top"
+    Background="White"
+    mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid Margin="0,0,0,0">
+
+        <TextBlock
+            Width="365"
+            Height="48"
+            Margin="20,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="Contact Clasification"
+            TextWrapping="Wrap" />
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,10,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="90" Click="Delete_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/delete.png" Height="23" Width="23"/>
+                        <TextBlock Text="Delete" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="playtutorial_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+        <Button HorizontalAlignment="Right" Margin="0,20,120,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnNew_Clicks">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
+                <TextBlock Text=" New" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="0,20,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnEdit_Clicks">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/edit.png" Height="20"/>
+                <TextBlock Text=" Edit" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <TreeView x:Name="TvContactClasification" HorizontalAlignment="Left" Height="632" Margin="22,73,0,-20" VerticalAlignment="Top" Width="206"
+                  SelectedItemChanged="TvContactClasification_SelectedItemChanged"
+                  >
+            <!--<TreeViewItem Header="Customer" IsExpanded="True">
+                <TreeViewItem Header="Manager" IsExpanded="True"></TreeViewItem>
+                <TreeViewItem Header="Staff" IsExpanded="True"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Vendor" IsExpanded="True">
+                <TreeViewItem Header="Example" IsExpanded="True"></TreeViewItem>
+                <TreeViewItem Header="Example" IsExpanded="True"></TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Employee" IsExpanded="True">
+                <TreeViewItem Header="Example" IsExpanded="True"></TreeViewItem>
+                <TreeViewItem Header="Example" IsExpanded="True"></TreeViewItem>
+            </TreeViewItem>-->
+
+        </TreeView>
+
+        <Label Content="ID Contact Clasification" FontSize="12.5" HorizontalAlignment="Left" Margin="244,83,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact Type" FontSize="12.5" HorizontalAlignment="Left" Margin="244,123,0,0" VerticalAlignment="Top"/>
+        <Label Content="Klasifikasi Kontak" FontSize="12.5" HorizontalAlignment="Left" Margin="244,163,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ayah" HorizontalAlignment="Left" FontSize="12.5" Margin="244,203,0,0" VerticalAlignment="Top"/>
+        <Label Content="Ibu" HorizontalAlignment="Left" FontSize="12.5" Margin="244,243,0,0" VerticalAlignment="Top"/>
+        <Label Content="Kakak" HorizontalAlignment="Left" FontSize="12.5" Margin="244,283,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note" HorizontalAlignment="Left" FontSize="12.5" Margin="244,323,0,0" VerticalAlignment="Top"/>
+        <!--<Label Content="Loream ipsum dolor sit amet,justo ancillae voluptua eos id ut dicam fastidii eam, et accusata qualisque sadipscing est." HorizontalAlignment="Left" Margin="244,347,0,0" VerticalAlignment="Top"/>
+        <Label Content="Eos Id omnesque mandamus. Pro an putant salutandi, ex solum persius fuisset eos." HorizontalAlignment="Left" Margin="244,367,0,0" VerticalAlignment="Top"/>
+        <Label Content="Apeirian deserunt sea ea. Has ferri salutandi ne. Ipsum quodsi vim ex. His nihil inermis ut, mea vocent meliore detracto no." HorizontalAlignment="Left" Margin="244,387,0,0" VerticalAlignment="Top"/>
+        <Label Content="Novum quidam fastidii vix ea. Vim ea etiam omnium abhorreant. Vocent voluptaria te eum. Id nihil libris sed." HorizontalAlignment="Left" Margin="244,407,0,0" VerticalAlignment="Top"/>-->
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,83,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,123,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,163,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,203,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,243,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,283,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="404,323,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtIDContactClasification" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtContactType" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBlock x:Name="txtKlasifikasiKontak" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBlock x:Name="txtAyah" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBlock x:Name="txtIbu" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBlock x:Name="txtKakak" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,284,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+        <TextBlock x:Name="txtNote" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="414,324,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147"/>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,210 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Class="Reyuko.App.Views.Project.NewProject"
+    d:DesignHeight="500"
+    d:DesignWidth="800"
+    FontSize="14"
+    Background="White"
+    mc:Ignorable="d" VerticalAlignment="Top" >
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <TextBlock
+            Width="267"
+            Height="46"
+            Margin="20,9,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="New Project"
+            TextWrapping="Wrap" />
+
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="playtutorial_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="20" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <Button x:Name="BtnSave" HorizontalAlignment="Right" Margin="0,12,130,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="65" Click="BtnSave_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
+                <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button x:Name="BtnCancel" HorizontalAlignment="Right" Margin="0,12,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="BtnCancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
+                <TextBlock Text=" Close" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <TabControl Margin="16,66,4,-16">
+            <TabItem Header="General" FontSize="24" >
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <Label Content="Project No" FontSize="12.5" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Project Name" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Customer" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                    <Label Content="PIC" HorizontalAlignment="Left" FontSize="12.5" Margin="10,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Currency" HorizontalAlignment="Left" FontSize="12.5" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Contract Price" HorizontalAlignment="Left" FontSize="12.5" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Start Project" HorizontalAlignment="Left" FontSize="12.5" Margin="450,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content="End Project" HorizontalAlignment="Left" FontSize="12.5" Margin="450,60,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Status" HorizontalAlignment="Left" FontSize="12.5" Margin="450,100,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" HorizontalAlignment="Left" FontSize="12.5" Margin="450,140,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="txtProjectno" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="180,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtProjectno_TextChanged"/>
+                    <TextBox x:Name="txtProjectName" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="180,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtProjectName_TextChanged"/>
+                    <ComboBox x:Name="CbCustomer" HorizontalAlignment="Left" FontSize="12.5" Margin="180,100,0,0" VerticalAlignment="Top" Height="28" Width="150" SelectionChanged="CbCustomer_SelectionChanged"/>
+                    <ComboBox x:Name="CbPIC" HorizontalAlignment="Left" FontSize="12.5" Margin="180,140,0,0" VerticalAlignment="Top" Height="28" Width="150" SelectionChanged="CBPIC_SelectionChanged"/>
+                    <ComboBox x:Name="CbCurrency" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,180,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbCurrency_SelectionChanged"/>
+                    <TextBox x:Name="txtContractPrice" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtContractPrice_TextChanged"/>
+                    <DatePicker x:Name="DpStartDate" HorizontalAlignment="Left" FontSize="12.5" Margin="600,20,0,0" VerticalAlignment="Top" Width="150" Height="28"/>
+                    <DatePicker x:Name="DpEndDate" HorizontalAlignment="Left" FontSize="12.5" Margin="600,60,0,0" VerticalAlignment="Top" Width="150" Height="28"/>
+                    <ComboBox x:Name="CbStatus" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="600,100,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbStatus_SelectionChanged"/>
+                    <TextBox x:Name="txtRemarks" HorizontalAlignment="Left" Height="138" FontSize="12.5" Margin="600,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <CheckBox x:Name="ChkInactive" Content="Inactive" FontSize="12.5" HorizontalAlignment="Left" Margin="450,305,0,0" VerticalAlignment="Top"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Team" FontSize="24">
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <DataGrid
+                        x:Name="DGTeam"
+                        Height="Auto"
+                        MinWidth="400"
+                        Margin="6,10,-6,0"
+                        AutoGenerateColumns="False"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        BorderThickness="0"
+                        CanUserResizeRows="False"
+                        ColumnHeaderHeight="32"
+                        FontSize="12.5"
+                        GridLinesVisibility="None"
+                        HeadersVisibility="Column"
+                        IsReadOnly="True"
+                        RowDetailsVisibilityMode="Visible"
+                        RowHeight="30"
+                        SelectionMode="Single">
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#d3d3d3" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+
+                            <DataGridTextColumn
+                                Width="200"
+                                Binding="{Binding IDEmployee}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="ID / Employee">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="250"
+                                Binding="{Binding Position}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="Position">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="320"
+                                Binding="{Binding Remarks}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="Remarks">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                          
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+
+    </Grid>
+
+</UserControl>

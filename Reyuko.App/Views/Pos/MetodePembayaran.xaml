@@ -1,0 +1,43 @@
+﻿<Window x:Class="Reyuko.App.Views.Pos.MetodePembayaran"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Reyuko.App.Views.Pos"
+        mc:Ignorable="d"
+        Title="MetodePembayaran" Height="290" Width="680" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
+        <Button
+                    x:Name="Cash"
+                    Width="479"
+                    Height="28"
+                    Margin="96,76,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Background="White"
+                    BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Content="Cash" FontSize="18"/>
+        <Button
+            x:Name="CreditCard"
+            Width="479"
+            Height="28"
+            Margin="96,104,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            BorderThickness="0"
+            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Content="Credit Card" FontSize="18"/>
+        <Button
+            x:Name="Debit"
+            Width="479"
+            Height="28"
+            Margin="96,132,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            BorderThickness="0"
+            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" Content="Debit" FontSize="18"/>
+
+
+    </Grid>
+</Window>

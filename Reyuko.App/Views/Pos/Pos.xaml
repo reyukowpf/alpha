@@ -1,0 +1,298 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Class="Reyuko.App.Views.Pos.Pos"
+    d:DesignHeight="600"
+    d:DesignWidth="1000"
+    Background="White"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,10,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="150">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Grid / List View" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="playtutorial_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <ListView
+            x:Name="LstService"
+            Width="220"
+            BorderBrush="Transparent"
+            Height="Auto"
+            Margin="8,132,0,202"
+            HorizontalAlignment="Left">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel
+                    Height="44"
+                    Margin="0,0,0,0"
+                    Orientation="Horizontal">
+                        <TextBlock
+                        Width="44"
+                        Height="26"
+                        Margin="0,10,1,8"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding KodeService}"
+                        />
+                        <TextBlock
+                        Grid.Row="2"
+                        Width="121"
+                        Margin="0,2,0,10"
+                        TextWrapping="Wrap"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding NamaCustomer}"
+                        />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock
+            Width="178"
+            Height="45"
+            Margin="10,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="POS"
+            TextWrapping="Wrap" />
+
+        <Button HorizontalAlignment="Right" Margin="0,20,140,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="New_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
+                <TextBlock Text=" New" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,20,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="Delete_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/delete.png" Height="20"/>
+                <TextBlock Text=" Delete" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="10,70,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="170">
+                <Controls:AutoCompleteBox x:Name="srpos" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="133" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaGrupProduk">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NamaGrupProduk}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+            </DockPanel>
+        </Border>
+        <Label Content="Items(0)" FontSize="18" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Discount" FontSize="14" HorizontalAlignment="Left" Margin="8,0,0,172" VerticalAlignment="Bottom"/>
+        <Label Content="Discount" FontSize="14" HorizontalAlignment="Left" Margin="8,0,0,172" VerticalAlignment="Bottom"/>
+        <Label Content="Subtotal" FontSize="14" HorizontalAlignment="Left" Margin="8,0,0,152" VerticalAlignment="Bottom"/>
+        <Label Content="Tax" FontSize="14" HorizontalAlignment="Left" Margin="8,0,0,132" VerticalAlignment="Bottom"/>
+        <Label Content="Rounding" FontSize="14" HorizontalAlignment="Left" Margin="8,0,0,112" VerticalAlignment="Bottom"/>
+        <Label Content="10 %" FontSize="14" HorizontalAlignment="Left" Margin="88,0,0,172" VerticalAlignment="Bottom"/>
+        <Label Content="Rp. 1.000.000" FontSize="14" HorizontalAlignment="Left" Margin="128,0,0,172" VerticalAlignment="Bottom"/>
+        <Label Content="Rp. 1.000.000" FontSize="14" HorizontalAlignment="Left" Margin="128,0,0,152" VerticalAlignment="Bottom"/>
+        <Label Content="Rp. 1.000.000" FontSize="14" HorizontalAlignment="Left" Margin="128,0,0,132" VerticalAlignment="Bottom"/>
+        <Label Content="Rp. 1.000.000" FontSize="14" HorizontalAlignment="Left" Margin="128,0,0,112" VerticalAlignment="Bottom"/>
+        <TextBox x:Name="txtSellingPrice" Text="Rp. " FontSize="29" HorizontalAlignment="Left" Height="46" Margin="8,0,0,52" Background="Orange" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="220" />
+        <TextBox x:Name="txtsearch" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="240,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="455" />
+        <Button
+                    x:Name="save"
+                    Width="70"
+                    Height="44"
+                    FontSize="29"
+                    Margin="8,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Background="Blue"
+                    BorderThickness="0"
+                    Style="{StaticResource MyButton}" Content="Save"/>
+        <Button
+                    x:Name="Load"
+                    Width="70"
+                    FontSize="29"
+                    Height="44"
+                    Margin="78,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Background="Blue"
+                    BorderThickness="0"
+                    Style="{StaticResource MyButton}" Content="Load" Click="btnload_click"/>
+
+        <Button
+                    x:Name="category"
+                    Width="100"
+                    Height="28"
+                    FontSize="18"
+                    Margin="10,80,0,0"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Background="Orange"
+                    BorderThickness="0"
+                    Style="{StaticResource MyButton}" Content="Category"/>
+        <Button
+                    x:Name="print"
+                    Width="80"
+                    FontSize="29"
+                    Height="44"
+                    Margin="148,0,0,10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    Background="Blue"
+                    BorderThickness="0"
+                    Style="{StaticResource MyButton}" Content="Print" Click="btnprint_click"/>
+
+
+        <ListView Name="lvUsers" Margin="238,110,0,0" MinWidth="400" FontSize="12.5" BorderThickness="0" SelectionChanged="LvUsers_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridView.ColumnHeaderContainerStyle>
+                        <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            <Setter Property="Background" Value="#FF5684C3" />
+                            <Setter Property="Foreground" Value="White" />
+                            <Setter Property="Height" Value="28"/>
+                            <Setter Property="Width" Value="300"/>
+                        </Style>
+                    </GridView.ColumnHeaderContainerStyle>
+                    <GridViewColumn Width="120" Header="SKU">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#FF5684C3" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Height" Value="28"/>
+                            </Style>
+                        </GridViewColumn.HeaderContainerStyle>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Background="White">
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Name">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#FF5684C3" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Height" Value="28"/>
+                            </Style>
+                        </GridViewColumn.HeaderContainerStyle>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Background="White">
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Discount">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#FF5684C3" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Height" Value="28"/>
+                            </Style>
+                        </GridViewColumn.HeaderContainerStyle>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Background="White">
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Price">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#FF5684C3" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Height" Value="28"/>
+                            </Style>
+                        </GridViewColumn.HeaderContainerStyle>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Background="White">
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Width="220" Header="Stock">
+                        <GridViewColumn.HeaderContainerStyle>
+                            <Style BasedOn="{StaticResource {x:Type GridViewColumnHeader}}" TargetType="{x:Type GridViewColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#FF5684C3" />
+                                <Setter Property="Foreground" Value="White" />
+                                <Setter Property="Height" Value="28"/>
+                            </Style>
+                        </GridViewColumn.HeaderContainerStyle>
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid Background="White">
+                                    <TextBlock Text="{Binding FirstName}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+
+</UserControl>
