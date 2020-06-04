@@ -2,9 +2,8 @@
     x:Class="Reyuko.App.Views.SalaryGroup.SalaryGroup"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
-    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     d:DesignHeight="500"
@@ -129,7 +128,24 @@
         <TextBlock x:Name="txtAllowance" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="384,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtOvertime" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="384,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtTax" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="384,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <dxe:SearchControl x:Name="txtSearch" HorizontalAlignment="Left" FontSize="12.5" Margin="8,64,0,0" VerticalAlignment="Top" Width="200"/>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="10,64,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="190">
+                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="160" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NamaPelanggan}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/>
+            </DockPanel>
+        </Border>
     </Grid>
 
 </UserControl>

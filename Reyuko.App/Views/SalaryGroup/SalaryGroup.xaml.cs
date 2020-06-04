@@ -133,10 +133,7 @@ namespace Reyuko.App.Views.SalaryGroup
             }
         }
 
-        private void TxtSearch_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            this.LoadGolonganKontak(txtSearch.SearchText);
-        }
+       
     }
 }
 

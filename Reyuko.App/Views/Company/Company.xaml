@@ -124,9 +124,6 @@
                     <Label Content="Account No." HorizontalAlignment="Left" FontSize="12.5" Margin="400,180,0,0" VerticalAlignment="Top"/>
                     <Label Content="Account Name" HorizontalAlignment="Left" FontSize="12.5" Margin="400,220,0,0" VerticalAlignment="Top"/>
                     <Label Content="Remarks" HorizontalAlignment="Left" FontSize="12.5" Margin="400,260,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Lorem ipsum dolor sit amet, consectetur adipsicing elit. " FontSize="12.5" HorizontalAlignment="Left" Margin="400,300,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Suspendisse sed est ac ligula suscipit lobortis. Aenean" FontSize="12.5" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top"/>
-                    <Label Content="ullamcorper quam vel augeu tristique" HorizontalAlignment="Left" FontSize="12.5" Margin="400,340,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,60,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,100,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,140,0,0" VerticalAlignment="Top"/>
@@ -178,9 +175,6 @@
                     <Label Content="Map Location" HorizontalAlignment="Left" FontSize="12.5" Margin="10,423,0,0" VerticalAlignment="Top"/>
                     <Label Content="Position" HorizontalAlignment="Left" FontSize="12.5" Margin="400,60,0,0" VerticalAlignment="Top"/>
                     <Label Content="Remarks" HorizontalAlignment="Left" FontSize="12.5" Margin="400,100,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Lorem ipsum dolor sit amet, consectetur adipsicing elit. " FontSize="12.5" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Suspendisse sed est ac ligula suscipit lobortis. Aenean" FontSize="12.5" HorizontalAlignment="Left" Margin="400,160,0,0" VerticalAlignment="Top"/>
-                    <Label Content="ullamcorper quam vel augeu tristique" HorizontalAlignment="Left" FontSize="12.5" Margin="400,180,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,60,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,100,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,140,0,0" VerticalAlignment="Top"/>
@@ -220,9 +214,6 @@
                     <Label Content="Map Location" HorizontalAlignment="Left" FontSize="12.5" Margin="10,423,0,0" VerticalAlignment="Top"/>
                     <Label Content="Position" HorizontalAlignment="Left" FontSize="12.5" Margin="400,60,0,0" VerticalAlignment="Top"/>
                     <Label Content="Remarks" HorizontalAlignment="Left" FontSize="12.5" Margin="400,100,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Lorem ipsum dolor sit amet, consectetur adipsicing elit. " FontSize="12.5" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Suspendisse sed est ac ligula suscipit lobortis. Aenean" FontSize="12.5" HorizontalAlignment="Left" Margin="400,160,0,0" VerticalAlignment="Top"/>
-                    <Label Content="ullamcorper quam vel augeu tristique" HorizontalAlignment="Left" FontSize="12.5" Margin="400,180,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,60,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,100,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="120,140,0,0" VerticalAlignment="Top"/>

@@ -31,7 +31,7 @@ namespace Reyuko.App.Views.Sales
 
         private void Savesales_Click(object sender, RoutedEventArgs e)
         {
-            if (Customer.Name == "" || txtRefereneNumber.Text == "" || txtNoteType.Text == "" || dtNote.Text == "" || txtNoteTitle.Text == "" || dtReminder.Text == "")
+            if (srcustomer.Name == "" || txtRefereneNumber.Text == "" || txtNoteType.Text == "" || dtNote.Text == "" || txtNoteTitle.Text == "" || dtReminder.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("TextBoc Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;

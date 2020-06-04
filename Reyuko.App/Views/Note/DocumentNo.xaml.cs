@@ -29,7 +29,7 @@ namespace Reyuko.App.Views.Note
         
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            if (cbDocumentTipe.Text == "" || date.Text == "" || txtDocumentNo.Text == "" || cbCustomer.Name == "" || txtDescription.Text == "")
+            if (cbDocumentTipe.Text == "" || date.Text == "" || txtDocumentNo.Text == "" || srcustomer.Name == "" || txtDescription.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;

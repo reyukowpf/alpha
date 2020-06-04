@@ -36,7 +36,7 @@ namespace Reyuko.App.Views.StockOpname
 
         private void SaveInventoryChecking_Click(object sender, RoutedEventArgs e)
         {
-            if (txtReferenceNumber.Text == "" || DocumentReference.Name == "" || cbAccount.Text == "" || date.Text == "" || Staf.Name == "")
+            if (txtReferenceNumber.Text == "" || srnorefensidokumen.Name == "" || cbAccount.Text == "" || date.Text == "" || srstaff.Name == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;

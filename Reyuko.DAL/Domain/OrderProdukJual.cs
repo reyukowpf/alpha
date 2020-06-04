@@ -6,7 +6,7 @@ namespace Reyuko.DAL.Domain
     public class OrderProdukJual
     {
         public int IdOrderProdukJual { get; set; }
-        public int? IdAkunStok { get; set; }
+        public int? IdAkunPersediaan { get; set; }
         public int? IdAkunPengirimanJual { get; set; }
         public int? IdAkunReturPenjualan { get; set; }
         public int? IdProyekProduk { get; set; }
@@ -39,5 +39,6 @@ namespace Reyuko.DAL.Domain
        public string TypeProduk { get; set; }
        public int? IdAkunHargaPokok { get; set; }
        public int? IdAkunPenjualan { get; set; }
+        public bool? Checkbokaktif { get; set; }
     }
 }
