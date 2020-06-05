@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 namespace Reyuko.App.Views.DeliveryOrder
 {
     /// <summary>
-    
+
     /// </summary>
     public partial class NewDeliveryOrder : UserControl
     {
@@ -54,7 +54,7 @@ namespace Reyuko.App.Views.DeliveryOrder
         public DataProyek dataProyekSelected;
         public IEnumerable<OptionAnnual> optionAnnuals { get; set; }
         public OptionAnnual optionAnnualSelected { get; set; }
-        
+
 
         private void Init()
         {
@@ -65,7 +65,16 @@ namespace Reyuko.App.Views.DeliveryOrder
             this.LoadSalesorder();
             this.LoadAnnual();
             this.LoadStaff();
+            this.ClearForm();
         }
+        public void ClearForm()
+        {
+            dtDeliveryorderdate.Text = DateTime.Now.ToShortDateString();
+            dtValiditydate.Text = DateTime.Now.ToShortDateString();
+            dtAnnualdate.Text = DateTime.Now.ToShortDateString();
+        }
+
+
         public void LoadSalesorder()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -436,75 +445,6 @@ namespace Reyuko.App.Views.DeliveryOrder
             }
         }
 
-        private void TxtNote_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        public Deliveryorders GetData()
-        {
-            Deliveryorders oData = new Deliveryorders();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalDo = DateTime.Parse(dtDeliveryorderdate.Text);
-            oData.NoDo = txtDeliveryOrderNo.Text;
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalPengiriman = DateTime.Parse(dtValiditydate.Text);
-            oData.DurationBerulang = double.Parse(txtAnnualFrequency.Text);
-            oData.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdPelanggan = this.kontakSelected.Id;
-                oData.NamePelanggan = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMaatUang = this.DataMataUangSelected.Id;
-                oData.MaatUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferansiDokumen = this.dokumenSelected.Id;
-                oData.NoReferansiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.SalesOrderSelected != null)
-            {
-                oData.IdOrderPenjualan = this.SalesOrderSelected.IdOrderPenjualan;
-                oData.NomorOrderPenjualan = this.SalesOrderSelected.NoOrderPenjualan;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NameLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-
-            }
-            if (this.optionAnnualSelected != null)
-            {
-                oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                oData.Annual = this.optionAnnualSelected.Annual;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamePetugas = this.kontakSelected.NamaA;
-            }
-
-            oData.CheckboxInclusivePajak = chkinclusive.IsChecked;
-            oData.CheckboxBerulang = chkannual.IsChecked;
-
-            return oData;
-        }
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             if (dtDeliveryorderdate.Text == "" || cbCurrency.Text == "" || txtDeliveryOrderNo.Text == "" || cbSalesorder.Text == "" || cbLocation.Text == "" || dtValiditydate.Text == "" || txtAnnualFrequency.Text == "" || dtAnnualdate.Text == "")
@@ -512,23 +452,115 @@ namespace Reyuko.App.Views.DeliveryOrder
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            DeliveryOrdersBLL deliveryOrdersBLL = new DeliveryOrdersBLL();
-            if (deliveryOrdersBLL.AddDeliveryOrder(this.GetData()) > 0)
+            DeliveryOrdersBLL deliveryBLL = new DeliveryOrdersBLL();
+            DeliveryOrdersBLL DeliveryBLL = new DeliveryOrdersBLL();
+            Deliveryorders deliveryorders = new Deliveryorders();
+            if (this.kontakSelected != null)
             {
+                deliveryorders.IdPelanggan = this.kontakSelected.Id;
+                deliveryorders.NamePelanggan = this.kontakSelected.NamaA;
+            }
+            deliveryorders.Email = txtemail.Text;
+            deliveryorders.NoHp = txthp.Text;
+            deliveryorders.TanggalDo = DateTime.Parse(dtDeliveryorderdate.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                deliveryorders.IdMaatUang = this.DataMataUangSelected.Id;
+                deliveryorders.MaatUang = this.DataMataUangSelected.NamaMataUang;
+                deliveryorders.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                deliveryorders.IdNoReferansiDokumen = this.dokumenSelected.Id;
+                deliveryorders.NoReferansiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            deliveryorders.NoDo = txtDeliveryOrderNo.Text;
+            if (this.SalesOrderSelected != null)
+            {
+                deliveryorders.IdOrderPenjualan = this.SalesOrderSelected.IdOrderPenjualan;
+                deliveryorders.NomorOrderPenjualan = this.SalesOrderSelected.NoOrderPenjualan;
+            }
+            deliveryorders.Keterangan = txtNote.Text;
+            if (this.lokasiSelected != null)
+            {
+                deliveryorders.IdLokasi = this.lokasiSelected.Id;
+                deliveryorders.NameLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            if (this.dataDepartemenSelected != null)
+            {
+                deliveryorders.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                deliveryorders.IdProyek = this.dataProyekSelected.Id;
+            }
+            deliveryorders.CheckboxInclusivePajak = chkinclusive.IsChecked;
+            deliveryorders.TanggalPengiriman = DateTime.Parse(dtValiditydate.Text);
+            deliveryorders.DurationBerulang = double.Parse(txtAnnualFrequency.Text);
+            deliveryorders.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
+            if (this.optionAnnualSelected != null)
+            {
+                deliveryorders.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                deliveryorders.Annual = this.optionAnnualSelected.Annual;
+            }
+            if (this.kontakSelected != null)
+            {
+                deliveryorders.IdPetugas = this.kontakSelected.Id;
+                deliveryorders.NamePetugas = this.kontakSelected.NamaA;
+            }
+            deliveryorders.CheckboxBerulang = chkannual.IsChecked;
+            deliveryorders.IdKodeTransaksi = 25;
+            deliveryorders.KodeTransaksi = "DO";
+            deliveryorders.IdReferalTransaksi = 1;
+            deliveryorders.IdPeriodeAkuntansi = 1;
+            deliveryorders.RealRecordingTime = DateTime.Now;
+            deliveryorders.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            deliveryorders.TotalPajak = double.Parse(txtTotalTax.Text);
+            deliveryorders.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            if (DeliveryBLL.AddDeliveryOrder(deliveryorders) > 0)
+            {
+                //  this.ClearForm();
                 MessageBox.Show("Delivery Order successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
             }
             else
             {
-                MessageBox.Show("Delivery Order failed to be added !");
+                MessageBox.Show("Delivery Order failed to add !");
             }
-            Deliveryorder v = new Deliveryorder();
-            Switcher.SwitchNewDeliveryorder(v);
+             if (DGSKU.Items.Count > 0)
+             {
+                 foreach (var item in DGSKU.Items)
+                 {
+                     if (item is OrderProdukJual)
+                     {
+                         OrderProdukJual oNewData1 = (OrderProdukJual)item;
+                         oNewData1.IdReferalTransaksi = 1;
+                         oNewData1.Tanggal = DateTime.Parse(dtDeliveryorderdate.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                        }                       
+                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValiditydate.Text);
+                        oNewData1.Checkbokaktif = false;
+                         if (deliveryBLL.EditOrderProdukjual(oNewData1, deliveryorders) == true)
+                         {
+                         }
+                     }
+                 }
+                    Deliveryorder v = new Deliveryorder();
+                    Switcher.SwitchNewDeliveryorder(v);
+                }
+            }
         }
-
-        
     }
-}
              
     
 

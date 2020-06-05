@@ -20,5 +20,6 @@
             FontStyle="Normal"
             Text="Dashboard"
             TextWrapping="Wrap" />
+        <TextBlock HorizontalAlignment="Left" Margin="140,300,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="22" Width="120"/>
     </Grid>
 </UserControl>

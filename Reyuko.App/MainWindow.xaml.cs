@@ -11,8 +11,8 @@ namespace Reyuko.App
         public MainWindow()
         {
             InitializeComponent();
-          
+            var vHeight = System.Windows.SystemParameters.PrimaryScreenHeight;
         }
-      
+
     }
 }

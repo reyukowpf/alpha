@@ -151,7 +151,7 @@
         <Label Content="Sales Order No." HorizontalAlignment="Left" FontSize="12.5" Margin="350,118,0,0" VerticalAlignment="Top"/>
         <Label Content="Note" HorizontalAlignment="Left" FontSize="12.5" Margin="10,178,0,0" VerticalAlignment="Top"/>
         <Label Content="Location" HorizontalAlignment="Left" FontSize="12.5" Margin="350,178,0,0" VerticalAlignment="Top"/>
-        <Label Content="Validity Date" HorizontalAlignment="Left" FontSize="12.5" Margin="10,420,0,0" VerticalAlignment="Top"/>
+        <Label Content="Delivery Date" HorizontalAlignment="Left" FontSize="12.5" Margin="10,420,0,0" VerticalAlignment="Top"/>
         <Label Content="Staf / Id" HorizontalAlignment="Left" FontSize="12.5" Margin="10,480,0,0" VerticalAlignment="Top"/>
         <Label Content="Annual Frequency" HorizontalAlignment="Left" FontSize="12.5" Margin="185,480,0,0" VerticalAlignment="Top"/>
         <Label Content="Annual Date" HorizontalAlignment="Left" FontSize="12.5" Margin="185,540,0,0" VerticalAlignment="Top"/>
@@ -218,7 +218,7 @@
         </Border>
         <TextBox x:Name="txtDeliveryOrderNo" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtDeliveryOrderNo_TextChanged"/>
         <ComboBox x:Name="cbSalesorder" HorizontalAlignment="Left" Margin="350,143,0,0" FontSize="12.5" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="Salesorder_selectedchange"/>
-        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" TextChanged="TxtNote_TextChanged"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
         <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" FontSize="12.5" Margin="350,203,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
         <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" FontSize="12.5" Margin="520,203,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
         <ComboBox x:Name="cbProyek" HorizontalAlignment="Left" FontSize="12.5" Margin="520,203,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
@@ -437,54 +437,8 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-                <DataGridTextColumn
-                    Width="60"
-                    Binding="{Binding Job}"
-                    CanUserReorder="False"
-                    CanUserResize="False"
-                    CanUserSort="True"
-                    FontSize="12.5"
-                    Header="Job">
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                            <Setter Property="HorizontalContentAlignment" Value="Left" />
-                            <Setter Property="Background" Value="#d3d3d3" />
-                            <Setter Property="Foreground" Value="White" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
-                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
-                <DataGridTextColumn
-                    Width="80"
-                    Binding="{Binding Account}"
-                    CanUserReorder="False"
-                    CanUserResize="False"
-                    CanUserSort="True"
-                    FontSize="12.5"
-                    Header="Account">
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                            <Setter Property="HorizontalContentAlignment" Value="Left" />
-                            <Setter Property="Background" Value="#d3d3d3" />
-                            <Setter Property="Foreground" Value="White" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
-                    <DataGridTextColumn.ElementStyle>
-                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
-                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
-                            <Setter Property="VerticalAlignment" Value="Center" />
-                        </Style>
-                    </DataGridTextColumn.ElementStyle>
-                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-
-
 
     </Grid>
 

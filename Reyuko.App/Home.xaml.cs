@@ -12,6 +12,7 @@ namespace Reyuko.App
         public Home()
         {
             InitializeComponent();
+            //MainWindow.vHeight = this;
         }
     }
 }

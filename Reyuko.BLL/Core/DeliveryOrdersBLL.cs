@@ -163,6 +163,7 @@ namespace Reyuko.BLL.Core
                             oDBData.MapFrom(oData);
                             uow.OrderProdukJual.Update(oDBData);
 
+
                             traceID = 6;
                             uow.Save();
                             trans.Commit();

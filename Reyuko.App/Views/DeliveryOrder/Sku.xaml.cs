@@ -35,6 +35,7 @@ namespace Reyuko.App.Views.DeliveryOrder
         public produk produkSelected;
         private void ClearForm()
         {
+            
         }
 
         private void Init()
@@ -58,7 +59,7 @@ namespace Reyuko.App.Views.DeliveryOrder
             {
                 this.produkSelected = (produk)srsku.SelectedItem;
                 txtunit.Text = this.produkSelected.SatuanDasar;
-                txtprice.Text = this.produkSelected.HargaPokokAverage.ToString();
+                txtprice.Text = this.produkSelected.HargaJual.ToString();
                 txtdiskon.Text = this.produkSelected.DiskonProdukPersen;
                 txttax.Text = this.produkSelected.PersentasePajak.ToString();
                 txtdiskon1.Text = ((float.Parse(txtprice.Text.ToString()) * float.Parse(txtdiskon.Text.ToString()) / 100)).ToString();
@@ -70,11 +71,22 @@ namespace Reyuko.App.Views.DeliveryOrder
             if (this.produkSelected != null)
             {
                 oData.IdProduk = this.produkSelected.IdProduk;
+                oData.ProdukKategori = this.produkSelected.ProdukKategori;
                 oData.Sku = this.produkSelected.SKU;
+                oData.IdTypeProduk = this.produkSelected.IdTipeProduk;
+                oData.TypeProduk = this.produkSelected.TipeProduk;
                 oData.SatuanDasar = this.produkSelected.SatuanDasar;
                 oData.HargaJual = this.produkSelected.HargaJual;
                 oData.NamaProduk = this.produkSelected.NamaProduk;
-                oData.TotalPajak = this.produkSelected.PersentasePajak;
+                oData.Persentase = this.produkSelected.PersentasePajak;
+                oData.IdAkunHargaPokok = this.produkSelected.IdAkunHargaPokok;
+                oData.IdAkunPenjualan = this.produkSelected.IdAkunPenjualan;
+                oData.IdAkunPersediaan = this.produkSelected.IdAkunPersediaan;
+                oData.IdAkunPajakJual = this.produkSelected.IdAkunPajak;
+                oData.IdPajak = this.produkSelected.IdPajak;
+                oData.Pajak = this.produkSelected.Pajak;
+                oData.IdAkunPengirimanJual = this.produkSelected.IdAkunPengirimanJual;
+                oData.IdAkunReturPenjualan = this.produkSelected.IdAkunReturPenjualan;
             }
             oData.DiskonProduk = double.Parse(txtdiskon1.Text);
             oData.JumlahProduk = int.Parse(txttotal.Text);

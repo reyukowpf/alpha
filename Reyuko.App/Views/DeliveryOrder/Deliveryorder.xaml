@@ -167,11 +167,10 @@
                     <Setter Property="Foreground" Value="White" />
                 </Style>
 
-
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="100"
                     Binding="{Binding NoDo}"
                     CanUserReorder="False"
                     CanUserResize="False"
