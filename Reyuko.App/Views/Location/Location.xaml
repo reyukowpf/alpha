@@ -32,7 +32,7 @@
         </Style>
     </UserControl.Resources>
 
-    <Grid>
+    <Grid x:Name="grid1">
         <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,10,8,0"  VerticalAlignment="Top" Width="40">
         </materialDesign:PopupBox>
         <TextBlock
@@ -70,30 +70,37 @@
                 <TextBlock Text=" Print" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <ListView
-            x:Name="LiLocation"
-            Width="180"
-            Height="580"
-            Margin="8,125,0,0"
-            HorizontalAlignment="Left" SelectionChanged="LiLocation_SelectionChanged">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel
-                        Height="41"
-                        Margin="0,0,0,0"
-                        Orientation="Horizontal">
-                        <TextBlock
-                            Width="165"
-                            Height="26"
-                            Margin="0,10,1,8"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Text="{Binding NamaTempatLokasi}"
+        <Grid Margin="8,125,612,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ListView
+                x:Name="LiLocation"
+                Width="180"
+                Margin="0,0,0,0"
+                VerticalAlignment="Top"
+                HorizontalAlignment="Left" SelectionChanged="LiLocation_SelectionChanged">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel
+                            Height="41"
+                            Margin="0,0,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock
+                                Width="165"
+                                Height="26"
+                                Margin="0,10,1,8"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                Text="{Binding NamaTempatLokasi}"
                         />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
 
         <Label Content="Search" HorizontalAlignment="Left" FontSize="12.5" Margin="200,60,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Category" HorizontalAlignment="Left" FontSize="12.5" Margin="363,60,0,0" VerticalAlignment="Top"/>

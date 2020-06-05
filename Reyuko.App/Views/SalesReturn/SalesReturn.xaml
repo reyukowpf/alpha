@@ -152,8 +152,10 @@
         <DataGrid
             x:Name="DGSalesReturn"
             Height="Auto"
-            MinWidth="400"
-            Margin="10,181,0,-14"
+            Width="700"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,181,0,20"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"

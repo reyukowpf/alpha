@@ -356,47 +356,6 @@ D:\New folder\Reyuko\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CoreCompileInput
 D:\New folder\Reyuko\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CopyComplete
 D:\New folder\Reyuko\Reyuko.Utils\obj\Debug\Reyuko.Utils.dll
 D:\New folder\Reyuko\Reyuko.Utils\obj\Debug\Reyuko.Utils.pdb
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.dll.config
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.pdb
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\CommonServiceLocator.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\CommonWin32.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.Wpf.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignColors.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignThemes.Wpf.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Newtonsoft.Json.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\System.ValueTuple.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.Toolkit.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\CommonWin32.xml
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.pdb
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.xml
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.Wpf.pdb
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.Wpf.xml
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignColors.pdb
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignThemes.Wpf.pdb
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignThemes.Wpf.xml
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Newtonsoft.Json.xml
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\System.ValueTuple.xml
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csprojAssemblyReference.cache
-D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CoreCompileInputs.cache
-D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CopyComplete
-D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.dll
-D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.pdb
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.dll.config
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.dll
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.pdb
@@ -438,3 +397,44 @@ D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.cs
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CopyComplete
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.dll
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.pdb
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.dll.config
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Reyuko.Utils.pdb
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\CommonServiceLocator.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\CommonWin32.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.Wpf.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignColors.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Newtonsoft.Json.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\System.ValueTuple.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\CommonWin32.xml
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.pdb
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.xml
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.Wpf.pdb
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\LiveCharts.Wpf.xml
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignColors.pdb
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\Newtonsoft.Json.xml
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\System.ValueTuple.xml
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csprojAssemblyReference.cache
+D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CoreCompileInputs.cache
+D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.csproj.CopyComplete
+D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.dll
+D:\Reyuko\alpha\Reyuko.Utils\obj\Debug\Reyuko.Utils.pdb
