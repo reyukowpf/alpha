@@ -8,8 +8,8 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:local="clr-namespace:Reyuko.App.Views.Document"
     x:Class="Reyuko.App.Views.Document.Documents"
-    d:DesignHeight="500"
-    d:DesignWidth="800"
+    d:DesignHeight="775"
+    d:DesignWidth="1000"
     VerticalAlignment="Top"
     Background="White"
     mc:Ignorable="d" >
@@ -35,7 +35,7 @@
     </UserControl.Resources>
 
 
-    <Grid>
+    <Grid x:Name="LayoutRoot">
         <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
             <StackPanel>
                 <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
@@ -105,9 +105,9 @@
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,80,0,0">
+                        CornerRadius="0" Margin="10,80,0,0" Width="185">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="177">
-                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="148" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
+                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="160" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
                     <Controls:AutoCompleteBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -116,13 +116,13 @@
                         </DataTemplate>
                     </Controls:AutoCompleteBox.ItemTemplate>
                 </Controls:AutoCompleteBox>
-                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,3,0,3"/>
             </DockPanel>
         </Border>
         <ComboBox x:Name="CbTipeDokumen"  FontSize="12.5" HorizontalAlignment="Left" Margin="208,82,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
-        <ComboBox HorizontalAlignment="Left" FontSize="12.5" Margin="371,82,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
-        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Margin="532,82,0,0" Height="28" VerticalAlignment="Top"/>
-        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Margin="652,82,0,0" Height="28" VerticalAlignment="Top"/>
+        <ComboBox HorizontalAlignment="Left" FontSize="12.5" Margin="371,82,0,0" Height="28" VerticalAlignment="Top" Width="176"/>
+        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Margin="557,82,0,0" Height="28" VerticalAlignment="Top" Width="128"/>
+        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Margin="697,82,0,0" Height="28" VerticalAlignment="Top" Width="128"/>
         <Label Content="Document No" FontSize="12.5" HorizontalAlignment="Left" Margin="209,123,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Document Type" FontSize="12.5" HorizontalAlignment="Left" Margin="209,163,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Date" HorizontalAlignment="Left" FontSize="12.5" Margin="209,203,0,0" VerticalAlignment="Top"/>
@@ -136,22 +136,25 @@
         <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="362,243,0,0" VerticalAlignment="Top"/>
         <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="362,283,0,0" VerticalAlignment="Top"/>
         <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="362,323,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtDocumentNo" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="372,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtDocumentNo" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="372,126,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="185"/>
         <TextBlock x:Name="txtDocumentType" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="372,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtDate" HorizontalAlignment="Left" Height="28" Margin="372,206,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtContactName" HorizontalAlignment="Left" Height="28" Margin="372,246,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtDepartment" HorizontalAlignment="Left" Height="28" Margin="372,286,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtDescription" HorizontalAlignment="Left" Height="70" Margin="209,356,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
-        <TextBlock x:Name="txtuploadfileA" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtuploadfileB" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtuploadfileC" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtuploadfileD" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtuploadfileA" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:Name="txtuploadfileB" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,196,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:Name="txtuploadfileC" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:Name="txtuploadfileD" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="559,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="400"/>
+      
         <ListView
             x:Name="LstDokumen"
-            Width="180"
-            Height="Auto"
-            Margin="10,128,0,-18"
-            HorizontalAlignment="Left" SelectionChanged="LIDokumen_SelectionChanged">
+            Width="185"
+           
+            Height="{Binding ElementName=LayoutRoot, Path=ActualHeight}"
+            
+           
+            Margin="10,128,0,10" SelectionChanged="LIDokumen_SelectionChanged" HorizontalAlignment="Left" VerticalContentAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel
@@ -179,6 +182,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
 
     </Grid>
 
