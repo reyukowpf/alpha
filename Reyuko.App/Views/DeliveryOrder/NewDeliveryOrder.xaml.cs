@@ -72,7 +72,6 @@ namespace Reyuko.App.Views.DeliveryOrder
             dtDeliveryorderdate.Text = DateTime.Now.ToShortDateString();
             dtValiditydate.Text = DateTime.Now.ToShortDateString();
             dtAnnualdate.Text = DateTime.Now.ToShortDateString();
-            txtNote.Text = "";
         }
 
 

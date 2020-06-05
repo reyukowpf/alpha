@@ -546,14 +546,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2667480">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2680280">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>B8caBxk7Ch1ERx2DhCQWbCt+Wf4y4NL15BLpN3bkcWg=</dsig:DigestValue>
+        <dsig:DigestValue>hoeBmyMEeAQbiXh9XvU8OpHyrRpvZDhf1H4bKCE36No=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -565,7 +565,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sacQLwLK9cyWe95gkJloK6616HV4YRlbrQKnsmXotp4=</dsig:DigestValue>
+        <dsig:DigestValue>Q+GmVeA1qzG99p2ix2MRZE7ndmGJqjyVOLktnIsRE2Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -577,7 +577,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ST8gZpX5FzebGkw5tggsEeEC4OKWv3df564QDPFR56w=</dsig:DigestValue>
+        <dsig:DigestValue>wlxi8ezyLLJGR/Q6CSRTVrbzLerRkKkR0iBZBUR8luQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -589,7 +589,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kyAIyMhoL5BZBqeHLrmkvd631HktQ0klmhIcilbHKjY=</dsig:DigestValue>
+        <dsig:DigestValue>vyMELyvBm+ZNXkmk3FqG1hcpbqsr3WOoV0o7XLKRVOE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -601,7 +601,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>BSAFurLZ7T48ukF1uGzOArv/65piu5Nx6FEqjfjgDE0=</dsig:DigestValue>
+        <dsig:DigestValue>Pljl7USF3pVBq3IH6joea4ygwi67yQEu3YvZp+zGpcM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

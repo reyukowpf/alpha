@@ -4807,6 +4807,7 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalaryPayment\Employees.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalaryPayment\NewSalaryPayment.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\NewSalesReturn.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\SalesReturn.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\Sku.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Customer.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\InternalNote.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\NewSalesOrder.baml
@@ -4960,6 +4961,7 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalaryPayment\NewSalaryPayment.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalaryPayment\SalaryPayment.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\NewSalesReturn.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\SalesReturn.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\Sku.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Customer.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\InternalNote.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\NewSalesOrder.g.cs

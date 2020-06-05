@@ -53,6 +53,7 @@ namespace Reyuko.App.Views.SalesReturn
         public Termspembayaran termspembayaranSelected;
         public IEnumerable<DropdownBankKas> dropdownBankkas { get; set; }
         public DropdownBankKas dropdownBankkasSelected;
+        public IEnumerable<OrderProdukJual> orderProdukJuals { get; set; }
         public DataProyek Selectproyek { get; set; }
         public DataDepartemen dataDepartemenSelected;
         public DataProyek dataProyekSelected;
@@ -419,6 +420,52 @@ namespace Reyuko.App.Views.SalesReturn
             {
                 Print.Print print = new Print.Print();
                 print.Show();
+            }
+        }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.Checkbokaktif == true);
+                DGSKUSalesReturn.ItemsSource = this.orderProdukJuals;
+                int sum = 0;
+                for (int i = 0; i < DGSKUSalesReturn.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKUSalesReturn.Items[i] as OrderProdukJual).TotalPajak);
+                }
+                txtTotalTax.Text = sum.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKUSalesReturn.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKUSalesReturn.Items[i] as OrderProdukJual).HargaJual);
+                }
+                txtTotalbeforeTax.Text = sumar.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKUSalesReturn.Items.Count; i++)
+                {
+                    suma += Convert.ToInt32((DGSKUSalesReturn.Items[i] as OrderProdukJual).TotalOrderProduk);
+                }
+                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+                txtoutstanding.Text = txtAfterTotalTax.Text;
+            }
+        }
+        private void btnsku(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
             }
         }
 
