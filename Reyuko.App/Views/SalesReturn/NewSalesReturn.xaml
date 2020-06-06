@@ -137,7 +137,7 @@
         <Label Content="Installments" FontSize="12.5" HorizontalAlignment="Left" Margin="460,620,0,0" VerticalAlignment="Top"/>
         <Label Content="Due Date" FontSize="12.5" HorizontalAlignment="Left" Margin="460,660,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="chkmanual" Content="Manual" HorizontalAlignment="Left" Margin="380,508,0,0" FontSize="12.5" VerticalAlignment="Top"/>
-        <CheckBox x:Name="chkannual" Content="Annual" HorizontalAlignment="Left" FontSize="12.5" Margin="185,420,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkannual" Content="Annual" HorizontalAlignment="Left" FontSize="12.5" Margin="185,425,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbdepartmen" Content="Department" HorizontalAlignment="Left" FontSize="12.5" Margin="520,176,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
         <RadioButton x:Name="rbproyek" Content="Project" HorizontalAlignment="Left" FontSize="12.5" Margin="620,176,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
         <CheckBox x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="680,211,0,0" VerticalAlignment="Top"/>
