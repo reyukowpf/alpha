@@ -353,7 +353,7 @@
         <Label Content="Total Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="400,420,0,0" VerticalAlignment="Top"/>
         <Label Content="After Total Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="400,460,0,0" VerticalAlignment="Top"/>
         <Label Content="Outstanding Balance" HorizontalAlignment="Left" FontSize="12.5" Margin="400,500,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="chkannual" Content="Annual" HorizontalAlignment="Left" FontSize="12.5" Margin="185,420,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkannual" Content="Annual" HorizontalAlignment="Left" FontSize="12.5" Margin="185,425,0,0" VerticalAlignment="Top"/>
             <DatePicker x:Name="dtValiditydate" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,445,0,0" VerticalAlignment="Top" Width="150"/>
             <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" HorizontalAlignment="Left" FontSize="12.5" Margin="185,445,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
             <Border BorderBrush="Black"
