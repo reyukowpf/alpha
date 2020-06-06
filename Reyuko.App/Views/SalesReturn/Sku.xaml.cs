@@ -97,8 +97,8 @@ namespace Reyuko.App.Views.SalesReturn
         }
         public void Addsku_Clicks(object sender, RoutedEventArgs e)
         {
-            DeliveryOrdersBLL deliveryBLL = new DeliveryOrdersBLL();
-                if (deliveryBLL.AddOrderProdukjual(this.GetData()) > 0)
+            SalesreturnBLL salesreturnBLL = new SalesreturnBLL();
+                if (salesreturnBLL.AddOrderProdukjual(this.GetData()) > 0)
                 {
                     this.ClearForm();
                     MessageBox.Show("Add Order Sell Product successfully added !");

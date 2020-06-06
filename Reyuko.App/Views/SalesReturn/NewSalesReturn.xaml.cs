@@ -383,17 +383,109 @@ namespace Reyuko.App.Views.SalesReturn
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            SalesreturnBLL salesreturnBLL = new SalesreturnBLL();
-            if (salesreturnBLL.AddSalesreturns(this.GetData()) > 0)
+            SalesreturnBLL returnBLL = new SalesreturnBLL();
+            SalesreturnBLL ReturnBLL = new SalesreturnBLL();
+            Salesreturn salesreturn = new Salesreturn();
+            if (this.kontakSelected != null)
             {
-
+                salesreturn.IdPelanggan = this.kontakSelected.Id;
+                salesreturn.NamaPelanggan = this.kontakSelected.NamaA;
+            }
+            salesreturn.Email = txtemail.Text;
+            salesreturn.NoHp = txthp.Text;
+            salesreturn.TanggalReturPenjualan = DateTime.Parse(dtSales.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                salesreturn.IdMataUang = this.DataMataUangSelected.Id;
+                salesreturn.MataUang = this.DataMataUangSelected.NamaMataUang;
+                salesreturn.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                salesreturn.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                salesreturn.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            salesreturn.NoReturPenjualan = txtsalesreturnno.Text;
+            if (this.invoiceSelected != null)
+            {
+                salesreturn.IdReferalTransaksi = this.invoiceSelected.IdOrderPenjualan;
+                salesreturn.NoReferensiTransaksi = this.invoiceSelected.NoOrderPenjualan;
+            }
+            salesreturn.Keterangan = txtNote.Text;
+            if (this.lokasiSelected != null)
+            {
+                salesreturn.IdLokasi = this.lokasiSelected.Id;
+                salesreturn.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            if (this.dataDepartemenSelected != null)
+            {
+                salesreturn.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                salesreturn.IdProyek = this.dataProyekSelected.Id;
+            }
+            salesreturn.CheckboxInclusiveTax = chkinclusive.IsChecked;
+            salesreturn.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
+            salesreturn.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
+            salesreturn.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
+            if (this.optionAnnualSelected != null)
+            {
+                salesreturn.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                salesreturn.Annual = this.optionAnnualSelected.Annual;
+            }
+            if (this.kontakSelected != null)
+            {
+                salesreturn.IdPetugas = this.kontakSelected.Id;
+                salesreturn.NamaPetugas = this.kontakSelected.NamaA;
+            }
+            salesreturn.Checkboxberulang = chkannual.IsChecked;
+            salesreturn.IdKodeTransaksi = 25;
+            salesreturn.KodeTransaksi = "SR";
+            salesreturn.IdPeriodeAkuntansi = 1;
+            salesreturn.RealRecongitionTime = DateTime.Now;
+            salesreturn.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            salesreturn.TotalPajak = double.Parse(txtTotalTax.Text);
+            salesreturn.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            if (ReturnBLL.AddSalesreturns(salesreturn) > 0)
+            {
+                //  this.ClearForm();
                 MessageBox.Show("Sales Return successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
             }
             else
             {
-                MessageBox.Show("Sales Return failed to be added !");
+                MessageBox.Show("Sales Return failed to add !");
             }
+            if (DGSKUSalesReturn.Items.Count > 0)
+            {
+                foreach (var item in DGSKUSalesReturn.Items)
+                {
+                    if (item is OrderProdukJual)
+                    {
+                        OrderProdukJual oNewData1 = (OrderProdukJual)item;
+                        oNewData1.IdReferalTransaksi = 1;
+                        oNewData1.Tanggal = DateTime.Parse(dtSales.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                        }
+                        oNewData1.TanggalPengiriman = DateTime.Parse(dtDelivery.Text);
+                        oNewData1.Checkbokaktif = false;
+                        if (returnBLL.EditOrderProdukjual(oNewData1, salesreturn) == true)
+                        {
+                        }
+                    }
+                }
+                }
             SalesReturn v = new SalesReturn();
             Switcher.SwitchNewSalesReturn(v);
         }

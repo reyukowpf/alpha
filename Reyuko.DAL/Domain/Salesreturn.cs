@@ -50,7 +50,7 @@ namespace Reyuko.DAL.Domain
         public DateTime? DueDate { get; set; }
         public int? IdUserId { get; set; }
         public int? IdPeriodeAkuntansi { get; set; }
-        public string RealRecongitionTime { get; set; }
+        public DateTime? RealRecongitionTime { get; set; }
         public int? IdTransaksi { get; set; }
         public string KodeTransaksi { get; set; }
         public string NoReturPenjualan { get; set; }

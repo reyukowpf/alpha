@@ -297,7 +297,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Total}"
+                    Binding="{Binding JumlahProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -319,7 +319,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="60"
-                    Binding="{Binding Unit}"
+                    Binding="{Binding SatuanDasar}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -341,7 +341,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Price}"
+                    Binding="{Binding HargaJual}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -363,7 +363,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Discount}"
+                    Binding="{Binding DiskonProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -385,7 +385,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Total1}"
+                    Binding="{Binding TotalOrderProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -407,7 +407,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Tax}"
+                    Binding="{Binding TotalPajak}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
