@@ -53,7 +53,7 @@ namespace Reyuko.DAL.Domain
         public string RealRecongitionTime { get; set; }
         public int? IdTransaksi { get; set; }
         public string KodeTransaksi { get; set; }
-        public double? NoReturPenjualan { get; set; }
+        public string NoReturPenjualan { get; set; }
         public int? IdPelanggan { get; set; }
         public string NamaPelanggan { get; set; }
         public string NoHp { get; set; }

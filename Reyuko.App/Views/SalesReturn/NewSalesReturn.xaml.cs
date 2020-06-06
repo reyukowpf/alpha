@@ -307,7 +307,7 @@ namespace Reyuko.App.Views.SalesReturn
             oData.Email = txtemail.Text;
             oData.NoHp = txthp.Text;
             oData.TanggalReturPenjualan = DateTime.Parse(dtSales.Text);
-            oData.NoReturPenjualan = double.Parse(txtsalesreturnno.Text);
+            oData.NoReturPenjualan = txtsalesreturnno.Text;
             oData.Keterangan = txtNote.Text;
             oData.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
             oData.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
