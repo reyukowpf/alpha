@@ -229,7 +229,7 @@ namespace Reyuko.App.Views.Sales
             {
                 this.kontakSelected = (Kontak)srcustomer.SelectedItem;
                 txtemail.Text = this.kontakSelected.EmailA;
-                txthp.Text = this.kontakSelected.NoHPA;
+                txthp.Text = this.kontakSelected.NoHPA.ToString();
             }
 
         }
@@ -332,7 +332,7 @@ namespace Reyuko.App.Views.Sales
      
         private void Savesales_Click(object sender, RoutedEventArgs e)
         {
-            if (srcustomer.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtsalesorderno.Text == "" || cbLocation.Text == "" || dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
+            if (srcustomer.Name == "" || txtemail.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtsalesorderno.Text == "" || cbLocation.Text == "" || dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -359,7 +359,7 @@ namespace Reyuko.App.Views.Sales
                 salesorder.IdNoReferensiDokumen = this.dokumenSelected.Id;
                 salesorder.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
             }
-            salesorder.NoOrderPenjualan = double.Parse(txtsalesorderno.Text);
+            salesorder.NoOrderPenjualan = txtsalesorderno.Text;
             if (this.salesquotationSelected != null)
             {
                 salesorder.IdPenawaran = this.salesquotationSelected.Id;

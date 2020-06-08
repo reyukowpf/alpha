@@ -15,7 +15,7 @@ namespace Reyuko.DAL.Domain
         public string NoHp{ get; set; }
         public string Email{ get; set; }
         public int? IdOrderPenjualan{ get; set; }
-        public double? NomorOrderPenjualan{ get; set; }
+        public string NomorOrderPenjualan{ get; set; }
         public int? IdReferalTransaksi{ get; set; }
         public int? IdMaatUang{ get; set; }
         public string MaatUang{ get; set; }

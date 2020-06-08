@@ -70,7 +70,7 @@ namespace Reyuko.DAL.Domain
         public string NoHp { get; set; }
         public string Email { get; set; }
         public int? IdOrderPenjualan { get; set; }
-        public double? NoOrderPenjualan { get; set; }
+        public string NoOrderPenjualan { get; set; }
         public int? IdDo { get; set; }
         public string NoDo { get; set; }
         public int? IdReferalTransaksi { get; set; }
@@ -92,6 +92,6 @@ namespace Reyuko.DAL.Domain
         public string Annual { get; set; }
         public int? IdTermPembayaran { get; set; }
         public string TermPembayaran { get; set; }
-        public double? NoReferalTransaksi { get; set; }
+        public string NoReferalTransaksi { get; set; }
     }
 }

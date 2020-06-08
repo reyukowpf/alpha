@@ -59,7 +59,7 @@ namespace Reyuko.DAL.Domain
         public string NoHp { get; set; }
         public string Email { get; set; }
         public int? IdReferalTransaksi { get; set; }
-        public double? NoReferensiTransaksi { get; set; }
+        public string NoReferensiTransaksi { get; set; }
         public int? IdMataUang { get; set; }
         public string MataUang { get; set; }
         public double? KursTukar { get; set; }

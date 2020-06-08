@@ -30,7 +30,7 @@ namespace Reyuko.DAL.Domain
         public int? IdKodeTransaksi { get; set; }
         public int? IdTransaksi { get; set; }
         public string KodeTransaksi { get; set; }
-        public double? NoOrderPenjualan { get; set; }
+        public string NoOrderPenjualan { get; set; }
         public int? IdPelanggan { get; set; }
         public string NamaPelanggan { get; set; }
         public string NoHp { get; set; }
