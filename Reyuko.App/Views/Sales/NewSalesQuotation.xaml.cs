@@ -377,7 +377,6 @@ namespace Reyuko.App.Views.Sales
             }
             salesquotation.IdKodeTransaksi = 15;
             salesquotation.KodeTransaksi = "SQ";
-            salesquotation.IdReferalTransaksi = 1;
             salesquotation.IdPeriodeAkutansi = 1;
             salesquotation.RealRecordingTime = DateTime.Now;
             salesquotation.TotalOrderProduk = salesquotation.TotalSebelumPajak;
