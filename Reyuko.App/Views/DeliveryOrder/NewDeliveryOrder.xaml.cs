@@ -252,7 +252,7 @@ namespace Reyuko.App.Views.DeliveryOrder
                 int sumar = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    sumar += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).HargaJual);
+                    sumar += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
                 }
                 txtTotalbeforeTax.Text = sumar.ToString();
                 int suma = 0;
@@ -514,6 +514,8 @@ namespace Reyuko.App.Views.DeliveryOrder
             deliveryorders.IdReferalTransaksi = 1;
             deliveryorders.IdPeriodeAkuntansi = 1;
             deliveryorders.RealRecordingTime = DateTime.Now;
+            deliveryorders.TotalKreditAkunPersediaanProduk = double.Parse(txtTotalbeforeTax.Text);
+            deliveryorders.TotalDebitAkunPengirimanJualProduk = double.Parse(txtTotalbeforeTax.Text);
             deliveryorders.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
             deliveryorders.TotalPajak = double.Parse(txtTotalTax.Text);
             deliveryorders.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);

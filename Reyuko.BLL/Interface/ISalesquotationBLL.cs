@@ -7,6 +7,8 @@ namespace Reyuko.BLL.Interface
         int AddSalesquotation(Salesquotation oData);
         bool EditSalesquotation(Salesquotation oData);
         bool RemoveSalesquotation(int id);
+        int AddOrderProdukjual(OrderProdukJual oData);
+        bool EditOrderProdukjual(OrderProdukJual oData, Salesquotation oDatas);
 
     }
 }

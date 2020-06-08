@@ -40,6 +40,7 @@ namespace Reyuko.App.Views.Sales
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         public IEnumerable<Dokumen> dokumens { get; set; }
+        public IEnumerable<OrderProdukJual> orderProdukJuals { get; set; }
         public Dokumen dokumenSelected { get; set; }
         public IEnumerable<Lokasi> lokasi { get; set; }
         public Lokasi lokasiSelected { get; set; }
@@ -220,6 +221,51 @@ namespace Reyuko.App.Views.Sales
             }
 
         }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.Checkbokaktif == true);
+                DGSKU.ItemsSource = this.orderProdukJuals;
+                int sum = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajak);
+                }
+                txtTotalTax.Text = sum.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                }
+                txtTotalbeforeTax.Text = sumar.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    suma += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                }
+                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+            }
+        }
+        private void btnsku(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
+            }
+        }
 
         private void currency_selectedchange(object sender, SelectionChangedEventArgs e)
         {
@@ -264,90 +310,120 @@ namespace Reyuko.App.Views.Sales
             }
         }
 
-        public Salesquotation GetData()
-        {
-            Salesquotation oData = new Salesquotation();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalPenawaranHarga = DateTime.Parse(dtSales.Text);
-            oData.NoPenawaranHarga = double.Parse (txtSalesQuotationNo.Text);
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalPenutupan = DateTime.Parse(dtValidaty.Text);
-            oData.DurasiBerulang = double.Parse (txtAnnualFrequency.Text);
-            oData.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdKontak = this.kontakSelected.Id;
-                oData.NamaPelanggan = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMataUang = this.DataMataUangSelected.Id;
-                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-                
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-                
-            }
-            if (this.optionAnnualSelected != null)
-            {
-                oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                oData.Annual = this.optionAnnualSelected.Annual;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-            if (this.termspembayaranSelected != null)
-            {
-                oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
-                oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
-            }
-            
-            oData.CheckboxSelesai = chkcomplete.IsChecked;
-            oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
-            oData.CheckboxBerulang = chkannual.IsChecked;
-            
-            return oData;
-        }
         private void Savesales_Click(object sender, RoutedEventArgs e)
         {
-            if (srcustomer.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtSalesQuotationNo.Text == "" || cbLocation.Text == "" ||  dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
+            if (srcustomer.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtSalesQuotationNo.Text == "" || cbLocation.Text == "" || dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            SalesquotationBLL SatuanDasarBLL = new SalesquotationBLL();
-                if (SatuanDasarBLL.AddSalesquotation(this.GetData()) > 0)
+            SalesquotationBLL quotaBLL = new SalesquotationBLL();
+            SalesquotationBLL QuotaBLL = new SalesquotationBLL();
+            Salesquotation salesquotation = new Salesquotation();
+            if (this.kontakSelected != null)
+            {
+                salesquotation.IdKontak = this.kontakSelected.Id;
+                salesquotation.NamaPelanggan = this.kontakSelected.NamaA;
+            }
+            salesquotation.Email = txtemail.Text;
+            salesquotation.NoHp = txthp.Text;
+            salesquotation.TanggalPenawaranHarga = DateTime.Parse(dtSales.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                salesquotation.IdMataUang = this.DataMataUangSelected.Id;
+                salesquotation.MataUang = this.DataMataUangSelected.NamaMataUang;
+                salesquotation.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                salesquotation.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                salesquotation.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            salesquotation.NoPenawaranHarga = txtSalesQuotationNo.Text;
+            salesquotation.Keterangan = txtNote.Text;
+            if (this.lokasiSelected != null)
+            {
+                salesquotation.IdLokasi = this.lokasiSelected.Id;
+                salesquotation.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            if (this.dataDepartemenSelected != null)
+            {
+                salesquotation.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                salesquotation.IdProyek = this.dataProyekSelected.Id;
+            }
+            salesquotation.CheckboxInclusiveTax = chkinclusive.IsChecked;
+            salesquotation.CheckboxSelesai = chkcomplete.IsChecked;
+            salesquotation.TanggalPenutupan = DateTime.Parse(dtValidaty.Text);
+            if (this.kontakSelected != null)
+            {
+                salesquotation.IdPetugas = this.kontakSelected.Id;
+                salesquotation.NamaPetugas = this.kontakSelected.NamaA;
+            }
+            if (this.termspembayaranSelected != null)
+            {
+                salesquotation.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
+                salesquotation.TermPembayaran = this.termspembayaranSelected.NamaSkema;
+            }
+            salesquotation.CheckboxBerulang = chkannual.IsChecked;
+            salesquotation.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
+            salesquotation.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
+            if (this.optionAnnualSelected != null)
+            {
+                salesquotation.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                salesquotation.Annual = this.optionAnnualSelected.Annual;
+            }
+            salesquotation.IdKodeTransaksi = 15;
+            salesquotation.KodeTransaksi = "SQ";
+            salesquotation.IdReferalTransaksi = 1;
+            salesquotation.IdPeriodeAkutansi = 1;
+            salesquotation.RealRecordingTime = DateTime.Now;
+            salesquotation.TotalOrderProduk = salesquotation.TotalSebelumPajak;
+            salesquotation.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            salesquotation.TotalPajak = double.Parse(txtTotalTax.Text);
+            salesquotation.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            if (QuotaBLL.AddSalesquotation(salesquotation) > 0)
+            {
+                //  this.ClearForm();
+                MessageBox.Show("Sales Quotation successfully added !");
+            }
+            else
+            {
+                MessageBox.Show("Sales Quotation failed to add !");
+            }
+            if (DGSKU.Items.Count > 0)
+            {
+                foreach (var item in DGSKU.Items)
                 {
-                    this.ClearForm();
-                    MessageBox.Show("Sales Quotation successfully added !");
-              //      this.measurementUnitForm.LoadSatuanDasar();
+                    if (item is OrderProdukJual)
+                    {
+                        OrderProdukJual oNewData1 = (OrderProdukJual)item;
+                        oNewData1.IdReferalTransaksi = 1;
+                        oNewData1.Tanggal = DateTime.Parse(dtSales.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                        }
+                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValidaty.Text);
+                        oNewData1.Checkbokaktif = false;
+                        if (quotaBLL.EditOrderProdukjual(oNewData1, salesquotation) == true)
+                        {
+                        }
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Sales Quotation failed to be added !");
-                }
+            }
         }
-    
 
         private void StockList_Click(object sender, RoutedEventArgs e)
         {

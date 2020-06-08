@@ -5009,3 +5009,5 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.application
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.csproj.CopyComplete
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.exe
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.pdb
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Sku.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Sku.g.cs

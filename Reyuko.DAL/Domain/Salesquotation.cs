@@ -9,7 +9,7 @@ namespace Reyuko.DAL.Domain
         public int? IdKodeTransaksi { get; set; }
         public int? IdTransaksi { get; set; }
         public string KodeTransaksi { get; set; }
-        public double? NoPenawaranHarga { get; set; }
+        public string NoPenawaranHarga { get; set; }
         public int? IdReferalTransaksi { get; set; }
         public int? IdKontak { get; set; }
         public string NamaPelanggan { get; set; }
@@ -49,7 +49,7 @@ namespace Reyuko.DAL.Domain
         public DateTime? DueDate { get; set; }
         public int? IdUserId { get; set; }
         public int? IdPeriodeAkutansi { get; set; }
-        public string RealRecordingTime { get; set; }
+        public DateTime? RealRecordingTime { get; set; }
         public bool? CheckboxSelesai { get; set; }
         public bool? CheckboxTunaiTermPembayaran { get; set; }
         public int? IdOpsiAnnual { get; set; }

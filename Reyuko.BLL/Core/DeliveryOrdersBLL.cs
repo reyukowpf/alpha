@@ -25,7 +25,7 @@ namespace Reyuko.BLL.Core
                     try
                     {
                         traceID = 2;
-                        Deliveryorders oNewDeliveryOrder = new Deliveryorders();
+                        Deliveryorders oNewDeliveryOrder = new Deliveryorders();                        
                         oNewDeliveryOrder.MapFrom(oData);
                         oNewDeliveryOrder = uow.DeliveryOrder.Add(oNewDeliveryOrder);
                         uow.Save();
