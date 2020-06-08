@@ -658,6 +658,9 @@
     <Compile Include="Views\Sales\Sales.xaml.cs">
       <DependentUpon>Sales.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Sales\Skuorder.xaml.cs">
+      <DependentUpon>Skuorder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Sales\Sku.xaml.cs">
       <DependentUpon>Sku.xaml</DependentUpon>
     </Compile>
@@ -1291,6 +1294,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Sales\Sales.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\Skuorder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

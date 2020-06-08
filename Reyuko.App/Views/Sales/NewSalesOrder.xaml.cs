@@ -46,7 +46,10 @@ namespace Reyuko.App.Views.Sales
         public IEnumerable<OptionAnnual> optionAnnuals { get; set; }
         public OptionAnnual optionAnnualSelected { get; set; }
         public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
+        public IEnumerable<Salesquotation> salesquotations { get; set; }
+        public Salesquotation salesquotationSelected;
         public DataDepartemen Selectdepartment { get; set; }
+        public IEnumerable<OrderProdukJual> orderProdukJuals { get; set; }
         public IEnumerable<DataProyek> dataProyeks { get; set; }
         public IEnumerable<Termspembayaran> termspembayarans { get; set; }
         public Termspembayaran termspembayaranSelected;
@@ -63,6 +66,7 @@ namespace Reyuko.App.Views.Sales
             this.LoadCurrency();
             this.LoadLokasi();
             this.LoadAnnual();
+            this.LoadSalesquotation();
         }
         private void ClearForm()
         {
@@ -73,7 +77,7 @@ namespace Reyuko.App.Views.Sales
             this.DataMataUangSelected = null;
             cbCurrency.SelectedIndex = -1;
             srnodokumen.Text = "";
-            txtSalesQuotationNo.Text = "";
+            txtsalesorderno.Text = "";
             txtNote.Text = "";
             this.lokasiSelected = null;
             cbLocation.SelectedIndex = -1;
@@ -93,6 +97,16 @@ namespace Reyuko.App.Views.Sales
             txtInstallmentannual.Text = "";
             txtInstallments.Text = "";
             txtDuedate.Text = "";
+        }
+        public void LoadSalesquotation()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.salesquotations = uow.Salesquotation.GetAll();
+                cbSalesquota.ItemsSource = this.salesquotations;
+                cbSalesquota.SelectedValuePath = "Id";
+                cbSalesquota.DisplayMemberPath = "NoPenawaranHarga";
+            }
         }
         public void LoadCustomer()
         {
@@ -260,89 +274,178 @@ namespace Reyuko.App.Views.Sales
                 this.optionAnnualSelected = (OptionAnnual)cbAnnual.SelectedItem;
             }
         }
-
-        public SalesOrder GetData()
+        public void LoadDataSku()
         {
-             SalesOrder oData = new SalesOrder();
-             oData.Email = txtemail.Text;
-             oData.NoHp = int.Parse(txthp.Text);
-             oData.TanggalOrderPenjualan = DateTime.Parse(dtSales.Text);
-             oData.NoPenawaran = double.Parse (txtSalesQuotationNo.Text);
-             oData.Keterangan = txtNote.Text;
-             oData.TanggalPengantaran = DateTime.Parse(dtValidaty.Text);
-             oData.DurasiBerulang = double.Parse (txtAnnualFrequency.Text);
-             oData.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
-             if (this.kontakSelected != null)
-             {
-                 oData.IdPelanggan = this.kontakSelected.Id;
-                 oData.NamaPelanggan = this.kontakSelected.NamaA;
-             }
-             if (this.DataMataUangSelected != null)
-             {
-                 oData.IdMataUang = this.DataMataUangSelected.Id;
-                 oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                 oData.KursTukar = this.DataMataUangSelected.KursTukar;
-             }
-             if (this.dokumenSelected != null)
-             {
-                 oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                 oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-             }
-             if (this.lokasiSelected != null)
-             {
-                 oData.IdLokasi = this.lokasiSelected.Id;
-                 oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-             }
-             if (this.dataDepartemenSelected != null)
-             {
-                 oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-             }
-             if (this.dataProyekSelected != null)
-             {
-                 oData.IdProyek = this.dataProyekSelected.Id;
-
-             }
-             if (this.optionAnnualSelected != null)
-             {
-                 oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                 oData.Annual = this.optionAnnualSelected.Annual;
-             }
-             if (this.kontakSelected != null)
-             {
-                 oData.IdPetugas = this.kontakSelected.Id;
-                 oData.NamaPetugas = this.kontakSelected.NamaA;
-             }
-             if (this.termspembayaranSelected != null)
-             {
-                 oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
-                 oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
-             }
-
-             oData.CheckboxSelesai = chkcomplete.IsChecked;
-             oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
-             oData.CheckboxBerulang = chkannual.IsChecked;
-
-            return oData;
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.Checkbokaktif == true);
+                DGSKU.ItemsSource = this.orderProdukJuals;
+                int sum = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajak);
+                }
+                txtTotalTax.Text = sum.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                }
+                txtTotalbeforeTax.Text = sumar.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    suma += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                }
+                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+            }
+        }
+        private void Salesquotation_selectedchange(object sender, SelectionChangedEventArgs e)
+        {
+            this.salesquotationSelected = null;
+            if (cbSalesquota.SelectedItem != null)
+            {
+                this.salesquotationSelected = (Salesquotation)cbSalesquota.SelectedItem;
+            }
         }
 
+        private void btnsku(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skuorder)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skuorder newsku = new Skuorder(this);
+                newsku.Show();
+            }
+        }
+
+     
         private void Savesales_Click(object sender, RoutedEventArgs e)
         {
-            if (srcustomer.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtSalesQuotationNo.Text == "" || cbLocation.Text == "" || dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
+            if (srcustomer.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtsalesorderno.Text == "" || cbLocation.Text == "" || dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            SalesOrderBLL salesOrderBLL = new SalesOrderBLL();
-            if (salesOrderBLL.AddSalesOrder(this.GetData()) > 0)
+            SalesOrderBLL orderBLL = new SalesOrderBLL();
+            SalesOrderBLL OrderBLL = new SalesOrderBLL();
+            SalesOrder salesorder = new SalesOrder();
+            if (this.kontakSelected != null)
             {
-                
+                salesorder.IdPelanggan = this.kontakSelected.Id;
+                salesorder.NamaPelanggan = this.kontakSelected.NamaA;
+            }
+            salesorder.Email = txtemail.Text;
+            salesorder.NoHp = txthp.Text;
+            salesorder.TanggalOrderPenjualan = DateTime.Parse(dtSales.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                salesorder.IdMataUang = this.DataMataUangSelected.Id;
+                salesorder.MataUang = this.DataMataUangSelected.NamaMataUang;
+                salesorder.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                salesorder.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                salesorder.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            salesorder.NoOrderPenjualan = double.Parse(txtsalesorderno.Text);
+            if (this.salesquotationSelected != null)
+            {
+                salesorder.IdPenawaran = this.salesquotationSelected.Id;
+                salesorder.NoPenawaran = this.salesquotationSelected.NoPenawaranHarga;
+            }
+            salesorder.Keterangan = txtNote.Text;
+            if (this.lokasiSelected != null)
+            {
+                salesorder.IdLokasi = this.lokasiSelected.Id;
+                salesorder.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            if (this.dataDepartemenSelected != null)
+            {
+                salesorder.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                salesorder.IdProyek = this.dataProyekSelected.Id;
+            }
+            salesorder.CheckboxInclusiveTax = chkinclusive.IsChecked;
+            salesorder.CheckboxSelesai = chkcomplete.IsChecked;
+            salesorder.TanggalPengantaran = DateTime.Parse(dtValidaty.Text);
+            if (this.kontakSelected != null)
+            {
+                salesorder.IdPetugas = this.kontakSelected.Id;
+                salesorder.NamaPetugas = this.kontakSelected.NamaA;
+            }
+            if (this.termspembayaranSelected != null)
+            {
+                salesorder.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
+                salesorder.TermPembayaran = this.termspembayaranSelected.NamaSkema;
+            }
+            salesorder.CheckboxBerulang = chkannual.IsChecked;
+            salesorder.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
+            salesorder.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
+            if (this.optionAnnualSelected != null)
+            {
+                salesorder.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                salesorder.Annual = this.optionAnnualSelected.Annual;
+            }
+            salesorder.IdKodeTransaksi = 18;
+            salesorder.KodeTransaksi = "SO";
+            salesorder.IdPeriodeAkuntansi = 1;
+            salesorder.RealRecordingTime = DateTime.Now;
+            salesorder.TotalOrderProduk = salesorder.TotalSebelumPajak;
+            salesorder.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            salesorder.TotalPajak = double.Parse(txtTotalTax.Text);
+            salesorder.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            if (OrderBLL.AddSalesOrder(salesorder) > 0)
+            {
+                //  this.ClearForm();
                 MessageBox.Show("Sales Order successfully added !");
-              
             }
             else
             {
-                MessageBox.Show("Sales Order failed to be added !");
+                MessageBox.Show("Sales Order failed to add !");
+            }
+            if (DGSKU.Items.Count > 0)
+            {
+                foreach (var item in DGSKU.Items)
+                {
+                    if (item is OrderProdukJual)
+                    {
+                        OrderProdukJual oNewData1 = (OrderProdukJual)item;
+                        oNewData1.IdReferalTransaksi = 1;
+                        oNewData1.Tanggal = DateTime.Parse(dtSales.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                        }
+                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValidaty.Text);
+                        oNewData1.Checkbokaktif = false;
+                        if (orderBLL.EditOrderProdukjual(oNewData1, salesorder) == true)
+                        {
+                        }
+                    }
+                }
             }
             Sales v = new Sales();
             Switcher.Switchorder(v);
@@ -480,14 +583,14 @@ namespace Reyuko.App.Views.Sales
 
         private void TxtSalesQuotationNo_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtSalesQuotationNo.Text;
+            string tString = txtsalesorderno.Text;
             if (tString.Trim() == "") return;
             for (int i = 0; i < tString.Length; i++)
             {
                 if (!char.IsNumber(tString[i]))
                 {
                     MessageBox.Show("Must Have Numeric");
-                    txtSalesQuotationNo.Text = "";
+                    txtsalesorderno.Text = "";
                     return;
                 }
 

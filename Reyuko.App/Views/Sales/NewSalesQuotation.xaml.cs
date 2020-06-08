@@ -422,6 +422,8 @@ namespace Reyuko.App.Views.Sales
                     }
                 }
             }
+            Sales v = new Sales();
+            Switcher.Switch2(v);
         }
 
         private void StockList_Click(object sender, RoutedEventArgs e)
