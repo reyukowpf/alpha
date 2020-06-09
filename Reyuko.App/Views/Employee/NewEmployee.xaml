@@ -70,7 +70,6 @@
                 <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-
         <TabControl Margin="18,60,2,-10" Background="Transparent">
             <TabItem Header="Contact Data" FontSize="24" Height="38">
                 <Grid Background="White" Margin="-15,-14,-15,-31">
