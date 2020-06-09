@@ -316,7 +316,35 @@ namespace Reyuko.App.Views.Employee
             }
         }
 
+        private void all_Checked(object sender, RoutedEventArgs e)
+        {
+            this.all.IsChecked = true;
+            {
+                tvemployee.Visibility = Visibility.Visible;
+                LiDataEmployee.Visibility = Visibility.Hidden;
+                tabPIC1.Visibility = Visibility.Visible;
+                tabPIC2.Visibility = Visibility.Visible;
+                tabPIC3.Visibility = Visibility.Visible;
+                Dokumentss.Visibility = Visibility.Visible;
+                Notess.Visibility = Visibility.Visible;
+                payment.Visibility = Visibility.Visible;
+            }
+        }
 
+        private void mainonly_Checked(object sender, RoutedEventArgs e)
+        {
+            this.mainonly.IsChecked = true;
+            {
+                LiDataEmployee.Visibility = Visibility.Visible;
+                tvemployee.Visibility = Visibility.Hidden;
+                tabPIC1.Visibility = Visibility.Hidden;
+                tabPIC2.Visibility = Visibility.Hidden;
+                tabPIC3.Visibility = Visibility.Hidden;
+                Dokumentss.Visibility = Visibility.Hidden;
+                Notess.Visibility = Visibility.Hidden;
+                payment.Visibility = Visibility.Hidden;
+            }
+        }
     }
 }
 

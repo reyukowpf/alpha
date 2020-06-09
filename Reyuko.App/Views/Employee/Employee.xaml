@@ -66,11 +66,13 @@
             </StackPanel>
         </materialDesign:PopupBox>
 
+        <TreeView x:Name="tvemployee" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Width="180" Height="620">
+        </TreeView>
         <ListView
             x:Name="LiDataEmployee"
             Width="180"
-            Height="610"
-            Margin="8,100,0,0"
+            Height="620"
+            Margin="10,100,0,0"
             HorizontalAlignment="Left" SelectionChanged="LiDataEmployee_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -151,12 +153,12 @@
         </Border>
         <ComboBox HorizontalAlignment="Left" FontSize="12.5" Margin="223,64,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
         <ComboBox HorizontalAlignment="Left" FontSize="12.5" Margin="389,64,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
-        <RadioButton Content="All" HorizontalAlignment="Left" FontSize="12.5" Margin="557,66,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <RadioButton Content="Main Contact Only" HorizontalAlignment="Left" FontSize="12.5" Margin="615,64,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="all" Content="All" HorizontalAlignment="Left" FontSize="12.5" Margin="557,66,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Checked="all_Checked"/>
+        <RadioButton x:Name="mainonly" Content="Main Contact Only" HorizontalAlignment="Left" FontSize="12.5" Margin="615,66,0,0" VerticalAlignment="Top" Checked="mainonly_Checked"/>
 
-        <TabControl Margin="224,100,0,0">
+        <TabControl Margin="224,100,0,0" Background="Transparent">
             <TabItem Header="Contact Data" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -235,7 +237,7 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabPIC1" Header="PIC 1" FontSize="24" HorizontalAlignment="Left" Width="72">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -278,7 +280,7 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabPIC2" Header="PIC 2" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <Label Content="Phone Number" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
                     <Label Content="Email" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Gender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
@@ -318,7 +320,7 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabPIC3" Header="PIC 3" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <Label Content="Phone Number" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
                     <Label Content="Email" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Gender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
@@ -357,8 +359,8 @@
 
                 </Grid>
             </TabItem>
-            <TabItem Header="Document" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+            <TabItem x:Name="Dokumentss" Header="Document" FontSize="24">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <DataGrid
                         x:Name="DGDocumentEmployee"
                         Height="Auto"
@@ -501,8 +503,8 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Notes" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+            <TabItem x:Name="Notess" Header="Notes" FontSize="24">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <DataGrid
                         x:Name="DGNoteEmpoyee"
                         Height="Auto"
@@ -623,12 +625,13 @@
                     </DataGrid>
                 </Grid>
             </TabItem>
-            <TabItem Header="Payment" FontSize="24">
+            <TabItem x:Name="payment" Header="Payment" FontSize="24">
                 <Grid Background="White" Margin="-15,-14,-15,-15">
                     <DataGrid
                         x:Name="DGPaymentEmployee"
                         Height="Auto"
-                        MinWidth="400"
+                        Width="750"
+                        HorizontalAlignment="Left"
                         Margin="0,10,0,0"
                         AutoGenerateColumns="False"
                         Background="{x:Null}"
@@ -676,7 +679,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
                             <DataGridTextColumn
-                                Width="150"
+                                Width="100"
                                 Binding="{Binding TglPayment}"
                                 CanUserReorder="False"
                                 CanUserResize="False"
@@ -720,7 +723,7 @@
                                 </DataGridTextColumn.ElementStyle>
                             </DataGridTextColumn>
                             <DataGridTextColumn
-                                Width="200"
+                                Width="100"
                                 Binding="{Binding Value}"
                                 CanUserReorder="False"
                                 CanUserResize="False"

@@ -72,9 +72,9 @@
             </StackPanel>
         </Button>
 
-        <TabControl Margin="16,66,4,-16">
+        <TabControl Margin="16,66,4,-16" Background="Transparent">
             <TabItem Header="General" FontSize="24" >
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <Label Content="Project No" FontSize="12.5" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
                     <Label Content="Project Name" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
                     <Label Content="Customer" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
@@ -100,11 +100,12 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Team" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <DataGrid
                         x:Name="DGTeam"
                         Height="Auto"
-                        MinWidth="400"
+                        HorizontalAlignment="Left"
+                        Width="700"
                         Margin="6,10,-6,0"
                         AutoGenerateColumns="False"
                         Background="{x:Null}"

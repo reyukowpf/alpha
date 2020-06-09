@@ -71,9 +71,9 @@
             </StackPanel>
         </Button>
 
-        <TabControl Margin="18,60,2,-10">
+        <TabControl Margin="18,60,2,-10" Background="Transparent">
             <TabItem Header="Contact Data" FontSize="24" Height="38">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-31">
+                <Grid Background="White" Margin="-15,-14,-15,-31">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -137,7 +137,7 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabPIC1" Header="PIC 1" FontSize="24">
-                <Grid Background="Transparent" Margin="-11,-14,-11,-11">
+                <Grid Background="White" Margin="-11,-14,-11,-11">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -181,7 +181,7 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabPIC2" Header="PIC 2" FontSize="24">
-                <Grid Background="Transparent" Margin="-11,-14,-11,-11">
+                <Grid Background="White" Margin="-11,-14,-11,-11">
                     <Label
                         Name="InfoMail2"
                         Margin="340,105,0,0"
@@ -222,7 +222,7 @@
                 </Grid>
             </TabItem>
             <TabItem x:Name="tabPIC3" Header="PIC 3" FontSize="24">
-                <Grid Background="Transparent" Margin="-11,-14,-11,-11">
+                <Grid Background="White" Margin="-11,-14,-11,-11">
                     <Label
                         Name="InfoMail3"
                         Margin="340,105,0,0"

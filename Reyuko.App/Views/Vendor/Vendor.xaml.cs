@@ -317,6 +317,35 @@ namespace Reyuko.App.Views.Vendor
                 }
             }
         }
+
+
+        private void mainonly_Checked(object sender, RoutedEventArgs e)
+        {
+            this.mainonly.IsChecked = true;
+            {
+                LiDataVendor.Visibility = Visibility.Visible;
+                tvvendor.Visibility = Visibility.Hidden;
+                tabPIC1.Visibility = Visibility.Hidden;
+                tabPIC2.Visibility = Visibility.Hidden;
+                tabPIC3.Visibility = Visibility.Hidden;
+                Dokumentss.Visibility = Visibility.Hidden;
+                Notess.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void All_Checked(object sender, RoutedEventArgs e)
+        {
+            this.all.IsChecked = true;
+            {
+                tvvendor.Visibility = Visibility.Visible;
+                LiDataVendor.Visibility = Visibility.Hidden;
+                tabPIC1.Visibility = Visibility.Visible;
+                tabPIC2.Visibility = Visibility.Visible;
+                tabPIC3.Visibility = Visibility.Visible;
+                Dokumentss.Visibility = Visibility.Visible;
+                Notess.Visibility = Visibility.Visible;
+            }
+        }
     }
 }
 

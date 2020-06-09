@@ -47,7 +47,7 @@ namespace Reyuko.App.Views.CustomerGroup
             this.GrupDiskonSelected = null;
             txtIDCustomerGroup.Text = "";
             txtGroupName.Text = "";
-            txtDiscount.Text = "";
+            txtDiscount.Text = "0";
             txtNote.Text = "";
         }
 

@@ -7,7 +7,7 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.Customer.Customers"
     d:DesignHeight="600"
-    d:DesignWidth="980"
+    d:DesignWidth="800"
     VerticalAlignment="Top"
     Background="White"
     mc:Ignorable="d">
@@ -87,8 +87,9 @@
         <ListView
             x:Name="LiDataCustomer"
             Width="180"
-            Height="632"
-            Margin="10,100,0,-132"
+            Height="620"
+            VerticalAlignment="Top"
+            Margin="10,100,0,0"
             HorizontalAlignment="Left" SelectionChanged="LiDataCustomer_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -117,7 +118,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TreeView x:Name="tvcustomer" HorizontalAlignment="Left" Margin="10,100,0,-132" Width="180" Height="632">
+        <TreeView x:Name="tvcustomer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Width="180" Height="620">
         </TreeView>
         <TextBlock
             Width="206"
@@ -350,7 +351,8 @@
                     <DataGrid
                         x:Name="DGDocumentCustomer"
                         Height="Auto"
-                        MinWidth="400"
+                        Width="700"
+                        HorizontalAlignment="Left"
                         Margin="0,10,0,0"
                         AutoGenerateColumns="False"
                         Background="{x:Null}"
@@ -494,7 +496,8 @@
                     <DataGrid
                         x:Name="DGNoteCustomer"
                         Height="Auto"
-                        MinWidth="400"
+                        Width="600"
+                        HorizontalAlignment="Left"
                         Margin="0,10,0,0"
                         AutoGenerateColumns="False"
                         Background="{x:Null}"

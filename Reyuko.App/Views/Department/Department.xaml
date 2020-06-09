@@ -149,9 +149,9 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/>
             </DockPanel>
         </Border>
-        <TabControl Margin="224,97,0,-24">
+        <TabControl Margin="224,97,0,-24" Background="Transparent">
             <TabItem Header="General" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
@@ -184,7 +184,8 @@
                     <DataGrid
                         x:Name="DGBudget"
                         Height="Auto"
-                        MinWidth="400"
+                        HorizontalAlignment="Left"
+                        Width="750"
                         Margin="10,330,0,0"
                         AutoGenerateColumns="False"
                         Background="{x:Null}"
@@ -369,11 +370,12 @@
                 </Grid>
             </TabItem>
             <TabItem Header="Team" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
                     <DataGrid
                         x:Name="DGTeam"
                         Height="Auto"
-                        MinWidth="400"
+                        HorizontalAlignment="Left"
+                        Width="700"
                         Margin="10,20,0,0"
                         AutoGenerateColumns="False"
                         Background="{x:Null}"
