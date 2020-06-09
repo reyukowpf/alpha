@@ -131,7 +131,6 @@
             FontStyle="Normal"
             Text="Customer"
             TextWrapping="Wrap" />
-
         <Button HorizontalAlignment="Right" Margin="0,12,200,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="65" Click="BtnNew_Click">
             <StackPanel Orientation="Horizontal">
