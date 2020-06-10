@@ -88,7 +88,6 @@ namespace Reyuko.DAL.Domain
         public int? IdPaymentTerm { get; set; }
         public string PaymentTerm { get; set; }
         public int? IdBankCash { get; set; }
-        public string BankCash { get; set; }
-    
+        public string BankCash { get; set; } 
     }
 }
