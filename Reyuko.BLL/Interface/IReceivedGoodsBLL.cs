@@ -10,6 +10,5 @@ namespace Reyuko.BLL.Interface
         int AddOrderProdukbeli(OrderProdukBeli oData);
         bool EditOrderProdukbeli(OrderProdukBeli oData, Receivedgood oDatas);
 
-
     }
 }
