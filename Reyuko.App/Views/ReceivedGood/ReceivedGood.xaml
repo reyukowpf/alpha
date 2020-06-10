@@ -181,7 +181,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="*"
                     Binding="{Binding NoOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -203,7 +203,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="60"
                     Binding="{Binding TanggalOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -225,7 +225,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="60"
                     Binding="{Binding NoOrderPembeliaan}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -247,7 +247,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="60"
                     Binding="{Binding NoPD}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -269,7 +269,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding NamaVendor}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -291,7 +291,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="70"
                     Binding="{Binding MataUang}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -313,7 +313,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="60"
                     Binding="{Binding Total}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -335,7 +335,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="70"
                     Binding="{Binding Outstanding}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -357,7 +357,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="60"
                     Binding="{Binding Annual}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -379,7 +379,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="50"
                     Binding="{Binding AgingReceivable}"
                     CanUserReorder="False"
                     CanUserResize="False"
