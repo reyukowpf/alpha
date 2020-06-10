@@ -144,8 +144,9 @@
         <DataGrid
             x:Name="DGPurchaseDelivery"
             Height="Auto"
-            MinWidth="400"
-            Margin="10,185,0,-18"
+            Width="750"
+            HorizontalAlignment="Left"
+            Margin="10,185,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -170,7 +171,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="120"
                     Binding="{Binding NoPengirimanBarangPembelian}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -192,7 +193,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding TanggalPengantaran}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -214,7 +215,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="120"
                     Binding="{Binding NoOrderPembelian}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -236,7 +237,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="120"
                     Binding="{Binding NamaVendor}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -258,7 +259,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding MataUang}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -280,7 +281,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding TotalSetelahPajak}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -302,7 +303,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="*"
                     Binding="{Binding Annual}"
                     CanUserReorder="False"
                     CanUserResize="False"

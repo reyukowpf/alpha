@@ -182,9 +182,8 @@ namespace Reyuko.DAL.Config
               .HasColumnName("id_periode_akuntansi");
 
             this.Property(m => m.RealRecordingTime)
-              .HasColumnName("real_recording_time")
-               .HasMaxLength(250);
-
+              .HasColumnName("real_recording_time");
+      
             this.Property(m => m.KodeTransaksi)
               .HasColumnName("kode_transaksi")
                .HasMaxLength(100);

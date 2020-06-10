@@ -5013,3 +5013,7 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Sku.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Sku.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Skuorder.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Sales\Skuorder.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuservice.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Sku.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuservice.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Sku.g.cs

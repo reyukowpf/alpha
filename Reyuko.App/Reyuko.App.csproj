@@ -550,6 +550,12 @@
     <Compile Include="Views\ReceivedGood\ReceivedGood.xaml.cs">
       <DependentUpon>ReceivedGood.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ReceivedGood\Skuservice.xaml.cs">
+      <DependentUpon>Skuservice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReceivedPostDateChequeIssuance\ChasingCheck.xaml.cs">
       <DependentUpon>ChasingCheck.xaml</DependentUpon>
     </Compile>
@@ -1150,6 +1156,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ReceivedGood\ReceivedGood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\Skuservice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\Sku.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

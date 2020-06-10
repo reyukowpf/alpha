@@ -6,8 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.PurchaseDelivery.NewPurchaseDelivery"
-    Height="730"
-    d:DesignWidth="1120"
+    d:DesignHeight="600"
+    d:DesignWidth="800"
     FontSize="14"
     Background="White"
     mc:Ignorable="d" VerticalAlignment="Top">
@@ -131,15 +131,15 @@
         <Label Content="Purchase Order No." FontSize="12.5" HorizontalAlignment="Left" Margin="350,125,0,0" VerticalAlignment="Top"/>
         <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top"/>
         <Label Content="Location" FontSize="12.5" HorizontalAlignment="Left" Margin="350,185,0,0" VerticalAlignment="Top"/>
-        <Label Content="Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,514,0,0" VerticalAlignment="Top"/>
-        <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,574,0,0" VerticalAlignment="Top"/>
-        <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,574,0,0" VerticalAlignment="Top"/>
-        <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,629,0,0" VerticalAlignment="Top"/>
-        <Label Content="Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,545,0,0" VerticalAlignment="Top"/>
-        <Label Content="After Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,578,0,0" VerticalAlignment="Top"/>
-        <Label Content="Outstanding Balance" FontSize="12.5" HorizontalAlignment="Left" Margin="400,614,0,0" VerticalAlignment="Top"/>
+        <Label Content="Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+        <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,480,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,540,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,420,0,0" VerticalAlignment="Top"/>
+        <Label Content="After Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,460,0,0" VerticalAlignment="Top"/>
+        <Label Content="Outstanding Balance" FontSize="12.5" HorizontalAlignment="Left" Margin="400,500,0,0" VerticalAlignment="Top"/>
 
-        <CheckBox x:Name="chkannual" Content="Annual" FontSize="12.5" HorizontalAlignment="Left" Margin="185,514,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkannual" Content="Annual" FontSize="12.5" HorizontalAlignment="Left" Margin="185,425,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,185,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
         <RadioButton x:Name="rbproyek" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,185,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
         <CheckBox x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="680,220,0,0" VerticalAlignment="Top"/>
@@ -203,13 +203,13 @@
         <ComboBox x:Name="cbLocation" FontSize="12.5" HorizontalAlignment="Left" Margin="350,210,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
         <ComboBox x:Name="cbDepartment" FontSize="12.5" HorizontalAlignment="Left" Margin="520,210,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
         <ComboBox x:Name="cbProyek" FontSize="12.5" HorizontalAlignment="Left" Margin="520,210,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
-        <DatePicker x:Name="dtDelivery" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="10,539,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Margin="185,539,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
+        <DatePicker x:Name="dtDelivery" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="10,445,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Margin="185,445,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,599,0,0">
+                        CornerRadius="0" Margin="10,505,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srstaff" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="staff_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -223,22 +223,24 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <TextBox x:Name="txtAnnualFrequency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="185,599,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
-        <DatePicker x:Name="dtAnnualdate" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,659,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="txtAnnualFrequency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="185,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
+        <DatePicker x:Name="dtAnnualdate" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,565,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtTotalbeforeTax" Visibility="Hidden" FontSize="12.5" Text=" " HorizontalAlignment="Left" Height="28" Margin="560,539,400,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtTotalTax" FontSize="12.5" Text=" " HorizontalAlignment="Left" Height="28" Margin="560,529,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtAfterTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="560,562,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtOutstanding" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="560,599,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotalTax" FontSize="12.5" Text=" " HorizontalAlignment="Left" Height="28" Margin="555,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtAfterTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtOutstanding" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
-        <Line Stroke="Black" X2="100" Fill="Black" Margin="590,559,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="100" Fill="Black" Margin="590,589,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="100" Fill="Black" Margin="590,629,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,450,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,530,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
         <DataGrid
             x:Name="DGSKUPurchaseDelivery"
-            Height="Auto"
-            MinWidth="400"
-            Margin="10,272,0,221"
+            Height="165"
+            Width="750"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="10,250,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -283,7 +285,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="80"
                     Binding="{Binding TotalProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -305,7 +307,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding SatuanDasar}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -327,7 +329,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="80"
                     Binding="{Binding HargaBeli}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -349,7 +351,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding DiskonProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -371,7 +373,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="80"
                     Binding="{Binding TotalOrderProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -393,7 +395,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding TotalPajakProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"

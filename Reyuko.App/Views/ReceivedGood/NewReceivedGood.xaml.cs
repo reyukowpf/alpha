@@ -36,9 +36,6 @@ namespace Reyuko.App.Views.ReceivedGood
        
         private void Clearform()
         {
-            this.receivedGoods = new List<ReceivedGood>();
-            DGSKUReceivedGood.ItemsSource = this.receivedGoods;
-            Custome.IsChecked = false;
         }
 
         private IEnumerable<Kontak> kontaks { get; set; }
@@ -51,6 +48,7 @@ namespace Reyuko.App.Views.ReceivedGood
         public Lokasi lokasiSelected;
         public IEnumerable<OptionAnnual> optionAnnuals { get; set; }
         public OptionAnnual optionAnnualSelected;
+        public IEnumerable<OrderProdukBeli> orderProdukBelis { get; set; }
         public IEnumerable<Termspembayaran> termspembayarans { get; set; }
         public Termspembayaran termspembayaranSelected;
         public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
@@ -63,8 +61,6 @@ namespace Reyuko.App.Views.ReceivedGood
         public PurchaseOrder purchaseOrderSelected { get; set; }
         public IEnumerable<Purchasedelivery> purchasedeliveries { get; set; }
         public Purchasedelivery purchaseDeliverySelected { get; set; }
-
-
 
         public void Navigate(UserControl nextPage)
         {
@@ -103,6 +99,34 @@ namespace Reyuko.App.Views.ReceivedGood
                 this.purchaseDeliverySelected = (Purchasedelivery)cbPurchasedelivery.SelectedItem;
             }
         }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.orderProdukBelis = uow.OrderProdukBeli.GetAll().Where(m => m.Checkboxaktif == true);
+                DGSKUReceivedGood.ItemsSource = this.orderProdukBelis;
+                int sum = 0;
+                for (int i = 0; i < DGSKUReceivedGood.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKUReceivedGood.Items[i] as OrderProdukBeli).TotalPajakProduk);
+                }
+                txtTotalTax.Text = sum.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKUReceivedGood.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKUReceivedGood.Items[i] as OrderProdukBeli).TotalOrderProduk);
+                }
+                txtTotalbeforeTax.Text = sumar.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKUReceivedGood.Items.Count; i++)
+                {
+                    suma += Convert.ToInt32((DGSKUReceivedGood.Items[i] as OrderProdukBeli).TotalOrderProduk);
+                }
+                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+         //       txtoutstanding.Text = txtAfterTotalTax.Text;
+            }
+        }
+        
         private void LoadPO()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -331,19 +355,14 @@ namespace Reyuko.App.Views.ReceivedGood
         public Receivedgood GetData()
         {
             Receivedgood oData = new Receivedgood();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalOrder = DateTime.Parse(dtReceived.Text);
+         
+            
             oData.NoOrder = txtReceivedNumber.Text;
             oData.Keterangan = txtNote.Text;
             oData.TanggalPengiriman = DateTime.Parse(dtDelivery.Text);
             oData.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
             oData.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdVendor = this.kontakSelected.Id;
-                oData.NamaVendor = this.kontakSelected.NamaA;
-            }
+            
             if (this.DataMataUangSelected != null)
             {
                 oData.IdMataUang = this.DataMataUangSelected.Id;
@@ -355,21 +374,8 @@ namespace Reyuko.App.Views.ReceivedGood
                 oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
                 oData.NoReferensiDokumentNi = this.dokumenSelected.NoReferensiDokumen;
             }
-            if (this.purchaseDeliverySelected != null)
-            {
-                oData.IdPD = this.purchaseDeliverySelected.IdPengirimanBarangPembelian;
-                oData.NoPD = this.purchaseDeliverySelected.NoPengirimanBarangPembelian;
-            }
-            if (this.purchaseOrderSelected != null)
-            {
-                oData.IdOrderPembeliaan = this.purchaseOrderSelected.IdOrderPembelian;
-                oData.NoOrderPembeliaan = this.purchaseOrderSelected.NoOrderPembelian;
-            }
-            if (this.dropdownBankKasSelected != null)
-            {
-                oData.IdBankCash = this.dropdownBankKasSelected.Id;
-                oData.BankCash = this.dropdownBankKasSelected.DropdownBankkas;
-            }
+            
+           
             if (this.lokasiSelected != null)
             {
                 oData.IdLokasi = this.lokasiSelected.Id;
@@ -415,21 +421,184 @@ namespace Reyuko.App.Views.ReceivedGood
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            ReceivedGoodsBLL receivedGoodsBLL = new ReceivedGoodsBLL();
-            if (receivedGoodsBLL.AddReceivedGoods(this.GetData()) > 0)
+            ReceivedGoodsBLL goodBLL = new ReceivedGoodsBLL();
+            ReceivedGoodsBLL GoodBLL = new ReceivedGoodsBLL();
+            Receivedgood receivedgood = new Receivedgood();
+            receivedgood.IdKodeTransaksi = 8;
+            receivedgood.KodeTransaksi = "PJ";
+            receivedgood.IdPeriodeAkutansi = 1;
+            receivedgood.NoOrder = txtReceivedNumber.Text;
+            if (this.kontakSelected != null)
             {
-
-                MessageBox.Show("Received Goods successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
+                receivedgood.IdVendor = this.kontakSelected.Id;
+                receivedgood.NamaVendor = this.kontakSelected.NamaA;
+            }
+            receivedgood.Email = txtemail.Text;
+            receivedgood.NoHp = txthp.Text;
+            receivedgood.TanggalOrder = DateTime.Parse(dtReceived.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                receivedgood.IdMataUang = this.DataMataUangSelected.Id;
+                receivedgood.MataUang = this.DataMataUangSelected.KodeMataUang;
+                receivedgood.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                receivedgood.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                receivedgood.NoReferensiDokumentNi = this.dokumenSelected.NoReferensiDokumen;
+            }
+            receivedgood.NoOrderPembeliaan = double.Parse(txtReceivedNumber.Text);
+            if (this.purchaseDeliverySelected != null)
+            {
+                receivedgood.IdPD = this.purchaseDeliverySelected.IdPengirimanBarangPembelian;
+                receivedgood.NoPD = this.purchaseDeliverySelected.NoPengirimanBarangPembelian;
+            }
+            if (this.purchaseOrderSelected != null)
+            {
+                receivedgood.IdOrderPembeliaan = this.purchaseOrderSelected.IdOrderPembelian;
+                receivedgood.NoOrderPembeliaan = this.purchaseOrderSelected.NoOrderPembelian;
+            }
+            if (this.dropdownBankKasSelected != null)
+            {
+                receivedgood.IdBankCash = this.dropdownBankKasSelected.Id;
+                receivedgood.BankCash = this.dropdownBankKasSelected.DropdownBankkas;
+            }
+            if (this.lokasiSelected != null)
+            {
+                receivedgood.IdLokasi = this.lokasiSelected.Id;
+                receivedgood.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            receivedgood.Keterangan = txtNote.Text;
+            if (this.dataDepartemenSelected != null)
+            {
+                receivedgood.IdDepartmen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                receivedgood.IdProyek = this.dataProyekSelected.Id;
+            }
+            receivedgood.CheckboxInclusiveTax = chktax.IsChecked;
+            receivedgood.TanggalPengiriman = DateTime.Parse(dtDelivery.Text);
+            receivedgood.CheckboxBerulang = chkannual.IsChecked;
+            if (this.optionAnnualSelected != null)
+            {
+                receivedgood.IdOptionAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                receivedgood.Annual = this.optionAnnualSelected.Annual;
+            }
+            if (this.kontakSelected != null)
+            {
+                receivedgood.IdPetugas = this.kontakSelected.Id;
+                receivedgood.NamaPetugas = this.kontakSelected.NamaA;
+            }
+            receivedgood.CicilanPerbulan = double.Parse(txtAnnualFrequency.Text);
+            receivedgood.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
+            receivedgood.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            receivedgood.TotalPajak = double.Parse(txtTotalTax.Text);
+            receivedgood.TotalDebitAkunPajakProduk = double.Parse(txtTotalTax.Text);
+            receivedgood.TotalDebitAkunPersediaanProduk = double.Parse(txtTotalbeforeTax.Text);
+            receivedgood.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            //receivedgood.SaldoTerhutang = double.Parse(txtoutstanding.Text);
+            
+            receivedgood.RealRecordingTime = DateTime.Now;
+            if (GoodBLL.AddReceivedGoods(receivedgood) > 0)
+            {
+                //  this.ClearForm();
+                MessageBox.Show("Received Good successfully added !");
             }
             else
             {
-                MessageBox.Show("Received Goods failed to be added !");
+                MessageBox.Show("Received Good failed to add !");
             }
-            ReceivedGood v = new ReceivedGood();
+            if (DGSKUReceivedGood.Items.Count > 0)
+            {
+                foreach (var item in DGSKUReceivedGood.Items)
+                {
+                    if (item is OrderProdukBeli)
+                    {
+                        OrderProdukBeli oNewData1 = (OrderProdukBeli)item;
+                        oNewData1.Tanggal = DateTime.Parse(dtReceived.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                        }
+                        receivedgood.IdAkunPersediaanProduk = oNewData1.AkunPersediaan;
+                        oNewData1.Checkboxaktif = false;
+                        if (goodBLL.EditOrderProdukbeli(oNewData1, receivedgood) == true)
+                        {
+                        }
+                    }
+                }
+                }
+                ReceivedGood v = new ReceivedGood();
             Switcher.Switchnewreceived(v);
         }
 
+        private void produk_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
+            }
+        }
+        private void service_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skuservice)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skuservice newsku = new Skuservice(this);
+                newsku.Show();
+            }
+        }
+        private void custom_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
+            }
+        }
         private void StockList_Click(object sender, RoutedEventArgs e)
         {
 
@@ -461,16 +630,7 @@ namespace Reyuko.App.Views.ReceivedGood
             Switcher.Switchnewreceived(v);
         }
 
-        private void Product_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Service_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void Custom_Click(object sender, RoutedEventArgs e)
         {
 

@@ -113,7 +113,71 @@ namespace Reyuko.BLL.Core
 
             return true;
         }
+        public int AddOrderProdukbeli(OrderProdukBeli oData)
+        {
+            methodName = "AddOrderProdukbeli";
+            traceID = 1;
 
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                using (var trans = uow.BeginTransaction())
+                {
+                    try
+                    {
+                        traceID = 2;
+                        OrderProdukBeli oNewumum = new OrderProdukBeli();
+                        oNewumum.MapFrom(oData);
+                        oNewumum = uow.OrderProdukBeli.Add(oNewumum);
+                        uow.Save();
+
+                        traceID = 3;
+                        oData.IdOrderProdukBeli = oNewumum.IdOrderProdukBeli;
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        throw new AppException(500, methodName, traceID, ex);
+                    }
+                }
+            }
+
+            return oData.IdOrderProdukBeli;
+        }
+        public bool EditOrderProdukbeli(OrderProdukBeli oData, Receivedgood oDatas)
+        {
+            methodName = "EditOrderProdukbeli";
+            traceID = 1;
+
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                traceID = 2;
+                var oDBData = uow.OrderProdukBeli.Get(oData.IdOrderProdukBeli);
+                if (oDBData != null)
+                {
+                    using (var trans = uow.BeginTransaction())
+                    {
+                        try
+                        {
+                            traceID = 3;
+                            oDBData.MapFrom(oData);
+                            uow.OrderProdukBeli.Update(oDBData);
+
+                            traceID = 6;
+                            uow.Save();
+                            trans.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            throw new AppException(500, methodName, traceID, ex);
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
 
     }
 }

@@ -7,6 +7,8 @@ namespace Reyuko.BLL.Interface
         int AddReceivedGoods(Receivedgood oData);
         bool EditReceivedGoods(Receivedgood oData);
         bool RemoveReceivedGoods(int id);
+        int AddOrderProdukbeli(OrderProdukBeli oData);
+        bool EditOrderProdukbeli(OrderProdukBeli oData, Receivedgood oDatas);
 
 
     }

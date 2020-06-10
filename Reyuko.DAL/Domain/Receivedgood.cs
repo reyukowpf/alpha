@@ -61,7 +61,7 @@ namespace Reyuko.DAL.Domain
         public int? IdTransaksi { get; set; }
         public int? IdUserId { get; set; }
         public int? IdPeriodeAkutansi { get; set; }
-        public string RealRecordingTime { get; set; }
+        public DateTime? RealRecordingTime { get; set; }
         public string KodeTransaksi { get; set; }
         public string NoOrder { get; set; }
         public int? IdVendor { get; set; }

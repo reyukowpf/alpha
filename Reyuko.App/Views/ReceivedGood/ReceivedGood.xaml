@@ -154,8 +154,9 @@
         <DataGrid
             x:Name="DGReceivedGood"
             Height="Auto"
-            MinWidth="400"
-            Margin="10,189,0,-22"
+            Width="750"
+            HorizontalAlignment="Left"
+            Margin="10,189,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
