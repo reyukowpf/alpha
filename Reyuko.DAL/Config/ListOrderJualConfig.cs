@@ -118,7 +118,6 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.Checkbokaktif)
                .HasColumnName("Checkboxaktif");
-
         }
     }
 }
