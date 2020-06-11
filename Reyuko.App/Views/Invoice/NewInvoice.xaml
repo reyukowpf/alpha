@@ -302,7 +302,7 @@
         <DataGrid
             x:Name="DGSKUInvoice"
             Height="Auto"
-            Width="770"
+            Width="780"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             Margin="10,291,0,0"
