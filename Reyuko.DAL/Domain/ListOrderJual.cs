@@ -3,9 +3,10 @@ using System.Collections.Generic;
 
 namespace Reyuko.DAL.Domain
 {
-    public class OrderProdukJual
+    public class ListOrderJual
     {
-        public int IdOrderProdukJual { get; set; }       
+        public int Id { get; set; }
+        public int? IdOrderJual { get; set; }
         public int? IdTransaksi { get; set; }
         public int? IdReferalTransaksi { get; set; }
         public DateTime? Tanggal { get; set; }
@@ -19,9 +20,9 @@ namespace Reyuko.DAL.Domain
         public double? DiskonProduk { get; set; }
         public double? HargaJual { get; set; }
         public double? HargaPokok { get; set; }
-        public double? JumlahProduk { get; set; }
+        public double? Jumlah { get; set; }
         public double? SalesBalance { get; set; }
-        public double? TotalOrderProduk { get; set; }
+        public double? TotalOrder { get; set; }
         public int? IdPajak { get; set; }
         public string Pajak { get; set; }
         public double? Persentase { get; set; }

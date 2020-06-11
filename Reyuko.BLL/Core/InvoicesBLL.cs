@@ -113,7 +113,105 @@ namespace Reyuko.BLL.Core
 
             return true;
         }
+        public int AddOrderProdukjual(OrderProdukJual oData)
+        {
+            methodName = "AddOrderProdukjual";
+            traceID = 1;
 
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                using (var trans = uow.BeginTransaction())
+                {
+                    try
+                    {
+                        traceID = 2;
+                        OrderProdukJual oNewOrderProdukJual = new OrderProdukJual();
+                        oNewOrderProdukJual.MapFrom(oData);
+                        oNewOrderProdukJual = uow.OrderProdukJual.Add(oNewOrderProdukJual);
+                        uow.Save();
+
+                        if (oNewOrderProdukJual.IdOrderProdukJual > 0)
+                        {
+                            traceID = 3;
+                            oData.IdOrderProdukJual = oNewOrderProdukJual.IdOrderProdukJual;
+                            ListOrderJual oNewListOrderJual = new ListOrderJual();
+                            oNewListOrderJual.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewListOrderJual.IdOrderJual = oData.IdOrderProdukJual;
+                            oNewListOrderJual.Jumlah = oData.JumlahProduk;
+                            oNewListOrderJual.TotalOrder = oData.TotalOrderProduk;
+                            uow.ListOrderJual.Add(oNewListOrderJual);
+                        }
+
+                        traceID = 5;
+                        uow.Save();
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        throw new AppException(500, methodName, traceID, ex);
+                    }
+                }
+            }
+
+            return oData.IdOrderProdukJual;
+        }
+        public bool EditOrderProdukjual(ListOrderJual oData, invoice oDatas)
+        {
+            methodName = "EditOrderProdukjual";
+            traceID = 1;
+
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                traceID = 2;
+                var oDBData = uow.ListOrderJual.Get(oData.Id);
+                if (oDBData != null)
+                {
+                    using (var trans = uow.BeginTransaction())
+                    {
+                        try
+                        {
+                            traceID = 3;
+                            oDBData.MapFrom(oData);
+                            uow.ListOrderJual.Update(oDBData);
+
+                            traceID = 4;
+                            OrderProdukJual oDBListorderjual = uow.OrderProdukJual.SingleOrDefault(m => m.IdOrderProdukJual == oData.IdOrderJual);
+                            if (oDBListorderjual != null)
+                            {
+                                traceID = 5;
+                                oDBListorderjual.MapFrom(oData);
+
+                                traceID = 6;
+                                uow.OrderProdukJual.Update(oDBListorderjual);
+                            }
+                            else
+                            {
+                                traceID = 7;
+                                OrderProdukJual oNewListorderjual = new OrderProdukJual();
+                                oNewListorderjual.MapFrom(oData);
+
+                                traceID = 8;
+                                uow.OrderProdukJual.Add(oNewListorderjual);
+                            }
+
+                            traceID = 9;
+                            uow.Save();
+                            trans.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            throw new AppException(500, methodName, traceID, ex);
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
 
     }
 }

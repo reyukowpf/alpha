@@ -93,6 +93,7 @@ namespace Reyuko.DAL
             Recap = new RecapRepo(_context);
             Typelist = new TypelistRepo(_context);
             OrderProdukJual = new OrderProdukJualRepo(_context);
+            ListOrderJual = new ListOrderJualRepo(_context);
         }
 
 
@@ -183,6 +184,7 @@ namespace Reyuko.DAL
         public IRecapRepo Recap { get; private set; }
         public ITypelistRepo Typelist { get; private set; }
         public IOrderProdukJualRepo OrderProdukJual { get; private set; }
+        public IListOrderJualRepo ListOrderJual { get; private set; }
 
         public IDBTransaction BeginTransaction(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Snapshot)
         {

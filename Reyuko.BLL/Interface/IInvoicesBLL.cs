@@ -7,7 +7,8 @@ namespace Reyuko.BLL.Interface
         int AddInvoices(invoice oData);
         bool EditInvoices(invoice oData);
         bool RemoveInvoices(int id);
-
+        int AddOrderProdukjual(OrderProdukJual oData);
+        bool EditOrderProdukjual(ListOrderJual oData, invoice oDatas);
 
     }
 }

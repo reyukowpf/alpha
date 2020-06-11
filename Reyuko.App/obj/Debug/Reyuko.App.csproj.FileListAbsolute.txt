@@ -5017,3 +5017,7 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuservice.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Sku.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuservice.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Sku.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skuservice.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Sku.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skuservice.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Sku.g.cs

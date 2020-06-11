@@ -32,6 +32,7 @@ namespace Reyuko.App.Views.Invoice
         }
         private IEnumerable<Invoice> invoices { get; set; }
         public IEnumerable<Kontak> kontaks { get; set; }
+        public IEnumerable<ListOrderJual> listOrderJuals { get; set; }
         public Kontak kontakSelected { get; set; }
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
@@ -130,6 +131,32 @@ namespace Reyuko.App.Views.Invoice
                 cbAnnual.ItemsSource = this.optionAnnuals;
                 cbAnnual.SelectedValuePath = "IdOptionAnnual";
                 cbAnnual.DisplayMemberPath = "Annual";
+            }
+        }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.listOrderJuals = uow.ListOrderJual.GetAll().Where(m => m.Checkbokaktif == true);
+                DGSKUInvoice.ItemsSource = this.listOrderJuals;
+                int sum = 0;
+                for (int i = 0; i < DGSKUInvoice.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKUInvoice.Items[i] as ListOrderJual).TotalPajak);
+                }
+                txtTotalTax.Text = sum.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKUInvoice.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKUInvoice.Items[i] as ListOrderJual).TotalOrder);
+                }
+                txtTotalbeforeTax.Text = sumar.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKUInvoice.Items.Count; i++)
+                {
+                    suma += Convert.ToInt32((DGSKUInvoice.Items[i] as ListOrderJual).TotalOrder);
+                }
+                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
             }
         }
         private void annual_selectedchange(object sender, SelectionChangedEventArgs e)
@@ -287,9 +314,6 @@ namespace Reyuko.App.Views.Invoice
 
         private void Clearform()
         {
-            //  this.invoices = new List<Invoice>();
-            //  DGSKUInvoice.ItemsSource = this.invoices;
-            Custome.IsChecked = false;
         }
 
         public void Navigate(UserControl nextPage)
@@ -378,23 +402,117 @@ namespace Reyuko.App.Views.Invoice
 
         private void Saveinvoice_Click(object sender, RoutedEventArgs e)
         {
-            if (dtInvoicedate.Text == "" || cbCurrency.Text == "" || txtInvoiceNumber.Text == "" || cbDONumber.Text == "" || cbSONumber.Text == "" || cbCash.Text == "" || cbLocation.Text == ""
+            if (dtInvoicedate.Text == "" || cbCurrency.Text == "" || txtInvoiceNumber.Text == "" ||  cbLocation.Text == ""
                  || dtDeliverydate.Text == "" || cbAnnual.Text == "" || txtAnnualFrequency.Text == "" || dtAnnualdate.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            InvoicesBLL invoicesBLL = new InvoicesBLL();
-            if (invoicesBLL.AddInvoices(this.GetData()) > 0)
+            InvoicesBLL invoiceBLL = new InvoicesBLL();
+            InvoicesBLL InvoiceBLL = new InvoicesBLL();
+            invoice invoice = new invoice();
+            if (this.kontakSelected != null)
             {
-
+                invoice.IdPelanggan = this.kontakSelected.Id;
+                invoice.NamaPelanggan = this.kontakSelected.NamaA;
+            }
+            invoice.Email = txtemail.Text;
+            invoice.NoHp = txthp.Text;
+            invoice.TanggalInvoice = DateTime.Parse(dtInvoicedate.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                invoice.IdMataUang = this.DataMataUangSelected.Id;
+                invoice.MataUang = this.DataMataUangSelected.NamaMataUang;
+                invoice.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                invoice.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                invoice.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            invoice.NoInvoice = txtInvoiceNumber.Text;
+            invoice.Keterangan = txtNote.Text;
+            if (this.lokasiSelected != null)
+            {
+                invoice.IdLokasi = this.lokasiSelected.Id;
+                invoice.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            if (this.dataDepartemenSelected != null)
+            {
+                invoice.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                invoice.IdProyek = this.dataProyekSelected.Id;
+            }
+            invoice.CheckboxInclusiveTax = chkinclusive.IsChecked;
+            invoice.TanggalPengiriman = DateTime.Parse(dtDeliverydate.Text);
+            if (this.kontakSelected != null)
+            {
+                invoice.IdPetugas = this.kontakSelected.Id;
+                invoice.NamaPetugas = this.kontakSelected.NamaA;
+            }
+            if (this.termspembayaranSelected != null)
+            {
+                invoice.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
+                invoice.TermPembayaran = this.termspembayaranSelected.NamaSkema;
+            }
+            invoice.CheckboxBerulang = chkannual.IsChecked;
+            invoice.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
+            invoice.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
+            if (this.optionAnnualSelected != null)
+            {
+                invoice.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                invoice.Annual = this.optionAnnualSelected.Annual;
+            }
+            invoice.IdKodeTransaksi = 15;
+            invoice.KodeTransaksi = "SQ";
+            invoice.IdPeriodeAkuntansi = 1;
+            invoice.RealRecordingTime = DateTime.Now;
+            invoice.TotalDebitAkunPiutangPenjualan = invoice.TotalSebelumPajak;
+            invoice.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            invoice.TotalPajak = double.Parse(txtTotalTax.Text);
+            invoice.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            if (InvoiceBLL.AddInvoices(invoice) > 0)
+            {
+                //  this.ClearForm();
                 MessageBox.Show("Invoice successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
             }
             else
             {
-                MessageBox.Show("Invoice failed to be added !");
+                MessageBox.Show("Invoice failed to add !");
             }
+            if (DGSKUInvoice.Items.Count > 0)
+            {
+                foreach (var item in DGSKUInvoice.Items)
+                {
+                    if (item is ListOrderJual)
+                    {
+                        ListOrderJual oNewData1 = (ListOrderJual)item;
+                        oNewData1.IdReferalTransaksi = 1;
+                        oNewData1.Tanggal = DateTime.Parse(dtInvoicedate.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                        }
+                        oNewData1.TanggalPengiriman = DateTime.Parse(dtDeliverydate.Text);
+                        oNewData1.Checkbokaktif = false;
+                        if (invoiceBLL.EditOrderProdukjual(oNewData1, invoice) == true)
+                        {
+                        }
+                    }
+                }
+            }
+
             Invoice v = new Invoice();
             Switcher.SwitchNewInvoice(v);
         }
@@ -496,6 +614,63 @@ namespace Reyuko.App.Views.Invoice
             }
         }
 
+        private void produk_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
+            }
+        }
+        private void service_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skuservice)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skuservice newsku = new Skuservice(this);
+                newsku.Show();
+            }
+        }
+        private void custom_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Sku)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Sku newsku = new Sku(this);
+                newsku.Show();
+            }
+        }
         private void Cancel_Click(object sender, RoutedEventArgs e)
         {
             Invoice v = new Invoice();

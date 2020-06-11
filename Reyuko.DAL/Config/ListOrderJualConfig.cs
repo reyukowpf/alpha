@@ -4,15 +4,18 @@ using Reyuko.DAL.Domain;
 
 namespace Reyuko.DAL.Config
 {
-    public class OrderProdukJualConfig : EntityTypeConfiguration<OrderProdukJual>
+    public class ListOrderJualConfig : EntityTypeConfiguration<ListOrderJual>
     {
-        public OrderProdukJualConfig()
+        public ListOrderJualConfig()
         {
-            this.ToTable("order_produk_jual");
-            this.HasKey(m => m.IdOrderProdukJual);
-            this.Property(m => m.IdOrderProdukJual)
-                .HasColumnName("id_order_produk_jual")
+            this.ToTable("list_order_jual");
+            this.HasKey(m => m.Id);
+            this.Property(m => m.Id)
+                .HasColumnName("id")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+
+            this.Property(m => m.IdOrderJual)
+                .HasColumnName("id_order_jual");
 
             this.Property(m => m.IdTransaksi)
                 .HasColumnName("id_transaksi");
@@ -45,7 +48,7 @@ namespace Reyuko.DAL.Config
                 .HasColumnName("satuan_dasar");
 
             this.Property(m => m.DiskonProduk)
-                .HasColumnName("diskon_produk");
+                .HasColumnName("diskon");
 
             this.Property(m => m.HargaJual)
                 .HasColumnName("harga_jual");
@@ -53,14 +56,14 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.HargaPokok)
                 .HasColumnName("harga_pokok");
 
-            this.Property(m => m.JumlahProduk)
-                .HasColumnName("jumlah_produk");
+            this.Property(m => m.Jumlah)
+                .HasColumnName("jumlah");
 
             this.Property(m => m.SalesBalance)
                 .HasColumnName("sales_balance");
 
-            this.Property(m => m.TotalOrderProduk)
-                .HasColumnName("total_order_produk");
+            this.Property(m => m.TotalOrder)
+                .HasColumnName("total_order");
 
             this.Property(m => m.IdPajak)
                 .HasColumnName("id_pajak");
@@ -99,10 +102,10 @@ namespace Reyuko.DAL.Config
                 .HasColumnName("id_akun_retur_penjualan");
 
             this.Property(m => m.IdProyekProduk)
-                .HasColumnName("id_proyek_produk");
+                .HasColumnName("id_proyek");
 
             this.Property(m => m.IdDepartemenProduk)
-                .HasColumnName("id_departemen_produk");
+                .HasColumnName("id_departemen");
 
             this.Property(m => m.IdAsset)
                 .HasColumnName("id_asset");

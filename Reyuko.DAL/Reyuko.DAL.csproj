@@ -107,6 +107,7 @@
   <ItemGroup>
     <Compile Include="Config\DeliveryorderConfig.cs" />
     <Compile Include="Config\invoiceConfig.cs" />
+    <Compile Include="Config\ListOrderJualConfig.cs" />
     <Compile Include="Config\OrderProdukJualConfig.cs" />
     <Compile Include="Config\OrderProdukbeliConfig.cs" />
     <Compile Include="Config\OrderProductioncustomConfig.cs" />
@@ -186,6 +187,7 @@
     <Compile Include="DBTransaction.cs" />
     <Compile Include="Domain\Deliveryorders.cs" />
     <Compile Include="Domain\invoice.cs" />
+    <Compile Include="Domain\ListOrderJual.cs" />
     <Compile Include="Domain\OrderProdukJual.cs" />
     <Compile Include="Domain\OrderProdukBeli.cs" />
     <Compile Include="Domain\OrderProductioncustom.cs" />
@@ -265,6 +267,7 @@
     <Compile Include="Domain\TypeKontak.cs" />
     <Compile Include="Interface\IDeliveryorderRepo.cs" />
     <Compile Include="Interface\IOrderFinishedprodukRepo.cs" />
+    <Compile Include="Interface\IListOrderJualRepo.cs" />
     <Compile Include="Interface\IOrderProdukJualRepo.cs" />
     <Compile Include="Interface\IOrderProdukBeliRepo.cs" />
     <Compile Include="Interface\IOrderProductioncustomRepo.cs" />
@@ -347,6 +350,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DeliveryorderRepo.cs" />
     <Compile Include="Repositories\OrderFinishedprodukRepo.cs" />
+    <Compile Include="Repositories\ListOrderJualRepo.cs" />
     <Compile Include="Repositories\OrderProdukJualRepo.cs" />
     <Compile Include="Repositories\OrderProdukBeliRepo.cs" />
     <Compile Include="Repositories\OrderProductioncustomRepo.cs" />
