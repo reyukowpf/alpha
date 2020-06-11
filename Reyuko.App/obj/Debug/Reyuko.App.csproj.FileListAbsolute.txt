@@ -5021,3 +5021,17 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skuservice.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Sku.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skuservice.g.cs
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Invoice\Sku.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skuservice.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Sku.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuservice.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Sku.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\Sku.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Sales\Skuorder.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Sales\Sku.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skuservice.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Sku.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuservice.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Sku.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\SalesReturn\Sku.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Sales\Skuorder.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Sales\Sku.g.cs

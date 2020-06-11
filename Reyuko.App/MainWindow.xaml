@@ -65,13 +65,13 @@
     VerticalAlignment="Center"
     HorizontalContentAlignment="Stretch"
     VerticalContentAlignment="Stretch"
-    d:DesignHeight="734"
+    d:DesignHeight="700"
     d:DesignWidth="1240"
     ActiveGlowColor="{x:Null}"
     Background="White"
     Icon="Icons/reyuko-blue.png"
     ShowBackButton="True"
-    mc:Ignorable="d" WindowStartupLocation="CenterScreen" Width="1240" Height="734">
+    mc:Ignorable="d" WindowStartupLocation="CenterScreen" Width="1240" Height="700">
 
     <dxwui:HamburgerMenu
         

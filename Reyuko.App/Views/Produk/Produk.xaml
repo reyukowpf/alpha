@@ -9,7 +9,7 @@
     d:DesignHeight="800"
     d:DesignWidth="1200"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="734">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -32,7 +32,7 @@
     </UserControl.Resources>
 
 
-    <Grid>
+    <Grid Width="Auto" Height="734" VerticalAlignment="Top" MaxWidth="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}">
         <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
             <StackPanel>
                 <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
@@ -132,9 +132,9 @@
         <ComboBox x:Name="cblist" HorizontalAlignment="Left" Margin="206,64,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
         <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="369,64,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="KategoriProduk_selectedchange"/>
 
-        <TabControl Margin="206,100,0,0">
+        <TabControl Margin="206,100,0,0" MaxWidth="1366">
             <TabItem Header="General" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="Transparent" Margin="0,-14,7,7">
                     <Label Content="Category" FontSize="12.5" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="26"/>
                     <Label Content="SKU" FontSize="12.5" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Height="26"/>
                     <Label Content="Product Group" FontSize="12.5" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>

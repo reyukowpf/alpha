@@ -546,14 +546,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2752984">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2754008">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+2YaWN5R83tV3auqSj7dUUOProdavgLvm5d9zIxFZ8o=</dsig:DigestValue>
+        <dsig:DigestValue>8ajYEOt/475ywWatWtWzK8021OVT8p8jPqsRxF5DVh0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -565,19 +565,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>j6SvDNV9gEz+1vqyjovvdSWhXEOay91/6h02Xyf4N/o=</dsig:DigestValue>
+        <dsig:DigestValue>Gu4zoJT3/jxxUY5s4VvKSVRxVtqGWqX/WrqZgdoYZAE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.DAL.dll" size="514560">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.DAL.dll" size="515072">
       <assemblyIdentity name="Reyuko.DAL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eFv+EwWqWfK+OXJ0whPurOO3adpDKy8zFGj4xp55B0E=</dsig:DigestValue>
+        <dsig:DigestValue>wRnPesIU5dXeSYL5vQfEX0IMFpguq9JqThxS6nLXpJI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
