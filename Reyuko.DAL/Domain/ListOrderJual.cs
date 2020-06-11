@@ -41,5 +41,6 @@ namespace Reyuko.DAL.Domain
         public string NamaAsset { get; set; }
         public DateTime? TanggalPengiriman { get; set; }
         public bool? Checkbokaktif { get; set; }
+
     }
 }
