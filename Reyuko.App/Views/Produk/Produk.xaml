@@ -32,7 +32,7 @@
     </UserControl.Resources>
 
 
-    <Grid Width="Auto" VerticalAlignment="Top" MaxWidth="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}">
+    <Grid Width="Auto" Height="734" VerticalAlignment="Top" MaxWidth="{DynamicResource {x:Static SystemParameters.PrimaryScreenWidthKey}}">
         <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
             <StackPanel>
                 <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
@@ -62,9 +62,9 @@
         <ListView
             x:Name="LstProduct"
             Width="180"
-            Height="560"
+            Height="Auto"
             Margin="8,100,0,0"
-            HorizontalAlignment="Left" SelectionChanged="LstProduk_SelectionChanged" VerticalAlignment="Top">
+            HorizontalAlignment="Left" SelectionChanged="LstProduk_SelectionChanged">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel
@@ -132,98 +132,93 @@
         <ComboBox x:Name="cblist" HorizontalAlignment="Left" Margin="206,64,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
         <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" Margin="369,64,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="KategoriProduk_selectedchange"/>
 
-        <TabControl Margin="206,100,8,0" MaxWidth="1366" Height="560">
+        <TabControl Margin="206,100,0,0" MaxWidth="1366">
             <TabItem Header="General" FontSize="24">
                 <Grid Background="Transparent" Margin="0,-14,7,7">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="131*"/>
-                        <ColumnDefinition Width="29*"/>
-                        <ColumnDefinition Width="653*"/>
-                    </Grid.ColumnDefinitions>
                     <Label Content="Category" FontSize="12.5" HorizontalAlignment="Left" Margin="10,50,0,0" VerticalAlignment="Top" Height="26"/>
-                    <Label Content="SKU" FontSize="12.5" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Height="26"/>
-                    <Label Content="Product Group" FontSize="12.5" HorizontalAlignment="Left" Margin="10,104,0,0" VerticalAlignment="Top"/>
-                    <Label Content="COGS" FontSize="12.5" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Purchasing Price" FontSize="12.5" HorizontalAlignment="Left" Margin="10,158,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Selling Price" FontSize="12.5" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Base Unit" FontSize="12.5" HorizontalAlignment="Left" Margin="10,212,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="10,239,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="10,266,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Minimum Order" FontSize="12.5" HorizontalAlignment="Left" Margin="10,293,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,347,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="10,374,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Ordered To Vendor" FontSize="12.5" HorizontalAlignment="Left" Margin="10,401,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Ordered by Customer" FontSize="12.5" HorizontalAlignment="Left" Margin="10,428,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-                    <Label Content="Manage Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="205,50,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="205,77,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Min Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="205,104,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Product Type" FontSize="12.5" HorizontalAlignment="Left" Margin="205,131,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="205,158,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Including Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="205,239,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Dimension" FontSize="12.5" HorizontalAlignment="Left" Margin="205,266,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Length" FontSize="12.5" HorizontalAlignment="Left" Margin="205,293,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Wide" FontSize="12.5" HorizontalAlignment="Left" Margin="205,320,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Tall" FontSize="12.5" HorizontalAlignment="Left" Margin="205,347,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content="Weight" FontSize="12.5" HorizontalAlignment="Left" Margin="205,374,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,50,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,77,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,104,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,131,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,158,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,185,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,212,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,239,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,266,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,293,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,320,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,347,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,374,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,401,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="9,428,0,0" VerticalAlignment="Top" Grid.Column="1"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,50,0,0" VerticalAlignment="Top" Grid.Column="2" />
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,77,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,104,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,131,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,158,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,239,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,293,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,320,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,347,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="315,374,0,0" VerticalAlignment="Top" Grid.Column="2"/>
-                    <Label x:Name="LblNamaProduk" Content="Nama Produk" FontSize="24" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
-                    <TextBlock x:Name="txtCategory" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtProductGroup" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtCogs" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtPurchasingprice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtSellingprice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtBaseUnit" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtDepartment" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtMinimumOrder" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtDiscountyes" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtDiscount" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtPeriode" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtPeriode1" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="100,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" Grid.Column="2"/>
-                    <TextBlock x:Name="txtOrdertoVendor" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtOrderbycustomer" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="19,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" Grid.Column="1"/>
-                    <TextBlock x:Name="txtManageStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtMinStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtProducttype" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,133,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtRemarks" FontSize="12.5" HorizontalAlignment="Left" Height="79" Margin="330,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtIncludingTax" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtLength" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,295,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Grid.Column="2"/>
-                    <TextBlock x:Name="txtWide" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,322,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60" Grid.Column="2"/>
-                    <TextBlock x:Name="txtTall" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <TextBlock x:Name="txtWeight" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,376,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="2"/>
-                    <Image x:Name="Image1" HorizontalAlignment="Right" Height="173" Margin="0,52,4,0" VerticalAlignment="Top" Width="144" Stretch="Fill" Grid.Column="2"/>
-                    <Image x:Name="Image2" HorizontalAlignment="Right" Height="50" Margin="0,232,4,0" VerticalAlignment="Top" Width="60" Stretch="Fill" Grid.Column="2"/>
-                    <Image x:Name="Image3" HorizontalAlignment="Right" Height="50" Margin="0,289,4,0" VerticalAlignment="Top" Width="60" Stretch="Fill" Grid.Column="2"/>
-                    <Image x:Name="Image4" HorizontalAlignment="Right" Height="49" Margin="0,347,4,0" VerticalAlignment="Top" Width="60" Stretch="Fill" Grid.Column="2"/>
-                    <Button HorizontalAlignment="Right" Margin="0,430,10,0" Background="Orange" BorderThickness="0"
-                       Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="180" Click="Sales_Click" Grid.Column="2">
+                    <Label Content="SKU" FontSize="12.5" HorizontalAlignment="Left" Margin="10,85,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Product Group" FontSize="12.5" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                    <Label Content="COGS" FontSize="12.5" HorizontalAlignment="Left" Margin="10,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Purchasing Price" FontSize="12.5" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Selling Price" FontSize="12.5" HorizontalAlignment="Left" Margin="10,225,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Base Unit" FontSize="12.5" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="10,295,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="10,330,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Minimum Order" FontSize="12.5" HorizontalAlignment="Left" Margin="10,365,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,435,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="10,470,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ordered To Vendor" FontSize="12.5" HorizontalAlignment="Left" Margin="10,505,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Ordered by Customer" FontSize="12.5" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Manage Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="450,50,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="450,85,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Min Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="450,120,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Product Type" FontSize="12.5" HorizontalAlignment="Left" Margin="450,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="450,190,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Including Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="450,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Dimension" FontSize="12.5" HorizontalAlignment="Left" Margin="450,335,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Length" FontSize="12.5" HorizontalAlignment="Left" Margin="450,370,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Wide" FontSize="12.5" HorizontalAlignment="Left" Margin="450,405,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Tall" FontSize="12.5" HorizontalAlignment="Left" Margin="450,440,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Weight" FontSize="12.5" HorizontalAlignment="Left" Margin="450,505,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,50,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,85,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,120,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,190,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,225,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,260,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,295,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,330,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,365,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,400,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,435,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,470,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,505,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="170,540,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,50,0,0" VerticalAlignment="Top" />
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,85,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,120,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,155,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,190,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,300,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,370,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,405,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,440,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="580,505,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="LblNamaProduk" Content="Nama Produk" FontSize="24" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="txtCategory" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtProductGroup" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtCogs" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtPurchasingprice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtSellingprice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtBaseUnit" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtDepartment" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,333,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtMinimumOrder" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,368,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtDiscountyes" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtDiscount" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,438,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtPeriode" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,473,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="txtPeriode1" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="300,473,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                    <TextBlock x:Name="txtOrdertoVendor" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtOrderbycustomer" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtManageStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtMinStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtProducttype" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,158,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtRemarks" FontSize="12.5" HorizontalAlignment="Left" Height="60" Margin="450,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                    <TextBlock x:Name="txtIncludingTax" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtLength" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,373,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtWide" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtTall" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,443,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtWeight" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Image x:Name="Image1" HorizontalAlignment="Right" Height="220" Margin="684,60,10,0" VerticalAlignment="Top" Width="180" Stretch="Fill"/>
+                    <Image x:Name="Image2" HorizontalAlignment="Right" Height="50" Margin="684,290,150,0" VerticalAlignment="Top" Width="60" Stretch="Fill"/>
+                    <Image x:Name="Image3" HorizontalAlignment="Right" Height="50" Margin="746,290,80,0" VerticalAlignment="Top" Width="60" Stretch="Fill"/>
+                    <Image x:Name="Image4" HorizontalAlignment="Right" Height="50" Margin="814,290,10,0" VerticalAlignment="Top" Width="60" Stretch="Fill"/>
+                    <Button HorizontalAlignment="Right" Margin="0,350,10,0" Background="Orange" BorderThickness="0"
+                       Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="180" Click="Sales_Click">
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text=" Sales/Inventory" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </StackPanel>
@@ -232,26 +227,26 @@
             </TabItem>
             <TabItem Header="Vendor" FontSize="24">
                 <Grid Background="Transparent" Margin="-15,-14,-15,-15">
-                    <Label Content="Vendor Primary" FontSize="12.5" HorizontalAlignment="Left" Margin="24,20,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="24,47,0,0" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="VendorPrimary" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="27,75,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Vendor 2" FontSize="12.5" HorizontalAlignment="Left" Margin="24,156,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="24,183,0,0" VerticalAlignment="Top"/>
-                    <TextBlock  x:Name="Vendor2" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="31,208,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Vendor 3" FontSize="12.5" HorizontalAlignment="Left" Margin="24,295,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="24,322,0,0" VerticalAlignment="Top"/>
-                    <TextBlock  x:Name="Vendor3" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="31,348,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Vendor 4" FontSize="12.5" HorizontalAlignment="Left" Margin="24,430,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="24,540,0,0" VerticalAlignment="Top"/>
-                    <TextBlock  x:Name="Vendor4" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="24,580,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="130,20,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="130,156,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="130,295,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="130,430,0,0" VerticalAlignment="Top"/>
-                    <TextBlock x:Name="txtVendor1" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="145,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtVendor2" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="145,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtVendor3" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="145,297,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtVendor4" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="145,431,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Label Content="Vendor Primary" FontSize="12.5" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="VendorPrimary" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Vendor 2" FontSize="12.5" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
+                    <TextBlock  x:Name="Vendor2" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Vendor 3" FontSize="12.5" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top"/>
+                    <TextBlock  x:Name="Vendor3" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Vendor 4" FontSize="12.5" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="10,540,0,0" VerticalAlignment="Top"/>
+                    <TextBlock  x:Name="Vendor4" FontSize="12.5" Height="76" Width="500" HorizontalAlignment="Left" Margin="10,580,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="150,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="150,180,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="150,340,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" HorizontalAlignment="Left" FontSize="12.5" Margin="150,500,0,0" VerticalAlignment="Top"/>
+                    <TextBlock x:Name="txtVendor1" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="160,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtVendor2" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="160,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtVendor3" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="160,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtVendor4" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="160,504,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                 </Grid>
             </TabItem>
         </TabControl>
