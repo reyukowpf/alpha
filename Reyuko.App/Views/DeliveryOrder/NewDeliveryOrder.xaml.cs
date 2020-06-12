@@ -544,11 +544,11 @@ namespace Reyuko.App.Views.DeliveryOrder
                         }
                         if (this.dataDepartemenSelected != null)
                         {
-                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
                         }
                         if (this.dataProyekSelected != null)
                         {
-                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                            oNewData1.IdProyek = this.dataProyekSelected.Id;
                         }                       
                         oNewData1.TanggalPengiriman = DateTime.Parse(dtValiditydate.Text);
                         oNewData1.Checkbokaktif = false;

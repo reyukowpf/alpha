@@ -472,11 +472,11 @@ namespace Reyuko.App.Views.SalesReturn
                         }
                         if (this.dataDepartemenSelected != null)
                         {
-                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
                         }
                         if (this.dataProyekSelected != null)
                         {
-                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                            oNewData1.IdDepartemen = this.dataProyekSelected.Id;
                         }
                         oNewData1.TanggalPengiriman = DateTime.Parse(dtDelivery.Text);
                         oNewData1.Checkbokaktif = false;

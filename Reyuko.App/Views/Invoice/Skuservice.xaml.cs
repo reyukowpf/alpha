@@ -58,55 +58,47 @@ namespace Reyuko.App.Views.Invoice
             if (srsku.SelectedItem != null)
             {
                 this.produkSelected = (produk)srsku.SelectedItem;
-                txtunit.Text = this.produkSelected.SatuanDasar;
                 txtprice.Text = this.produkSelected.HargaJual.ToString();
                 txtdiskon.Text = this.produkSelected.DiskonProdukPersen;
                 txttax.Text = this.produkSelected.PersentasePajak.ToString();
                 txtdiskon1.Text = ((float.Parse(txtprice.Text.ToString()) * float.Parse(txtdiskon.Text.ToString()) / 100)).ToString();
             }
         }
-        public OrderProdukJual GetData()
+        public OrderJasaJual GetData()
         {
-            OrderProdukJual oData = new OrderProdukJual();
+            OrderJasaJual oData = new OrderJasaJual();
             if (this.produkSelected != null)
             {
                 oData.IdProduk = this.produkSelected.IdProduk;
                 oData.ProdukKategori = this.produkSelected.ProdukKategori;
                 oData.Sku = this.produkSelected.SKU;
-                oData.IdTypeProduk = this.produkSelected.IdTipeProduk;
-                oData.TypeProduk = this.produkSelected.TipeProduk;
-                oData.SatuanDasar = this.produkSelected.SatuanDasar;
-                oData.HargaJual = this.produkSelected.HargaJual;
+                oData.AkunJasa = this.produkSelected.IdTipeProduk;
+                oData.HargaJasa = this.produkSelected.HargaJual;
                 oData.NamaProduk = this.produkSelected.NamaProduk;
                 oData.Persentase = this.produkSelected.PersentasePajak;
-                oData.IdAkunHargaPokok = this.produkSelected.IdAkunHargaPokok;
-                oData.IdAkunPenjualan = this.produkSelected.IdAkunPenjualan;
-                oData.IdAkunPersediaan = this.produkSelected.IdAkunPersediaan;
                 oData.IdAkunPajakJual = this.produkSelected.IdAkunPajak;
                 oData.IdPajak = this.produkSelected.IdPajak;
-                oData.Pajak = this.produkSelected.Pajak;
-                oData.IdAkunPengirimanJual = this.produkSelected.IdAkunPengirimanJual;
-                oData.IdAkunReturPenjualan = this.produkSelected.IdAkunReturPenjualan;
+                oData.Pajak = this.produkSelected.Pajak;                
             }
-            oData.DiskonProduk = double.Parse(txtdiskon1.Text);
-            oData.JumlahProduk = int.Parse(txttotal.Text);
-            oData.TotalOrderProduk = double.Parse(txttotal1.Text);
+            oData.DiskonJasa = double.Parse(txtdiskon1.Text);
+            oData.JumlahJasa = int.Parse(txttotal.Text);
+            oData.TotalOrderJasa = double.Parse(txttotal1.Text);
             oData.TotalPajak = double.Parse(txttotaltax.Text);
             oData.Checkbokaktif = true;
             return oData;
         }
         public void Addsku_Clicks(object sender, RoutedEventArgs e)
         {
-            DeliveryOrdersBLL deliveryBLL = new DeliveryOrdersBLL();
-                if (deliveryBLL.AddOrderProdukjual(this.GetData()) > 0)
+            InvoicesBLL invoiceBLL = new InvoicesBLL();
+                if (invoiceBLL.AddOrderJasaJual(this.GetData()) > 0)
                 {
                     this.ClearForm();
-                    MessageBox.Show("Add Order Sell Product successfully added !");
-               //     this.newinvoice.LoadDataSku();
+                    MessageBox.Show("Add Order Sell Service successfully added !");
+                    this.newinvoice.LoadDataSku();
                 }
                 else
                 {
-                    MessageBox.Show("Add Order Sell Product failed to add !");
+                    MessageBox.Show("Add Order Sell Service failed to add !");
                 }
             this.Close();
         }
