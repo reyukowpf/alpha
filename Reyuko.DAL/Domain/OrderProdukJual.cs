@@ -34,8 +34,8 @@ namespace Reyuko.DAL.Domain
         public int? IdAkunPersediaan { get; set; }
         public int? IdAkunPengirimanJual { get; set; }
         public int? IdAkunReturPenjualan { get; set; }
-        public int? IdProyekProduk { get; set; }
-        public int? IdDepartemenProduk { get; set; }
+        public int? IdProyek { get; set; }
+        public int? IdDepartemen { get; set; }
         public int? IdAsset { get; set; }
         public string NamaAsset { get; set; }
         public DateTime? TanggalPengiriman { get; set; }

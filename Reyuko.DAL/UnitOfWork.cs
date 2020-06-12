@@ -94,6 +94,8 @@ namespace Reyuko.DAL
             Typelist = new TypelistRepo(_context);
             OrderProdukJual = new OrderProdukJualRepo(_context);
             ListOrderJual = new ListOrderJualRepo(_context);
+            OrderJasaJual = new OrderJasaJualRepo(_context);
+            OrderCustomJual = new OrderCustomJualRepo(_context);
         }
 
 
@@ -185,6 +187,9 @@ namespace Reyuko.DAL
         public ITypelistRepo Typelist { get; private set; }
         public IOrderProdukJualRepo OrderProdukJual { get; private set; }
         public IListOrderJualRepo ListOrderJual { get; private set; }
+        public IOrderJasaJualRepo OrderJasaJual { get; private set; }
+        public IOrderCustomJualRepo OrderCustomJual { get; private set; }
+
 
         public IDBTransaction BeginTransaction(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Snapshot)
         {

@@ -92,6 +92,9 @@ namespace Reyuko.DAL
         public virtual DbSet<Typelist> Typelist { get; set; }
         public virtual DbSet<OrderProdukJual> OrderProdukJual { get; set; }
         public virtual DbSet<ListOrderJual> ListOrderJual { get; set; }
+        public virtual DbSet<OrderJasaJual> OrderJasaJual { get; set; }
+        public virtual DbSet<OrderCustomJual> OrderCustomJual { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new DataMataUangConfig());
@@ -173,6 +176,8 @@ namespace Reyuko.DAL
             modelBuilder.Configurations.Add(new TypelistConfig());
             modelBuilder.Configurations.Add(new OrderProdukJualConfig());
             modelBuilder.Configurations.Add(new ListOrderJualConfig());
+            modelBuilder.Configurations.Add(new OrderJasaJualConfig());
+            modelBuilder.Configurations.Add(new OrderCustomJualConfig());
         }
     }
 }
