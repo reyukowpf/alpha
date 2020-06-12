@@ -101,10 +101,10 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.IdAkunReturPenjualan)
                 .HasColumnName("id_akun_retur_penjualan");
 
-            this.Property(m => m.IdProyekProduk)
+            this.Property(m => m.IdProyek)
                 .HasColumnName("id_proyek");
 
-            this.Property(m => m.IdDepartemenProduk)
+            this.Property(m => m.IdDepartemen)
                 .HasColumnName("id_departemen");
 
             this.Property(m => m.IdAsset)

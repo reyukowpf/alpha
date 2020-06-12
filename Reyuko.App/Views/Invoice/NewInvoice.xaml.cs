@@ -498,15 +498,15 @@ namespace Reyuko.App.Views.Invoice
                         }
                         if (this.dataDepartemenSelected != null)
                         {
-                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
                         }
                         if (this.dataProyekSelected != null)
                         {
-                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                            oNewData1.IdProyek = this.dataProyekSelected.Id;
                         }
                         oNewData1.TanggalPengiriman = DateTime.Parse(dtDeliverydate.Text);
                         oNewData1.Checkbokaktif = false;
-                        if (invoiceBLL.EditOrderProdukjual(oNewData1, invoice) == true)
+                        if (invoiceBLL.EditOrderProdukJual(oNewData1, invoice) == true)
                         {
                         }
                     }
@@ -658,7 +658,7 @@ namespace Reyuko.App.Views.Invoice
 
             foreach (Window w in Application.Current.Windows)
             {
-                if (w is Sku)
+                if (w is Skucustom)
                 {
                     isWindowOpen = true;
                     w.Activate();
@@ -667,7 +667,7 @@ namespace Reyuko.App.Views.Invoice
 
             if (!isWindowOpen)
             {
-                Sku newsku = new Sku(this);
+                Skucustom newsku = new Skucustom(this);
                 newsku.Show();
             }
         }

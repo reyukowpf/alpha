@@ -94,6 +94,7 @@ namespace Reyuko.App.Views.Invoice
             oData.TotalPajak = double.Parse(txttotaltax.Text);
             oData.Checkbokaktif = true;
             return oData;
+
         }
         public void Addsku_Clicks(object sender, RoutedEventArgs e)
         {

@@ -58,7 +58,6 @@ namespace Reyuko.App.Views.ReceivedGood
             if (srsku.SelectedItem != null)
             {
                 this.produkSelected = (produk)srsku.SelectedItem;
-                txtunit.Text = this.produkSelected.SatuanDasar;
                 txtprice.Text = this.produkSelected.HargaPokokAverage.ToString();
                 txtdiskon.Text = this.produkSelected.DiskonProdukPersen;
                 txttax.Text = this.produkSelected.PersentasePajak.ToString();
