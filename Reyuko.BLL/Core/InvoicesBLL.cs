@@ -158,9 +158,9 @@ namespace Reyuko.BLL.Core
 
             return oData.IdOrderProdukJual;
         }
-        public bool EditOrderProdukjual(ListOrderJual oData, invoice oDatas)
+        public bool EditOrderProdukJual(ListOrderJual oData, invoice oDatas)
         {
-            methodName = "EditOrderProdukjual";
+            methodName = "EditOrderProdukJual";
             traceID = 1;
 
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -196,8 +196,40 @@ namespace Reyuko.BLL.Core
                                 traceID = 8;
                                 uow.OrderProdukJual.Add(oNewListorderjual);
                             }
-
                             traceID = 9;
+                            OrderJasaJual oDBListorderjual1 = uow.OrderJasaJual.SingleOrDefault(m => m.IdOrderJasa == oData.IdOrderJual);
+                            if (oDBListorderjual1 != null)
+                            {
+                                traceID = 10;
+                                oDBListorderjual1.MapFrom(oData);
+
+                                traceID = 11;
+                                oDBListorderjual1.TanggalStartdate = oData.TanggalPengiriman;
+                                uow.OrderJasaJual.Update(oDBListorderjual1);
+                            }
+                            else
+                            {
+                                traceID = 12;
+                    
+                                traceID = 13;
+                            }
+                            traceID = 14;
+                            OrderCustomJual oDBListorderjual2 = uow.OrderCustomJual.SingleOrDefault(m => m.IdOrderCustom == oData.IdOrderJual);
+                            if (oDBListorderjual2 != null)
+                            {
+                                traceID = 15;
+                                oDBListorderjual2.MapFrom(oData);
+
+                                traceID = 16;
+                                uow.OrderCustomJual.Update(oDBListorderjual2);
+                            }
+                            else
+                            {
+                                traceID = 17;
+
+                                traceID = 18;
+                            }
+                            traceID = 19;
                             uow.Save();
                             trans.Commit();
                         }
@@ -212,6 +244,101 @@ namespace Reyuko.BLL.Core
 
             return true;
         }
+        public int AddOrderJasaJual(OrderJasaJual oData)
+        {
+            methodName = "AddOrderJasaJual";
+            traceID = 1;
 
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                using (var trans = uow.BeginTransaction())
+                {
+                    try
+                    {
+                        traceID = 2;
+                        OrderJasaJual oNewOrderJasaJual = new OrderJasaJual();
+                        oNewOrderJasaJual.MapFrom(oData);
+                        oNewOrderJasaJual = uow.OrderJasaJual.Add(oNewOrderJasaJual);
+                        uow.Save();
+
+                        if (oNewOrderJasaJual.IdOrderJasa > 0)
+                        {
+                            traceID = 3;
+                            oData.IdOrderJasa = oNewOrderJasaJual.IdOrderJasa;
+                            ListOrderJual oNewListOrderJual = new ListOrderJual();
+                            oNewListOrderJual.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewListOrderJual.IdOrderJual = oData.IdOrderJasa;
+                            oNewListOrderJual.HargaJual = oData.HargaJasa;
+                            oNewListOrderJual.DiskonProduk = oData.DiskonJasa;
+                            oNewListOrderJual.IdTypeProduk = oData.AkunJasa;
+                            oNewListOrderJual.Jumlah = oData.JumlahJasa;
+                            oNewListOrderJual.TotalOrder = oData.TotalOrderJasa;
+                            uow.ListOrderJual.Add(oNewListOrderJual);
+                        }
+
+                        traceID = 5;
+                        uow.Save();
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        throw new AppException(500, methodName, traceID, ex);
+                    }
+                }
+            }
+
+            return oData.IdOrderJasa;
+        }
+        public int AddOrderCustomJual(OrderCustomJual oData)
+        {
+            methodName = "AddOrderCustomJual";
+            traceID = 1;
+
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                using (var trans = uow.BeginTransaction())
+                {
+                    try
+                    {
+                        traceID = 2;
+                        OrderCustomJual oNewOrderProdukJual = new OrderCustomJual();
+                        oNewOrderProdukJual.MapFrom(oData);
+                        oNewOrderProdukJual = uow.OrderCustomJual.Add(oNewOrderProdukJual);
+                        uow.Save();
+
+                        if (oNewOrderProdukJual.IdOrderCustom > 0)
+                        {
+                            traceID = 3;
+                            oData.IdOrderCustom = oNewOrderProdukJual.IdOrderCustom;
+                            ListOrderJual oNewListOrderJual = new ListOrderJual();
+                            oNewListOrderJual.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewListOrderJual.IdOrderJual = oData.IdOrderCustom;
+                            oNewListOrderJual.HargaJual = oData.HargaCustom;
+                            oNewListOrderJual.Sku = oData.NamaCustom;
+                            oNewListOrderJual.NamaProduk = oData.NamaCustom;
+                            oNewListOrderJual.Jumlah = oData.JumlahCustom;
+                            oNewListOrderJual.TotalOrder = oData.TotalCustom;
+                            uow.ListOrderJual.Add(oNewListOrderJual);
+                        }
+
+                        traceID = 5;
+                        uow.Save();
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        throw new AppException(500, methodName, traceID, ex);
+                    }
+                }
+            }
+
+            return oData.IdOrderCustom;
+        }
     }
 }
