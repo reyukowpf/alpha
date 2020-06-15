@@ -128,15 +128,15 @@
                 <TextBlock Text=" Finished Product" FontSize="12.5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        
+
         <Label Content="Document Refence No." FontSize="12.5" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Date" HorizontalAlignment="Left" FontSize="12.5" Margin="190,58,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Location" HorizontalAlignment="Left" FontSize="12.5" Margin="350,58,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Staf/Id" HorizontalAlignment="Left" FontSize="12.5" Margin="520,58,0,0" VerticalAlignment="Top"/>
         <Label Content="Production Number" HorizontalAlignment="Left" FontSize="12.5" Margin="350,118,0,0" VerticalAlignment="Top"/>
         <Label Content="Note" HorizontalAlignment="Left" FontSize="12.5" Margin="10,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Total" HorizontalAlignment="Right" FontSize="12.5" Margin="0,610,745,0" VerticalAlignment="Top"/>
-        <Label Content="Balance" HorizontalAlignment="Right" FontSize="12.5" Margin="0,640,728,0" VerticalAlignment="Top"/>
+        <Label Content="Total" HorizontalAlignment="Left" FontSize="12.5" Margin="450,610,0,0" VerticalAlignment="Top"/>
+        <Label Content="Balance" HorizontalAlignment="Left" FontSize="12.5" Margin="450,640,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
@@ -179,11 +179,11 @@
         <TextBox x:Name="txtProductionNumber" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="350,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtProductionNumber_TextChanged"/>
         <TextBlock x:Name="txtTotalinput" Visibility="Hidden" HorizontalAlignment="Right" Height="28" FontSize="12.5" Margin="0,605,513,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtidakun" Visibility="Hidden" HorizontalAlignment="Right" Height="28" FontSize="12.5" Margin="0,605,513,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtTotal" Text=" " HorizontalAlignment="Right" Height="28" FontSize="12.5" Margin="0,600,490,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtBalance" Text=" " HorizontalAlignment="Right" Height="28" FontSize="12.5" Margin="0,630,490,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotal" Text=" " HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,600,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtBalance" Text=" " HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
-        <Line Stroke="Black" X2="100" Fill="Black" Margin="480,628,0,0"  VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="100" Fill="Black" Margin="480,658,0,0"  VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="520,628,0,0"  VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="520,658,0,0"  VerticalAlignment="Top" />
 
         <DataGrid
             x:Name="DGSKUProduction"
@@ -212,11 +212,10 @@
                     <Setter Property="Foreground" Value="White" />
                 </Style>
 
-
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="*"
                     Binding="{Binding Sku}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -238,8 +237,8 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
-                    Binding="{Binding JumlahProduk}"
+                    Width="80"
+                    Binding="{Binding Jumlah}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -260,7 +259,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding SatuanDasar}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -282,7 +281,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="80"
                     Binding="{Binding HargaPokok}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -304,8 +303,8 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
-                    Binding="{Binding TotalOrderProduk}"
+                    Width="80"
+                    Binding="{Binding TotalOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -326,7 +325,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="80"
                     Binding="{Binding Job}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -373,9 +372,11 @@
         </DataGrid>
         <DataGrid
             x:Name="DGSKUFinishedProduction"
-            Height="Auto"
-            MinWidth="400"
-            Margin="10,430,0,132"
+            Height="165"
+            Width="670"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,430,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -399,7 +400,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="170"
                     Binding="{Binding Sku}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -421,7 +422,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="80"
                     Binding="{Binding TotalProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -443,7 +444,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="220"
+                    Width="80"
                     Binding="{Binding SatuanDasar}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -465,7 +466,29 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="80"
+                    Binding="{Binding HargaProduk}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Price">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
                     Binding="{Binding TotalBiaya}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -487,7 +510,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="100"
+                    Width="*"
                     Binding="{Binding Job}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -510,7 +533,10 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-
+        <RadioButton x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,120,0,0" VerticalAlignment="Top" Checked="rbdepartmen_Checked"/>
+        <RadioButton x:Name="rbproject" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,120,0,0" VerticalAlignment="Top" Checked="rbproject_Checked"/>
+        <ComboBox x:Name="cbproject" HorizontalAlignment="Left" FontSize="12.5" Margin="520,143,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="cbproyek_SelectionChanged"/>
+        <ComboBox x:Name="cbdepartmen" HorizontalAlignment="Left" FontSize="12.5" Margin="520,143,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="cbdepartmen_SelectionChanged"/>
 
 
     </Grid>

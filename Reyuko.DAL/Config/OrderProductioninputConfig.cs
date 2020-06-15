@@ -14,8 +14,8 @@ namespace Reyuko.DAL.Config
                 .HasColumnName("id_order_production")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
 
-            this.Property(m => m.IdProduction)
-                .HasColumnName("id_production");
+            this.Property(m => m.IdTransaksi)
+                .HasColumnName("id_transaksi");
 
             this.Property(m => m.Tanggal)
                 .HasColumnName("tanggal");
@@ -34,6 +34,9 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.NamaProduk)
                 .HasColumnName("nama_produk");
+
+            this.Property(m => m.IdSatuanDasar)
+               .HasColumnName("id_satuan_dasar");
 
             this.Property(m => m.SatuanDasar)
                 .HasColumnName("satuan_dasar");

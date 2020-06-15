@@ -129,7 +129,7 @@
                     <TextBox x:Name="txtProductName" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtProductName_TextChanged" />
                     <TextBlock x:Name="txtCogs" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
                     <TextBlock x:Name="txtStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-                    <TextBlock x:Name="txtMinStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+                    <TextBlock Text="1" x:Name="txtMinStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,99,0,0" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
                     <TextBlock x:Name="txtPurchasingPrice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
                     <TextBox x:Name="txtSellingPrice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSellingPrice_TextChanged" />
                     <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,260,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcurrency_Selectchange" />

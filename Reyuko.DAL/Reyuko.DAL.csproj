@@ -110,6 +110,7 @@
     <Compile Include="Config\ListOrderJualConfig.cs" />
     <Compile Include="Config\OrderCustomJualConfig.cs" />
     <Compile Include="Config\OrderJasaJualConfig.cs" />
+    <Compile Include="Config\ListOrderProductionConfig.cs" />
     <Compile Include="Config\OrderProdukJualConfig.cs" />
     <Compile Include="Config\OrderProdukbeliConfig.cs" />
     <Compile Include="Config\OrderProductioncustomConfig.cs" />
@@ -192,6 +193,7 @@
     <Compile Include="Domain\ListOrderJual.cs" />
     <Compile Include="Domain\OrderCustomJual.cs" />
     <Compile Include="Domain\OrderJasaJual.cs" />
+    <Compile Include="Domain\ListOrderProduction.cs" />
     <Compile Include="Domain\OrderProdukJual.cs" />
     <Compile Include="Domain\OrderProdukBeli.cs" />
     <Compile Include="Domain\OrderProductioncustom.cs" />
@@ -274,6 +276,7 @@
     <Compile Include="Interface\IOrderFinishedprodukRepo.cs" />
     <Compile Include="Interface\IListOrderJualRepo.cs" />
     <Compile Include="Interface\IOrderJasaJualRepo.cs" />
+    <Compile Include="Interface\IListOrderProductionRepo.cs" />
     <Compile Include="Interface\IOrderProdukJualRepo.cs" />
     <Compile Include="Interface\IOrderProdukBeliRepo.cs" />
     <Compile Include="Interface\IOrderProductioncustomRepo.cs" />
@@ -359,6 +362,7 @@
     <Compile Include="Repositories\OrderFinishedprodukRepo.cs" />
     <Compile Include="Repositories\ListOrderJualRepo.cs" />
     <Compile Include="Repositories\OrderJasaJualRepo.cs" />
+    <Compile Include="Repositories\ListOrderProductionRepo.cs" />
     <Compile Include="Repositories\OrderProdukJualRepo.cs" />
     <Compile Include="Repositories\OrderProdukBeliRepo.cs" />
     <Compile Include="Repositories\OrderProductioncustomRepo.cs" />

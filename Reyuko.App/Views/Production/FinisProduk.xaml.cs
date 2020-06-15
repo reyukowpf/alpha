@@ -33,10 +33,6 @@ namespace Reyuko.App.Views.Production
         }
         public IEnumerable<produk> produks { get; set; }
         public produk produkSelected;
-        public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
-        public DataDepartemen Selectdepartment { get; set; }
-        public IEnumerable<DataProyek> dataProyeks { get; set; }
-        public DataProyek Selectproyek { get; set; }
         private void ClearForm()
         {
         }
@@ -55,26 +51,6 @@ namespace Reyuko.App.Views.Production
                     srsku.ItemsSource = this.produks;
              }
         }
-        public void LoadDepartmen()
-        {
-            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-            {
-                this.dataDepartemens = uow.DataDepartemen.GetAll();
-                cbdepartmen.ItemsSource = this.dataDepartemens;
-                cbdepartmen.SelectedValuePath = "Id";
-                cbdepartmen.DisplayMemberPath = "NamaDepartemen";
-            }
-        }
-        public void LoadProyek()
-        {
-            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-            {
-                this.dataProyeks = uow.DataProyek.GetAll();
-                cbproject.ItemsSource = this.dataProyeks;
-                cbproject.SelectedValuePath = "Id";
-                cbproject.DisplayMemberPath = "NamaProyek";
-            }
-        }
         private void produk_selectedchange(object sender, SelectionChangedEventArgs e)
         {
             this.produkSelected = null;
@@ -85,44 +61,6 @@ namespace Reyuko.App.Views.Production
                 txtprice.Text = this.produkSelected.HargaPokokAverage.ToString();
             }
         }
-        private void department_selectionchange(object sender, SelectionChangedEventArgs e)
-        {
-            this.Selectdepartment = null;
-            if (cbdepartmen.SelectedItem != null)
-            {
-                Selectdepartment = (DataDepartemen)cbdepartmen.SelectedItem;
-            }
-        }
-        private void proyek_selectionchange(object sender, SelectionChangedEventArgs e)
-        {
-            this.Selectproyek = null;
-            if (cbproject.SelectedItem != null)
-            {
-                Selectproyek = (DataProyek)cbproject.SelectedItem;
-            }
-        }
-        public void Departmen_Checked(object sender, EventArgs e)
-        {
-            this.rbdepartmen.IsChecked = true;
-            {
-                cbdepartmen.Visibility = Visibility.Visible;
-                cbproject.Visibility = Visibility.Hidden;
-                cbproject.SelectedIndex = -1;
-                this.LoadDepartmen();
-            }
-        }
-
-        public void Proyek_Checked(object sender, EventArgs e)
-        {
-            this.rbproject.IsChecked = true;
-            {
-                cbproject.Visibility = Visibility.Visible;
-                cbdepartmen.Visibility = Visibility.Hidden;
-                cbdepartmen.SelectedIndex = -1;
-                this.LoadProyek();
-            }
-
-        }
         public OrderFinishedproduk GetData()
         {
             OrderFinishedproduk oData = new OrderFinishedproduk();
@@ -130,18 +68,11 @@ namespace Reyuko.App.Views.Production
             {
                 oData.IdProduk = this.produkSelected.IdProduk;
                 oData.Sku = this.produkSelected.SKU;
+                oData.IdSatuanDasar = this.produkSelected.IdSatuanDasar;
                 oData.SatuanDasar = this.produkSelected.SatuanDasar;
                 oData.HargaProduk = this.produkSelected.HargaPokokAverage;
                 oData.NamaProduk = this.produkSelected.NamaProduk;
                 oData.IdAkunPersediaan = this.produkSelected.IdAkunPersediaan;
-            }
-            if (this.Selectdepartment != null)
-            {
-                oData.IdDepartemen = this.Selectdepartment.Id;
-            }
-            if (this.Selectproyek != null)
-            {
-                oData.IdProyek = this.Selectproyek.Id;
             }
             oData.TotalProduk = double.Parse(txttotal.Text);
             oData.TotalBiaya = double.Parse(txttotal1.Text);

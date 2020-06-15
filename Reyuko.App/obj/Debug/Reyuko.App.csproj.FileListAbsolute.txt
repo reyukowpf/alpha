@@ -5037,5 +5037,5 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.application
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.csproj.CopyComplete
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.exe
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.pdb
-D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skucustom.baml
-D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skucustom.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Production\Skuother.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Production\Skuother.g.cs

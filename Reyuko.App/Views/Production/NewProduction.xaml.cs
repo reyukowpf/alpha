@@ -46,12 +46,17 @@ namespace Reyuko.App.Views.Production
         }
         public Production productionform;
         private IEnumerable<Dokumen> dokumens { get; set; }
+        public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
+        public DataDepartemen dataDepartemenSelected;
+        public IEnumerable<DataProyek> dataProyeks { get; set; }
+        public DataProyek dataProyekSelected;
         private Dokumen dokumenSelected;
         private IEnumerable<Lokasi> lokasis { get; set; }
         private Lokasi lokasiSelected;
         private IEnumerable<Kontak> kontaks { get; set; }
         private Kontak kontakSelected;
-        public IEnumerable<OrderProductioninput> orderProductioninputs { get; set; }
+        public IEnumerable<ListOrderProduction> listOrderProductions { get; set; }
+        public IEnumerable<OrderProductioncustom> orderProductioncustoms { get; set; }
         public OrderProductioninput orderProductioninputSelected;
         public IEnumerable<OrderFinishedproduk> orderFinishedproduks { get; set; }
         public OrderFinishedproduk orderFinishedprodukSelected;
@@ -76,12 +81,12 @@ namespace Reyuko.App.Views.Production
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.orderProductioninputs = uow.OrderProductioninput.GetAll().Where(m => m.CheckboxAktif == true);
-                DGSKUProduction.ItemsSource = this.orderProductioninputs;
+                this.listOrderProductions = uow.ListOrderProduction.GetAll().Where(m => m.CheckboxAktif == true);
+                DGSKUProduction.ItemsSource = this.listOrderProductions;
                 int sum = 0;
                 for (int i = 0; i < DGSKUProduction.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKUProduction.Items[i] as OrderProductioninput).TotalOrderProduk);
+                    sum += Convert.ToInt32((DGSKUProduction.Items[i] as ListOrderProduction).TotalOrder);
                 }
                 txtTotalinput.Text = sum.ToString();
             }
@@ -108,7 +113,7 @@ namespace Reyuko.App.Views.Production
             {
                 this.lokasis = uow.Lokasi.GetAll();
                 cbLocation.DisplayMemberPath = "NamaTempatLokasi";
-                cbLocation.SelectedValuePath = "id_order_finish_produk";
+                cbLocation.SelectedValuePath = "Id";
                 cbLocation.ItemsSource = this.lokasis;
             }
         }
@@ -139,30 +144,6 @@ namespace Reyuko.App.Views.Production
         private void Calculate_Click(object sender, RoutedEventArgs e)
         {
 
-        }
-        private production GetData()
-        {
-            production oData = new production();
-            if (this.dokumenSelected != null)
-            {
-                oData.IdDocumentReference = this.dokumenSelected.Id;
-                oData.DokumenReference = this.dokumenSelected.NoReferensiDokumen;
-            }
-            oData.Tanggal = DateTime.Parse(tanggal.Text);
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.Location = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdKontak = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-            oData.Note = txtNote.Text;
-            oData.ProductionNumber = double.Parse(txtProductionNumber.Text);
-          
-            return oData;
         }
         private void SaveProduction_Click(object sender, RoutedEventArgs e)
         {
@@ -195,6 +176,14 @@ namespace Reyuko.App.Views.Production
             production.ProductionNumber = double.Parse(txtProductionNumber.Text);
             production.TotalDebitAkunPersediaanProduk = double.Parse(txtTotal.Text);
             production.TotalKreditAkunPersediaanProduk = double.Parse(txtTotalinput.Text);
+            if (this.dataDepartemenSelected != null)
+            {
+                production.IdDepartmen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                production.IdProyek = this.dataProyekSelected.Id;
+            }
             if (ProductionBLL.AddProduction(production) > 0)
             {
                 //  this.ClearForm();
@@ -208,9 +197,9 @@ namespace Reyuko.App.Views.Production
             {
                 foreach (var item in DGSKUProduction.Items)
                 {
-                    if (item is OrderProductioninput)
+                    if (item is ListOrderProduction)
                     {
-                        OrderProductioninput oNewData1 = (OrderProductioninput)item;
+                        ListOrderProduction oNewData1 = (ListOrderProduction)item;
                         if (this.lokasiSelected != null)
                         {
                             oNewData1.IdLokasi = this.lokasiSelected.Id;
@@ -218,8 +207,15 @@ namespace Reyuko.App.Views.Production
                         }
                         oNewData1.Tanggal = DateTime.Parse(tanggal.Text);
                         oNewData1.CheckboxAktif = false;
-                        oNewData1.IdProduction = production.Id;
-                        oNewData1.IdAkunPersediaan = production.IdAkunPersediaanProduk; 
+                        oNewData1.IdTransaksi = production.Id;
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyek = this.dataProyekSelected.Id;
+                        }
                         if (productionBLL.EditProductioninput(oNewData1, production) == true)
                         {
                         }
@@ -240,8 +236,14 @@ namespace Reyuko.App.Views.Production
                             }
                             oNewData1.Tanggal = DateTime.Parse(tanggal.Text);
                             oNewData1.CheckboxAktif = false;
-                            oNewData1.IdAkunPersediaan = production.IdAkunPersediaanProduk;
-                            oNewData1.IdProduction = production.Id;
+                            if (this.dataDepartemenSelected != null)
+                            {
+                                oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+                            }
+                            if (this.dataProyekSelected != null)
+                            {
+                                oNewData1.IdProyek = this.dataProyekSelected.Id;
+                            }
                             if (productionBLL.EditFinishedproduk(oNewData1, production) == true)
                             {
                             }
@@ -331,7 +333,22 @@ namespace Reyuko.App.Views.Production
 
         private void Othercost_Click(object sender, RoutedEventArgs e)
         {
+            bool isWindowOpen = false;
 
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skuother)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skuother newsku = new Skuother(this);
+                newsku.Show();
+            }
         }
 
         private void FinishedProduct_Click(object sender, RoutedEventArgs e)
@@ -370,6 +387,65 @@ namespace Reyuko.App.Views.Production
             }
         }
 
+        private void rbdepartmen_Checked(object sender, RoutedEventArgs e)
+        {
+            this.rbdepartmen.IsChecked = true;
+            {
+                cbdepartmen.Visibility = Visibility.Visible;
+                cbproject.Visibility = Visibility.Hidden;
+                cbproject.SelectedIndex = -1;
+                this.LoadDepartmen();
+            }
+        }
+        public void LoadDepartmen()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.dataDepartemens = uow.DataDepartemen.GetAll();
+                cbdepartmen.ItemsSource = this.dataDepartemens;
+                cbdepartmen.SelectedValuePath = "Id";
+                cbdepartmen.DisplayMemberPath = "NamaDepartemen";
+            }
+        }
+
+        private void rbproject_Checked(object sender, RoutedEventArgs e)
+        {
+            this.rbproject.IsChecked = true;
+            {
+                cbproject.Visibility = Visibility.Visible;
+                cbdepartmen.Visibility = Visibility.Hidden;
+                cbdepartmen.SelectedIndex = -1;
+                this.LoadProyek();
+            }
+        }
+
+        public void LoadProyek()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.dataProyeks = uow.DataProyek.GetAll();
+                cbproject.ItemsSource = this.dataProyeks;
+                cbproject.SelectedValuePath = "Id";
+                cbproject.DisplayMemberPath = "NamaProyek";
+            }
+        }
+
+        private void cbdepartmen_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.dataDepartemenSelected = null;
+            if (cbdepartmen.SelectedItem != null)
+            {
+                this.dataDepartemenSelected = (DataDepartemen)cbdepartmen.SelectedItem;
+            }
+        }
+        private void cbproyek_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.dataProyekSelected = null;
+            if (cbproject.SelectedItem != null)
+            {
+                this.dataProyekSelected = (DataProyek)cbproject.SelectedItem;
+            }
+        }
     }
 }
              

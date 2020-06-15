@@ -94,6 +94,7 @@ namespace Reyuko.DAL
         public virtual DbSet<ListOrderJual> ListOrderJual { get; set; }
         public virtual DbSet<OrderJasaJual> OrderJasaJual { get; set; }
         public virtual DbSet<OrderCustomJual> OrderCustomJual { get; set; }
+        public virtual DbSet<ListOrderProduction> ListOrderProduction { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -178,6 +179,7 @@ namespace Reyuko.DAL
             modelBuilder.Configurations.Add(new ListOrderJualConfig());
             modelBuilder.Configurations.Add(new OrderJasaJualConfig());
             modelBuilder.Configurations.Add(new OrderCustomJualConfig());
+            modelBuilder.Configurations.Add(new ListOrderProductionConfig());
         }
     }
 }

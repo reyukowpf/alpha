@@ -502,6 +502,9 @@
     <Compile Include="Views\PaymentTerm\PaymentTerms.xaml.cs">
       <DependentUpon>PaymentTerms.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Production\Skuother.xaml.cs">
+      <DependentUpon>Skuother.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Project\NewProject.xaml.cs">
       <DependentUpon>NewProject.xaml</DependentUpon>
     </Compile>
@@ -1101,6 +1104,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PaymentTerm\PaymentTerms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Production\Skuother.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

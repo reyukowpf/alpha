@@ -131,8 +131,22 @@ namespace Reyuko.BLL.Core
                         oNewumum = uow.OrderProductioninput.Add(oNewumum);
                         uow.Save();
 
-                        traceID = 3;
-                        oData.IdOrderProduction = oNewumum.IdOrderProduction;
+                        if (oNewumum.IdOrderProduction > 0)
+                        {
+                            traceID = 3;
+                            oData.IdOrderProduction = oNewumum.IdOrderProduction;
+                            ListOrderProduction oNewListOrderJual = new ListOrderProduction();
+                            oNewListOrderJual.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewListOrderJual.IdOrder = oData.IdOrderProduction;
+                            oNewListOrderJual.Jumlah = oData.JumlahProduk;
+                            oNewListOrderJual.TotalOrder = oData.TotalOrderProduk;
+                            uow.ListOrderProduction.Add(oNewListOrderJual);
+                        }
+
+                        traceID = 5;
+                        uow.Save();
                         trans.Commit();
                     }
                     catch (Exception ex)
@@ -145,7 +159,7 @@ namespace Reyuko.BLL.Core
 
             return oData.IdOrderProduction;
         }
-        public bool EditProductioninput(OrderProductioninput oData, production oDatas)
+        public bool EditProductioninput(ListOrderProduction oData, production oDatas)
         {
             methodName = "EditProductioninput";
             traceID = 1;
@@ -153,7 +167,7 @@ namespace Reyuko.BLL.Core
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
                 traceID = 2;
-                var oDBData = uow.OrderProductioninput.Get(oData.IdOrderProduction);
+                var oDBData = uow.ListOrderProduction.Get(oData.Id);
                 if (oDBData != null)
                 {
                     using (var trans = uow.BeginTransaction())
@@ -162,9 +176,44 @@ namespace Reyuko.BLL.Core
                         {
                             traceID = 3;
                             oDBData.MapFrom(oData);
-                            uow.OrderProductioninput.Update(oDBData);
+                            uow.ListOrderProduction.Update(oDBData);
 
-                            traceID = 6;
+                            traceID = 4;
+                            OrderProductioninput oDBListorderjual = uow.OrderProductioninput.SingleOrDefault(m => m.IdOrderProduction == oData.IdOrder);
+                            if (oDBListorderjual != null)
+                            {
+                                traceID = 5;
+                                oDBListorderjual.MapFrom(oData);
+
+                                traceID = 6;
+                                uow.OrderProductioninput.Update(oDBListorderjual);
+                            }
+                            else
+                            {
+                                traceID = 7;
+                                OrderProductioninput oNewListorderjual = new OrderProductioninput();
+                                oNewListorderjual.MapFrom(oData);
+
+                                traceID = 8;
+                                uow.OrderProductioninput.Add(oNewListorderjual);
+                            }
+                            traceID = 9;
+                            OrderProductioncustom oDBListorderjual1 = uow.OrderProductioncustom.SingleOrDefault(m => m.IdOrderProductionCustom == oData.IdOrder);
+                            if (oDBListorderjual1 != null)
+                            {
+                                traceID = 10;
+                                oDBListorderjual1.MapFrom(oData);
+
+                                traceID = 11;
+                                uow.OrderProductioncustom.Update(oDBListorderjual1);
+                            }
+                            else
+                            {
+                                traceID = 12;
+
+                                traceID = 13;
+                            }
+                            traceID = 14;
                             uow.Save();
                             trans.Commit();
                         }
@@ -196,8 +245,25 @@ namespace Reyuko.BLL.Core
                         oNewumum = uow.OrderProductioncustom.Add(oNewumum);
                         uow.Save();
 
-                        traceID = 3;
-                        oData.IdOrderProductionCustom = oNewumum.IdOrderProductionCustom;
+                        if (oNewumum.IdOrderProductionCustom > 0)
+                        {
+                            traceID = 3;
+                            oData.IdOrderProductionCustom = oNewumum.IdOrderProductionCustom;
+                            ListOrderProduction oNewListOrderJual = new ListOrderProduction();
+                            oNewListOrderJual.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewListOrderJual.IdOrder = oData.IdOrderProductionCustom;
+                           // oNewListOrderJual.Jumlah = oData.JumlahCustom;
+                            oNewListOrderJual.Sku = oData.NamaCustom;
+                        //    oNewListOrderJual.HargaPokok = oData.HargaCustom;
+                          //  oNewListOrderJual.SatuanDasar = oData.SatuanCustom;
+                            oNewListOrderJual.TotalOrder = oData.TotalCustom;
+                            uow.ListOrderProduction.Add(oNewListOrderJual);
+                        }
+
+                        traceID = 5;
+                        uow.Save();
                         trans.Commit();
                     }
                     catch (Exception ex)
@@ -209,40 +275,6 @@ namespace Reyuko.BLL.Core
             }
 
             return oData.IdOrderProductionCustom;
-        }
-        public bool EditProductioncustom(OrderProductioncustom oData, production oDatas)
-        {
-            methodName = "EditProductioncustom";
-            traceID = 1;
-
-            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-            {
-                traceID = 2;
-                var oDBData = uow.OrderProductioncustom.Get(oData.IdOrderProductionCustom);
-                if (oDBData != null)
-                {
-                    using (var trans = uow.BeginTransaction())
-                    {
-                        try
-                        {
-                            traceID = 3;
-                            oDBData.MapFrom(oData);
-                            uow.OrderProductioncustom.Update(oDBData);
-
-                            traceID = 6;
-                            uow.Save();
-                            trans.Commit();
-                        }
-                        catch (Exception ex)
-                        {
-                            trans.Rollback();
-                            throw new AppException(500, methodName, traceID, ex);
-                        }
-                    }
-                }
-            }
-
-            return true;
         }
         public int AddOrderFinishedproduk(OrderFinishedproduk oData)
         {

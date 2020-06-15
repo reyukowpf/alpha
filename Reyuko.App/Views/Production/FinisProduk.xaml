@@ -91,10 +91,6 @@
             <TextBlock x:Name="txtprice" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
         </Border>
         <TextBlock x:Name="txttotal1" HorizontalAlignment="Left" Height="28" Margin="10,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <RadioButton x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="170,140,0,0" VerticalAlignment="Top" Checked="Departmen_Checked"/>
-        <RadioButton x:Name="rbproject" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="270,140,0,0" VerticalAlignment="Top" Checked="Proyek_Checked"/>
-        <ComboBox x:Name="cbdepartmen" HorizontalAlignment="Left" FontSize="12.5" Margin="170,165,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="department_selectionchange"/>
-        <ComboBox x:Name="cbproject" HorizontalAlignment="Left" FontSize="12.5" Margin="170,165,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="proyek_selectionchange"/>
         <Button HorizontalAlignment="Right" Margin="0,18,100,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="Addsku_Clicks">
             <StackPanel Orientation="Horizontal">

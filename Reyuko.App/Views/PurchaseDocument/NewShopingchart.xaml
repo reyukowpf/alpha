@@ -6,8 +6,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.PurchaseDocument.NewShopingchart"
-    Height="730"
-    d:DesignWidth="820"
+    d:DesignHeight="730"
+    d:DesignWidth="800"
     FontSize="14"
     Background="White"
     mc:Ignorable="d" VerticalAlignment="Top">
@@ -138,11 +138,11 @@
         <Label Content="Request No" FontSize="12.5" HorizontalAlignment="Left" Margin="190,118,0,0" VerticalAlignment="Top"/>
         <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="10,178,0,0" VerticalAlignment="Top"/>
         <Label Content="Location" FontSize="12.5" HorizontalAlignment="Left" Margin="350,178,0,0" VerticalAlignment="Top"/>
-        <Label Content="Required Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,514,0,0" VerticalAlignment="Top"/>
-        <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,574,0,0" VerticalAlignment="Top"/>
-        <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,574,0,0" VerticalAlignment="Top"/>
-        <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,629,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="chkannual" Content="Annual" FontSize="12.5" HorizontalAlignment="Left" Margin="185,514,0,0" VerticalAlignment="Top"/>
+        <Label Content="Required Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,440,0,0" VerticalAlignment="Top"/>
+        <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,500,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,500,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,560,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkannual" Content="Annual" FontSize="12.5" HorizontalAlignment="Left" Margin="185,445,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="rbdeprtmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,178,0,0" VerticalAlignment="Top" Checked="rbdeprtmen_Checked"/>
         <RadioButton x:Name="rbprojec" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,178,0,0" VerticalAlignment="Top" Checked="rbprojec_Checked"/>
         <CheckBox x:Name="chkcomplete" Content="Complete" FontSize="12.5" HorizontalAlignment="Left" Margin="680,213,0,0" VerticalAlignment="Top"/>
@@ -205,13 +205,13 @@
         <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" FontSize="12.5" Margin="350,203,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
         <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" FontSize="12.5" Margin="520,203,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
         <ComboBox x:Name="cbProyek" HorizontalAlignment="Left" FontSize="12.5" Margin="520,203,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
-        <DatePicker x:Name="dtRequired" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,539,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" HorizontalAlignment="Left" FontSize="12.5" Margin="185,539,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
+        <DatePicker x:Name="dtRequired" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,465,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" HorizontalAlignment="Left" FontSize="12.5" Margin="185,465,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,599,0,0">
+                        CornerRadius="0" Margin="10,525,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srstaff" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="staff_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -225,13 +225,15 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <TextBox x:Name="txtAnnualFrequency" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,599,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
-        <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,659,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="txtAnnualFrequency" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,525,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
+        <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,585,0,0" VerticalAlignment="Top" Width="150"/>
         <DataGrid
             x:Name="DGSKUShopingChart"
-            Height="Auto"
-            MinWidth="400"
-            Margin="10,255,0,221"
+            Height="180"
+            Width="750"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,245,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
