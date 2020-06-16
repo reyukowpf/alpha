@@ -213,6 +213,7 @@
                     <TextBlock x:Name="txtWide" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,408,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                     <TextBlock x:Name="txtTall" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,443,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                     <TextBlock x:Name="txtWeight" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="594,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <Image x:Name="imagedefault" Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
                     <Image x:Name="Image1" HorizontalAlignment="Right" Height="220" Margin="684,60,10,0" VerticalAlignment="Top" Width="180" Stretch="Fill"/>
                     <Image x:Name="Image2" HorizontalAlignment="Right" Height="50" Margin="684,290,150,0" VerticalAlignment="Top" Width="60" Stretch="Fill"/>
                     <Image x:Name="Image3" HorizontalAlignment="Right" Height="50" Margin="746,290,80,0" VerticalAlignment="Top" Width="60" Stretch="Fill"/>

@@ -72,7 +72,7 @@ namespace Reyuko.App.Views.Invoice
                 oData.IdProduk = this.produkSelected.IdProduk;
                 oData.ProdukKategori = this.produkSelected.ProdukKategori;
                 oData.Sku = this.produkSelected.SKU;
-                oData.AkunJasa = this.produkSelected.IdTipeProduk;
+                oData.AkunJasa = this.produkSelected.IdAkunJasa;
                 oData.HargaJasa = this.produkSelected.HargaJual;
                 oData.NamaProduk = this.produkSelected.NamaProduk;
                 oData.Persentase = this.produkSelected.PersentasePajak;

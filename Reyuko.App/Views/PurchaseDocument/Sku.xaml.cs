@@ -73,7 +73,6 @@ namespace Reyuko.App.Views.PurchaseDocument
                 oData.Sku = this.produkSelected.SKU;
                 oData.SatuanDasar = this.produkSelected.SatuanDasar;
                 oData.HargaBeli = this.produkSelected.HargaBeli;
-                oData.DiskonProduk = this.produkSelected.DiskonProdukPersen;
                 oData.NamaProduk = this.produkSelected.NamaProduk;
           //      oData.PersentasePajak = this.produkSelected.PersentasePajak;
             }

@@ -524,11 +524,11 @@ namespace Reyuko.App.Views.ReceivedGood
                         }
                         if (this.dataDepartemenSelected != null)
                         {
-                            oNewData1.IdDepartemenProduk = this.dataDepartemenSelected.Id;
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
                         }
                         if (this.dataProyekSelected != null)
                         {
-                            oNewData1.IdProyekProduk = this.dataProyekSelected.Id;
+                            oNewData1.IdProyek = this.dataProyekSelected.Id;
                         }
                         receivedgood.IdAkunPersediaanProduk = oNewData1.AkunPersediaan;
                         oNewData1.Checkboxaktif = false;

@@ -97,6 +97,8 @@ namespace Reyuko.DAL
             OrderJasaJual = new OrderJasaJualRepo(_context);
             OrderCustomJual = new OrderCustomJualRepo(_context);
             ListOrderProduction = new ListOrderProductionRepo(_context);
+            OrderJasaBeli = new OrderJasaBeliRepo(_context);
+            ListOrderBeli = new ListOrderBeliRepo(_context);
         }
 
 
@@ -191,6 +193,8 @@ namespace Reyuko.DAL
         public IOrderJasaJualRepo OrderJasaJual { get; private set; }
         public IOrderCustomJualRepo OrderCustomJual { get; private set; }
         public IListOrderProductionRepo ListOrderProduction { get; private set; }
+        public IOrderJasaBeliRepo OrderJasaBeli { get; private set; }
+        public IListOrderBeliRepo ListOrderBeli { get; private set; }
 
         public IDBTransaction BeginTransaction(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Snapshot)
         {

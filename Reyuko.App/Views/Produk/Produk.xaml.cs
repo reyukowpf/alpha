@@ -156,6 +156,8 @@ namespace Reyuko.App.Views.Produk
                         Vendor4.Text = this.produk.KeteranganSuplierD;
                         if (!string.IsNullOrEmpty(this.produk.UploadImage0))
                             Image1.Source = new BitmapImage(new Uri(Path.GetFullPath(this.produk.UploadImage0)));
+                        else if (!string.IsNullOrEmpty(this.produk.UploadImage0))
+                            Image1.Source = new BitmapImage(new Uri(Path.GetFullPath("/Reyuko.App/bin/Debug/files/images/1.jpg")));
                         if (!string.IsNullOrEmpty(this.produk.UploadImage1))
                             Image2.Source = new BitmapImage(new Uri(Path.GetFullPath(this.produk.UploadImage1)));
                         if (!string.IsNullOrEmpty(this.produk.UploadImage2))

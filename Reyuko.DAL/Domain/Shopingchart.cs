@@ -11,7 +11,7 @@ namespace Reyuko.DAL.Domain
         public double? Nilai { get; set; }
         public int? IdUserId { get; set; }
         public int? IdPeriodeAkuntansi { get; set; }
-        public string RealRecordingTime { get; set; }
+        public DateTime? RealRecordingTime { get; set; }
         public bool? CheckboxSelesai { get; set; }
         public int? IdKodeTransaksi { get; set; }
         public int? idTransaksi { get; set; }

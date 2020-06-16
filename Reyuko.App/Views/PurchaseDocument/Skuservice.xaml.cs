@@ -1,5 +1,4 @@
-﻿using DevExpress.Xpf.Editors.Helpers;
-using Reyuko.BLL.Core;
+﻿using Reyuko.BLL.Core;
 using Reyuko.DAL;
 using Reyuko.DAL.Domain;
 using Reyuko.Utils;
@@ -19,23 +18,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Reyuko.App.Views.ReceivedGood
+namespace Reyuko.App.Views.PurchaseDocument
 {
     /// <summary>
    
     /// </summary>
-    public partial class Sku : Window
+    public partial class Skuservice : Window
     {
-        public Sku(NewReceivedGood newReceivedGood)
+        public Skuservice(NewShopingchart newshoping)
         {
             InitializeComponent();
-            this.newReceivedGood = newReceivedGood;
+            this.newshoping = newshoping;
             this.Init();
         }
         public IEnumerable<produk> produks { get; set; }
         public produk produkSelected;
         private void ClearForm()
         {
+            
         }
 
         private void Init()
@@ -43,7 +43,7 @@ namespace Reyuko.App.Views.ReceivedGood
             this.ClearForm();
             this.Loadproduk();
         }
-        public NewReceivedGood newReceivedGood;
+        public NewShopingchart newshoping;
         private void Loadproduk()
         {
              using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -58,52 +58,46 @@ namespace Reyuko.App.Views.ReceivedGood
             if (srsku.SelectedItem != null)
             {
                 this.produkSelected = (produk)srsku.SelectedItem;
-                txtunit.Text = this.produkSelected.SatuanDasar;
-                txtprice.Text = this.produkSelected.HargaPokokAverage.ToString();
+                txtprice.Text = this.produkSelected.HargaJual.ToString();
                 txtdiskon.Text = this.produkSelected.DiskonProdukPersen;
                 txttax.Text = this.produkSelected.PersentasePajak.ToString();
                 txtdiskon1.Text = ((float.Parse(txtprice.Text.ToString()) * float.Parse(txtdiskon.Text.ToString()) / 100)).ToString();
             }
         }
-        public OrderProdukBeli GetData()
+        public OrderJasaBeli GetData()
         {
-            OrderProdukBeli oData = new OrderProdukBeli();
+            OrderJasaBeli oData = new OrderJasaBeli();
             if (this.produkSelected != null)
             {
                 oData.IdProduk = this.produkSelected.IdProduk;
                 oData.Sku = this.produkSelected.SKU;
-                oData.SatuanDasar = this.produkSelected.SatuanDasar;
-                oData.HargaBeli = this.produkSelected.HargaBeli;
-                oData.NamaProduk = this.produkSelected.NamaProduk;
+                oData.NamaJasa = this.produkSelected.NamaProduk;
+                oData.HargaJasa = this.produkSelected.HargaBeli;
                 oData.PersentasePajak = this.produkSelected.PersentasePajak;
+                oData.IdAkunPajakJasa = this.produkSelected.IdAkunPajak;
                 oData.IdPajak = this.produkSelected.IdPajak;
                 oData.NamaPajak = this.produkSelected.Pajak;
-                oData.IdAkunPajakProduk = this.produkSelected.IdAkunPajak;
-                oData.IdTypeProduk = this.produkSelected.IdTipeProduk;
-                oData.TypeProduk = this.produkSelected.TipeProduk;
-                oData.AkunPersediaan = this.produkSelected.IdAkunPersediaan;
-                oData.AkunPengirimanBeli = this.produkSelected.IdAkunPengirimanBeli;
-                oData.ProdukKategori = this.produkSelected.ProdukKategori;
-            }           
-            oData.DiskonProduk = double.Parse(txtdiskon1.Text);
-            oData.TotalProduk = int.Parse(txttotal.Text);
-            oData.TotalOrderProduk = double.Parse(txttotal1.Text);
-            oData.TotalPajakProduk = double.Parse(txttotaltax.Text);
+                oData.IdAkunJasa = this.produkSelected.IdAkunJasa;
+            }
+            oData.DiskonJasa = double.Parse(txtdiskon1.Text);
+            oData.TotalJasa = int.Parse(txttotal.Text);
+            oData.TotalOrderJasa = double.Parse(txttotal1.Text);
+            oData.TotalPajakJasa = double.Parse(txttotaltax.Text);
             oData.Checkboxaktif = true;
             return oData;
         }
         public void Addsku_Clicks(object sender, RoutedEventArgs e)
         {
-            ReceivedGoodsBLL receivedBLL = new ReceivedGoodsBLL();
-                if (receivedBLL.AddOrderProdukbeli(this.GetData()) > 0)
+            ShopingchartBLL shopingBLL = new ShopingchartBLL();
+                if (shopingBLL.AddOrderJasabeli(this.GetData()) > 0)
                 {
                     this.ClearForm();
-                    MessageBox.Show("Add Order Buy Product successfully added !");
-                    this.newReceivedGood.LoadDataSku();
+                    MessageBox.Show("Add Order Buy Service successfully added !");
+                   this.newshoping.LoadDataSku();
                 }
                 else
                 {
-                    MessageBox.Show("Add Order Buy Product failed to add !");
+                    MessageBox.Show("Add Order Sell Service failed to add !");
                 }
             this.Close();
         }

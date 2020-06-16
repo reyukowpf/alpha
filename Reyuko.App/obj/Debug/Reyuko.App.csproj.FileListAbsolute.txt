@@ -5039,3 +5039,5 @@ D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.exe
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Reyuko.App.pdb
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Production\Skuother.baml
 D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Production\Skuother.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\PurchaseDocument\Skuservice.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\PurchaseDocument\Skuservice.g.cs

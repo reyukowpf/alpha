@@ -146,6 +146,21 @@
         <RadioButton x:Name="rbdeprtmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,178,0,0" VerticalAlignment="Top" Checked="rbdeprtmen_Checked"/>
         <RadioButton x:Name="rbprojec" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,178,0,0" VerticalAlignment="Top" Checked="rbprojec_Checked"/>
         <CheckBox x:Name="chkcomplete" Content="Complete" FontSize="12.5" HorizontalAlignment="Left" Margin="680,213,0,0" VerticalAlignment="Top"/>
+        <Button HorizontalAlignment="Left" Margin="10,245,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="produk_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/red_plus.png" Height="20"/>
+                <TextBlock Text=" Product" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Left" Margin="100,245,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="service_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/green_plus.png" Height="20"/>
+                <TextBlock Text=" Service" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
@@ -201,6 +216,7 @@
             </DockPanel>
         </Border>
         <TextBox x:Name="txtRequestNo" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtRequestNo_TextChanged"/>
+        <TextBlock x:Name="txttotalbeforetax" Visibility="Hidden" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="350,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,203,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
         <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" FontSize="12.5" Margin="350,203,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
         <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" FontSize="12.5" Margin="520,203,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
@@ -229,11 +245,11 @@
         <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,585,0,0" VerticalAlignment="Top" Width="150"/>
         <DataGrid
             x:Name="DGSKUShopingChart"
-            Height="180"
+            Height="165"
             Width="750"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="10,245,0,0"
+            Margin="10,270,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -253,18 +269,16 @@
                     <Setter Property="Background" Value="#d3d3d3" />
                     <Setter Property="Foreground" Value="White" />
                 </Style>
-
-
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" IsReadOnly="True" Binding="{Binding Sku}" x:Name="temp">
-                    <DataGridTextColumn.Header>
-                        <Grid Margin="0">
-                            <Button x:Name="btnskuu" Content="SKU / Name" Background="Transparent" BorderThickness="0"
-            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="120" Click="btnsku">
-                            </Button>
-                        </Grid>
-                    </DataGridTextColumn.Header>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Sku}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="SKU / Name">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -274,14 +288,14 @@
                     </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
-                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
                             <Setter Property="VerticalAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="150"
-                    Binding="{Binding Total}"
+                    Width="120"
+                    Binding="{Binding Jumlah}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -302,8 +316,8 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="150"
-                    Binding="{Binding Unit}"
+                    Width="80"
+                    Binding="{Binding SatuanDasar}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -324,7 +338,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="150"
+                    Width="80"
                     Binding="{Binding Budget}"
                     CanUserReorder="False"
                     CanUserResize="False"

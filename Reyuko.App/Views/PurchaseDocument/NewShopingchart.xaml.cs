@@ -39,6 +39,7 @@ namespace Reyuko.App.Views.PurchaseDocument
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         public IEnumerable<Dokumen> dokumens { get; set; }
+        public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
         public Dokumen dokumenSelected { get; set; }
         public IEnumerable<Lokasi> lokasi { get; set; }
         public Lokasi lokasiSelected { get; set; }
@@ -215,25 +216,6 @@ namespace Reyuko.App.Views.PurchaseDocument
                 this.dokumenSelected = (Dokumen)srnodokumen.SelectedItem;
             }
         }
-        private void btnsku(object sender, RoutedEventArgs e)
-        {
-            bool isWindowOpen = false;
-
-            foreach (Window w in Application.Current.Windows)
-            {
-                if (w is Skushopingchart)
-                {
-                    isWindowOpen = true;
-                    w.Activate();
-                }
-            }
-
-            if (!isWindowOpen)
-            {
-               Skushopingchart newVendor = new Skushopingchart(this);
-                newVendor.Show();
-            }
-        }
         private void lokasi_selectedchange(object sender, SelectionChangedEventArgs e)
         {
             this.lokasiSelected = null;
@@ -253,6 +235,44 @@ namespace Reyuko.App.Views.PurchaseDocument
         private void StockList_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void produk_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skushopingchart)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skushopingchart newsku = new Skushopingchart(this);
+                newsku.Show();
+            }
+        }
+        private void service_Click(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skuservice)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skuservice newsku = new Skuservice(this);
+                newsku.Show();
+            }
         }
 
         private void Print_Click(object sender, RoutedEventArgs e)
@@ -390,6 +410,20 @@ namespace Reyuko.App.Views.PurchaseDocument
 
             }
         }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.listOrderBelis = uow.ListOrderBeli.GetAll().Where(m => m.Checkboxaktif == true);
+                DGSKUShopingChart.ItemsSource = this.listOrderBelis;
+                int sumar = 0;
+                for (int i = 0; i < DGSKUShopingChart.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKUShopingChart.Items[i] as ListOrderBeli).TotalOrder);
+                }
+                   txttotalbeforetax.Text = sumar.ToString();             
+            }
+        }
 
         private void DGSKUShopingChart_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -463,18 +497,102 @@ namespace Reyuko.App.Views.PurchaseDocument
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            ShopingchartBLL shopingchartBLL = new ShopingchartBLL();
-            if (shopingchartBLL.AddShopingcharts(this.GetData()) > 0)
+            ShopingchartBLL shopingBLL = new ShopingchartBLL();
+            ShopingchartBLL ShopingBLL = new ShopingchartBLL();
+            Shopingchart shoping = new Shopingchart();
+            shoping.IdKodeTransaksi = 14;
+            shoping.KodeTransaksi = "MR";
+            if (this.kontakSelected != null)
             {
-
+                shoping.IdEmployee = this.kontakSelected.Id;
+                shoping.NamaManager = this.kontakSelected.NamaA;
+            }
+            shoping.Email = txtemail.Text;
+            shoping.Nohp = txthp.Text;
+            shoping.TanggaldiBuat = DateTime.Parse(dtIssued.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                shoping.IdMataUang = this.DataMataUangSelected.Id;
+                shoping.MataUang = this.DataMataUangSelected.KodeMataUang;
+                shoping.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                shoping.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                shoping.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            shoping.NoPermintaanBarang = txtRequestNo.Text;
+            if (this.lokasiSelected != null)
+            {
+                shoping.IdLokasi = this.lokasiSelected.Id;
+                shoping.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            shoping.Keterangan = txtNote.Text;
+            if (this.dataDepartemenSelected != null)
+            {
+                shoping.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                shoping.IdProyek = this.dataProyekSelected.Id;
+            }
+            shoping.CheckboxSelesai = chkcomplete.IsChecked;
+            shoping.TanggalDigunakan = DateTime.Parse(dtRequired.Text);
+            shoping.CheckboxBerulang = chkannual.IsChecked;
+            if (this.optionAnnualSelected != null)
+            {
+                shoping.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                shoping.Annual = this.optionAnnualSelected.Annual;
+            }
+            if (this.kontakSelected != null)
+            {
+                shoping.IdPetugas = this.kontakSelected.Id;
+                shoping.NamaPetugas = this.kontakSelected.NamaA;
+            }
+            shoping.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
+            shoping.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
+            shoping.Nilai = double.Parse(txttotalbeforetax.Text);
+            shoping.IdUserId = 1;
+            shoping.IdPeriodeAkuntansi = 1;
+            shoping.RealRecordingTime = DateTime.Now;
+            if (ShopingBLL.AddShopingcharts(shoping) > 0)
+            {
+                //  this.ClearForm();
                 MessageBox.Show("Shoping Chart successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
             }
             else
             {
-                MessageBox.Show("Shoping Chart failed to be added !");
+                MessageBox.Show("Shoping Chart failed to add !");
             }
-            PurchaseDocument v = new PurchaseDocument();
+            if (DGSKUShopingChart.Items.Count > 0)
+            {
+                foreach (var item in DGSKUShopingChart.Items)
+                {
+                    if (item is ListOrderBeli)
+                    {
+                        ListOrderBeli oNewData1 = (ListOrderBeli)item;
+                        oNewData1.Tanggal = DateTime.Parse(dtIssued.Text);
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyek = this.dataProyekSelected.Id;
+                        }
+                        oNewData1.Checkboxaktif = false;
+                        if (shopingBLL.EditOrderProdukBeli(oNewData1, shoping) == true)
+                        {
+                        }
+                    }
+                }
+            }
+                PurchaseDocument v = new PurchaseDocument();
             Switcher.SwitchNewShopingchart(v);
         }
 

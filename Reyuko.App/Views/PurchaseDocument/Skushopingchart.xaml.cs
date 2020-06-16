@@ -70,27 +70,35 @@ namespace Reyuko.App.Views.PurchaseDocument
             if (this.produkSelected != null)
             {
                 oData.IdProduk = this.produkSelected.IdProduk;
+                oData.ProdukKategori = this.produkSelected.ProdukKategori;
                 oData.Sku = this.produkSelected.SKU;
                 oData.SatuanDasar = this.produkSelected.SatuanDasar;
+                oData.IdPajak = this.produkSelected.IdPajak;
+                oData.NamaPajak = this.produkSelected.Pajak;
+                oData.PersentasePajak = this.produkSelected.PersentasePajak;
                 oData.HargaBeli = this.produkSelected.HargaBeli;
-                oData.DiskonProduk = this.produkSelected.DiskonProdukPersen;
+                oData.IdAkunPajakProduk = this.produkSelected.IdAkunPajak;
                 oData.NamaProduk = this.produkSelected.NamaProduk;
-          //      oData.PersentasePajak = this.produkSelected.PersentasePajak;
+                oData.IdTypeProduk = this.produkSelected.IdTipeProduk;
+                oData.TypeProduk = this.produkSelected.TipeProduk;
+                oData.AkunPersediaan = this.produkSelected.IdAkunPersediaan;
+                oData.AkunPengirimanBeli = this.produkSelected.IdAkunPengirimanBeli;
             }
+            oData.TotalPajakProduk = double.Parse(txttotaltax.Text);
+            oData.DiskonProduk = double.Parse(txtdiskon1.Text);
             oData.TotalProduk = int.Parse(txttotal.Text);
             oData.TotalOrderProduk = double.Parse(txttotal1.Text);
-            oData.PersentasePajak = double.Parse(txttotaltax.Text);
             oData.Checkboxaktif = true;
             return oData;
         }
         public void Addsku_Clicks(object sender, RoutedEventArgs e)
         {
-            PurchaseordersBLL purchaseorderBLL = new PurchaseordersBLL();
-                if (purchaseorderBLL.AddOrderProdukbeli(this.GetData()) > 0)
+            ShopingchartBLL shopingBLL = new ShopingchartBLL();
+                if (shopingBLL.AddOrderProdukbeli(this.GetData()) > 0)
                 {
                     this.ClearForm();
                     MessageBox.Show("Add Order Buy Product successfully added !");
-                    //this.newShopingchart.LoadDataSku();
+                    this.newShopingchart.LoadDataSku();
                 }
                 else
                 {

@@ -546,38 +546,38 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2765784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2777048">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>7do03jkcaCiwG5jDkOZZOslPUbKNMcEnXChR8oVuVfU=</dsig:DigestValue>
+        <dsig:DigestValue>HEBVQfTX3ev54ubkqoO+vqW0kgJ5Amrdjck7JPyHyTE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.BLL.dll" size="107520">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.BLL.dll" size="110080">
       <assemblyIdentity name="Reyuko.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>XhgvBhhfuMC5k+m3qKCxuI0H8BifHjEz6qBITvSBr2E=</dsig:DigestValue>
+        <dsig:DigestValue>7tGV5dW0F6VH6UBCKfSMUJqqnCOLrClUtKUmE3dLmwI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.DAL.dll" size="531456">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.DAL.dll" size="543744">
       <assemblyIdentity name="Reyuko.DAL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>I8P05+rc2TsxDT7ASFR6mtWEzfrxQ7NrI9Okb3ncE8E=</dsig:DigestValue>
+        <dsig:DigestValue>efeGLD1ke4tob6RDWTC2HFx7JWPp3hJviStjSBDDiAU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

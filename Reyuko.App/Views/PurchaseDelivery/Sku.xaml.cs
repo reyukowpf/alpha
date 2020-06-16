@@ -76,7 +76,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 oData.NamaProduk = this.produkSelected.NamaProduk;
                 oData.PersentasePajak = this.produkSelected.PersentasePajak;
             }
-            oData.DiskonProduk = txtdiskon1.Text;
+            oData.DiskonProduk = double.Parse(txtdiskon1.Text);
             oData.TotalProduk = int.Parse(txttotal.Text);
             oData.TotalOrderProduk = double.Parse(txttotal1.Text);
             oData.TotalPajakProduk = double.Parse(txttotaltax.Text);

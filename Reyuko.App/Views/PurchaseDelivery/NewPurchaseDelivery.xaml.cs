@@ -257,69 +257,6 @@ namespace Reyuko.App.Views.PurchaseDelivery
 
         }
 
-        public Purchasedelivery GetData()
-        {
-            Purchasedelivery oData = new Purchasedelivery();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalPengantaran = DateTime.Parse(dtPurchase.Text);
-            oData.NoPengirimanBarangPembelian = double.Parse(txtPurchaseDeliveryNo.Text);
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalPengirimanBarangPembelian = DateTime.Parse(dtDelivery.Text);
-            oData.DurationBerulang = double.Parse(txtAnnualFrequency.Text);
-            oData.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdVendor = this.kontakSelected.Id;
-                oData.NamaVendor = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMataUang = this.DataMataUangSelected.Id;
-                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.purchaseOrderSelected != null)
-            {
-                oData.IdOrderPembelian = this.purchaseOrderSelected.IdOrderPembelian;
-                oData.NoOrderPembelian = this.purchaseOrderSelected.NoOrderPembelian;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-
-            }
-            if (this.optionAnnualSelected != null)
-            {
-                oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                oData.Annual = this.optionAnnualSelected.Annual;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-
-            oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
-            oData.CheckboxBerulang = chkannual.IsChecked;
-
-            return oData;
-        }
         private void btnsku(object sender, RoutedEventArgs e)
         {
             bool isWindowOpen = false;
@@ -351,7 +288,6 @@ namespace Reyuko.App.Views.PurchaseDelivery
             PurchasedeliveryBLL PurchaseBLL = new PurchasedeliveryBLL();
             Purchasedelivery purchase = new Purchasedelivery();
             purchase.IdKodeTransaksi = 26;
-         //   purchase.IdReferalTransaksi = "26" + "." + purchase.IdPengirimanBarangPembelian;
             purchase.KodeTransaksi = "PD";
             purchase.NoPengirimanBarangPembelian = double.Parse(txtPurchaseDeliveryNo.Text);
             if (this.kontakSelected != null)
