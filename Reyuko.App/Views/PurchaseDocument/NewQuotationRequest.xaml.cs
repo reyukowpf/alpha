@@ -49,6 +49,7 @@ namespace Reyuko.App.Views.PurchaseDocument
         public IEnumerable<Termspembayaran> termspembayarans { get; set; }
         public Termspembayaran termspembayaranSelected;
         public DataDepartemen dataDepartemenSelected;
+        public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
         public DataProyek dataProyekSelected;
         public IEnumerable<Shopingchart> shopingcharts { get; set; }
         public Shopingchart shopingchartSelected;
@@ -224,8 +225,56 @@ namespace Reyuko.App.Views.PurchaseDocument
             if (cbRequestNo.SelectedItem != null)
             {
                 this.shopingchartSelected = (Shopingchart)cbRequestNo.SelectedItem;
+                this.LoadDataSku();
+                txtNote.Text = this.shopingchartSelected.Keterangan;
+                
             }
 
+        }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.listOrderBelis = uow.ListOrderBeli.GetAll().Where(m => m.IdTransaksi == this.shopingchartSelected.IdPermintaanBarang);
+                DGSKUQuota.ItemsSource = this.listOrderBelis;
+                int sum = 0;
+                for (int i = 0; i < DGSKUQuota.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKUQuota.Items[i] as ListOrderBeli).TotalPajakProduk);
+                }
+                txtTotalprodukTax.Text = sum.ToString();
+                int sum1 = 0;
+                for (int i = 0; i < DGSKUQuota.Items.Count; i++)
+                {
+                    sum1 += Convert.ToInt32((DGSKUQuota.Items[i] as ListOrderBeli).TotalPajakJasa);
+                }
+                txtTotaljasaTax.Text = sum1.ToString();
+                int sum2 = 0;
+                for (int i = 0; i < DGSKUQuota.Items.Count; i++)
+                {
+                    sum2 += Convert.ToInt32((DGSKUQuota.Items[i] as ListOrderBeli).TotalPajak);
+                }
+                txtTotalTax.Text = sum2.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKUQuota.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKUQuota.Items[i] as ListOrderBeli).TotalOrderProduk);
+                }
+                txttotalprodukbeforetax.Text = sumar.ToString();
+                int sumar1 = 0;
+                for (int i = 0; i < DGSKUQuota.Items.Count; i++)
+                {
+                    sumar1 += Convert.ToInt32((DGSKUQuota.Items[i] as ListOrderBeli).TotalOrderJasa);
+                }
+                txttotaljasabeforetax.Text = sumar1.ToString();
+                int sumar2 = 0;
+                for (int i = 0; i < DGSKUQuota.Items.Count; i++)
+                {
+                    sumar2 += Convert.ToInt32((DGSKUQuota.Items[i] as ListOrderBeli).TotalOrder);
+                }
+                txttotalbeforetax.Text = sumar2.ToString();
+                txtAfterTotalTax.Text = (float.Parse(sumar2.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+            }
         }
         private void vendor_selectedchange(object sender, SelectionChangedEventArgs e)
         {
@@ -342,11 +391,19 @@ namespace Reyuko.App.Views.PurchaseDocument
                 oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
                 oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
             }
-
+            oData.KodeTransaksi = "RQ";
+            oData.IdKodeTransaksi = 16;
             oData.CheckboxHidePrice = chkhide.IsChecked;
             oData.CheckboxSelesai = chkcomplete.IsChecked;
             oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
             oData.CheckboxBerulang = chkannual.IsChecked;
+            oData.TotalOrderProduk = double.Parse(txttotalprodukbeforetax.Text);
+            oData.TotalOrderJasa = double.Parse(txttotaljasabeforetax.Text);
+            oData.TotalPajakJasa = double.Parse(txtTotaljasaTax.Text);
+            oData.TotalPajakProduk = double.Parse(txtTotalprodukTax.Text);
+            oData.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
+            oData.TotalPajak = double.Parse(txtTotalTax.Text);
+            oData.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
 
             return oData;
         }

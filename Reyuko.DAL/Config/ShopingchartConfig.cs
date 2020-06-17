@@ -107,9 +107,6 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.CheckboxBerulang)
                 .HasColumnName("checkbox_berulang");
 
-            this.Property(m => m.DropdownBerulang)
-                .HasColumnName("dropdown_berulang");
-
             this.Property(m => m.IdOpsiAnnual)
                .HasColumnName("id_opsi_annual");
 

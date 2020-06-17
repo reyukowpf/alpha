@@ -58,7 +58,7 @@ namespace Reyuko.App.Views.PurchaseDocument
             {
                 this.produkSelected = (produk)srsku.SelectedItem;
                 txtunit.Text = this.produkSelected.SatuanDasar;
-                txtprice.Text = this.produkSelected.HargaPokokAverage.ToString();
+                txtprice.Text = this.produkSelected.HargaBeli.ToString();
                 txtdiskon.Text = this.produkSelected.DiskonProdukPersen;
                 txttax.Text = this.produkSelected.PersentasePajak.ToString();
                 txtdiskon1.Text = ((float.Parse(txtprice.Text.ToString()) * float.Parse(txtdiskon.Text.ToString()) / 100)).ToString();

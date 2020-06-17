@@ -37,7 +37,6 @@ namespace Reyuko.DAL.Domain
         public int? IdPetugas { get; set; }
         public string NamaPetugas { get; set; }
         public bool? CheckboxBerulang { get; set; }
-        public bool? DropdownBerulang { get; set; }
         public int? IdOpsiAnnual { get; set; }
         public string Annual { get; set; }
     }

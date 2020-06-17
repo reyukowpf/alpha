@@ -141,9 +141,9 @@ namespace Reyuko.BLL.Core
                             oNewListOrderBeli.IdOrderBeli = oData.IdOrderProdukBeli;
                             oNewListOrderBeli.Diskon = oData.DiskonProduk;
                             oNewListOrderBeli.IdAkunPajak = oData.IdAkunPajakProduk;
-                            oNewListOrderBeli.Jumlah = oData.TotalProduk;
                             oNewListOrderBeli.TotalOrder = oData.TotalOrderProduk;
                             oNewListOrderBeli.TotalPajak = oData.TotalPajakProduk;
+                            oNewListOrderBeli.Jumlah = oData.TotalProduk;
                             uow.ListOrderBeli.Add(oNewListOrderBeli);
                         }
 
@@ -190,9 +190,11 @@ namespace Reyuko.BLL.Core
                             oNewListOrderBeli.Diskon = oData.DiskonJasa;
                             oNewListOrderBeli.IdAkunPajak = oData.IdAkunPajakJasa;
                             oNewListOrderBeli.Jumlah = oData.TotalJasa;
+                            oNewListOrderBeli.TotalOrderJasa = oData.TotalOrderJasa;
+                            oNewListOrderBeli.TotalPajakJasa = oData.TotalPajakJasa;
+                            oNewListOrderBeli.NamaProduk = oData.NamaJasa;
                             oNewListOrderBeli.TotalOrder = oData.TotalOrderJasa;
                             oNewListOrderBeli.TotalPajak = oData.TotalPajakJasa;
-                            oNewListOrderBeli.NamaProduk = oData.NamaJasa;
                             oNewListOrderBeli.HargaBeli = oData.HargaJasa;
                             oNewListOrderBeli.IdAkunJasa = oData.IdAkunJasa;
                             uow.ListOrderBeli.Add(oNewListOrderBeli);

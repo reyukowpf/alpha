@@ -10,14 +10,11 @@ namespace Reyuko.DAL.Domain
         public string NamaPetugas { get; set; }
         public bool? CheckboxUnposted { get; set; }
         public bool? CheckboxTunaiTermPembayaran { get; set; }
-        public bool? DropdownTermPembayaran { get; set; }
         public double? GracePeriod { get; set; }
         public double? UangMuka { get; set; }
         public int? IdOpsiAnnual { get; set; }
         public string Annual { get; set; }
-        public double? Duration { get; set; }
         public bool? CheckboxBerulang { get; set; }
-        public bool? DropdownBerulang { get; set; }
         public double? DurasiBerulang { get; set; }
         public DateTime? TanggalBerulang { get; set; }
         public double? TotalOrderProduk { get; set; }

@@ -430,65 +430,6 @@ namespace Reyuko.App.Views.PurchaseDocument
 
         }
 
-        public Shopingchart GetData()
-        {
-            Shopingchart oData = new Shopingchart();
-            oData.Email = txtemail.Text;
-            oData.Nohp = txthp.Text;
-            oData.TanggaldiBuat = DateTime.Parse(dtIssued.Text);
-            oData.NoPermintaanBarang = txtRequestNo.Text;
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalDigunakan = DateTime.Parse(dtRequired.Text);
-            oData.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
-            oData.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdEmployee = this.kontakSelected.Id;
-                oData.NamaManager = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMataUang = this.DataMataUangSelected.Id;
-                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-
-            }
-            if (this.optionAnnualSelected != null)
-            {
-                oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                oData.Annual = this.optionAnnualSelected.Annual;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-            
-
-            oData.CheckboxSelesai = chkcomplete.IsChecked;           
-            oData.CheckboxBerulang = chkannual.IsChecked;
-
-            return oData;
-        }
 
         private void Saveshopingchart_Click(object sender, RoutedEventArgs e)
         {
@@ -585,6 +526,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                         {
                             oNewData1.IdProyek = this.dataProyekSelected.Id;
                         }
+                        oNewData1.IdTransaksi = shoping.IdPermintaanBarang;
                         oNewData1.Checkboxaktif = false;
                         if (shopingBLL.EditOrderProdukBeli(oNewData1, shoping) == true)
                         {

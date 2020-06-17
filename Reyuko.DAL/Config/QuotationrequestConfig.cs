@@ -26,9 +26,6 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.CheckboxTunaiTermPembayaran)
                 .HasColumnName("checkbox_tunai_term_pembayaran");
 
-            this.Property(m => m.DropdownTermPembayaran)
-                .HasColumnName("dropdown_term_pembayaran");
-
             this.Property(m => m.GracePeriod)
                 .HasColumnName("grace_period");
 
@@ -41,14 +38,8 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.Annual)
                 .HasColumnName("annual");
 
-            this.Property(m => m.Duration)
-                .HasColumnName("duration");
-
             this.Property(m => m.CheckboxBerulang)
                 .HasColumnName("checkbox_berulang");
-
-            this.Property(m => m.DropdownBerulang)
-                .HasColumnName("dropdown_berulang");
 
             this.Property(m => m.DurasiBerulang)
                 .HasColumnName("durasi_berulang");

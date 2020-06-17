@@ -20,6 +20,9 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.IdTransaksi)
                  .HasColumnName("id_transaksi");
 
+            this.Property(m => m.Idquota)
+                 .HasColumnName("id_quota");
+
             this.Property(m => m.IdReferralTransaksi)
                 .HasColumnName("id_referral_transaksi");
 
@@ -59,8 +62,8 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.PurchasedBalance)
                 .HasColumnName("purchased_balance");
 
-            this.Property(m => m.TotalOrder)
-                .HasColumnName("total_order");
+            this.Property(m => m.TotalOrderProduk)
+                .HasColumnName("total_order_produk");
 
             this.Property(m => m.IdPajak)
                 .HasColumnName("id_pajak");
@@ -71,8 +74,8 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.PersentasePajak)
                 .HasColumnName("persentase");
 
-            this.Property(m => m.TotalPajak)
-                .HasColumnName("total_pajak");
+            this.Property(m => m.TotalPajakProduk)
+                .HasColumnName("total_pajak_produk");
 
             this.Property(m => m.IdAkunPajak)
                 .HasColumnName("id_akun_pajak");
@@ -99,7 +102,19 @@ namespace Reyuko.DAL.Config
                 .HasColumnName("id_proyek");
 
             this.Property(m => m.IdDepartemen)
-                .HasColumnName("id_departemen"); 
+                .HasColumnName("id_departemen");
+
+            this.Property(m => m.TotalOrderJasa)
+               .HasColumnName("total_order_jasa");
+
+            this.Property(m => m.TotalPajakJasa)
+               .HasColumnName("total_pajak_jasa");
+
+            this.Property(m => m.TotalOrder)
+              .HasColumnName("total_order");
+
+            this.Property(m => m.TotalPajak)
+               .HasColumnName("total_pajak");
 
             this.Property(m => m.Checkboxaktif)
                 .HasColumnName("checkboxaktif");
