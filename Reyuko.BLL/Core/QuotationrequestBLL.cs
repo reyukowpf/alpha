@@ -63,9 +63,8 @@ namespace Reyuko.BLL.Core
                             traceID = 3;
                             oDBData.MapFrom(oData);
                             uow.Quotationrequest.Update(oDBData);
-                            uow.Save();
-
                             traceID = 4;
+                            uow.Save();
                             trans.Commit();
                         }
                         catch (Exception ex)
@@ -114,6 +113,75 @@ namespace Reyuko.BLL.Core
             return true;
         }
 
+        public bool EditOrderProdukBeli(ListOrderBeli oData, Quotationrequest oDatas)
+        {
+            methodName = "EditOrderProdukBeli";
+            traceID = 1;
 
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                traceID = 2;
+                var oDBData = uow.ListOrderBeli.Get(oData.Id);
+                if (oDBData != null)
+                {
+                    using (var trans = uow.BeginTransaction())
+                    {
+                        try
+                        {
+                            traceID = 3;
+                            oDBData.MapFrom(oData);
+                            uow.ListOrderBeli.Update(oDBData);
+
+                            traceID = 4;
+                            OrderProdukBeli oDBListorderbeli = uow.OrderProdukBeli.SingleOrDefault(m => m.IdOrderProdukBeli == oData.IdOrderBeli);
+                            if (oDBListorderbeli != null)
+                            {
+                                traceID = 5;
+                                oDBListorderbeli.MapFrom(oData);
+
+                                traceID = 6;
+                                uow.OrderProdukBeli.Update(oDBListorderbeli);
+                            }
+                            else
+                            {
+                                traceID = 7;
+                                OrderProdukBeli oNewListorderbeli = new OrderProdukBeli();
+                                oNewListorderbeli.MapFrom(oData);
+
+                                traceID = 8;
+                                uow.OrderProdukBeli.Add(oNewListorderbeli);
+                            }
+                            traceID = 9;
+                            OrderJasaBeli oDBListorderbeli1 = uow.OrderJasaBeli.SingleOrDefault(m => m.IdOrderJasa == oData.IdOrderBeli);
+                            if (oDBListorderbeli1 != null)
+                            {
+                                traceID = 10;
+                                oDBListorderbeli1.MapFrom(oData);
+
+                                traceID = 11;
+                                //         oDBListorderbeli1.TanggalStartdate = oData.TanggalPengiriman;
+                                uow.OrderJasaBeli.Update(oDBListorderbeli1);
+                            }
+                            else
+                            {
+                                traceID = 12;
+
+                                traceID = 13;
+                            }
+                            traceID = 14;
+                            uow.Save();
+                            trans.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            throw new AppException(500, methodName, traceID, ex);
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 }

@@ -23,9 +23,6 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.CheckboxTunaiTermPembayaran)
            .HasColumnName("checkbox_tunai_term_pembayaran");
 
-            this.Property(m => m.DropdownTermPembayaran)
-      .HasColumnName("dropdown_term_pembayaran");
-
             this.Property(m => m.GracePeriod)
       .HasColumnName("grace_period");
 

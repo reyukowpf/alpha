@@ -30,8 +30,32 @@ namespace Reyuko.BLL.Core
                         oNewShopingchart = uow.Shopingchart.Add(oNewShopingchart);
                         uow.Save();
 
-                        traceID = 3;
-                        oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                        if (oNewShopingchart.IdPermintaanBarang > 0)
+                        {
+                            traceID = 3;
+                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                            Quotationrequest oNewQuota = new Quotationrequest();
+                            oNewQuota.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewQuota.IdTransaksi = oData.IdPermintaanBarang;
+                            uow.Quotationrequest.Add(oNewQuota);                            
+                        }
+
+                        if (oNewShopingchart.IdPermintaanBarang > 0)
+                        {
+                            traceID = 3;
+                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                            PurchaseOrder oNeworder = new PurchaseOrder();
+                            oNeworder.MapFrom(oData);
+
+                            traceID = 4;
+                            oNeworder.IdTransaksi = oData.IdPermintaanBarang;
+                            uow.PurchaseOrder.Add(oNeworder);
+                        }
+
+                        traceID = 7;
+                        uow.Save();
                         trans.Commit();
                     }
                     catch (Exception ex)

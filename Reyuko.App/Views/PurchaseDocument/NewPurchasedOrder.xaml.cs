@@ -50,10 +50,11 @@ namespace Reyuko.App.Views.PurchaseDocument
         public Termspembayaran termspembayaranSelected;
         public DataDepartemen dataDepartemenSelected;
         public DataProyek dataProyekSelected;
+        public IEnumerable<PurchaseOrder> purchaseOrders { get; set; }
         public IEnumerable<Quotationrequest> quotationrequests { get; set; }
         public Quotationrequest quotationrequestSelected;
-        public IEnumerable<OrderProdukBeli> orderProdukBelis { get; set; }
-        public OrderProdukBeli orderProdukBeliSelected;
+        public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
+        public ListOrderBeli listOrderBeliSelected;
         public bool isEdit = false;
         private void Init()
         {
@@ -137,26 +138,45 @@ namespace Reyuko.App.Views.PurchaseDocument
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.orderProdukBelis = uow.OrderProdukBeli.GetAll().Where(m => m.Checkboxaktif == true);
-                DGSKUPurchaseOrder.ItemsSource = this.orderProdukBelis;
+                this.listOrderBelis = uow.ListOrderBeli.GetAll().Where(m => m.IdTransaksi == this.quotationrequestSelected.IdTransaksi);
+                DGSKUorder.ItemsSource = this.listOrderBelis;
                 int sum = 0;
-                for (int i = 0; i < DGSKUPurchaseOrder.Items.Count; i++)
+                for (int i = 0; i < DGSKUorder.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKUPurchaseOrder.Items[i] as OrderProdukBeli).PersentasePajak);
+                    sum += Convert.ToInt32((DGSKUorder.Items[i] as ListOrderBeli).TotalPajakProduk);
                 }
-                txtTotalTax.Text = sum.ToString();
+                txtTotalprodukTax.Text = sum.ToString();
+                int sum1 = 0;
+                for (int i = 0; i < DGSKUorder.Items.Count; i++)
+                {
+                    sum1 += Convert.ToInt32((DGSKUorder.Items[i] as ListOrderBeli).TotalPajakJasa);
+                }
+                txtTotaljasaTax.Text = sum1.ToString();
+                int sum2 = 0;
+                for (int i = 0; i < DGSKUorder.Items.Count; i++)
+                {
+                    sum2 += Convert.ToInt32((DGSKUorder.Items[i] as ListOrderBeli).TotalPajak);
+                }
+                txtTotalTax.Text = sum2.ToString();
                 int sumar = 0;
-                for (int i = 0; i < DGSKUPurchaseOrder.Items.Count; i++)
+                for (int i = 0; i < DGSKUorder.Items.Count; i++)
                 {
-                    sumar += Convert.ToInt32((DGSKUPurchaseOrder.Items[i] as OrderProdukBeli).HargaBeli);
+                    sumar += Convert.ToInt32((DGSKUorder.Items[i] as ListOrderBeli).TotalOrderProduk);
                 }
-               // txtbeforeTax.Text = sumar.ToString();
-                int suma = 0;
-                for (int i = 0; i < DGSKUPurchaseOrder.Items.Count; i++)
+                txttotalprodukbeforetax.Text = sumar.ToString();
+                int sumar1 = 0;
+                for (int i = 0; i < DGSKUorder.Items.Count; i++)
                 {
-                    suma += Convert.ToInt32((DGSKUPurchaseOrder.Items[i] as OrderProdukBeli).TotalOrderProduk);
+                    sumar1 += Convert.ToInt32((DGSKUorder.Items[i] as ListOrderBeli).TotalOrderJasa);
                 }
-                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+                txttotaljasabeforetax.Text = sumar1.ToString();
+                int sumar2 = 0;
+                for (int i = 0; i < DGSKUorder.Items.Count; i++)
+                {
+                    sumar2 += Convert.ToInt32((DGSKUorder.Items[i] as ListOrderBeli).TotalOrder);
+                }
+                txttotalbeforetax.Text = sumar2.ToString();
+                txtAfterTotalTax.Text = (float.Parse(sumar2.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
             }
         }
         public void LoadProyek()
@@ -244,8 +264,20 @@ namespace Reyuko.App.Views.PurchaseDocument
             if (cbQuotationNo.SelectedItem != null)
             {
                 quotationrequestSelected = (Quotationrequest)cbQuotationNo.SelectedItem;
+                this.LoadDataSku();
+                txtNote.Text = this.quotationrequestSelected.Keterangan;
+                this.LoadDatarequest();
             }
         }
+         public void LoadDatarequest()
+            {
+                using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+                {
+                    this.purchaseOrders = uow.PurchaseOrder.GetAll().Where(m => m.IdTransaksi == this.quotationrequestSelected.IdTransaksi);
+                    DGSKUorder1.ItemsSource = this.purchaseOrders;
+                }
+            }
+        
         private void payment_selectedchange(object sender, SelectionChangedEventArgs e)
         {
             this.termspembayaranSelected = null;
@@ -400,16 +432,96 @@ namespace Reyuko.App.Views.PurchaseDocument
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            PurchaseordersBLL purchaseordersBLL = new PurchaseordersBLL();
-            if (purchaseordersBLL.AddPurchaseorders(this.GetData()) > 0)
+            PurchaseordersBLL purchaseordersBLL = new PurchaseordersBLL(); 
+            if (DGSKUorder1.Items.Count > 0)
             {
+                foreach (var item in DGSKUorder1.Items)
+                {
+                    if (item is PurchaseOrder)
+                    {
+                        PurchaseOrder oNewData1 = (PurchaseOrder)item;
+                        oNewData1.KodeTransaksi = "PO";
+                        oNewData1.IdKodeTransaksi = 17;
+                        if (this.kontakSelected != null)
+                        {
+                            oNewData1.IdVendor = this.kontakSelected.Id;
+                            oNewData1.NamaVendor = this.kontakSelected.NamaA;
+                        }
+                        oNewData1.Email = txtemail.Text;
+                        oNewData1.NoHp = txthp.Text;
+                        oNewData1.TanggalOrderPembelian = DateTime.Parse(dtPurchase.Text);
+                        if (this.DataMataUangSelected != null)
+                        {
+                            oNewData1.IdMataUang = this.DataMataUangSelected.Id;
+                            oNewData1.MataUang = this.DataMataUangSelected.NamaMataUang;
+                            oNewData1.KursTukar = this.DataMataUangSelected.KursTukar;
+                        }
+                        if (this.dokumenSelected != null)
+                        {
+                            oNewData1.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                            oNewData1.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+                        }
+                        oNewData1.NoOrderPembelian = double.Parse(txtPurchaseOrderNo.Text);
+                        if (this.quotationrequestSelected != null)
+                        {
+                            oNewData1.IdPermintaanPenawaranHarga = this.quotationrequestSelected.IdPermintaanPenawaranHarga;
+                            oNewData1.NoPermintaanPenawaranHarga = this.quotationrequestSelected.NoPemintaanPenawaranHarga;
+                        }
+                        oNewData1.Keterangan = txtNote.Text;
+                        if (this.lokasiSelected != null)
+                        {
+                            oNewData1.IdLokasi = this.lokasiSelected.Id;
+                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oNewData1.IdProyek = this.dataProyekSelected.Id;
+                        }
+                        oNewData1.CheckboxSelesai = chkComplete.IsChecked;
+                        oNewData1.CheckboxInclusiveTax = chkinclusive.IsChecked;
+                        oNewData1.CheckboxBerulang = chkannual.IsChecked;
+                        oNewData1.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
+                        oNewData1.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
+                        oNewData1.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
+                        if (this.optionAnnualSelected != null)
+                        {
+                            oNewData1.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                            oNewData1.Annual = this.optionAnnualSelected.Annual;
+                        }
+                        if (this.kontakSelected != null)
+                        {
+                            oNewData1.IdPetugas = this.kontakSelected.Id;
+                            oNewData1.NamaPetugas = this.kontakSelected.NamaA;
+                        }
+                        if (this.termspembayaranSelected != null)
+                        {
+                            oNewData1.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
+                            oNewData1.TermPembayaran = this.termspembayaranSelected.NamaSkema;
+                        }
+                        oNewData1.TotalOrderProduk = double.Parse(txttotalprodukbeforetax.Text);
+                        oNewData1.TotalOrderJasa = double.Parse(txttotaljasabeforetax.Text);
+                        oNewData1.TotalPajakJasa = double.Parse(txtTotaljasaTax.Text);
+                        oNewData1.TotalPajakProduk = double.Parse(txtTotalprodukTax.Text);
+                        oNewData1.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
+                        oNewData1.TotalPajak = double.Parse(txtTotalTax.Text);
+                        oNewData1.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+                        oNewData1.RealRecordingTime = DateTime.Now;
+                        if (purchaseordersBLL.EditPurchaseorders(oNewData1) == true)
+                        {
+                            //  this.ClearForm();
+                            MessageBox.Show("Purchased Order successfully added !");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Purchased Order failed to add !");
+                        }
 
-                MessageBox.Show("Purchase Order successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
-            }
-            else
-            {
-                MessageBox.Show("Purchase Order failed to be added !");
+                    }
+                }
             }
             PurchaseDocument v = new PurchaseDocument();
             Switcher.SwitchNewPurchasedOrder(v);

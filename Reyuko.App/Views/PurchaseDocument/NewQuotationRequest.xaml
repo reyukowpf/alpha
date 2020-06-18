@@ -459,6 +459,191 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid
+            x:Name="DGquota"
+            Visibility="Hidden"
+            Height="165"
+            Width="770"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="10,250,0,0"
+            AutoGenerateColumns="False"
+            Background="{x:Null}"
+            BorderBrush="{x:Null}"
+            BorderThickness="0"
+            CanUserResizeRows="False"
+            ColumnHeaderHeight="32"
+            FontSize="12.5"
+            GridLinesVisibility="None"
+            HeadersVisibility="Column"
+            IsReadOnly="True"
+            RowDetailsVisibilityMode="Visible"
+            RowHeight="30"
+            SelectionMode="Single">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Background" Value="#d3d3d3" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Sku}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="SKU / Name">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding Jumlah}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Total">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding SatuanDasar}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Unit">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding HargaBeli}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Price">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding Diskon}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Discount">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding TotalOrder}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Total">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding TotalPajak}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Tax">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
 
     </Grid>
 

@@ -7,6 +7,7 @@ namespace Reyuko.BLL.Interface
         int AddQuotationrequests(Quotationrequest oData);
         bool EditQuotationrequests(Quotationrequest oData);
         bool RemoveQuotationrequests(int id);
+        bool EditOrderProdukBeli(ListOrderBeli oData, Quotationrequest oDatas);
 
     }
 }

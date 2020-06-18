@@ -546,26 +546,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2779608">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2790872">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>G6HsHMrRM/jOQbqRQP9AcJ424tuN896yRZ0LqnOYHCk=</dsig:DigestValue>
+        <dsig:DigestValue>ArquxmRnqTOIr9fTunRm1shyV3YLh74lh6c4U9NgBrk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.BLL.dll" size="110592">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.BLL.dll" size="111616">
       <assemblyIdentity name="Reyuko.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QV6ZjpjY2WMiESlQgTe4nV0cOUu+iM/9PtNchFZwhSo=</dsig:DigestValue>
+        <dsig:DigestValue>waXulU0+KgzeNdN1W8cQsn02dWZXK+RUh3xNkdzkYDk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -577,7 +577,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>8NMrztKZa+cYlptN+eI/EdqtBf1m5qH50pZWcVXKvFY=</dsig:DigestValue>
+        <dsig:DigestValue>7+RI2gXb7b4cvVChc0EN1OQyHZ8PDRmsqX3NmLNT13g=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

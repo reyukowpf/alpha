@@ -29,7 +29,7 @@ namespace Reyuko.DAL.Domain
         public int? IdUserId { get; set; }
         public int? IdPeriodeAkuntansi { get; set; }
         public int? IdKodeTransaksi { get; set; }
-        public string RealRecordingTime { get; set; }
+        public DateTime? RealRecordingTime { get; set; }
         public bool? CheckboxSelesai { get; set; }
         public int? IdTransaksi { get; set; }
         public string KodeTransaksi { get; set; }
