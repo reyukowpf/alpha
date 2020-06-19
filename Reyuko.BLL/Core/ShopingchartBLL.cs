@@ -54,6 +54,30 @@ namespace Reyuko.BLL.Core
                             uow.PurchaseOrder.Add(oNeworder);
                         }
 
+                        if (oNewShopingchart.IdPermintaanBarang > 0)
+                        {
+                            traceID = 3;
+                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                            Purchasedelivery oNewdelivery = new Purchasedelivery();
+                            oNewdelivery.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewdelivery.IdTransaksi = oData.IdPermintaanBarang;
+                            uow.PurchaseDelivery.Add(oNewdelivery);
+                        }
+
+                        if (oNewShopingchart.IdPermintaanBarang > 0)
+                        {
+                            traceID = 3;
+                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                            Receivedgood oNewgood = new Receivedgood();
+                            oNewgood.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewgood.IdTransaksi = oData.IdPermintaanBarang;
+                            uow.Receivedgood.Add(oNewgood);
+                        }
+
                         traceID = 7;
                         uow.Save();
                         trans.Commit();
