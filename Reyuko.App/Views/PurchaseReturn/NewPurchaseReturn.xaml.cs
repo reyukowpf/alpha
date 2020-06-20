@@ -50,7 +50,9 @@ namespace Reyuko.App.Views.PurchaseReturn
         public Termspembayaran termspembayaranSelected;
         public IEnumerable<Purchasereturn>purchasereturns  { get; set; }
         public Purchasereturn purchasereturnSelected;
-
+        public IEnumerable<Receivedgood> receivedgoods { get; set; }
+        public Receivedgood receivedgoodSelected;
+        public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
         private void Init()
         {
             this.Clearform();
@@ -67,18 +69,73 @@ namespace Reyuko.App.Views.PurchaseReturn
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.purchasereturns = uow.PurchaseReturn.GetAll();
-                cbReceiveNumber.ItemsSource = this.purchasereturns;
-                cbReceiveNumber.SelectedValuePath = "IdReturPembelian";
-                cbReceiveNumber.DisplayMemberPath = "NoReferensiTransaksi";
+                this.receivedgoods = uow.Receivedgood.GetAll();
+                cbReceiveNumber.ItemsSource = this.receivedgoods;
+                cbReceiveNumber.SelectedValuePath = "IdOrder";
+                cbReceiveNumber.DisplayMemberPath = "NoOrder";
             }
         }
         private void received_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.purchasereturnSelected = null;
+            this.receivedgoodSelected = null;
             if (cbReceiveNumber.SelectedItem != null)
             {
-                purchasereturnSelected = (Purchasereturn)cbReceiveNumber.SelectedItem;
+                receivedgoodSelected = (Receivedgood)cbReceiveNumber.SelectedItem;
+                this.LoadDataSku();
+                this.LoadDatapo();
+            }
+        }
+        public void LoadDatapo()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.purchasereturns = uow.PurchaseReturn.GetAll().Where(m => m.IdTransaksi == this.receivedgoodSelected.IdTransaksi);
+                DGpurchasereturn.ItemsSource = this.purchasereturns;
+            }
+        }
+        public void LoadDataSku()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.listOrderBelis = uow.ListOrderBeli.GetAll().Where(m => m.IdTransaksi == this.receivedgoodSelected.IdTransaksi);
+                DGSKUpurchasereturn.ItemsSource = this.listOrderBelis;
+                int sum = 0;
+                for (int i = 0; i < DGSKUpurchasereturn.Items.Count; i++)
+                {
+                    sum += Convert.ToInt32((DGSKUpurchasereturn.Items[i] as ListOrderBeli).TotalPajakProduk);
+                }
+                txtTotalprodukTax.Text = sum.ToString();
+                int sum1 = 0;
+                for (int i = 0; i < DGSKUpurchasereturn.Items.Count; i++)
+                {
+                    sum1 += Convert.ToInt32((DGSKUpurchasereturn.Items[i] as ListOrderBeli).TotalPajakJasa);
+                }
+                txtTotaljasaTax.Text = sum1.ToString();
+                int sum2 = 0;
+                for (int i = 0; i < DGSKUpurchasereturn.Items.Count; i++)
+                {
+                    sum2 += Convert.ToInt32((DGSKUpurchasereturn.Items[i] as ListOrderBeli).TotalPajak);
+                }
+                txtTotalTax.Text = sum2.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKUpurchasereturn.Items.Count; i++)
+                {
+                    sumar += Convert.ToInt32((DGSKUpurchasereturn.Items[i] as ListOrderBeli).TotalOrderProduk);
+                }
+                txttotalprodukbeforetax.Text = sumar.ToString();
+                int sumar1 = 0;
+                for (int i = 0; i < DGSKUpurchasereturn.Items.Count; i++)
+                {
+                    sumar1 += Convert.ToInt32((DGSKUpurchasereturn.Items[i] as ListOrderBeli).TotalOrderJasa);
+                }
+                txttotaljasabeforetax.Text = sumar1.ToString();
+                int sumar2 = 0;
+                for (int i = 0; i < DGSKUpurchasereturn.Items.Count; i++)
+                {
+                    sumar2 += Convert.ToInt32((DGSKUpurchasereturn.Items[i] as ListOrderBeli).TotalOrder);
+                }
+                txttotalbeforetax.Text = sumar2.ToString();
+                txtAfterTotalTax.Text = (float.Parse(sumar2.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
             }
         }
         public void LoadPaymentTerms()
@@ -244,82 +301,13 @@ namespace Reyuko.App.Views.PurchaseReturn
         
         private void Clearform()
         {
-            this.purchaseReturns = new List<PurchaseReturn>();
-            DGSKUPurchaseReturn.ItemsSource = this.purchaseReturns;
-            Custome.IsChecked = false;
         }
         public void Navigate(UserControl nextPage)
         {
             this.Content = nextPage;
         }
 
-        public Purchasereturn GetData()
-        {
-            Purchasereturn oData = new Purchasereturn();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalReturPembelian = DateTime.Parse(dtReceived.Text);
-            oData.NoReturPembelian = double.Parse(txtPurchaseReturnNumber.Text);
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
-            
-            if (this.kontakSelected != null)
-            {
-                oData.IdVendor = this.kontakSelected.Id;
-                oData.NamaVendor = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMataUang = this.DataMataUangSelected.Id;
-                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.purchasereturnSelected != null)
-            {
-                oData.IdReturPembelian = this.purchasereturnSelected.IdReturPembelian;
-                oData.NoReferensiTransaksi = this.purchasereturnSelected.NoReferensiTransaksi;
-            }
-            if (this.dropdownBankKasSelected != null)
-            {
-                oData.IdMataUang = this.dropdownBankKasSelected.Id;
-                oData.MataUang = this.dropdownBankKasSelected.DropdownBankkas;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-            if (this.termspembayaranSelected != null)
-            {
-                oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
-                oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
-            }
-
-            oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
-            oData.CheckboxManual = chkmanual.IsChecked;
-
-            return oData;
-        }
+ 
 
         private void savepurchasereturn_Click(object sender, RoutedEventArgs e)
         {
@@ -328,16 +316,88 @@ namespace Reyuko.App.Views.PurchaseReturn
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            PurchasereturnBLL purchasereturnBLL = new PurchasereturnBLL();
-            if (purchasereturnBLL.AddPurchasereturn(this.GetData()) > 0)
+            PurchasereturnBLL returBLL = new PurchasereturnBLL();
+            if (DGpurchasereturn.Items.Count > 0)
             {
+                foreach (var item in DGpurchasereturn.Items)
+                {
+                    if (item is Purchasereturn)
+                    {
+                        Purchasereturn oData = (Purchasereturn)item;
+                        oData.Email = txtemail.Text;
+                        oData.IdKodeTransaksi = 21;
+                        oData.KodeTransaksi = "PR";
+                        oData.NoHp = txthp.Text;
+                        oData.TanggalReturPembelian = DateTime.Parse(dtReceived.Text);
+                        oData.NoReturPembelian = double.Parse(txtPurchaseReturnNumber.Text);
+                        oData.Keterangan = txtNote.Text;
+                        oData.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
 
-                MessageBox.Show("Purchase Return successfully added !");
-                //      this.measurementUnitForm.LoadSatuanDasar();
-            }
-            else
-            {
-                MessageBox.Show("Purchase Return failed to be added !");
+                        if (this.kontakSelected != null)
+                        {
+                            oData.IdVendor = this.kontakSelected.Id;
+                            oData.NamaVendor = this.kontakSelected.NamaA;
+                        }
+                        if (this.DataMataUangSelected != null)
+                        {
+                            oData.IdMataUang = this.DataMataUangSelected.Id;
+                            oData.MataUang = this.DataMataUangSelected.NamaMataUang;
+                            oData.KursTukar = this.DataMataUangSelected.KursTukar;
+                        }
+                        if (this.dokumenSelected != null)
+                        {
+                            oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                            oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+                        }
+                        if (this.purchasereturnSelected != null)
+                        {
+                            oData.IdReturPembelian = this.purchasereturnSelected.IdReturPembelian;
+                            oData.NoReferensiTransaksi = this.purchasereturnSelected.NoReferensiTransaksi;
+                        }
+                        if (this.dropdownBankKasSelected != null)
+                        {
+                            oData.IdMataUang = this.dropdownBankKasSelected.Id;
+                            oData.MataUang = this.dropdownBankKasSelected.DropdownBankkas;
+                        }
+                        if (this.lokasiSelected != null)
+                        {
+                            oData.IdLokasi = this.lokasiSelected.Id;
+                            oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                        }
+                        if (this.dataDepartemenSelected != null)
+                        {
+                            oData.IdDepartemen = this.dataDepartemenSelected.Id;
+
+                        }
+                        if (this.dataProyekSelected != null)
+                        {
+                            oData.IdProyek = this.dataProyekSelected.Id;
+
+                        }
+                        if (this.kontakSelected != null)
+                        {
+                            oData.IdPetugas = this.kontakSelected.Id;
+                            oData.NamaPetugas = this.kontakSelected.NamaA;
+                        }
+                        if (this.termspembayaranSelected != null)
+                        {
+                            oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
+                            oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
+                        }
+
+                        oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
+                        oData.CheckboxManual = chkmanual.IsChecked;
+                        if (returBLL.EditPurchasereturn(oData) == true)
+                        {
+                            //  this.ClearForm();
+                            MessageBox.Show("Purchased Return successfully added !");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Purchased Return failed to add !");
+                        }
+                    }
+                }
             }
             PurchaseReturn v = new PurchaseReturn();
             Switcher.SwitchNewPurchaseReturn(v);

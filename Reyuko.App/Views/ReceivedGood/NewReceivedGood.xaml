@@ -278,7 +278,7 @@
         <TextBlock x:Name="txttotalbeforetax" Visibility="Hidden" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="550,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         <TextBlock x:Name="txtTotalprodukTax" Visibility="Hidden" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtTotaljasaTax" Text=" " Visibility="Hidden" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="610,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="650,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtAfterTotalTax" Text="" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="650,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtPaid" Text="" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="650,510,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtoutstanding" Text="" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="650,540,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
