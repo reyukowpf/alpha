@@ -319,7 +319,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="120"
                     Binding="{Binding TotalProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -363,7 +363,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="120"
                     Binding="{Binding HargaBeli}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -407,7 +407,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="120"
                     Binding="{Binding TotalOrderProduk}"
                     CanUserReorder="False"
                     CanUserResize="False"
