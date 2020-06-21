@@ -119,14 +119,14 @@
             </StackPanel>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="10,255,0,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Left" Margin="10,235,0,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
                 <TextBlock Text=" Custom" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        
+
         <Button HorizontalAlignment="Left" Margin="10,243,0,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="85" Click="Product_Click">
             <StackPanel Orientation="Horizontal"/>
@@ -203,7 +203,8 @@
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="360,82,0,0">
             <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
-        </Border><DatePicker x:Name="dtReceived" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,82,0,0" VerticalAlignment="Top" Width="150"/>
+        </Border>
+        <DatePicker x:Name="dtReceived" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,82,0,0" VerticalAlignment="Top" Width="150"/>
         <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,82,0,0" Height="28" VerticalAlignment="Top" Width="85"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
@@ -267,11 +268,11 @@
         <ComboBox x:Name="cbCash1" FontSize="12.5" HorizontalAlignment="Left" Margin="10,600,0,0" Height="28" VerticalAlignment="Top" Width="150"/>
         <DataGrid
             x:Name="DGSKUpurchasereturn"
-            Height="165"
+            Height="193"
             Width="1020"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
-            Margin="10,288,0,0"
+            Margin="10,260,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
