@@ -272,7 +272,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="350"
+                    Width="*"
                     Binding="{Binding Sku}"
                     CanUserReorder="False"
                     CanUserResize="False"
