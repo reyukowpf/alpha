@@ -6,10 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.PurchaseDocument.PurchaseDocument"
-    d:DesignHeight="500"
-    d:DesignWidth="800"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -114,10 +115,10 @@
         <Label Content="Contact / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="177,60,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="350,60,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Recap" FontSize="12.5" HorizontalAlignment="Left" Margin="590,60,0,0" VerticalAlignment="Top"/>
-        <Label Content="Vendor Clasification" FontSize="12.5" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Value Range" FontSize="12.5" HorizontalAlignment="Left" Margin="182,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vendor Clasification" FontSize="12.5" HorizontalAlignment="Left" Margin="10,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Value Range" FontSize="12.5" HorizontalAlignment="Left" Margin="182,112,0,0" VerticalAlignment="Top"/>
 
-        <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="422,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="421,112,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbTypelist" FontSize="12.5" HorizontalAlignment="Left" Margin="10,84,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="typelist_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
@@ -140,18 +141,18 @@
         <DatePicker HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="350,84,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="470,84,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbRecap" HorizontalAlignment="Left" FontSize="12.5" Margin="590,84,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="recap_selectedchange"/>
-        <ComboBox x:Name="cbVendorClasification" HorizontalAlignment="Left" FontSize="12.5" Margin="10,145,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
-        <TextBox x:Name="txtvalue" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="182,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="Txtvalue_TextChanged"/>
-        <TextBox x:Name="txtRange" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="302,145,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TxtRange_TextChanged"/>
+        <ComboBox x:Name="cbVendorClasification" HorizontalAlignment="Left" FontSize="12.5" Margin="10,138,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
+        <TextBox x:Name="txtvalue" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="182,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="Txtvalue_TextChanged"/>
+        <TextBox x:Name="txtRange" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="302,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TxtRange_TextChanged"/>
 
-        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="422,145,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="currency_selectedchange"/>
+        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="422,138,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="currency_selectedchange"/>
 
         <DataGrid 
             
             x:Name="DGPurchaseDocument"
             Height="Auto"
             MinWidth="400"
-            Margin="10,187,0,-20"
+            Margin="10,173,8,10"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -353,7 +354,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <CheckBox Content="Recurring" FontSize="12.5" HorizontalAlignment="Left" Margin="590,150,0,0" VerticalAlignment="Top" Width="93"/>
+        <CheckBox Content="Recurring" FontSize="12.5" HorizontalAlignment="Left" Margin="590,143,0,0" VerticalAlignment="Top" Width="93"/>
 
     </Grid>
 

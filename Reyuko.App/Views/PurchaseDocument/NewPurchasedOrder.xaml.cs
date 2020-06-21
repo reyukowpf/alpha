@@ -651,6 +651,18 @@ namespace Reyuko.App.Views.PurchaseDocument
                 this.LoadPaymentTerms();
             }
         }
+
+        // Tolong dilengkapi
+        private void rbcash_Checked(object sender, RoutedEventArgs e)
+        {
+            this.rbcash.IsChecked = true;
+            {
+                cbCash.Visibility = Visibility.Visible;
+                cbPayment.Visibility = Visibility.Hidden;
+                cbPayment.SelectedIndex = -1;
+                //this.LoadCashTerms();
+            }
+        }
     }
 }
              
