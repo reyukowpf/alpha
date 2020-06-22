@@ -6,11 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.PurchaseDelivery.NewPurchaseDelivery"
-    d:DesignHeight="600"
-    d:DesignWidth="800"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -73,8 +73,8 @@
                 </Button>
             </StackPanel>
         </materialDesign:PopupBox>
-        <Image HorizontalAlignment="Left" Height="15" Margin="170,95,0,0" VerticalAlignment="Top" Width="15" Source="/Reyuko.App;component/Icons/black_plus.png"/>
-        <Image HorizontalAlignment="Left" Height="15" Margin="170,155,0,0" VerticalAlignment="Top" Width="15" Source="/Reyuko.App;component/Icons/black_plus.png"/>
+        <Image HorizontalAlignment="Left" Height="15" Margin="170,89,0,0" VerticalAlignment="Top" Width="15" Source="/Reyuko.App;component/Icons/black_plus.png"/>
+        <Image HorizontalAlignment="Left" Height="15" Margin="170,144,0,0" VerticalAlignment="Top" Width="15" Source="/Reyuko.App;component/Icons/black_plus.png"/>
         <TextBlock
             Width="364"
             Height="50"
@@ -121,33 +121,33 @@
 
         <CheckBox Content="Unposted" FontSize="12.5" HorizontalAlignment="Right" Margin="0,13,355,0" VerticalAlignment="Top"/>
 
-        <Label Content="Vendor / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,65,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Email" FontSize="12.5" HorizontalAlignment="Left" Margin="190,65,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Mobile Phone" FontSize="12.5" HorizontalAlignment="Left" Margin="350,65,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Purchase Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="520,65,0,0" VerticalAlignment="Top"/>
-        <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="680,65,0,0" VerticalAlignment="Top"/>
-        <Label Content="Document Reference No." FontSize="12.5" HorizontalAlignment="Left" Margin="10,125,0,0" VerticalAlignment="Top"/>
-        <Label Content="Purchase Delivery No." FontSize="12.5" HorizontalAlignment="Left" Margin="190,125,0,0" VerticalAlignment="Top"/>
-        <Label Content="Purchase Order No." FontSize="12.5" HorizontalAlignment="Left" Margin="350,125,0,0" VerticalAlignment="Top"/>
-        <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="10,185,0,0" VerticalAlignment="Top"/>
-        <Label Content="Location" FontSize="12.5" HorizontalAlignment="Left" Margin="350,185,0,0" VerticalAlignment="Top"/>
-        <Label Content="Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
-        <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top"/>
-        <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,480,0,0" VerticalAlignment="Top"/>
-        <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,540,0,0" VerticalAlignment="Top"/>
-        <Label Content="Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,420,0,0" VerticalAlignment="Top"/>
-        <Label Content="After Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,450,0,0" VerticalAlignment="Top"/>
-        <Label Content="Outstanding Balance" FontSize="12.5" HorizontalAlignment="Left" Margin="400,480,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vendor / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Email" FontSize="12.5" HorizontalAlignment="Left" Margin="190,60,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Mobile Phone" FontSize="12.5" HorizontalAlignment="Left" Margin="350,60,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Purchase Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="520,60,0,0" VerticalAlignment="Top"/>
+        <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="680,60,0,0" VerticalAlignment="Top"/>
+        <Label Content="Document Reference No." FontSize="12.5" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Purchase Delivery No." FontSize="12.5" HorizontalAlignment="Left" Margin="190,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Purchase Order No." FontSize="12.5" HorizontalAlignment="Left" Margin="350,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="Location" FontSize="12.5" HorizontalAlignment="Left" Margin="350,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,514,0,0" VerticalAlignment="Top"/>
+        <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,571,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,571,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,628,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,508,0,0" VerticalAlignment="Top"/>
+        <Label Content="After Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="400,538,0,0" VerticalAlignment="Top"/>
+        <Label Content="Outstanding Balance" FontSize="12.5" HorizontalAlignment="Left" Margin="400,568,0,0" VerticalAlignment="Top"/>
 
-        <CheckBox x:Name="chkannual" Content="Annual" FontSize="12.5" HorizontalAlignment="Left" Margin="185,425,0,0" VerticalAlignment="Top"/>
-        <RadioButton x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,185,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
-        <RadioButton x:Name="rbproyek" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,185,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
-        <CheckBox x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="680,220,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkannual" Content="Annual" FontSize="12.5" HorizontalAlignment="Left" Margin="185,519,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,168,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
+        <RadioButton x:Name="rbproyek" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,168,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
+        <CheckBox x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="680,203,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,89,0,0">
+                        CornerRadius="0" Margin="10,82,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srvendor" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,-1,0,-1" VerticalAlignment="Top" ValueMemberPath="NamaA" SelectionChanged="vendor_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -167,23 +167,23 @@
                         Height="28"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="190,89,0,0">
+                        CornerRadius="0" Margin="190,82,0,0">
             <TextBlock x:Name="txtemail" FontSize="12.5" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         </Border>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="350,89,0,0">
+                        CornerRadius="0" Margin="350,82,0,0">
             <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
         </Border>
-        <DatePicker x:Name="dtPurchase" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="520,89,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Margin="680,89,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
+        <DatePicker x:Name="dtPurchase" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="520,82,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Margin="680,82,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,150,0,0">
+                        CornerRadius="0" Margin="10,138,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srnodokumen" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NoReferensiDokumen" SelectionChanged="dokumen_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -197,19 +197,19 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <TextBox x:Name="txtPurchaseDeliveryNo" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="190,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtPurchaseDeliveryNo_TextChanged"/>
-        <ComboBox x:Name="cbPurchaseorder" FontSize="12.5" HorizontalAlignment="Left" Margin="350,150,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="PO_selectedchange"/>
-        <TextBox x:Name="txtNote" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="10,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-        <ComboBox x:Name="cbLocation" FontSize="12.5" HorizontalAlignment="Left" Margin="350,210,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
-        <ComboBox x:Name="cbDepartment" FontSize="12.5" HorizontalAlignment="Left" Margin="520,210,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
-        <ComboBox x:Name="cbProyek" FontSize="12.5" HorizontalAlignment="Left" Margin="520,210,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
-        <DatePicker x:Name="dtDelivery" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="10,445,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Margin="185,445,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
+        <TextBox x:Name="txtPurchaseDeliveryNo" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="190,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtPurchaseDeliveryNo_TextChanged"/>
+        <ComboBox x:Name="cbPurchaseorder" FontSize="12.5" HorizontalAlignment="Left" Margin="350,138,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="PO_selectedchange"/>
+        <TextBox x:Name="txtNote" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="10,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <ComboBox x:Name="cbLocation" FontSize="12.5" HorizontalAlignment="Left" Margin="350,193,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
+        <ComboBox x:Name="cbDepartment" FontSize="12.5" HorizontalAlignment="Left" Margin="520,193,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
+        <ComboBox x:Name="cbProyek" FontSize="12.5" HorizontalAlignment="Left" Margin="520,193,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
+        <DatePicker x:Name="dtDelivery" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="10,539,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Margin="185,539,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,505,0,0">
+                        CornerRadius="0" Margin="10,596,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srstaff" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="staff_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -223,24 +223,24 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <TextBox x:Name="txtAnnualFrequency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="185,505,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
-        <DatePicker x:Name="dtAnnualdate" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,565,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="txtAnnualFrequency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="185,596,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
+        <DatePicker x:Name="dtAnnualdate" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,653,0,0" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txttotalbeforetax" Visibility="Hidden" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="550,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
-        <TextBlock x:Name="txtTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtAfterTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,450,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtOutstanding" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,508,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtAfterTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,538,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtOutstanding" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="555,568,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
 
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,450,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,480,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,510,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,538,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,568,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="555,598,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
 
         <DataGrid
             x:Name="DGSKUPurchaseDelivery"
-            Height="165"
-            Width="750"
+            Height="274"
+            Width="1022"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
-            Margin="10,250,0,0"
+            Margin="10,229,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"

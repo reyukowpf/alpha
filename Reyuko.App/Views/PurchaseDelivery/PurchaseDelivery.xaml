@@ -6,10 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.PurchaseDelivery.PurchaseDelivery"
-    d:DesignHeight="500"
-    d:DesignWidth="800"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -112,10 +113,10 @@
 
         <Label Content="Vendor / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="26"/>
         <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="177,58,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Recap" FontSize="12.5" HorizontalAlignment="Left" Margin="420,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Customer Clasification" FontSize="12.5" HorizontalAlignment="Left" Margin="10,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Value Range" FontSize="12.5" HorizontalAlignment="Left" Margin="177,118,0,0" VerticalAlignment="Top"/>
-        <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="590,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Recap" FontSize="12.5" HorizontalAlignment="Left" Margin="420,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer Clasification" FontSize="12.5" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Value Range" FontSize="12.5" HorizontalAlignment="Left" Margin="177,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="590,113,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
@@ -136,17 +137,17 @@
         </Border>
         <DatePicker HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="177,82,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="290,82,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbRecap" FontSize="12.5" HorizontalAlignment="Left" Margin="420,143,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="recap_selectedchange"/>
-        <ComboBox x:Name="cbClasification" FontSize="12.5" HorizontalAlignment="Left" Margin="10,143,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="CbClasification_SelectionChanged"/>
-        <TextBox x:Name="txtvalue" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="177,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="Txtvalue_TextChanged"/>
-        <TextBox x:Name="txtRange" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="300,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TxtRange_TextChanged"/>
-        <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Margin="590,143,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="currency_selectedchange"/>
+        <ComboBox x:Name="cbRecap" FontSize="12.5" HorizontalAlignment="Left" Margin="420,138,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="recap_selectedchange"/>
+        <ComboBox x:Name="cbClasification" FontSize="12.5" HorizontalAlignment="Left" Margin="10,138,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="CbClasification_SelectionChanged"/>
+        <TextBox x:Name="txtvalue" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="177,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="Txtvalue_TextChanged"/>
+        <TextBox x:Name="txtRange" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="300,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" TextChanged="TxtRange_TextChanged"/>
+        <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Margin="590,138,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="currency_selectedchange"/>
         <DataGrid
             x:Name="DGPurchaseDelivery"
             Height="Auto"
-            Width="750"
+            Width="1022"
             HorizontalAlignment="Left"
-            Margin="10,185,0,0"
+            Margin="10,176,0,10"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -171,13 +172,13 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="120"
+                    Width="*"
                     Binding="{Binding NoPengirimanBarangPembelian}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Purchase Delivery No.">
+                    Header=" Purchase Delivery No.">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -199,7 +200,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Date">
+                    Header=" Date">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -221,7 +222,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Purchase Order No.">
+                    Header=" Purchase Order No.">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -243,7 +244,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Vendor / ID">
+                    Header=" Vendor / ID">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -259,13 +260,13 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="100"
                     Binding="{Binding MataUang}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Currency">
+                    Header=" Currency">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -281,7 +282,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="120"
                     Binding="{Binding TotalSetelahPajak}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -303,13 +304,13 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="*"
+                    Width="80"
                     Binding="{Binding Annual}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Annuality">
+                    Header=" Annuality ">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
