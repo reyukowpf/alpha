@@ -382,6 +382,12 @@
     <Compile Include="Views\Document\Documentcashactivity.xaml.cs">
       <DependentUpon>Documentcashactivity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Document\Documentpurchasedelivery.xaml.cs">
+      <DependentUpon>Documentpurchasedelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentpurchase.xaml.cs">
+      <DependentUpon>Documentpurchase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Document\Documentsalesorderquotation.xaml.cs">
       <DependentUpon>Documentsalesorderquotation.xaml</DependentUpon>
     </Compile>
@@ -724,6 +730,12 @@
     <Compile Include="Views\Vendor\Vendors.xaml.cs">
       <DependentUpon>Vendors.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Vendor\Vendorspurchasedelivery.xaml.cs">
+      <DependentUpon>Vendorspurchasedelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorspurchase.xaml.cs">
+      <DependentUpon>Vendorspurchase.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Vendor\Vendorsreturconsigment.xaml.cs">
       <DependentUpon>Vendorsreturconsigment.xaml</DependentUpon>
     </Compile>
@@ -947,6 +959,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Document\Documentcashactivity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentpurchasedelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentpurchase.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1403,6 +1423,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Vendor\Vendors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorspurchasedelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorspurchase.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

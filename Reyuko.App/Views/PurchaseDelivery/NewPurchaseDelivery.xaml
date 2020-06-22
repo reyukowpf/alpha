@@ -73,8 +73,18 @@
                 </Button>
             </StackPanel>
         </materialDesign:PopupBox>
-        <Image HorizontalAlignment="Left" Height="15" Margin="170,89,0,0" VerticalAlignment="Top" Width="15" Source="/Reyuko.App;component/Icons/black_plus.png"/>
-        <Image HorizontalAlignment="Left" Height="15" Margin="170,144,0,0" VerticalAlignment="Top" Width="15" Source="/Reyuko.App;component/Icons/black_plus.png"/>
+        <Button HorizontalAlignment="Left" Margin="163,87,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="25" Click="btnvendor">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="18"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="163,143,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="25" Click="btndokumen">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="18"/>
+            </StackPanel>
+        </Button>
         <TextBlock
             Width="364"
             Height="50"

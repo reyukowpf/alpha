@@ -252,6 +252,7 @@
             </DockPanel>
         </Border>
         <TextBox x:Name="txtAnnualFrequency" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,560,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
+        <TextBlock x:Name="txtuangmuka" Visibility="Hidden" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <RadioButton x:Name="rbpayment" Content="Payment Terms" HorizontalAlignment="Left" FontSize="12.5" Margin="10,596,0,0" VerticalAlignment="Top" Checked="rbpayment_Checked"/>
         <RadioButton x:Name="rbcash" Content="Cash" FontSize="12.5" HorizontalAlignment="Left" Margin="117,596,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="cbPayment" FontSize="12.5" HorizontalAlignment="Left" Margin="10,620,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="payment_selectedchange"/>

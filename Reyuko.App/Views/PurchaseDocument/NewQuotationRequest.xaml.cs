@@ -202,6 +202,9 @@ namespace Reyuko.App.Views.PurchaseDocument
             if (cbPayment.SelectedItem != null)
             {
                 termspembayaranSelected = (Termspembayaran)cbPayment.SelectedItem;
+                txtuangmuka.Text = this.termspembayaranSelected.UangMuka.ToString();
+                txtPaid.Text = (float.Parse(txtuangmuka.Text) * float.Parse(txtAfterTotalTax.Text)).ToString();
+                txtInstallments.Text = this.termspembayaranSelected.TermPembayaran.ToString();
             }
         }
         private void department_selectionchange(object sender, SelectionChangedEventArgs e)

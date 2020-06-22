@@ -162,6 +162,7 @@
         <Label Content="Annual Frequency" FontSize="12.5" HorizontalAlignment="Left" Margin="185,532,0,0" VerticalAlignment="Top"/>
         <Label Content="Annual Date" FontSize="12.5" HorizontalAlignment="Left" Margin="185,591,0,0" VerticalAlignment="Top"/>
         <Label Content="Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="500,480,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
+        <Label Content="x" FontSize="12.5" HorizontalAlignment="Left" Margin="750,590,0,0" VerticalAlignment="Top" Height="25" Width="64"/>
         <Label Content="After Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="500,510,0,0" VerticalAlignment="Top"/>
         <Label Content="Paid / Down Payment" FontSize="12.5" HorizontalAlignment="Left" Margin="500,540,0,0" VerticalAlignment="Top"/>
         <Label Content="Installments" FontSize="12.5" HorizontalAlignment="Left" Margin="500,590,0,0" VerticalAlignment="Top"/>
@@ -268,6 +269,7 @@
         <ComboBox x:Name="cbPayment" FontSize="12.5" HorizontalAlignment="Left" Margin="10,620,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="payment_selectedchange"/>
         <ComboBox x:Name="cbCash" FontSize="12.5" HorizontalAlignment="Left" Margin="10,620,0,0" Height="28" VerticalAlignment="Top" Width="150"/>
         <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,620,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtuangmuka" Visibility="Hidden" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtTotalprodukTax" Visibility="Hidden" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtTotaljasaTax" Text=" " Visibility="Hidden" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="690,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>

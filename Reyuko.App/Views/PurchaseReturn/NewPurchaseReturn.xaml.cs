@@ -154,6 +154,9 @@ namespace Reyuko.App.Views.PurchaseReturn
             if (cbPayment.SelectedItem != null)
             {
                 termspembayaranSelected = (Termspembayaran)cbPayment.SelectedItem;
+                txtuangmuka.Text = this.termspembayaranSelected.UangMuka.ToString();
+                txtPaid.Text = (float.Parse(txtuangmuka.Text) * float.Parse(txtAfterTotalTax.Text)).ToString();
+                txtInstallments.Text = this.termspembayaranSelected.TermPembayaran.ToString();
             }
         }
         public void LoadStaff()
@@ -298,7 +301,45 @@ namespace Reyuko.App.Views.PurchaseReturn
             }
 
         }
-        
+
+        private void btnvendor(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Vendor.Vendorspurchase)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Vendor.Vendorspurchase newVendor = new Vendor.Vendorspurchase(this);
+                newVendor.Show();
+            }
+        }
+        private void btndokumen(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Document.Documentpurchase)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Document.Documentpurchase newdokumen = new Document.Documentpurchase(this);
+                newdokumen.Show();
+            }
+        }
         private void Clearform()
         {
         }

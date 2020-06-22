@@ -225,6 +225,45 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 txtAfterTotalTax.Text = (float.Parse(sumar.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
             }
         }
+
+        private void btnvendor(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Vendor.Vendorspurchasedelivery)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Vendor.Vendorspurchasedelivery newVendor = new Vendor.Vendorspurchasedelivery(this);
+                newVendor.Show();
+            }
+        }
+        private void btndokumen(object sender, RoutedEventArgs e)
+        {
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Document.Documentpurchasedelivery)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Document.Documentpurchasedelivery newdokumen = new Document.Documentpurchasedelivery(this);
+                newdokumen.Show();
+            }
+        }
         private void LoadCurrency()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
