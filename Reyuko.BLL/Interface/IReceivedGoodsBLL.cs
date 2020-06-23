@@ -9,6 +9,6 @@ namespace Reyuko.BLL.Interface
         bool RemoveReceivedGoods(int id);
         int AddOrderProdukbeli(OrderProdukBeli oData);
         bool EditOrderProdukbeli(OrderProdukBeli oData, Receivedgood oDatas);
-
+        bool EditOrderCustomBeli(ListOrderBeli oData, Receivedgood oDatas);
     }
 }

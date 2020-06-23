@@ -10,7 +10,6 @@
     WindowStyle="None"
     FontSize="14"
     Loaded="load"
-    Icon="/Reyuko.App;component/Icons/currency.png"
     ResizeMode="NoResize"
     BorderThickness="1"
     ShowInTaskbar="False"

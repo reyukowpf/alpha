@@ -99,6 +99,7 @@ namespace Reyuko.DAL
             ListOrderProduction = new ListOrderProductionRepo(_context);
             OrderJasaBeli = new OrderJasaBeliRepo(_context);
             ListOrderBeli = new ListOrderBeliRepo(_context);
+            OrderCustomBeli = new OrderCustomBeliRepo(_context);
         }
 
 
@@ -195,6 +196,7 @@ namespace Reyuko.DAL
         public IListOrderProductionRepo ListOrderProduction { get; private set; }
         public IOrderJasaBeliRepo OrderJasaBeli { get; private set; }
         public IListOrderBeliRepo ListOrderBeli { get; private set; }
+        public IOrderCustomBeliRepo OrderCustomBeli { get; private set; }
 
         public IDBTransaction BeginTransaction(System.Data.IsolationLevel isolationLevel = System.Data.IsolationLevel.Snapshot)
         {

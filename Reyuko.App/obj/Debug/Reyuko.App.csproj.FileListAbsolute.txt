@@ -5047,3 +5047,15 @@ D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\PurchaseDoc
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Invoice\Skucustom.g.cs
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Production\Skuother.g.cs
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\PurchaseDocument\Skuservice.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Document\Documentpurchasedelivery.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Document\Documentpurchase.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Vendor\Vendorspurchasedelivery.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Vendor\Vendorspurchase.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Document\Documentpurchasedelivery.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Document\Documentpurchase.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Vendor\Vendorspurchasedelivery.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\Vendor\Vendorspurchase.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuother.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\ReceivedGood\Skuother.g.cs
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\PurchaseReturn\Skuother.baml
+D:\Reyuko\alpha\Reyuko.App\obj\Debug\Views\PurchaseReturn\Skuother.g.cs

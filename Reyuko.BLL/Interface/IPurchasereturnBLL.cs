@@ -7,6 +7,6 @@ namespace Reyuko.BLL.Interface
         int AddPurchasereturn(Purchasereturn oData);
         bool EditPurchasereturn(Purchasereturn oData);
         bool RemovePurchasereturn(int id);
-
+        bool EditOrderCustomBeli(ListOrderBeli oData, Purchasereturn oDatas);
     }
 }

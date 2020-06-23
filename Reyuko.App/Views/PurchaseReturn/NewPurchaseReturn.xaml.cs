@@ -390,10 +390,10 @@ namespace Reyuko.App.Views.PurchaseReturn
                             oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
                             oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
                         }
-                        if (this.purchasereturnSelected != null)
+                        if (this.receivedgoodSelected != null)
                         {
-                            oData.IdReturPembelian = this.purchasereturnSelected.IdReturPembelian;
-                            oData.NoReferensiTransaksi = this.purchasereturnSelected.NoReferensiTransaksi;
+                            oData.IdReferalPa = this.receivedgoodSelected.IdOrder;
+                            oData.NoReferensiTransaksi = this.receivedgoodSelected.NoOrder;
                         }
                         if (this.dropdownBankKasSelected != null)
                         {
@@ -428,6 +428,13 @@ namespace Reyuko.App.Views.PurchaseReturn
 
                         oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
                         oData.CheckboxManual = chkmanual.IsChecked;
+                        oData.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
+                        oData.TotalPajak = double.Parse(txtTotalTax.Text);
+                        oData.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+                        oData.TotalKreditAkunStokProduk = double.Parse(txttotalbeforetax.Text);
+                        oData.TotalKreditAkunPajakProduk = double.Parse(txtTotalprodukTax.Text);
+                        oData.TotalKreditAkunPajakJasa = double.Parse(txtTotaljasaTax.Text);
+                        oData.TotalDebitAkunHutangPembelian = double.Parse(txtAfterTotalTax.Text);
                         if (returBLL.EditPurchasereturn(oData) == true)
                         {
                             //  this.ClearForm();
@@ -436,6 +443,34 @@ namespace Reyuko.App.Views.PurchaseReturn
                         else
                         {
                             MessageBox.Show("Purchased Return failed to add !");
+                        }
+                        if (DGSKUpurchasereturn.Items.Count > 0)
+                        {
+                            foreach (var item1 in DGSKUpurchasereturn.Items)
+                            {
+                                if (item1 is ListOrderBeli)
+                                {
+                                    ListOrderBeli oNewData1 = (ListOrderBeli)item1;
+                                    oNewData1.Tanggal = DateTime.Parse(dtReceived.Text);
+                                    if (this.lokasiSelected != null)
+                                    {
+                                        oNewData1.IdLokasi = this.lokasiSelected.Id;
+                                        oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                                    }
+                                    if (this.dataDepartemenSelected != null)
+                                    {
+                                        oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+                                    }
+                                    if (this.dataProyekSelected != null)
+                                    {
+                                        oNewData1.IdProyek = this.dataProyekSelected.Id;
+                                    }
+                                    oNewData1.Checkboxaktif = false;
+                                    if (returBLL.EditOrderCustomBeli(oNewData1, oData) == true)
+                                    {
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -487,7 +522,22 @@ namespace Reyuko.App.Views.PurchaseReturn
 
         private void Custom_Click(object sender, RoutedEventArgs e)
         {
+            bool isWindowOpen = false;
 
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Skuother)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Skuother newsku = new Skuother(this);
+                newsku.Show();
+            }
         }
         private void notes_Click(object sender, RoutedEventArgs e)
         {

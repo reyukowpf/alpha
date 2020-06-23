@@ -129,7 +129,7 @@
             </StackPanel>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="10,228,0,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Left" Margin="10,228,0,0" Background="Transparent" BorderThickness="0" Click="Custom_Click"
             Style="{StaticResource MyButton}" VerticalAlignment="Top">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
@@ -331,7 +331,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="120"
-                    Binding="{Binding TotalProduk}"
+                    Binding="{Binding Jumlah}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -397,7 +397,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding DiskonProduk}"
+                    Binding="{Binding Diskon}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -419,7 +419,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="120"
-                    Binding="{Binding TotalOrderProduk}"
+                    Binding="{Binding TotalOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -441,7 +441,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding TotalPajakProduk}"
+                    Binding="{Binding TotalPajak}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"

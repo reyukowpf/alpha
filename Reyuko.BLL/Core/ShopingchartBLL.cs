@@ -273,7 +273,53 @@ namespace Reyuko.BLL.Core
 
             return oData.IdOrderJasa;
         }
+        public int AddOrderCustombeli(OrderCustomBeli oData)
+        {
+            methodName = "AddOrderCustombeli";
+            traceID = 1;
 
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                using (var trans = uow.BeginTransaction())
+                {
+                    try
+                    {
+                        traceID = 2;
+                        OrderCustomBeli oNewumum = new OrderCustomBeli();
+                        oNewumum.MapFrom(oData);
+                        oNewumum = uow.OrderCustomBeli.Add(oNewumum);
+                        uow.Save();
+
+                        if (oNewumum.IdOrderCustom > 0)
+                        {
+                            traceID = 3;
+                            oData.IdOrderCustom = oNewumum.IdOrderCustom;
+                            ListOrderBeli oNewListOrderBeli = new ListOrderBeli();
+                            oNewListOrderBeli.MapFrom(oData);
+
+                            traceID = 4;
+                            oNewListOrderBeli.IdOrderBeli = oData.IdOrderCustom;
+                            oNewListOrderBeli.TotalOrder = oData.TotalCustom;
+                            oNewListOrderBeli.Jumlah = oData.TotalCustom;
+                            oNewListOrderBeli.Sku = oData.NamaCustom;
+                            oNewListOrderBeli.HargaBeli = oData.HargaCustom;
+                            uow.ListOrderBeli.Add(oNewListOrderBeli);
+                        }
+
+                        traceID = 5;
+                        uow.Save();
+                        trans.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        throw new AppException(500, methodName, traceID, ex);
+                    }
+                }
+            }
+
+            return oData.IdOrderCustom;
+        }
         public bool EditOrderProdukBeli(ListOrderBeli oData, Shopingchart oDatas)
         {
             methodName = "EditOrderProdukBeli";

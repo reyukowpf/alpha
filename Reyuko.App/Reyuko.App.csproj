@@ -565,11 +565,17 @@
     <Compile Include="Views\PurchaseReturn\PurchaseReturn.xaml.cs">
       <DependentUpon>PurchaseReturn.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\PurchaseReturn\Skuother.xaml.cs">
+      <DependentUpon>Skuother.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ReceivedGood\NewReceivedGood.xaml.cs">
       <DependentUpon>NewReceivedGood.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReceivedGood\ReceivedGood.xaml.cs">
       <DependentUpon>ReceivedGood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\Skuother.xaml.cs">
+      <DependentUpon>Skuother.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReceivedGood\Skuservice.xaml.cs">
       <DependentUpon>Skuservice.xaml</DependentUpon>
@@ -1206,11 +1212,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\PurchaseReturn\Skuother.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ReceivedGood\NewReceivedGood.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ReceivedGood\ReceivedGood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\Skuother.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

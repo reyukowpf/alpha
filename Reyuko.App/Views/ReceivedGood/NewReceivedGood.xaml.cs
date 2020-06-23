@@ -475,21 +475,49 @@ namespace Reyuko.App.Views.ReceivedGood
                         receivedgood.TotalDebitAkunPersediaanProduk = double.Parse(txttotalbeforetax.Text);
                         receivedgood.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
                         //receivedgood.SaldoTerhutang = double.Parse(txtoutstanding.Text);
-            
+
                         receivedgood.RealRecordingTime = DateTime.Now;
                         if (goodBLL.EditReceivedGoods(receivedgood) == true)
-                          {
-                        //  this.ClearForm();
+                        {
+                            //  this.ClearForm();
                             MessageBox.Show("Received Good successfully added !");
-                          }
+                        }
                         else
-                         {
+                        {
                             MessageBox.Show("Received Good failed to add !");
-                         }
+                        }
+                        if (DGSKUReceivedGood.Items.Count > 0)
+                        {
+                            foreach (var item1 in DGSKUReceivedGood.Items)
+                            {
+                                if (item1 is ListOrderBeli)
+                                {
+                                    ListOrderBeli oNewData1 = (ListOrderBeli)item1;
+                                    oNewData1.Tanggal = DateTime.Parse(dtReceived.Text);
+                                    if (this.lokasiSelected != null)
+                                    {
+                                        oNewData1.IdLokasi = this.lokasiSelected.Id;
+                                        oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+                                    }
+                                    if (this.dataDepartemenSelected != null)
+                                    {
+                                        oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+                                    }
+                                    if (this.dataProyekSelected != null)
+                                    {
+                                        oNewData1.IdProyek = this.dataProyekSelected.Id;
+                                    }
+                                    oNewData1.Checkboxaktif = false;
+                                    if (goodBLL.EditOrderCustomBeli(oNewData1, receivedgood) == true)
+                                    {
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
-                }
-                ReceivedGood v = new ReceivedGood();
+            }
+                        ReceivedGood v = new ReceivedGood();
             Switcher.Switchnewreceived(v);
         }
 
@@ -537,7 +565,7 @@ namespace Reyuko.App.Views.ReceivedGood
 
             foreach (Window w in Application.Current.Windows)
             {
-                if (w is Sku)
+                if (w is Skuother)
                 {
                     isWindowOpen = true;
                     w.Activate();
@@ -546,7 +574,7 @@ namespace Reyuko.App.Views.ReceivedGood
 
             if (!isWindowOpen)
             {
-                Sku newsku = new Sku(this);
+                Skuother newsku = new Skuother(this);
                 newsku.Show();
             }
         }

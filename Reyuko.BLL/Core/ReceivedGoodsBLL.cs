@@ -178,6 +178,55 @@ namespace Reyuko.BLL.Core
 
             return true;
         }
+        public bool EditOrderCustomBeli(ListOrderBeli oData, Receivedgood oDatas)
+        {
+            methodName = "EditOrderCustomBeli";
+            traceID = 1;
 
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                traceID = 2;
+                var oDBData = uow.ListOrderBeli.Get(oData.Id);
+                if (oDBData != null)
+                {
+                    using (var trans = uow.BeginTransaction())
+                    {
+                        try
+                        {
+                            traceID = 3;
+                            oDBData.MapFrom(oData);
+                            uow.ListOrderBeli.Update(oDBData);
+
+                            traceID = 4;
+                            OrderCustomBeli oDBListorderbeli = uow.OrderCustomBeli.SingleOrDefault(m => m.IdOrderCustom == oData.IdOrderBeli);
+                            if (oDBListorderbeli != null)
+                            {
+                                traceID = 5;
+                                oDBListorderbeli.MapFrom(oData);
+
+                                traceID = 6;
+                                uow.OrderCustomBeli.Update(oDBListorderbeli);
+                            }
+                            else
+                            {
+                                traceID = 7;
+                              
+                                traceID = 8;
+                            }
+                            traceID = 9;
+                            uow.Save();
+                            trans.Commit();
+                        }
+                        catch (Exception ex)
+                        {
+                            trans.Rollback();
+                            throw new AppException(500, methodName, traceID, ex);
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
     }
 }
