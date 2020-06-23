@@ -58,6 +58,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
         public OptionAnnual optionAnnualSelected { get; set; }
         public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
         public ListOrderBeli listOrderBeliSelected;
+        public Kontak petugasSelected;
 
         private void Init()
         {           
@@ -67,8 +68,17 @@ namespace Reyuko.App.Views.PurchaseDelivery
             this.LoadLokasi();
             this.LoadAnnual();
             this.LoadStaff();
+            this.ClearForm();
             this.LoadPO();
         }
+
+        private void ClearForm()
+        {
+            dtDelivery.Text = DateTime.Now.ToShortDateString();
+            dtPurchase.Text = DateTime.Now.ToShortDateString();
+            dtAnnualdate.Text = DateTime.Now.ToShortDateString();
+        }
+
         private void LoadPO()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -108,10 +118,10 @@ namespace Reyuko.App.Views.PurchaseDelivery
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void LoadAnnual()
@@ -388,10 +398,10 @@ namespace Reyuko.App.Views.PurchaseDelivery
                             oNewData1.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                             oNewData1.Annual = this.optionAnnualSelected.Annual;
                         }
-                        if (this.kontakSelected != null)
+                        if (this.petugasSelected != null)
                         {
-                            oNewData1.IdPetugas = this.kontakSelected.Id;
-                            oNewData1.NamaPetugas = this.kontakSelected.NamaA;
+                            oNewData1.IdPetugas = this.petugasSelected.Id;
+                            oNewData1.NamaPetugas = this.petugasSelected.NamaA;
                         }
                         oNewData1.TotalDebitAkunStokProduk = double.Parse(txttotalbeforetax.Text);
                         oNewData1.TotalKreditAkunPengirimanBeliProduk = double.Parse(txttotalbeforetax.Text);

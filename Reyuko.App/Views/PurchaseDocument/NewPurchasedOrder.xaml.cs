@@ -54,6 +54,7 @@ namespace Reyuko.App.Views.PurchaseDocument
         public IEnumerable<Quotationrequest> quotationrequests { get; set; }
         public Quotationrequest quotationrequestSelected;
         public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
+        public Kontak petugasSelected;
         public ListOrderBeli listOrderBeliSelected;
         public bool isEdit = false;
         private void Init()
@@ -318,10 +319,10 @@ namespace Reyuko.App.Views.PurchaseDocument
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void currency_selectedchange(object sender, SelectionChangedEventArgs e)
@@ -425,10 +426,10 @@ namespace Reyuko.App.Views.PurchaseDocument
                             oNewData1.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                             oNewData1.Annual = this.optionAnnualSelected.Annual;
                         }
-                        if (this.kontakSelected != null)
+                        if (this.petugasSelected != null)
                         {
-                            oNewData1.IdPetugas = this.kontakSelected.Id;
-                            oNewData1.NamaPetugas = this.kontakSelected.NamaA;
+                            oNewData1.IdPetugas = this.petugasSelected.Id;
+                            oNewData1.NamaPetugas = this.petugasSelected.NamaA;
                         }
                         if (this.termspembayaranSelected != null)
                         {

@@ -50,6 +50,7 @@ namespace Reyuko.App.Views.PurchaseDocument
         public IEnumerable<Termspembayaran> termspembayarans { get; set; }
         public Termspembayaran termspembayaranSelected;
         public DataDepartemen dataDepartemenSelected;
+        public Kontak petugasSelected;
         public DataProyek dataProyekSelected;
         public bool isEdit = false;
         private void Init()
@@ -83,7 +84,7 @@ namespace Reyuko.App.Views.PurchaseDocument
             srstaff.Text = "";
             txtAnnualFrequency.Text = "";
             dtAnnual.Text = DateTime.Now.ToShortDateString();
-           
+            dtRequired.Text = DateTime.Now.ToShortDateString();
         }
         public void LoadEmployee()
         {
@@ -193,10 +194,10 @@ namespace Reyuko.App.Views.PurchaseDocument
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void currency_selectedchange(object sender, SelectionChangedEventArgs e)
@@ -485,10 +486,10 @@ namespace Reyuko.App.Views.PurchaseDocument
                 shoping.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                 shoping.Annual = this.optionAnnualSelected.Annual;
             }
-            if (this.kontakSelected != null)
+            if (this.petugasSelected != null)
             {
-                shoping.IdPetugas = this.kontakSelected.Id;
-                shoping.NamaPetugas = this.kontakSelected.NamaA;
+                shoping.IdPetugas = this.petugasSelected.Id;
+                shoping.NamaPetugas = this.petugasSelected.NamaA;
             }
             shoping.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
             shoping.TanggalBerulang = DateTime.Parse(dtAnnual.Text);

@@ -36,6 +36,9 @@ namespace Reyuko.App.Views.ReceivedGood
        
         private void Clearform()
         {
+            dtDelivery.Text = DateTime.Now.ToShortDateString();
+            dtReceived.Text = DateTime.Now.ToShortDateString();
+            dtAnnual.Text = DateTime.Now.ToShortDateString();
         }
 
         public IEnumerable<Receivedgood> receivedGoods { get; set; }
@@ -63,6 +66,7 @@ namespace Reyuko.App.Views.ReceivedGood
         public IEnumerable<Purchasedelivery> purchasedeliveries { get; set; }
         public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
         public Purchasedelivery purchaseDeliverySelected { get; set; }
+        public Kontak petugasSelected;
 
         public void Navigate(UserControl nextPage)
         {
@@ -298,10 +302,10 @@ namespace Reyuko.App.Views.ReceivedGood
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void cash_selectedchange(object sender, SelectionChangedEventArgs e)
@@ -462,10 +466,10 @@ namespace Reyuko.App.Views.ReceivedGood
                             receivedgood.IdOptionAnnual = this.optionAnnualSelected.IdOptionAnnual;
                             receivedgood.Annual = this.optionAnnualSelected.Annual;
                         }
-                        if (this.kontakSelected != null)
+                        if (this.petugasSelected != null)
                         {
-                            receivedgood.IdPetugas = this.kontakSelected.Id;
-                            receivedgood.NamaPetugas = this.kontakSelected.NamaA;
+                            receivedgood.IdPetugas = this.petugasSelected.Id;
+                            receivedgood.NamaPetugas = this.petugasSelected.NamaA;
                         }
                         receivedgood.CicilanPerbulan = double.Parse(txtAnnualFrequency.Text);
                         receivedgood.TanggalBerulang = DateTime.Parse(dtAnnual.Text);

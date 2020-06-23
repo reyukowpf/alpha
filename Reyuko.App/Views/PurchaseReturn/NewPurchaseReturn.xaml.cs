@@ -34,6 +34,7 @@ namespace Reyuko.App.Views.PurchaseReturn
         
         private IEnumerable<Kontak> kontaks { get; set; }
         public Kontak kontakSelected { get; set; }
+        public Kontak petugasSelected;
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         public IEnumerable<Dokumen> dokumens { get; set; }
@@ -169,10 +170,10 @@ namespace Reyuko.App.Views.PurchaseReturn
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         public void LoadDepartmen()
@@ -342,6 +343,8 @@ namespace Reyuko.App.Views.PurchaseReturn
         }
         private void Clearform()
         {
+            dtReceived.Text = DateTime.Now.ToShortDateString();
+            dtDelivery.Text = DateTime.Now.ToShortDateString();
         }
         public void Navigate(UserControl nextPage)
         {
@@ -415,10 +418,10 @@ namespace Reyuko.App.Views.PurchaseReturn
                             oData.IdProyek = this.dataProyekSelected.Id;
 
                         }
-                        if (this.kontakSelected != null)
+                        if (this.petugasSelected != null)
                         {
-                            oData.IdPetugas = this.kontakSelected.Id;
-                            oData.NamaPetugas = this.kontakSelected.NamaA;
+                            oData.IdPetugas = this.petugasSelected.Id;
+                            oData.NamaPetugas = this.petugasSelected.NamaA;
                         }
                         if (this.termspembayaranSelected != null)
                         {
