@@ -246,7 +246,7 @@ namespace Reyuko.App.Views.DeliveryOrder
                 int sum = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajak);
+                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
                 }
                 txtTotalTax.Text = sum.ToString();
                 int sumar = 0;

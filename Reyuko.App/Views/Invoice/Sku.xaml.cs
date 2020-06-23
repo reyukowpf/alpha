@@ -91,7 +91,7 @@ namespace Reyuko.App.Views.Invoice
             oData.DiskonProduk = double.Parse(txtdiskon1.Text);
             oData.JumlahProduk = int.Parse(txttotal.Text);
             oData.TotalOrderProduk = double.Parse(txttotal1.Text);
-            oData.TotalPajak = double.Parse(txttotaltax.Text);
+            oData.TotalPajakProduk = double.Parse(txttotaltax.Text);
             oData.Checkbokaktif = true;
             return oData;
 

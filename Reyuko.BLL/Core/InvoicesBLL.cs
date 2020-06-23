@@ -271,7 +271,7 @@ namespace Reyuko.BLL.Core
                             traceID = 4;
                             oNewListOrderJual.IdOrderJual = oData.IdOrderJasa;
                             oNewListOrderJual.HargaJual = oData.HargaJasa;
-                            oNewListOrderJual.DiskonProduk = oData.DiskonJasa;
+                            oNewListOrderJual.Diskon = oData.DiskonJasa;
                             oNewListOrderJual.IdTypeProduk = oData.AkunJasa;
                             oNewListOrderJual.Jumlah = oData.JumlahJasa;
                             oNewListOrderJual.TotalOrder = oData.TotalOrderJasa;

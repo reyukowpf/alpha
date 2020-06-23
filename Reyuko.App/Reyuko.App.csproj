@@ -691,11 +691,11 @@
     <Compile Include="Views\Sales\Sales.xaml.cs">
       <DependentUpon>Sales.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Sales\Skuorder.xaml.cs">
-      <DependentUpon>Skuorder.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Sales\Sku.xaml.cs">
       <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\Skuservice.xaml.cs">
+      <DependentUpon>Skuservice.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Sales\StockList.xaml.cs">
       <DependentUpon>StockList.xaml</DependentUpon>
@@ -1380,11 +1380,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Sales\Skuorder.xaml">
+    <Page Include="Views\Sales\Sku.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Sales\Sku.xaml">
+    <Page Include="Views\Sales\Skuservice.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

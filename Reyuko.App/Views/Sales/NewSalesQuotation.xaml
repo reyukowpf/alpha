@@ -135,6 +135,22 @@
             </StackPanel>
         </Button>
 
+        <Button HorizontalAlignment="Left" Margin="10,235,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="produk_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/red_plus.png" Height="20"/>
+                <TextBlock Text=" Product" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Left" Margin="100,235,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="service_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/green_plus.png" Height="20"/>
+                <TextBlock Text=" Service" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
         <CheckBox Content="Unposted" FontSize="12.5" HorizontalAlignment="Right" Margin="0,13,355,0" VerticalAlignment="Top"/>
 
         <Label Content="Customer / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="12,52,0,0" VerticalAlignment="Top" Height="26"/>
@@ -254,8 +270,12 @@
         <ComboBox x:Name="cbPayment" HorizontalAlignment="Left" FontSize="12.5" Margin="10,565,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="payment_selectedchange"/>
         <ComboBox x:Name="cbCash" HorizontalAlignment="Left" FontSize="12.5" Margin="10,565,0,0" Height="28" VerticalAlignment="Top" Width="150" />
         <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" Height="28" Margin="185,565,0,0" FontSize="12.5" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtTotalbeforeTax" Visibility="Hidden" FontSize="12.5" Text=" " HorizontalAlignment="Left" Height="28" Margin="560,539,400,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtTotalTax" Text="" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="622,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txttotalprodukbeforetax" Visibility="Hidden" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="550,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBlock x:Name="txttotaljasabeforetax" Visibility="Hidden" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="550,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBlock x:Name="txttotalbeforetax" Visibility="Hidden" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="350,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        <TextBlock x:Name="txtTotalprodukTax" Visibility="Hidden" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,430,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotaljasaTax" Text=" " Visibility="Hidden" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="390,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotalTax" Text=" " FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="622,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtAfterTotalTax" Text="" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="622,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtPaid" Text="" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="622,500,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <TextBlock x:Name="txtInstallmentannual" FontSize="12.5" Text="" HorizontalAlignment="Left" Height="28" Margin="622,570,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
@@ -263,11 +283,11 @@
         <TextBlock x:Name="txtDuedate" Text="" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="622,650,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <DataGrid
             x:Name="DGSKU"
-            Height="Auto"
+            Height="160"
             Width="770"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
-            Margin="10,240,0,0"
+            Margin="10,260,0,0"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -289,14 +309,14 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" IsReadOnly="True" Binding="{Binding Sku}" x:Name="temp">
-                    <DataGridTextColumn.Header>
-                        <Grid Margin="0">
-                            <Button x:Name="btnskuu" Content="SKU / Name" Background="Transparent" BorderThickness="0"
-            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="100" Click="btnsku">
-                            </Button>
-                        </Grid>
-                    </DataGridTextColumn.Header>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Sku}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="SKU / Name">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Left" />
@@ -306,14 +326,14 @@
                     </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
-                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
                             <Setter Property="VerticalAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding JumlahProduk}"
+                    Binding="{Binding Jumlah}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
@@ -401,7 +421,7 @@
                 </DataGridTextColumn>
                 <DataGridTextColumn
                     Width="80"
-                    Binding="{Binding Jumlah}"
+                    Binding="{Binding TotalOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"

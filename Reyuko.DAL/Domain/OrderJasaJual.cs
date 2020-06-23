@@ -22,7 +22,7 @@ namespace Reyuko.DAL.Domain
         public int? IdPajak { get; set; }
         public string Pajak { get; set; }
         public double? Persentase { get; set; }
-        public double? TotalPajak { get; set; }
+        public double? TotalPajakJasa { get; set; }
         public int? IdAkunPajakJual { get; set; }
         public int? AkunJasa { get; set; }
         public int? IdProyek { get; set; }

@@ -17,7 +17,7 @@ namespace Reyuko.DAL.Domain
         public string Sku { get; set; }
         public string NamaProduk { get; set; }
         public string SatuanDasar { get; set; }
-        public double? DiskonProduk { get; set; }
+        public double? Diskon { get; set; }
         public double? HargaJual { get; set; }
         public double? HargaPokok { get; set; }
         public double? Jumlah { get; set; }
@@ -41,6 +41,9 @@ namespace Reyuko.DAL.Domain
         public string NamaAsset { get; set; }
         public DateTime? TanggalPengiriman { get; set; }
         public bool? Checkbokaktif { get; set; }
-
+        public double? TotalOrderProduk { get; set; }
+        public double? TotalPajakProduk { get; set; }
+        public double? TotalOrderJasa { get; set; }
+        public double? TotalPajakJasa { get; set; }
     }
 }

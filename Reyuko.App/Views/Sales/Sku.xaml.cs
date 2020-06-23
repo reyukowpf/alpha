@@ -25,10 +25,10 @@ namespace Reyuko.App.Views.Sales
     /// </summary>
     public partial class Sku : Window
     {
-        public Sku(NewSalesQuotation newsalesquota)
+        public Sku(NewSalesQuotation newquota)
         {
             InitializeComponent();
-            this.newsalesquota = newsalesquota;
+            this.newquota = newquota;
             this.Init();
         }
         public IEnumerable<produk> produks { get; set; }
@@ -43,7 +43,7 @@ namespace Reyuko.App.Views.Sales
             this.ClearForm();
             this.Loadproduk();
         }
-        public NewSalesQuotation newsalesquota;
+        public NewSalesQuotation newquota;
         private void Loadproduk()
         {
              using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -91,18 +91,19 @@ namespace Reyuko.App.Views.Sales
             oData.DiskonProduk = double.Parse(txtdiskon1.Text);
             oData.JumlahProduk = int.Parse(txttotal.Text);
             oData.TotalOrderProduk = double.Parse(txttotal1.Text);
-            oData.TotalPajak = double.Parse(txttotaltax.Text);
+            oData.TotalPajakProduk = double.Parse(txttotaltax.Text);
             oData.Checkbokaktif = true;
             return oData;
+
         }
         public void Addsku_Clicks(object sender, RoutedEventArgs e)
         {
-            DeliveryOrdersBLL deliveryBLL = new DeliveryOrdersBLL();
-                if (deliveryBLL.AddOrderProdukjual(this.GetData()) > 0)
+            SalesquotationBLL quotaBLL = new SalesquotationBLL();
+                if (quotaBLL.AddOrderProdukjual(this.GetData()) > 0)
                 {
                     this.ClearForm();
                     MessageBox.Show("Add Order Sell Product successfully added !");
-                    this.newsalesquota.LoadDataSku();
+                    this.newquota.LoadDataSku();
                 }
                 else
                 {

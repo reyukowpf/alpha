@@ -47,7 +47,7 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.SatuanDasar)
                 .HasColumnName("satuan_dasar");
 
-            this.Property(m => m.DiskonProduk)
+            this.Property(m => m.Diskon)
                 .HasColumnName("diskon");
 
             this.Property(m => m.HargaJual)
@@ -118,6 +118,18 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.Checkbokaktif)
                .HasColumnName("Checkboxaktif");
+
+            this.Property(m => m.TotalOrderProduk)
+               .HasColumnName("total_order_produk");
+
+            this.Property(m => m.TotalPajakProduk)
+               .HasColumnName("total_pajak_produk");
+
+            this.Property(m => m.TotalOrderJasa)
+               .HasColumnName("total_order_jasa");
+
+            this.Property(m => m.TotalPajakJasa)
+               .HasColumnName("total_pajak_jasa");
         }
     }
 }

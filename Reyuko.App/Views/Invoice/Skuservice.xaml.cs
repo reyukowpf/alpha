@@ -83,7 +83,7 @@ namespace Reyuko.App.Views.Invoice
             oData.DiskonJasa = double.Parse(txtdiskon1.Text);
             oData.JumlahJasa = int.Parse(txttotal.Text);
             oData.TotalOrderJasa = double.Parse(txttotal1.Text);
-            oData.TotalPajak = double.Parse(txttotaltax.Text);
+            oData.TotalPajakJasa = double.Parse(txttotaltax.Text);
             oData.Checkbokaktif = true;
             return oData;
         }

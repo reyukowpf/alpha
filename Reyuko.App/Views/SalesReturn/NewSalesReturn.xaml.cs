@@ -523,7 +523,7 @@ namespace Reyuko.App.Views.SalesReturn
                 int sum = 0;
                 for (int i = 0; i < DGSKUSalesReturn.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKUSalesReturn.Items[i] as OrderProdukJual).TotalPajak);
+                    sum += Convert.ToInt32((DGSKUSalesReturn.Items[i] as OrderProdukJual).TotalPajakProduk);
                 }
                 txtTotalTax.Text = sum.ToString();
                 int sumar = 0;

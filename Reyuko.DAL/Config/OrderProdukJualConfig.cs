@@ -71,7 +71,7 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.Persentase)
                 .HasColumnName("persentase");
 
-            this.Property(m => m.TotalPajak)
+            this.Property(m => m.TotalPajakProduk)
                 .HasColumnName("total_pajak");
 
             this.Property(m => m.IdAkunPajakJual)

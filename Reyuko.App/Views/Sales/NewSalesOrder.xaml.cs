@@ -283,7 +283,7 @@ namespace Reyuko.App.Views.Sales
                 int sum = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajak);
+                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajakProduk);
                 }
                 txtTotalTax.Text = sum.ToString();
                 int sumar = 0;
@@ -311,22 +311,7 @@ namespace Reyuko.App.Views.Sales
 
         private void btnsku(object sender, RoutedEventArgs e)
         {
-            bool isWindowOpen = false;
-
-            foreach (Window w in Application.Current.Windows)
-            {
-                if (w is Skuorder)
-                {
-                    isWindowOpen = true;
-                    w.Activate();
-                }
-            }
-
-            if (!isWindowOpen)
-            {
-                Skuorder newsku = new Skuorder(this);
-                newsku.Show();
-            }
+          
         }
 
      

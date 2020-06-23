@@ -25,7 +25,7 @@ namespace Reyuko.DAL.Domain
         public int? IdPajak { get; set; }
         public string Pajak { get; set; }
         public double? Persentase { get; set; }
-        public double? TotalPajak { get; set; }
+        public double? TotalPajakProduk { get; set; }
         public int? IdAkunPajakJual { get; set; }
         public int? IdTypeProduk { get; set; }
         public string TypeProduk { get; set; }
