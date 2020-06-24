@@ -34,6 +34,7 @@ namespace Reyuko.App.Views.Invoice
         public IEnumerable<Kontak> kontaks { get; set; }
         public IEnumerable<ListOrderJual> listOrderJuals { get; set; }
         public Kontak kontakSelected { get; set; }
+        public Kontak petugasSelected;
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         public IEnumerable<Dokumen> dokumens { get; set; }

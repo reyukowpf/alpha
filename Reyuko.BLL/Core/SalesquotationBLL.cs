@@ -30,55 +30,57 @@ namespace Reyuko.BLL.Core
                         oNewSalesquotation = uow.Salesquotation.Add(oNewSalesquotation);
                         uow.Save();
 
-                        if (oNewSalesquotation.Id > 0)
-                        {
-                            traceID = 3;
-                            oData.Id = oNewSalesquotation.Id;
-                            SalesOrder oNewsalesorder = new SalesOrder();
-                            oNewsalesorder.MapFrom(oData);
+                        /*  if (oNewSalesquotation.Id > 0)
+                          {
+                              traceID = 3;
+                              oData.Id = oNewSalesquotation.Id;
+                              SalesOrder oNewsalesorder = new SalesOrder();
+                              oNewsalesorder.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewsalesorder.IdTransaksi = oData.Id;
-                            uow.SalesOrder.Add(oNewsalesorder);
-                        }
+                              traceID = 4;
+                              oNewsalesorder.IdTransaksi = oData.Id;
+                              uow.SalesOrder.Add(oNewsalesorder);
+                          }
 
-                        if (oNewSalesquotation.Id > 0)
-                        {
-                            traceID = 3;
-                            oData.Id = oNewSalesquotation.Id;
-                            Deliveryorders oNeworder = new Deliveryorders();
-                            oNeworder.MapFrom(oData);
+                          if (oNewSalesquotation.Id > 0)
+                          {
+                              traceID = 3;
+                              oData.Id = oNewSalesquotation.Id;
+                              Deliveryorders oNeworder = new Deliveryorders();
+                              oNeworder.MapFrom(oData);
 
-                            traceID = 4;
-                            oNeworder.IdTransaksi = oData.Id;
-                            uow.DeliveryOrder.Add(oNeworder);
-                        }
+                              traceID = 4;
+                              oNeworder.IdTransaksi = oData.Id;
+                              uow.DeliveryOrder.Add(oNeworder);
+                          }
 
-                        if (oNewSalesquotation.Id > 0)
-                        {
-                            traceID = 3;
-                            oData.Id = oNewSalesquotation.Id;
-                            invoice oNewinvoice = new invoice();
-                            oNewinvoice.MapFrom(oData);
+                          if (oNewSalesquotation.Id > 0)
+                          {
+                              traceID = 3;
+                              oData.Id = oNewSalesquotation.Id;
+                              invoice oNewinvoice = new invoice();
+                              oNewinvoice.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewinvoice.IdTransaksi = oData.Id;
-                            uow.Invoice.Add(oNewinvoice);
-                        }
+                              traceID = 4;
+                              oNewinvoice.IdTransaksi = oData.Id;
+                              uow.Invoice.Add(oNewinvoice);
+                          }
 
-                        if (oNewSalesquotation.Id > 0)
-                        {
-                            traceID = 3;
-                            oData.Id = oNewSalesquotation.Id;
-                            Salesreturn oNewgood = new Salesreturn();
-                            oNewgood.MapFrom(oData);
+                          if (oNewSalesquotation.Id > 0)
+                          {
+                              traceID = 3;
+                              oData.Id = oNewSalesquotation.Id;
+                              Salesreturn oNewgood = new Salesreturn();
+                              oNewgood.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewgood.IdTransaksi = oData.Id;
-                            uow.SalesReturn.Add(oNewgood);
-                        }
+                              traceID = 4;
+                              oNewgood.IdTransaksi = oData.Id;
+                              uow.SalesReturn.Add(oNewgood);
+                          }*/
 
-                        traceID = 7;
+                        traceID = 3;
+                        oData.Id = oNewSalesquotation.Id;
+                        oData.IdTransaksi = oNewSalesquotation.Id;
                         uow.Save();
                         trans.Commit();
                     }
@@ -293,11 +295,8 @@ namespace Reyuko.BLL.Core
                             else
                             {
                                 traceID = 7;
-                                OrderProdukJual oNewListorderjual = new OrderProdukJual();
-                                oNewListorderjual.MapFrom(oData);
-
+                               
                                 traceID = 8;
-                                uow.OrderProdukJual.Add(oNewListorderjual);
                             }
                             traceID = 9;
                             OrderJasaJual oDBListorderjual1 = uow.OrderJasaJual.SingleOrDefault(m => m.IdOrderJasa == oData.IdOrderJual);

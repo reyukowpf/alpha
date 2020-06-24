@@ -553,19 +553,19 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>g7w/WOPKEGBUfZ4lba2LVIp/4PSW1VdSENoJoJqta9k=</dsig:DigestValue>
+        <dsig:DigestValue>4SzQQ/iRfByUqHTPeTqLRE0ka0vUUh7ngrJZwgesDhQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.BLL.dll" size="116224">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.BLL.dll" size="115712">
       <assemblyIdentity name="Reyuko.BLL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>f96qCsrV4UHHoc5OtNPhYkTK4kzljXzScprszlHMmk0=</dsig:DigestValue>
+        <dsig:DigestValue>PjJxgMrN6WrH6X8uZ7m6XPaljneoDLEVn2kkEFwq1z0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -37,11 +37,13 @@ namespace Reyuko.App.Views.Sales
         }
         public IEnumerable<Kontak> kontaks { get; set; }
         public Kontak kontakSelected { get; set; }
+        public Kontak petugasSelected;
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         public IEnumerable<Dokumen> dokumens { get; set; }
         public Dokumen dokumenSelected { get; set; }
         public IEnumerable<Lokasi> lokasi { get; set; }
+        public IEnumerable<SalesOrder> salesOrders { get; set; }
         public Lokasi lokasiSelected { get; set; }
         public IEnumerable<OptionAnnual> optionAnnuals { get; set; }
         public OptionAnnual optionAnnualSelected { get; set; }
@@ -49,7 +51,7 @@ namespace Reyuko.App.Views.Sales
         public IEnumerable<Salesquotation> salesquotations { get; set; }
         public Salesquotation salesquotationSelected;
         public DataDepartemen Selectdepartment { get; set; }
-        public IEnumerable<OrderProdukJual> orderProdukJuals { get; set; }
+        public IEnumerable<ListOrderJual> listOrderJuals { get; set; }
         public IEnumerable<DataProyek> dataProyeks { get; set; }
         public IEnumerable<Termspembayaran> termspembayarans { get; set; }
         public Termspembayaran termspembayaranSelected;
@@ -235,10 +237,10 @@ namespace Reyuko.App.Views.Sales
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void currency_selectedchange(object sender, SelectionChangedEventArgs e)
@@ -278,26 +280,45 @@ namespace Reyuko.App.Views.Sales
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.Checkbokaktif == true);
-                DGSKU.ItemsSource = this.orderProdukJuals;
+                this.listOrderJuals = uow.ListOrderJual.GetAll().Where(m => m.IdTransaksi == this.salesquotationSelected.Id);
+                DGSKU.ItemsSource = this.listOrderJuals;
                 int sum = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajakProduk);
+                    sum += Convert.ToInt32((DGSKU.Items[i] as ListOrderJual).TotalPajakProduk);
                 }
-                txtTotalTax.Text = sum.ToString();
+                txtTotalprodukTax.Text = sum.ToString();
+                int sum1 = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sum1 += Convert.ToInt32((DGSKU.Items[i] as ListOrderJual).TotalPajakJasa);
+                }
+                txtTotaljasaTax.Text = sum1.ToString();
+                int sum2 = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sum2 += Convert.ToInt32((DGSKU.Items[i] as ListOrderJual).TotalPajak);
+                }
+                txtTotalTax.Text = sum2.ToString();
                 int sumar = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    sumar += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                    sumar += Convert.ToInt32((DGSKU.Items[i] as ListOrderJual).TotalOrderProduk);
                 }
-                txtTotalbeforeTax.Text = sumar.ToString();
-                int suma = 0;
+                txttotalprodukbeforetax.Text = sumar.ToString();
+                int sumar1 = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    suma += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                    sumar1 += Convert.ToInt32((DGSKU.Items[i] as ListOrderJual).TotalOrderJasa);
                 }
-                txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
+                txttotaljasabeforetax.Text = sumar1.ToString();
+                int sumar2 = 0;
+                for (int i = 0; i < DGSKU.Items.Count; i++)
+                {
+                    sumar2 += Convert.ToInt32((DGSKU.Items[i] as ListOrderJual).TotalOrder);
+                }
+                txttotalbeforetax.Text = sumar2.ToString();
+                txtAfterTotalTax.Text = (float.Parse(sumar2.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
             }
         }
         private void Salesquotation_selectedchange(object sender, SelectionChangedEventArgs e)
@@ -306,12 +327,15 @@ namespace Reyuko.App.Views.Sales
             if (cbSalesquota.SelectedItem != null)
             {
                 this.salesquotationSelected = (Salesquotation)cbSalesquota.SelectedItem;
+                this.LoadDataSku();
+                this.LoadDataQuota();
             }
         }
-
-        private void btnsku(object sender, RoutedEventArgs e)
+        public void LoadDataQuota()
         {
-          
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+            }
         }
 
      
@@ -323,7 +347,6 @@ namespace Reyuko.App.Views.Sales
                 return;
             }
             SalesOrderBLL orderBLL = new SalesOrderBLL();
-            SalesOrderBLL OrderBLL = new SalesOrderBLL();
             SalesOrder salesorder = new SalesOrder();
             if (this.kontakSelected != null)
             {
@@ -367,10 +390,10 @@ namespace Reyuko.App.Views.Sales
             salesorder.CheckboxInclusiveTax = chkinclusive.IsChecked;
             salesorder.CheckboxSelesai = chkcomplete.IsChecked;
             salesorder.TanggalPengantaran = DateTime.Parse(dtValidaty.Text);
-            if (this.kontakSelected != null)
+            if (this.petugasSelected != null)
             {
-                salesorder.IdPetugas = this.kontakSelected.Id;
-                salesorder.NamaPetugas = this.kontakSelected.NamaA;
+                salesorder.IdPetugas = this.petugasSelected.Id;
+                salesorder.NamaPetugas = this.petugasSelected.NamaA;
             }
             if (this.termspembayaranSelected != null)
             {
@@ -385,15 +408,19 @@ namespace Reyuko.App.Views.Sales
                 salesorder.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                 salesorder.Annual = this.optionAnnualSelected.Annual;
             }
+            if (this.salesquotationSelected != null)
+            {
+                salesorder.IdTransaksi = this.salesquotationSelected.Id;
+            }
             salesorder.IdKodeTransaksi = 18;
             salesorder.KodeTransaksi = "SO";
             salesorder.IdPeriodeAkuntansi = 1;
             salesorder.RealRecordingTime = DateTime.Now;
             salesorder.TotalOrderProduk = salesorder.TotalSebelumPajak;
-            salesorder.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
+            salesorder.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
             salesorder.TotalPajak = double.Parse(txtTotalTax.Text);
             salesorder.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
-            if (OrderBLL.AddSalesOrder(salesorder) > 0)
+            if (orderBLL.AddSalesOrder(salesorder) > 0)
             {
                 //  this.ClearForm();
                 MessageBox.Show("Sales Order successfully added !");
@@ -401,36 +428,6 @@ namespace Reyuko.App.Views.Sales
             else
             {
                 MessageBox.Show("Sales Order failed to add !");
-            }
-            if (DGSKU.Items.Count > 0)
-            {
-                foreach (var item in DGSKU.Items)
-                {
-                    if (item is OrderProdukJual)
-                    {
-                        OrderProdukJual oNewData1 = (OrderProdukJual)item;
-                        oNewData1.IdReferalTransaksi = 1;
-                        oNewData1.Tanggal = DateTime.Parse(dtSales.Text);
-                        if (this.lokasiSelected != null)
-                        {
-                            oNewData1.IdLokasi = this.lokasiSelected.Id;
-                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-                        }
-                        if (this.dataDepartemenSelected != null)
-                        {
-                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
-                        }
-                        if (this.dataProyekSelected != null)
-                        {
-                            oNewData1.IdProyek = this.dataProyekSelected.Id;
-                        }
-                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValidaty.Text);
-                        oNewData1.Checkbokaktif = false;
-                        if (orderBLL.EditOrderProdukjual(oNewData1, salesorder) == true)
-                        {
-                        }
-                    }
-                }
             }
             Sales v = new Sales();
             Switcher.Switchorder(v);

@@ -455,8 +455,8 @@ namespace Reyuko.App.Views.Sales
                         {
                             oNewData1.IdProyek = this.dataProyekSelected.Id;
                         }
-                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValidaty.Text);
                         oNewData1.IdTransaksi = salesquotation.Id;
+                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValidaty.Text);
                         oNewData1.Checkbokaktif = false;
                         if (quotaBLL.EditOrderProdukjual(oNewData1, salesquotation) == true)
                         {

@@ -352,11 +352,8 @@ namespace Reyuko.BLL.Core
                             else
                             {
                                 traceID = 7;
-                                OrderProdukBeli oNewListorderbeli = new OrderProdukBeli();
-                                oNewListorderbeli.MapFrom(oData);
-
+                      
                                 traceID = 8;
-                                uow.OrderProdukBeli.Add(oNewListorderbeli);
                             }
                             traceID = 9;
                             OrderJasaBeli oDBListorderbeli1 = uow.OrderJasaBeli.SingleOrDefault(m => m.IdOrderJasa == oData.IdOrderBeli);

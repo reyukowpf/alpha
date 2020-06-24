@@ -46,6 +46,8 @@ namespace Reyuko.App.Views.DeliveryOrder
         public IEnumerable<SalesOrder> SalesOrders { get; set; }
         public SalesOrder SalesOrderSelected { get; set; }
         public IEnumerable<OrderProdukJual> orderProdukJuals { get; set; }
+        public Kontak petugasSelected;
+        public IEnumerable<Deliveryorders> deliveryorders { get; set; }
         public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
         public DataDepartemen Selectdepartment { get; set; }
         public IEnumerable<DataProyek> dataProyeks { get; set; }
@@ -91,8 +93,10 @@ namespace Reyuko.App.Views.DeliveryOrder
             if (cbSalesorder.SelectedItem != null)
             {
                 this.SalesOrderSelected = (SalesOrder)cbSalesorder.SelectedItem;
+                this.LoadDataSku();
             }
         }
+      
         public void LoadStaff()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -103,10 +107,10 @@ namespace Reyuko.App.Views.DeliveryOrder
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void LoadAnnual()
@@ -241,12 +245,12 @@ namespace Reyuko.App.Views.DeliveryOrder
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.Checkbokaktif == true);
+                this.orderProdukJuals = uow.OrderProdukJual.GetAll().Where(m => m.IdTransaksi == this.SalesOrderSelected.IdTransaksi);
                 DGSKU.ItemsSource = this.orderProdukJuals;
                 int sum = 0;
                 for (int i = 0; i < DGSKU.Items.Count; i++)
                 {
-                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
+                    sum += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalPajakProduk);
                 }
                 txtTotalTax.Text = sum.ToString();
                 int sumar = 0;
@@ -261,26 +265,7 @@ namespace Reyuko.App.Views.DeliveryOrder
                     suma += Convert.ToInt32((DGSKU.Items[i] as OrderProdukJual).TotalOrderProduk);
                 }
                 txtAfterTotalTax.Text = (float.Parse(suma.ToString()) + float.Parse(txtTotalTax.Text)).ToString();
-                txtOutstanding.Text = txtAfterTotalTax.Text;
-            }
-        }
-        private void btnsku(object sender, RoutedEventArgs e)
-        {
-            bool isWindowOpen = false;
-
-            foreach (Window w in Application.Current.Windows)
-            {
-                if (w is Sku)
-                {
-                    isWindowOpen = true;
-                    w.Activate();
-                }
-            }
-
-            if (!isWindowOpen)
-            {
-                Sku newsku = new Sku(this);
-                newsku.Show();
+                //  txtOutstanding.Text = txtAfterTotalTax.Text;
             }
         }
 
@@ -453,7 +438,6 @@ namespace Reyuko.App.Views.DeliveryOrder
                 return;
             }
             DeliveryOrdersBLL deliveryBLL = new DeliveryOrdersBLL();
-            DeliveryOrdersBLL DeliveryBLL = new DeliveryOrdersBLL();
             Deliveryorders deliveryorders = new Deliveryorders();
             if (this.kontakSelected != null)
             {
@@ -503,10 +487,10 @@ namespace Reyuko.App.Views.DeliveryOrder
                 deliveryorders.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                 deliveryorders.Annual = this.optionAnnualSelected.Annual;
             }
-            if (this.kontakSelected != null)
+            if (this.petugasSelected != null)
             {
-                deliveryorders.IdPetugas = this.kontakSelected.Id;
-                deliveryorders.NamePetugas = this.kontakSelected.NamaA;
+                deliveryorders.IdPetugas = this.petugasSelected.Id;
+                deliveryorders.NamePetugas = this.petugasSelected.NamaA;
             }
             deliveryorders.CheckboxBerulang = chkannual.IsChecked;
             deliveryorders.IdKodeTransaksi = 25;
@@ -518,8 +502,12 @@ namespace Reyuko.App.Views.DeliveryOrder
             deliveryorders.TotalDebitAkunPengirimanJualProduk = double.Parse(txtTotalbeforeTax.Text);
             deliveryorders.TotalSebelumPajak = double.Parse(txtTotalbeforeTax.Text);
             deliveryorders.TotalPajak = double.Parse(txtTotalTax.Text);
+            if (this.SalesOrderSelected != null)
+            {
+                deliveryorders.IdTransaksi = this.SalesOrderSelected.IdTransaksi;
+            }
             deliveryorders.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
-            if (DeliveryBLL.AddDeliveryOrder(deliveryorders) > 0)
+            if (deliveryBLL.AddDeliveryOrder(deliveryorders) > 0)
             {
                 //  this.ClearForm();
                 MessageBox.Show("Delivery Order successfully added !");
@@ -528,41 +516,16 @@ namespace Reyuko.App.Views.DeliveryOrder
             {
                 MessageBox.Show("Delivery Order failed to add !");
             }
-             if (DGSKU.Items.Count > 0)
-             {
-                 foreach (var item in DGSKU.Items)
-                 {
-                     if (item is OrderProdukJual)
-                     {
-                         OrderProdukJual oNewData1 = (OrderProdukJual)item;
-                         oNewData1.IdReferalTransaksi = 1;
-                         oNewData1.Tanggal = DateTime.Parse(dtDeliveryorderdate.Text);
-                        if (this.lokasiSelected != null)
-                        {
-                            oNewData1.IdLokasi = this.lokasiSelected.Id;
-                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-                        }
-                        if (this.dataDepartemenSelected != null)
-                        {
-                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
-                        }
-                        if (this.dataProyekSelected != null)
-                        {
-                            oNewData1.IdProyek = this.dataProyekSelected.Id;
-                        }                       
-                        oNewData1.TanggalPengiriman = DateTime.Parse(dtValiditydate.Text);
-                        oNewData1.Checkbokaktif = false;
-                         if (deliveryBLL.EditOrderProdukjual(oNewData1, deliveryorders) == true)
-                         {
-                         }
-                     }
-                 }
-                    Deliveryorder v = new Deliveryorder();
-                    Switcher.SwitchNewDeliveryorder(v);
-                }
-            }
+           
+            Deliveryorder v = new Deliveryorder();
+            Switcher.SwitchNewDeliveryorder(v);
         }
     }
+}
+
+
+            
+
              
     
 

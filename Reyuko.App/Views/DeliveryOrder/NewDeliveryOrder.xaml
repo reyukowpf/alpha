@@ -161,7 +161,7 @@
             </Grid.ColumnDefinitions>
             <DataGrid
             x:Name="DGSKU"
-            Height="Auto"
+            Height="175"
             Width="770"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
@@ -185,18 +185,16 @@
                         <Setter Property="Background" Value="#d3d3d3" />
                         <Setter Property="Foreground" Value="White" />
                     </Style>
-
-
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    <DataGridTextColumn Width="*" IsReadOnly="True" Binding="{Binding Sku}" x:Name="temp">
-                        <DataGridTextColumn.Header>
-                            <Grid Margin="0">
-                                <Button x:Name="btnskuu" Content="SKU / Name" Background="Transparent" BorderThickness="0"
-            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="100" Click="btnsku">
-                                </Button>
-                            </Grid>
-                        </DataGridTextColumn.Header>
+                    <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Sku}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="SKU / Name">
                         <DataGridTextColumn.HeaderStyle>
                             <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                                 <Setter Property="HorizontalContentAlignment" Value="Left" />

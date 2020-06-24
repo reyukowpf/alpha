@@ -93,23 +93,8 @@
                 <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="10,255,0,0" Background="Transparent" BorderThickness="0"
-            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="produk_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/Reyuko.App;component/Icons/red_plus.png" Height="20"/>
-                <TextBlock Text=" Product" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Button>
 
-        <Button HorizontalAlignment="Left" Margin="100,255,0,0" Background="Transparent" BorderThickness="0"
-            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="service_Click">
-            <StackPanel Orientation="Horizontal">
-                <Image Source="/Reyuko.App;component/Icons/green_plus.png" Height="20"/>
-                <TextBlock Text=" Service" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-            </StackPanel>
-        </Button>
-
-        <Button HorizontalAlignment="Left" Margin="200,255,0,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Left" Margin="10,245,0,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="custom_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
@@ -301,11 +286,11 @@
         <ComboBox x:Name="cbCash1" HorizontalAlignment="Left" FontSize="12.5" Margin="10,610,0,0" Height="28" VerticalAlignment="Top" Width="150"/>
         <DataGrid
             x:Name="DGSKUInvoice"
-            Height="Auto"
+            Height="185"
             Width="780"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
-            Margin="10,291,0,0"
+            Margin="10,271,0,0"
             AutoGenerateColumns="False"
             IsEnabled="{Binding ElementName=Custome, Path=IsChecked}"
             CanUserAddRows="True"
@@ -342,7 +327,7 @@
                     </DataGridTextColumn.HeaderStyle>
                     <DataGridTextColumn.ElementStyle>
                         <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
-                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
                             <Setter Property="VerticalAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
