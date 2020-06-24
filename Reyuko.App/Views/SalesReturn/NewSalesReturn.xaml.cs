@@ -39,6 +39,7 @@ namespace Reyuko.App.Views.SalesReturn
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         private IEnumerable<invoice> invoices { get; set; }
+        public Kontak petugasSelected;
         private invoice invoiceSelected;
         public IEnumerable<Dokumen> dokumens { get; set; }
         public Dokumen dokumenSelected { get; set; }
@@ -192,10 +193,10 @@ namespace Reyuko.App.Views.SalesReturn
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void proyek_selectionchange(object sender, SelectionChangedEventArgs e)
@@ -301,81 +302,7 @@ namespace Reyuko.App.Views.SalesReturn
             }
         }
 
-        public Salesreturn GetData()
-        {
-            Salesreturn oData = new Salesreturn();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalReturPenjualan = DateTime.Parse(dtSales.Text);
-            oData.NoReturPenjualan = txtsalesreturnno.Text;
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
-            oData.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
-            oData.TanggalBerulang = DateTime.Parse(dtAnnual.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdPelanggan = this.kontakSelected.Id;
-                oData.NamaPelanggan = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMataUang = this.DataMataUangSelected.Id;
-                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.invoiceSelected != null)
-            {
-                oData.IdReferalTransaksi = this.invoiceSelected.IdReferalTransaksi;
-                oData.NoReferensiTransaksi = this.invoiceSelected.NoReferalTransaksi;
-            }
-            if (this.dropdownBankkasSelected != null)
-            {
-                oData.IdBankCash = this.dropdownBankkasSelected.Id;
-                oData.BankCash = this.dropdownBankkasSelected.DropdownBankkas;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-
-            }
-            if (this.optionAnnualSelected != null)
-            {
-                oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                oData.Annual = this.optionAnnualSelected.Annual;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-            if (this.termspembayaranSelected != null)
-            {
-                oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
-                oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
-            }
-
-            
-            oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
-            oData.Checkboxberulang = chkannual.IsChecked;
-
-            return oData;
-        }
-
+       
         private void Savesales_Click(object sender, RoutedEventArgs e)
         {
             if (srcustomer.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtSales.Text == "" || cbCurrency.Text == "" || txtsalesreturnno.Text == "" || cbLocation.Text == "" || dtDelivery.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
@@ -434,10 +361,14 @@ namespace Reyuko.App.Views.SalesReturn
                 salesreturn.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                 salesreturn.Annual = this.optionAnnualSelected.Annual;
             }
-            if (this.kontakSelected != null)
+            if (this.petugasSelected != null)
             {
-                salesreturn.IdPetugas = this.kontakSelected.Id;
-                salesreturn.NamaPetugas = this.kontakSelected.NamaA;
+                salesreturn.IdPetugas = this.petugasSelected.Id;
+                salesreturn.NamaPetugas = this.petugasSelected.NamaA;
+            }
+            if (this.invoiceSelected != null)
+            {
+                salesreturn.IdTransaksi = this.invoiceSelected.IdTransaksi;
             }
             salesreturn.Checkboxberulang = chkannual.IsChecked;
             salesreturn.IdKodeTransaksi = 25;
@@ -456,36 +387,6 @@ namespace Reyuko.App.Views.SalesReturn
             {
                 MessageBox.Show("Sales Return failed to add !");
             }
-            if (DGSKUSalesReturn.Items.Count > 0)
-            {
-                foreach (var item in DGSKUSalesReturn.Items)
-                {
-                    if (item is OrderProdukJual)
-                    {
-                        OrderProdukJual oNewData1 = (OrderProdukJual)item;
-                        oNewData1.IdReferalTransaksi = 1;
-                        oNewData1.Tanggal = DateTime.Parse(dtSales.Text);
-                        if (this.lokasiSelected != null)
-                        {
-                            oNewData1.IdLokasi = this.lokasiSelected.Id;
-                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-                        }
-                        if (this.dataDepartemenSelected != null)
-                        {
-                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
-                        }
-                        if (this.dataProyekSelected != null)
-                        {
-                            oNewData1.IdDepartemen = this.dataProyekSelected.Id;
-                        }
-                        oNewData1.TanggalPengiriman = DateTime.Parse(dtDelivery.Text);
-                        oNewData1.Checkbokaktif = false;
-                        if (returnBLL.EditOrderProdukjual(oNewData1, salesreturn) == true)
-                        {
-                        }
-                    }
-                }
-                }
             SalesReturn v = new SalesReturn();
             Switcher.SwitchNewSalesReturn(v);
         }

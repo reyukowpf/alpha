@@ -105,7 +105,6 @@ namespace Reyuko.App.Views.ReceivedGood
                 this.purchaseDeliverySelected = (Purchasedelivery)cbPurchasedelivery.SelectedItem;
                 this.LoadDataSku();
                 this.LoadPO();
-                this.LoadDatapo();
             }
         }
         public void LoadDataSku()
@@ -174,14 +173,6 @@ namespace Reyuko.App.Views.ReceivedGood
                 txtNote.Text = this.purchaseOrderSelected.Keterangan;
                 
              }
-        }
-        public void LoadDatapo()
-        {
-            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-            {
-                this.receivedGoods = uow.Receivedgood.GetAll().Where(m => m.IdTransaksi == this.purchaseDeliverySelected.IdTransaksi);
-                DGSKUorder.ItemsSource = this.receivedGoods;
-            }
         }
         public void LoadPaymentTerms()
         {
@@ -368,7 +359,22 @@ namespace Reyuko.App.Views.ReceivedGood
         
         private void vendor_Click(object sender, RoutedEventArgs e)
         {
-           
+            bool isWindowOpen = false;
+
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is Vendor.Vendorsgood)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+
+            if (!isWindowOpen)
+            {
+                Vendor.Vendorsgood newVendor = new Vendor.Vendorsgood(this);
+                newVendor.Show();
+            }
         }
         public void dokumen_Click(object sender, RoutedEventArgs e)
         {
@@ -398,13 +404,7 @@ namespace Reyuko.App.Views.ReceivedGood
                 return;
             }
             ReceivedGoodsBLL goodBLL = new ReceivedGoodsBLL();
-            if (DGSKUorder.Items.Count > 0)
-            {
-                foreach (var item in DGSKUorder.Items)
-                {
-                    if (item is Receivedgood)
-                    {
-                        Receivedgood receivedgood = (Receivedgood)item;
+                        Receivedgood receivedgood = new Receivedgood();
                         receivedgood.IdKodeTransaksi = 8;
                         receivedgood.KodeTransaksi = "PJ";
                         receivedgood.IdPeriodeAkutansi = 1;
@@ -434,8 +434,12 @@ namespace Reyuko.App.Views.ReceivedGood
                             receivedgood.IdPD = this.purchaseDeliverySelected.IdPengirimanBarangPembelian;
                             receivedgood.NoPD = this.purchaseDeliverySelected.NoPengirimanBarangPembelian;
                         }
-                        if (this.purchaseOrderSelected != null)
+                        if (this.purchaseDeliverySelected != null)
                         {
+                            receivedgood.IdTransaksi = this.purchaseDeliverySelected.IdTransaksi;
+                        }
+                        if (this.purchaseOrderSelected != null)
+                                    {
                             receivedgood.IdOrderPembeliaan = this.purchaseOrderSelected.IdOrderPembelian;
                             receivedgood.NoOrderPembeliaan = this.purchaseOrderSelected.NoOrderPembelian;
                         }
@@ -481,7 +485,7 @@ namespace Reyuko.App.Views.ReceivedGood
                         //receivedgood.SaldoTerhutang = double.Parse(txtoutstanding.Text);
 
                         receivedgood.RealRecordingTime = DateTime.Now;
-                        if (goodBLL.EditReceivedGoods(receivedgood) == true)
+                        if (goodBLL.AddReceivedGoods(receivedgood) > 0)
                         {
                             //  this.ClearForm();
                             MessageBox.Show("Received Good successfully added !");
@@ -518,9 +522,7 @@ namespace Reyuko.App.Views.ReceivedGood
                                 }
                             }
                         }
-                    }
-                }
-            }
+             
                         ReceivedGood v = new ReceivedGood();
             Switcher.Switchnewreceived(v);
         }

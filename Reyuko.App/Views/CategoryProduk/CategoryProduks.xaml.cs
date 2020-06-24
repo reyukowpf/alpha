@@ -1,4 +1,5 @@
-﻿using Reyuko.DAL;
+﻿using Reyuko.BLL.Core;
+using Reyuko.DAL;
 using Reyuko.DAL.Domain;
 using Reyuko.Utils;
 using System;
@@ -146,7 +147,20 @@ namespace Reyuko.App.Views.CategoryProduk
         }
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-
+            if (this.kategoriProdukSelected == null)
+            {
+                MessageBox.Show("Category Product not selected !");
+            }
+            else
+            {
+                KategoriProdukBLL purchasedeliveryBLL = new KategoriProdukBLL();
+                if (purchasedeliveryBLL.RemoveKategoriProduk(this.kategoriProdukSelected.Id) == true)
+                {
+                    MessageBox.Show("Category Product successfully deleted");
+                    this.LoadKategoriProduk();
+                    this.kategoriProdukSelected = null;
+                }
+            }
         }
         private void playtutorial_Click(object sender, RoutedEventArgs e)
         {

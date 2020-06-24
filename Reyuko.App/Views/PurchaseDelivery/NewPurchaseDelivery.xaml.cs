@@ -97,17 +97,9 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 this.purchaseOrderSelected = (PurchaseOrder)cbPurchaseorder.SelectedItem;
                 this.LoadDataSku();
                 txtNote.Text = this.purchaseOrderSelected.Keterangan;
-                this.LoadDataorder();
             }
         }
-        public void LoadDataorder()
-        {
-            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-            {
-                this.purchasedeliveries = uow.PurchaseDelivery.GetAll().Where(m => m.IdTransaksi == this.purchaseOrderSelected.IdTransaksi);
-                DGSKUPurchase.ItemsSource = this.purchasedeliveries;
-            }
-        }
+      
         public void LoadStaff()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -340,13 +332,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 return;
             }
             PurchasedeliveryBLL purchasedeliveryBLL = new PurchasedeliveryBLL();
-            if (DGSKUPurchase.Items.Count > 0)
-            {
-                foreach (var item in DGSKUPurchase.Items)
-                {
-                    if (item is Purchasedelivery)
-                    {
-                        Purchasedelivery oNewData1 = (Purchasedelivery)item;
+                        Purchasedelivery oNewData1 = new Purchasedelivery();
                         oNewData1.KodeTransaksi = "PD";
                         oNewData1.IdKodeTransaksi = 26;
                         if (this.kontakSelected != null)
@@ -403,13 +389,17 @@ namespace Reyuko.App.Views.PurchaseDelivery
                             oNewData1.IdPetugas = this.petugasSelected.Id;
                             oNewData1.NamaPetugas = this.petugasSelected.NamaA;
                         }
-                        oNewData1.TotalDebitAkunStokProduk = double.Parse(txttotalbeforetax.Text);
+                        if (this.purchaseOrderSelected != null)
+                        {
+                            oNewData1.IdTransaksi = this.purchaseOrderSelected.IdTransaksi;
+                        }
+                         oNewData1.TotalDebitAkunStokProduk = double.Parse(txttotalbeforetax.Text);
                         oNewData1.TotalKreditAkunPengirimanBeliProduk = double.Parse(txttotalbeforetax.Text);
                         oNewData1.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
                         oNewData1.TotalPajak = double.Parse(txtTotalTax.Text);
                         oNewData1.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
                         oNewData1.RealRecordingTime = DateTime.Now;
-                        if (purchasedeliveryBLL.EditPurchasedelivery(oNewData1) == true)
+                        if (purchasedeliveryBLL.AddPurchasedelivery(oNewData1) > 0)
                         {
                             //  this.ClearForm();
                             MessageBox.Show("Purchased Delivery successfully added !");
@@ -418,10 +408,6 @@ namespace Reyuko.App.Views.PurchaseDelivery
                         {
                             MessageBox.Show("Purchased Delivery failed to add !");
                         }
-                    }
-                    }
-                }
-            
             PurchaseDelivery v = new PurchaseDelivery();
                 Switcher.SwitchNewPurchaseDelivery(v);
             

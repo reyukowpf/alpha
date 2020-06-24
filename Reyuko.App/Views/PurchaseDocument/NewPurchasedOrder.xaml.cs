@@ -267,17 +267,8 @@ namespace Reyuko.App.Views.PurchaseDocument
                 quotationrequestSelected = (Quotationrequest)cbQuotationNo.SelectedItem;
                 this.LoadDataSku();
                 txtNote.Text = this.quotationrequestSelected.Keterangan;
-                this.LoadDatarequest();
             }
         }
-         public void LoadDatarequest()
-            {
-                using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-                {
-                    this.purchaseOrders = uow.PurchaseOrder.GetAll().Where(m => m.IdTransaksi == this.quotationrequestSelected.IdTransaksi);
-                    DGSKUorder1.ItemsSource = this.purchaseOrders;
-                }
-            }
         
         private void payment_selectedchange(object sender, SelectionChangedEventArgs e)
         {
@@ -367,13 +358,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                 return;
             }
             PurchaseordersBLL purchaseordersBLL = new PurchaseordersBLL(); 
-            if (DGSKUorder1.Items.Count > 0)
-            {
-                foreach (var item in DGSKUorder1.Items)
-                {
-                    if (item is PurchaseOrder)
-                    {
-                        PurchaseOrder oNewData1 = (PurchaseOrder)item;
+                        PurchaseOrder oNewData1 = new PurchaseOrder();
                         oNewData1.KodeTransaksi = "PO";
                         oNewData1.IdKodeTransaksi = 17;
                         if (this.kontakSelected != null)
@@ -436,6 +421,10 @@ namespace Reyuko.App.Views.PurchaseDocument
                             oNewData1.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
                             oNewData1.TermPembayaran = this.termspembayaranSelected.NamaSkema;
                         }
+                        if (this.quotationrequestSelected != null)
+                        {
+                            oNewData1.IdTransaksi = this.quotationrequestSelected.IdTransaksi;
+                        }
                         oNewData1.TotalOrderProduk = double.Parse(txttotalprodukbeforetax.Text);
                         oNewData1.TotalOrderJasa = double.Parse(txttotaljasabeforetax.Text);
                         oNewData1.TotalPajakJasa = double.Parse(txtTotaljasaTax.Text);
@@ -444,7 +433,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                         oNewData1.TotalPajak = double.Parse(txtTotalTax.Text);
                         oNewData1.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
                         oNewData1.RealRecordingTime = DateTime.Now;
-                        if (purchaseordersBLL.EditPurchaseorders(oNewData1) == true)
+                        if (purchaseordersBLL.AddPurchaseorders(oNewData1) > 0)
                         {
                             //  this.ClearForm();
                             MessageBox.Show("Purchased Order successfully added !");
@@ -454,9 +443,6 @@ namespace Reyuko.App.Views.PurchaseDocument
                             MessageBox.Show("Purchased Order failed to add !");
                         }
 
-                    }
-                }
-            }
             PurchaseDocument v = new PurchaseDocument();
             Switcher.SwitchNewPurchasedOrder(v);
         }
@@ -473,7 +459,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 foreach (Window w in Application.Current.Windows)
                 {
-                    if (w is NewVendor)
+                    if (w is Vendor.Vendorsorder)
                     {
                         isWindowOpen = true;
                         w.Activate();
@@ -482,7 +468,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 if (!isWindowOpen)
                 {
-                    NewVendor Customer = new NewVendor(this);
+                    Vendor.Vendorsorder Customer = new Vendor.Vendorsorder(this);
                     Customer.Show();
                 }
 
@@ -496,7 +482,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 foreach (Window w in Application.Current.Windows)
                 {
-                    if (w is Document)
+                    if (w is Document.Documentorder)
                     {
                         isWindowOpen = true;
                         w.Activate();
@@ -505,7 +491,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 if (!isWindowOpen)
                 {
-                    Document document = new Document();
+                    Document.Documentorder document = new Document.Documentorder(this);
                     document.Show();
                 }
 

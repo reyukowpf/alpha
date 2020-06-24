@@ -83,17 +83,9 @@ namespace Reyuko.App.Views.PurchaseReturn
             {
                 receivedgoodSelected = (Receivedgood)cbReceiveNumber.SelectedItem;
                 this.LoadDataSku();
-                this.LoadDatapo();
             }
         }
-        public void LoadDatapo()
-        {
-            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
-            {
-                this.purchasereturns = uow.PurchaseReturn.GetAll().Where(m => m.IdTransaksi == this.receivedgoodSelected.IdTransaksi);
-                DGpurchasereturn.ItemsSource = this.purchasereturns;
-            }
-        }
+      
         public void LoadDataSku()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -361,13 +353,7 @@ namespace Reyuko.App.Views.PurchaseReturn
                 return;
             }
             PurchasereturnBLL returBLL = new PurchasereturnBLL();
-            if (DGpurchasereturn.Items.Count > 0)
-            {
-                foreach (var item in DGpurchasereturn.Items)
-                {
-                    if (item is Purchasereturn)
-                    {
-                        Purchasereturn oData = (Purchasereturn)item;
+                        Purchasereturn oData = new Purchasereturn();
                         oData.Email = txtemail.Text;
                         oData.IdKodeTransaksi = 21;
                         oData.KodeTransaksi = "PR";
@@ -428,7 +414,10 @@ namespace Reyuko.App.Views.PurchaseReturn
                             oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
                             oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
                         }
-
+                        if (this.receivedgoodSelected != null)
+                        {
+                            oData.IdTransaksi = this.receivedgoodSelected.IdTransaksi;
+                        }
                         oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
                         oData.CheckboxManual = chkmanual.IsChecked;
                         oData.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
@@ -438,7 +427,7 @@ namespace Reyuko.App.Views.PurchaseReturn
                         oData.TotalKreditAkunPajakProduk = double.Parse(txtTotalprodukTax.Text);
                         oData.TotalKreditAkunPajakJasa = double.Parse(txtTotaljasaTax.Text);
                         oData.TotalDebitAkunHutangPembelian = double.Parse(txtAfterTotalTax.Text);
-                        if (returBLL.EditPurchasereturn(oData) == true)
+                        if (returBLL.AddPurchasereturn(oData) > 0)
                         {
                             //  this.ClearForm();
                             MessageBox.Show("Purchased Return successfully added !");
@@ -475,9 +464,7 @@ namespace Reyuko.App.Views.PurchaseReturn
                                 }
                             }
                         }
-                    }
-                }
-            }
+             
             PurchaseReturn v = new PurchaseReturn();
             Switcher.SwitchNewPurchaseReturn(v);
         }

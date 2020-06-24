@@ -30,66 +30,68 @@ namespace Reyuko.BLL.Core
                         oNewShopingchart = uow.Shopingchart.Add(oNewShopingchart);
                         uow.Save();
 
-                        if (oNewShopingchart.IdPermintaanBarang > 0)
-                        {
-                            traceID = 3;
-                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
-                            Quotationrequest oNewQuota = new Quotationrequest();
-                            oNewQuota.MapFrom(oData);
+                        /*  if (oNewShopingchart.IdPermintaanBarang > 0)
+                          {
+                              traceID = 3;
+                              oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                              Quotationrequest oNewQuota = new Quotationrequest();
+                              oNewQuota.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewQuota.IdTransaksi = oData.IdPermintaanBarang;
-                            uow.Quotationrequest.Add(oNewQuota);                            
-                        }
+                              traceID = 4;
+                              oNewQuota.IdTransaksi = oData.IdPermintaanBarang;
+                              uow.Quotationrequest.Add(oNewQuota);                            
+                          }
 
-                        if (oNewShopingchart.IdPermintaanBarang > 0)
-                        {
-                            traceID = 3;
-                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
-                            PurchaseOrder oNeworder = new PurchaseOrder();
-                            oNeworder.MapFrom(oData);
+                          if (oNewShopingchart.IdPermintaanBarang > 0)
+                          {
+                              traceID = 3;
+                              oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                              PurchaseOrder oNeworder = new PurchaseOrder();
+                              oNeworder.MapFrom(oData);
 
-                            traceID = 4;
-                            oNeworder.IdTransaksi = oData.IdPermintaanBarang;
-                            uow.PurchaseOrder.Add(oNeworder);
-                        }
+                              traceID = 4;
+                              oNeworder.IdTransaksi = oData.IdPermintaanBarang;
+                              uow.PurchaseOrder.Add(oNeworder);
+                          }
 
-                        if (oNewShopingchart.IdPermintaanBarang > 0)
-                        {
-                            traceID = 3;
-                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
-                            Purchasedelivery oNewdelivery = new Purchasedelivery();
-                            oNewdelivery.MapFrom(oData);
+                          if (oNewShopingchart.IdPermintaanBarang > 0)
+                          {
+                              traceID = 3;
+                              oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                              Purchasedelivery oNewdelivery = new Purchasedelivery();
+                              oNewdelivery.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewdelivery.IdTransaksi = oData.IdPermintaanBarang;
-                            uow.PurchaseDelivery.Add(oNewdelivery);
-                        }
+                              traceID = 4;
+                              oNewdelivery.IdTransaksi = oData.IdPermintaanBarang;
+                              uow.PurchaseDelivery.Add(oNewdelivery);
+                          }
 
-                        if (oNewShopingchart.IdPermintaanBarang > 0)
-                        {
-                            traceID = 3;
-                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
-                            Receivedgood oNewgood = new Receivedgood();
-                            oNewgood.MapFrom(oData);
+                          if (oNewShopingchart.IdPermintaanBarang > 0)
+                          {
+                              traceID = 3;
+                              oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                              Receivedgood oNewgood = new Receivedgood();
+                              oNewgood.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewgood.IdTransaksi = oData.IdPermintaanBarang;
-                            uow.Receivedgood.Add(oNewgood);
-                        }
+                              traceID = 4;
+                              oNewgood.IdTransaksi = oData.IdPermintaanBarang;
+                              uow.Receivedgood.Add(oNewgood);
+                          }
 
-                        if (oNewShopingchart.IdPermintaanBarang > 0)
-                        {
-                            traceID = 3;
-                            oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
-                            Purchasereturn oNewretur = new Purchasereturn();
-                            oNewretur.MapFrom(oData);
+                          if (oNewShopingchart.IdPermintaanBarang > 0)
+                          {
+                              traceID = 3;
+                              oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                              Purchasereturn oNewretur = new Purchasereturn();
+                              oNewretur.MapFrom(oData);
 
-                            traceID = 4;
-                            oNewretur.IdTransaksi = oData.IdPermintaanBarang;
-                            uow.PurchaseReturn.Add(oNewretur);
-                        }
-                        traceID = 7;
+                              traceID = 4;
+                              oNewretur.IdTransaksi = oData.IdPermintaanBarang;
+                              uow.PurchaseReturn.Add(oNewretur);
+                          }*/
+                        traceID = 3;
+                        oData.IdPermintaanBarang = oNewShopingchart.IdPermintaanBarang;
+                        oData.idTransaksi = oNewShopingchart.IdPermintaanBarang;
                         uow.Save();
                         trans.Commit();
                     }

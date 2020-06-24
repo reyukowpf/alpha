@@ -65,7 +65,7 @@ namespace Reyuko.App.Views.Invoice
             this.LoadCustomer();
             this.LoadCurrency();
             this.LoadNoDokumen();
-            this.LoadSalesorder();
+           // this.LoadSalesorder();
             this.LoadDeliveryorder();
             this.LoadLokasi();
             this.LoadAnnual();
@@ -118,10 +118,10 @@ namespace Reyuko.App.Views.Invoice
         }
         private void staff_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.kontakSelected = null;
+            this.petugasSelected = null;
             if (srstaff.SelectedItem != null)
             {
-                this.kontakSelected = (Kontak)srstaff.SelectedItem;
+                this.petugasSelected = (Kontak)srstaff.SelectedItem;
             }
         }
         private void LoadAnnual()
@@ -138,7 +138,7 @@ namespace Reyuko.App.Views.Invoice
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.listOrderJuals = uow.ListOrderJual.GetAll().Where(m => m.Checkbokaktif == true);
+                this.listOrderJuals = uow.ListOrderJual.GetAll().Where(m => m.IdTransaksi == this.DeliveryOrderSelected.IdTransaksi);
                 DGSKUInvoice.ItemsSource = this.listOrderJuals;
                 int sum = 0;
                 for (int i = 0; i < DGSKUInvoice.Items.Count; i++)
@@ -238,13 +238,15 @@ namespace Reyuko.App.Views.Invoice
             if (cbDONumber.SelectedItem != null)
             {
                 this.DeliveryOrderSelected = (Deliveryorders)cbDONumber.SelectedItem;
+                this.LoadSalesorder();
+                this.LoadDataSku();
             }
         }
         public void LoadSalesorder()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.SalesOrders = uow.SalesOrder.GetAll();
+                this.SalesOrders = uow.SalesOrder.GetAll().Where(m => m.IdTransaksi == DeliveryOrderSelected.IdTransaksi);
                 cbSONumber.ItemsSource = this.SalesOrders;
                 cbSONumber.SelectedValuePath = "IdOrderPenjualan";
                 cbSONumber.DisplayMemberPath = "NoOrderPenjualan";
@@ -315,91 +317,16 @@ namespace Reyuko.App.Views.Invoice
 
         private void Clearform()
         {
+            dtInvoicedate.Text = DateTime.Now.ToShortDateString();
+            dtDeliverydate.Text = DateTime.Now.ToShortDateString();
+            dtAnnualdate.Text = DateTime.Now.ToShortDateString();
         }
 
         public void Navigate(UserControl nextPage)
         {
             this.Content = nextPage;
         }
-        public invoice GetData()
-        {
-            invoice oData = new invoice();
-            oData.Email = txtemail.Text;
-            oData.NoHp = txthp.Text;
-            oData.TanggalInvoice = DateTime.Parse(dtInvoicedate.Text);
-            oData.NoInvoice = txtInvoiceNumber.Text;
-            oData.Keterangan = txtNote.Text;
-            oData.TanggalPengiriman = DateTime.Parse(dtDeliverydate.Text);
-            oData.DurasiBerulang = double.Parse(txtAnnualFrequency.Text);
-            oData.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
-            if (this.kontakSelected != null)
-            {
-                oData.IdPelanggan = this.kontakSelected.Id;
-                oData.NamaPelanggan = this.kontakSelected.NamaA;
-            }
-            if (this.DataMataUangSelected != null)
-            {
-                oData.IdMataUang = this.DataMataUangSelected.Id;
-                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
-                oData.KursTukar = this.DataMataUangSelected.KursTukar;
-            }
-            if (this.dokumenSelected != null)
-            {
-                oData.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                oData.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-            }
-            if (this.DeliveryOrderSelected != null)
-            {
-                oData.IdDo = this.DeliveryOrderSelected.Id;
-                oData.NoDo = this.DeliveryOrderSelected.NoDo;
-            }
-            if (this.SalesOrderSelected != null)
-            {
-                oData.IdOrderPenjualan = this.SalesOrderSelected.IdOrderPenjualan;
-                oData.NoOrderPenjualan = this.SalesOrderSelected.NoOrderPenjualan;
-            }
-            if (this.dropdownBankkasSelected != null)
-            {
-                oData.IdBankCash = this.dropdownBankkasSelected.Id;
-                oData.BankCash = this.dropdownBankkasSelected.DropdownBankkas;
-            }
-            if (this.lokasiSelected != null)
-            {
-                oData.IdLokasi = this.lokasiSelected.Id;
-                oData.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-            }
-            if (this.dataDepartemenSelected != null)
-            {
-                oData.IdDepartemen = this.dataDepartemenSelected.Id;
-
-            }
-            if (this.dataProyekSelected != null)
-            {
-                oData.IdProyek = this.dataProyekSelected.Id;
-
-            }
-            if (this.optionAnnualSelected != null)
-            {
-                oData.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                oData.Annual = this.optionAnnualSelected.Annual;
-            }
-            if (this.kontakSelected != null)
-            {
-                oData.IdPetugas = this.kontakSelected.Id;
-                oData.NamaPetugas = this.kontakSelected.NamaA;
-            }
-            if (this.termspembayaranSelected != null)
-            {
-                oData.IdTermPembayaran = this.termspembayaranSelected.IdTermPembayaran;
-                oData.TermPembayaran = this.termspembayaranSelected.NamaSkema;
-            }
-
-            oData.CheckboxManual = chkmanual.IsChecked;
-            oData.CheckboxInclusiveTax = chkinclusive.IsChecked;
-            oData.CheckboxBerulang = chkannual.IsChecked;
-
-            return oData;
-        }
+        
 
         private void Saveinvoice_Click(object sender, RoutedEventArgs e)
         {
@@ -448,10 +375,10 @@ namespace Reyuko.App.Views.Invoice
             }
             invoice.CheckboxInclusiveTax = chkinclusive.IsChecked;
             invoice.TanggalPengiriman = DateTime.Parse(dtDeliverydate.Text);
-            if (this.kontakSelected != null)
+            if (this.petugasSelected != null)
             {
-                invoice.IdPetugas = this.kontakSelected.Id;
-                invoice.NamaPetugas = this.kontakSelected.NamaA;
+                invoice.IdPetugas = this.petugasSelected.Id;
+                invoice.NamaPetugas = this.petugasSelected.NamaA;
             }
             if (this.termspembayaranSelected != null)
             {
@@ -465,6 +392,10 @@ namespace Reyuko.App.Views.Invoice
             {
                 invoice.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
                 invoice.Annual = this.optionAnnualSelected.Annual;
+            }
+            if (this.DeliveryOrderSelected != null)
+            {
+                invoice.IdTransaksi = this.DeliveryOrderSelected.IdTransaksi;
             }
             invoice.IdKodeTransaksi = 15;
             invoice.KodeTransaksi = "SQ";

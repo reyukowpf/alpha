@@ -42,8 +42,7 @@ namespace Reyuko.App.Views.GroupProduct
         public IEnumerable<KategoriProduk> kategoriProduks { get; set; }
         public KategoriProduk kategoriProdukSelected { get; set; }
         public IEnumerable<GrupProduk> grupProduks { get; set; }
-        public GrupProduk grupprodukSelected { get; set; }
-
+        
         public bool isEdit = false;
         private int pageIndex = 1;
         private int pageSize = 10;
@@ -66,10 +65,10 @@ namespace Reyuko.App.Views.GroupProduct
         }
         private void GroupProduk_selectedchange(object sender, SelectionChangedEventArgs e)
         {
-            this.grupprodukSelected = null;
+            this.GrupProdukSelected = null;
             if (srgroupproduk.SelectedItem != null)
             {
-                this.grupprodukSelected = (GrupProduk)srgroupproduk.SelectedItem;
+                this.GrupProdukSelected = (GrupProduk)srgroupproduk.SelectedItem;
             }
         }
         private void LoadKategoriProduk()
@@ -157,22 +156,22 @@ namespace Reyuko.App.Views.GroupProduct
 
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
-            if (this.GrupDiskonSelected == null)
+            if (this.GrupProdukSelected == null)
             {
-                MessageBox.Show("Customer Group belum dipilih !");
+                MessageBox.Show("Group Product not selected !");
             }
             else
             {
-                GrupDiskonBLL GrupDiskonBLL = new GrupDiskonBLL();
-                if (GrupDiskonBLL.RemoveGrupDiskon(this.GrupDiskonSelected.Id) == true)
+                GrupProdukBLL purchasedeliveryBLL = new GrupProdukBLL();
+                if (purchasedeliveryBLL.RemoveGrupProduk(this.GrupProdukSelected.Id) == true)
                 {
-                    MessageBox.Show("Customer Group berhasil dihapus");
-//                    this.LoadGrupDiskon("");
-                    this.GrupDiskonSelected = null;
+                    MessageBox.Show("Group Product successfully deleted");
+                    this.LoadGrupProduk();
+                    this.GrupProdukSelected = null;
                 }
             }
         }
-
+ 
        
     }
 }

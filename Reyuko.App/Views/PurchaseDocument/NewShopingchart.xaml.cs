@@ -329,7 +329,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 foreach (Window w in Application.Current.Windows)
                 {
-                    if (w is Customer)
+                    if (w is Employee.Employeeshoping)
                     {
                         isWindowOpen = true;
                         w.Activate();
@@ -338,7 +338,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 if (!isWindowOpen)
                 {
-                    Customer Customer = new Customer();
+                    Employee.Employeeshoping Customer = new Employee.Employeeshoping(this);
                     Customer.Show();
                 }
 
@@ -353,7 +353,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 foreach (Window w in Application.Current.Windows)
                 {
-                    if (w is Document)
+                    if (w is Document.Documentshoping)
                     {
                         isWindowOpen = true;
                         w.Activate();
@@ -362,7 +362,7 @@ namespace Reyuko.App.Views.PurchaseDocument
 
                 if (!isWindowOpen)
                 {
-                    Document document = new Document();
+                    Document.Documentshoping document = new Document.Documentshoping(this);
                     document.Show();
                 }
 

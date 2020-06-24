@@ -382,6 +382,15 @@
     <Compile Include="Views\Document\Documentcashactivity.xaml.cs">
       <DependentUpon>Documentcashactivity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Document\Documentorder.xaml.cs">
+      <DependentUpon>Documentorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentquota.xaml.cs">
+      <DependentUpon>Documentquota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentshoping.xaml.cs">
+      <DependentUpon>Documentshoping.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Document\Documentpurchasedelivery.xaml.cs">
       <DependentUpon>Documentpurchasedelivery.xaml</DependentUpon>
     </Compile>
@@ -411,6 +420,9 @@
     </Compile>
     <Compile Include="Views\Employee\Employee.xaml.cs">
       <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\Employeeshoping.xaml.cs">
+      <DependentUpon>Employeeshoping.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Employee\NewEmployee.xaml.cs">
       <DependentUpon>NewEmployee.xaml</DependentUpon>
@@ -529,9 +541,6 @@
     <Compile Include="Views\PurchaseDocument\Customer.xaml.cs">
       <DependentUpon>Customer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\PurchaseDocument\Document.xaml.cs">
-      <DependentUpon>Document.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\PurchaseDocument\NewPurchasedOrder.xaml.cs">
       <DependentUpon>NewPurchasedOrder.xaml</DependentUpon>
     </Compile>
@@ -540,9 +549,6 @@
     </Compile>
     <Compile Include="Views\PurchaseDocument\NewShopingchart.xaml.cs">
       <DependentUpon>NewShopingchart.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\PurchaseDocument\NewVendor.xaml.cs">
-      <DependentUpon>NewVendor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PurchaseDocument\PaymentTerm.xaml.cs">
       <DependentUpon>PaymentTerm.xaml</DependentUpon>
@@ -735,6 +741,15 @@
     </Compile>
     <Compile Include="Views\Vendor\Vendors.xaml.cs">
       <DependentUpon>Vendors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsgood.xaml.cs">
+      <DependentUpon>Vendorsgood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsorder.xaml.cs">
+      <DependentUpon>Vendorsorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsquot.xaml.cs">
+      <DependentUpon>Vendorsquot.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Vendor\Vendorspurchasedelivery.xaml.cs">
       <DependentUpon>Vendorspurchasedelivery.xaml</DependentUpon>
@@ -968,6 +983,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\Document\Documentorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentquota.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentshoping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\Document\Documentpurchasedelivery.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1005,6 +1032,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Employee\Employee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Employee\Employeeshoping.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1164,10 +1195,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\PurchaseDocument\Document.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\PurchaseDocument\NewPurchasedOrder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -1177,10 +1204,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\PurchaseDocument\NewShopingchart.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\PurchaseDocument\NewVendor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -1437,6 +1460,18 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\Vendor\Vendors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsgood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsquot.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
