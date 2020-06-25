@@ -560,6 +560,23 @@ namespace Reyuko.App.Views.PurchaseDocument
                 this.LoadProyek();
             }
         }
+
+        private void chkproduk_Checked(object sender, RoutedEventArgs e)
+        {
+            /*if (this.chkproduk.IsChecked == true)
+            {
+                txtNote1.Visibility = Visibility.Visible;
+            }
+            else if (this.chkproduk.IsChecked == false)
+            {
+                txtNote1.Visibility = Visibility.Hidden;
+            } */
+            
+           /* this.chkproduk.IsChecked = false;
+            {
+                txtNote1.Visibility = Visibility.Hidden;
+            }*/
+        }
     }
 }
              

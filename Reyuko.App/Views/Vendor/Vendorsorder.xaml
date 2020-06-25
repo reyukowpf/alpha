@@ -4,8 +4,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Class="Reyuko.App.Views.Vendor.Vendorsorder"
-    Height="750"
-    d:DesignWidth="900"
+    Height="350"
+    Width="450"
     WindowStyle="None"
     FontSize="14"
     Background="White"
@@ -44,28 +44,15 @@
             FontStyle="Normal"
             Text="Vendor"
             TextWrapping="Wrap" />
-        <Button
-            x:Name="other"
-            Width="33"
-            FontSize="18"
-            Height="24"
-            Margin="0,3,8,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Top"
-            Background="Transparent"
-            BorderThickness="0"
-            Content="..."
-            FontWeight="Bold"
-            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" />
 
-        <Button HorizontalAlignment="Right" Margin="0,10,140,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Right" Margin="0,20,100,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnSave_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
                 <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Right" Margin="0,10,55,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Right" Margin="0,20,25,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="BtnCancel_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
@@ -89,47 +76,15 @@
                     <Label Content="Name" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Phone Number" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
                     <Label Content="Email" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Gender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Country" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Address" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
-                    <Label Content="City" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,400,0,0" VerticalAlignment="Top"/>
-                    <Label Content="State" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,440,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Zip Code" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,480,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Map Location" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,520,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Position" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,20,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Tax ID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,60,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Credit Limit" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,100,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Bank Name" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,140,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Bank Account" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Account Name" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="380,260,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Photo" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="700,20,0,0" VerticalAlignment="Top"/>
                     <ComboBox x:Name="cbClasification" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,20,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbClasification_SelectionChanged"/>
                     <TextBox x:Name="txtVendorID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBox x:Name="txtName" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtName_TextChanged"/>
+                    <TextBox x:Name="txtName" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                     <TextBox x:Name="txtPhone" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtPhone_TextChanged"/>
                     <TextBox x:Name="txtEmail" LostFocus="TxtEmail_OnLostFocus" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-                    <RadioButton x:Name="rdMale" Content="Male" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="25" Margin="180,220,0,0" VerticalAlignment="Top" Width="64"/>
-                    <RadioButton x:Name="rdFemale" Content="Female" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="25" Margin="260,220,0,0" VerticalAlignment="Top" Width="64"/>
-                    <ComboBox x:Name="cbCountry" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,260,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbCountry_SelectionChanged"/>
-                    <TextBox x:Name="txtAddress" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="90" Margin="180,300,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBox x:Name="txtCity" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <ComboBox x:Name="cbState" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,440,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbState_SelectionChanged"/>
-                    <TextBox x:Name="txtZip" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,480,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtZip_TextChanged"/>
-                    <TextBox x:Name="txtMap" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtMap_TextChanged"/>
-                    <TextBox x:Name="txtPosition" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBox x:Name="txtTaxID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtTaxID_TextChanged"/>
-                    <TextBox x:Name="txtCredit" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtCredit_TextChanged"/>
-                    <TextBox x:Name="txtBankName" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtBankName_TextChanged"/>
-                    <TextBox x:Name="txtBankAccount" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtBankAccount_TextChanged"/>
-                    <TextBox x:Name="txtAccountName" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAccountName_TextChanged"/>
-                    <TextBox x:Name="txtNote" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="90" Margin="500,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <Button x:Name="btnUploadPhoto" Content="Upload Photo" FontFamily="Segoe" FontSize="18" HorizontalAlignment="Left" Margin="720,247,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.187,-1.12" Click="BtnUploadPhoto_Click"/>
-                    <Image x:Name="imgPhoto" HorizontalAlignment="Left" Height="171" Margin="700,60,0,0" VerticalAlignment="Top" Width="160" Stretch="Fill"/>
 
                 </Grid>
             </TabItem>
-          
+
         </TabControl>
 
 

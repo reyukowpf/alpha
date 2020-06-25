@@ -215,7 +215,7 @@
             <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
         </Border>
         <DatePicker x:Name="dtReceived" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,82,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,82,0,0" Height="28" VerticalAlignment="Top" Width="85"/>
+        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,82,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
@@ -236,9 +236,9 @@
         </Border>
         <TextBox x:Name="txtPurchaseReturnNumber" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtPurchaseReturnNumber_TextChanged"/>
         <ComboBox x:Name="cbReceiveNumber" HorizontalAlignment="Left" Margin="360,139,0,0" FontSize="12.5" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="received_selectedchange"/>
-        <ComboBox x:Name="cbCash" HorizontalAlignment="Left" Margin="680,139,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="85"/>
+        <ComboBox x:Name="cbCash" HorizontalAlignment="Left" Margin="680,139,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="85" SelectionChanged="cash_selectedchange"/>
         <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="28" Margin="10,193,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-        <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" Margin="350,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="152"/>
+        <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" Margin="350,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
         <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" Margin="520,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
         <ComboBox x:Name="cbProyek" HorizontalAlignment="Left" Margin="520,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
         <DatePicker x:Name="dtDelivery" HorizontalAlignment="Left" Height="28" Margin="10,485,0,0" FontSize="12.5" VerticalAlignment="Top" Width="150"/>

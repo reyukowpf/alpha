@@ -742,11 +742,11 @@
     <Compile Include="Views\Vendor\Vendors.xaml.cs">
       <DependentUpon>Vendors.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Vendor\Vendorsgood.xaml.cs">
-      <DependentUpon>Vendorsgood.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\Vendor\Vendorsorder.xaml.cs">
       <DependentUpon>Vendorsorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsgood.xaml.cs">
+      <DependentUpon>Vendorsgood.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\Vendor\Vendorsquot.xaml.cs">
       <DependentUpon>Vendorsquot.xaml</DependentUpon>
@@ -1463,11 +1463,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Vendor\Vendorsgood.xaml">
+    <Page Include="Views\Vendor\Vendorsorder.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\Vendor\Vendorsorder.xaml">
+    <Page Include="Views\Vendor\Vendorsgood.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

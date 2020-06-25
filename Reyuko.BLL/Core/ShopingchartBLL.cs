@@ -302,7 +302,7 @@ namespace Reyuko.BLL.Core
                             traceID = 4;
                             oNewListOrderBeli.IdOrderBeli = oData.IdOrderCustom;
                             oNewListOrderBeli.TotalOrder = oData.TotalCustom;
-                            oNewListOrderBeli.Jumlah = oData.TotalCustom;
+                            oNewListOrderBeli.Jumlah = oData.JumlahCustom;
                             oNewListOrderBeli.Sku = oData.NamaCustom;
                             oNewListOrderBeli.HargaBeli = oData.HargaCustom;
                             uow.ListOrderBeli.Add(oNewListOrderBeli);

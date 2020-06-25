@@ -371,7 +371,7 @@ namespace Reyuko.App.Views.PurchaseReturn
                         if (this.DataMataUangSelected != null)
                         {
                             oData.IdMataUang = this.DataMataUangSelected.Id;
-                            oData.MataUang = this.DataMataUangSelected.NamaMataUang;
+                            oData.MataUang = this.DataMataUangSelected.KodeMataUang;
                             oData.KursTukar = this.DataMataUangSelected.KursTukar;
                         }
                         if (this.dokumenSelected != null)
