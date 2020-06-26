@@ -312,7 +312,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="SKU / Name">
+                    Header="   SKU / Name">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Left" />

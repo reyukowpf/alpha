@@ -242,7 +242,7 @@
             </DockPanel>
         </Border>
         <TextBox x:Name="txtAnnualFrequency" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,575,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
-        <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,635,0,0" VerticalAlignment="Top" Width="150"/>
+        <DatePicker x:Name="dtAnnual" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="185,633,0,0" VerticalAlignment="Top" Width="150"/>
         <DataGrid
             x:Name="DGSKUShopingChart"
             Height="230"
@@ -278,7 +278,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="SKU / Name">
+                    Header="   SKU / Name">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Left" />
