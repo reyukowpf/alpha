@@ -39,5 +39,6 @@ namespace Reyuko.DAL.Domain
         public bool? CheckboxBerulang { get; set; }
         public int? IdOpsiAnnual { get; set; }
         public string Annual { get; set; }
+        public bool? Checkaktif { get; set; }
     }
 }

@@ -62,6 +62,6 @@ namespace Reyuko.DAL.Domain
         public int? IdPetugas { get; set; }
         public int? IdTermPembayaran { get; set; }
         public string TermPembayaran { get; set; }
-
+        public bool? Checkboxaktif { get; set; }
     }
 }

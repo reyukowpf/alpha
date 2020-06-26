@@ -57,5 +57,6 @@ namespace Reyuko.DAL.Domain
         public DateTime? TanggalPenutupan { get; set; }
         public int? IdTermPembayaran { get; set; }
         public string TermPembayaran { get; set; }
+        public bool? Checkboxaktif { get; set; }
     }
 }

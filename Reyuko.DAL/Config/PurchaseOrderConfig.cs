@@ -182,6 +182,8 @@ namespace Reyuko.DAL.Config
             this.Property(m => m.TermPembayaran)
      .HasColumnName("term_pembayaran");
 
+            this.Property(m => m.Checkboxaktif)
+                .HasColumnName("checkboxaktif");
 
         }
     }

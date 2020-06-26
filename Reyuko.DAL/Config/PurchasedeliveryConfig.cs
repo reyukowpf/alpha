@@ -169,7 +169,9 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.IdPetugas)
      .HasColumnName("id_petugas");
-       
+
+            this.Property(m => m.Checkboxaktif)
+                .HasColumnName("checkboxaktif");
        
         }
     }

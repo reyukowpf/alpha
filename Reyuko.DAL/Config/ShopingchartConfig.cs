@@ -112,6 +112,11 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.Annual)
                 .HasColumnName("annual");
+
+            this.Property(m => m.Checkaktif)
+                .HasColumnName("checkboxaktif");
+
+
         }
     }
 }

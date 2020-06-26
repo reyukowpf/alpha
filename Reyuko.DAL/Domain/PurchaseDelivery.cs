@@ -58,6 +58,7 @@ namespace Reyuko.DAL.Domain
         public bool? CheckboxInclusiveTax { get; set; }
         public DateTime? TanggalPengantaran { get; set; }
         public int? IdPetugas { get; set; }
+        public bool? Checkboxaktif { get; set; }
 
     }
 }
