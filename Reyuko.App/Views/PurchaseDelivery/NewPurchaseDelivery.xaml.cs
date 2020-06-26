@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 namespace Reyuko.App.Views.PurchaseDelivery
 {
     /// <summary>
-    
+
     /// </summary>
     public partial class NewPurchaseDelivery : UserControl
     {
@@ -48,11 +48,11 @@ namespace Reyuko.App.Views.PurchaseDelivery
         public IEnumerable<DataDepartemen> dataDepartemens { get; set; }
         public IEnumerable<Purchasedelivery> purchasedeliveries { get; set; }
         public DataDepartemen Selectdepartment { get; set; }
-        
+
         public DataDepartemen dataDepartemenSelected;
         public IEnumerable<DataProyek> dataProyeks { get; set; }
         public DataProyek Selectproyek { get; set; }
-        
+
         public DataProyek dataProyekSelected;
         public IEnumerable<OptionAnnual> optionAnnuals { get; set; }
         public OptionAnnual optionAnnualSelected { get; set; }
@@ -61,7 +61,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
         public Kontak petugasSelected;
 
         private void Init()
-        {           
+        {
             this.LoadVendor();
             this.LoadCurrency();
             this.LoadNoDokumen();
@@ -69,7 +69,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
             this.LoadAnnual();
             this.LoadStaff();
             this.ClearForm();
-            this.LoadPO();
+            //    this.LoadPO();
         }
 
         private void ClearForm()
@@ -83,7 +83,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.purchaseOrders = uow.PurchaseOrder.GetAll();
+                this.purchaseOrders = uow.PurchaseOrder.GetAll().Where(m => m.IdVendor == this.kontakSelected.Id).Where(m => m.Checkboxaktif == true);
                 cbPurchaseorder.ItemsSource = this.purchaseOrders;
                 cbPurchaseorder.SelectedValuePath = "IdOrderPembelian";
                 cbPurchaseorder.DisplayMemberPath = "NoOrderPembelian";
@@ -97,9 +97,21 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 this.purchaseOrderSelected = (PurchaseOrder)cbPurchaseorder.SelectedItem;
                 this.LoadDataSku();
                 txtNote.Text = this.purchaseOrderSelected.Keterangan;
+                cbLocation.SelectedValue = this.purchaseOrderSelected.IdLokasi;
+                dtPurchase.Text = this.purchaseOrderSelected.TanggalOrderPembelian.GetValueOrDefault().ToShortDateString();
+                cbCurrency.SelectedValue = this.purchaseOrderSelected.IdMataUang;
+                srnodokumen.Text = this.purchaseOrderSelected.NoReferensiDokumen.ToString();
+                cbDepartment.SelectedValue = this.purchaseOrderSelected.IdDepartemen;
+                cbProyek.SelectedValue = this.purchaseOrderSelected.IdProyek;
+                dtDelivery.Text = this.purchaseOrderSelected.TanggalPengantaran.GetValueOrDefault().ToShortDateString();
+                dtAnnualdate.Text = this.purchaseOrderSelected.TanggalBerulang.GetValueOrDefault().ToShortDateString();
+                srstaff.Text = this.purchaseOrderSelected.NamaPetugas;
+                chkannual.IsChecked = this.purchaseOrderSelected.CheckboxBerulang.GetValueOrDefault();
+                cbAnnual.SelectedValue = this.purchaseOrderSelected.IdOpsiAnnual.ToString();
+                txtAnnualFrequency.Text = this.purchaseOrderSelected.DurasiBerulang.ToString();
             }
         }
-      
+
         public void LoadStaff()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -300,6 +312,7 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 this.kontakSelected = (Kontak)srvendor.SelectedItem;
                 txtemail.Text = this.kontakSelected.EmailA;
                 txthp.Text = this.kontakSelected.NoHPA;
+                this.LoadPO();
             }
 
         }
@@ -332,85 +345,101 @@ namespace Reyuko.App.Views.PurchaseDelivery
                 return;
             }
             PurchasedeliveryBLL purchasedeliveryBLL = new PurchasedeliveryBLL();
-                        Purchasedelivery oNewData1 = new Purchasedelivery();
-                        oNewData1.KodeTransaksi = "PD";
-                        oNewData1.IdKodeTransaksi = 26;
-                        if (this.kontakSelected != null)
+            Purchasedelivery oNewData1 = new Purchasedelivery();
+            PurchaseordersBLL purchaseordersBLL = new PurchaseordersBLL();
+            oNewData1.KodeTransaksi = "PD";
+            oNewData1.IdKodeTransaksi = 26;
+            if (this.kontakSelected != null)
+            {
+                oNewData1.IdVendor = this.kontakSelected.Id;
+                oNewData1.NamaVendor = this.kontakSelected.NamaA;
+            }
+            oNewData1.Email = txtemail.Text;
+            oNewData1.NoHp = txthp.Text;
+            oNewData1.TanggalPengirimanBarangPembelian = DateTime.Parse(dtPurchase.Text);
+            if (this.DataMataUangSelected != null)
+            {
+                oNewData1.IdMataUang = this.DataMataUangSelected.Id;
+                oNewData1.MataUang = this.DataMataUangSelected.NamaMataUang;
+                oNewData1.KursTukar = this.DataMataUangSelected.KursTukar;
+            }
+            if (this.dokumenSelected != null)
+            {
+                oNewData1.IdNoReferensiDokumen = this.dokumenSelected.Id;
+                oNewData1.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
+            }
+            oNewData1.NoPengirimanBarangPembelian = double.Parse(txtPurchaseDeliveryNo.Text);
+            if (this.purchaseOrderSelected != null)
+            {
+                oNewData1.IdOrderPembelian = this.purchaseOrderSelected.IdOrderPembelian;
+                oNewData1.NoOrderPembelian = this.purchaseOrderSelected.NoOrderPembelian;
+            }
+            oNewData1.Keterangan = txtNote.Text;
+            if (this.lokasiSelected != null)
+            {
+                oNewData1.IdLokasi = this.lokasiSelected.Id;
+                oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
+            }
+            if (this.dataDepartemenSelected != null)
+            {
+                oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
+            }
+            if (this.dataProyekSelected != null)
+            {
+                oNewData1.IdProyek = this.dataProyekSelected.Id;
+            }
+            oNewData1.CheckboxInclusiveTax = chkinclusive.IsChecked;
+            oNewData1.CheckboxBerulang = chkannual.IsChecked;
+            oNewData1.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
+            oNewData1.DurationBerulang = double.Parse(txtAnnualFrequency.Text);
+            oNewData1.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
+            if (this.optionAnnualSelected != null)
+            {
+                oNewData1.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
+                oNewData1.Annual = this.optionAnnualSelected.Annual;
+            }
+            if (this.petugasSelected != null)
+            {
+                oNewData1.IdPetugas = this.petugasSelected.Id;
+                oNewData1.NamaPetugas = this.petugasSelected.NamaA;
+            }
+            if (this.purchaseOrderSelected != null)
+            {
+                oNewData1.IdTransaksi = this.purchaseOrderSelected.IdTransaksi;
+            }
+            oNewData1.TotalDebitAkunStokProduk = double.Parse(txttotalbeforetax.Text);
+            oNewData1.TotalKreditAkunPengirimanBeliProduk = double.Parse(txttotalbeforetax.Text);
+            oNewData1.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
+            oNewData1.TotalPajak = double.Parse(txtTotalTax.Text);
+            oNewData1.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
+            oNewData1.RealRecordingTime = DateTime.Now;
+            oNewData1.Checkboxaktif = true;
+            if (purchasedeliveryBLL.AddPurchasedelivery(oNewData1) > 0)
+            {
+                //  this.ClearForm();
+                MessageBox.Show("Purchased Delivery successfully added !");
+            }
+            else
+            {
+                MessageBox.Show("Purchased Delivery failed to add !");
+            }
+            if (cbPurchaseorder.Items.Count > 0)
+            {
+                foreach (var item in cbPurchaseorder.Items)
+                {
+                    if (item is PurchaseOrder)
+                    {
+                        PurchaseOrder oNewData2 = (PurchaseOrder)item;
+                        oNewData2.Checkboxaktif = false;
+                        if (purchaseordersBLL.EditPurchaseorders(oNewData2) == true)
                         {
-                            oNewData1.IdVendor = this.kontakSelected.Id;
-                            oNewData1.NamaVendor = this.kontakSelected.NamaA;
                         }
-                        oNewData1.Email = txtemail.Text;
-                        oNewData1.NoHp = txthp.Text;
-                        oNewData1.TanggalPengirimanBarangPembelian = DateTime.Parse(dtPurchase.Text);
-                        if (this.DataMataUangSelected != null)
-                        {
-                            oNewData1.IdMataUang = this.DataMataUangSelected.Id;
-                            oNewData1.MataUang = this.DataMataUangSelected.NamaMataUang;
-                            oNewData1.KursTukar = this.DataMataUangSelected.KursTukar;
-                        }
-                        if (this.dokumenSelected != null)
-                        {
-                            oNewData1.IdNoReferensiDokumen = this.dokumenSelected.Id;
-                            oNewData1.NoReferensiDokumen = this.dokumenSelected.NoReferensiDokumen;
-                        }
-                        oNewData1.NoPengirimanBarangPembelian = double.Parse(txtPurchaseDeliveryNo.Text);
-                        if (this.purchaseOrderSelected != null)
-                        {
-                            oNewData1.IdOrderPembelian = this.purchaseOrderSelected.IdOrderPembelian;
-                            oNewData1.NoOrderPembelian = this.purchaseOrderSelected.NoOrderPembelian;
-                        }
-                        oNewData1.Keterangan = txtNote.Text;
-                        if (this.lokasiSelected != null)
-                        {
-                            oNewData1.IdLokasi = this.lokasiSelected.Id;
-                            oNewData1.NamaLokasi = this.lokasiSelected.NamaTempatLokasi;
-                        }
-                        if (this.dataDepartemenSelected != null)
-                        {
-                            oNewData1.IdDepartemen = this.dataDepartemenSelected.Id;
-                        }
-                        if (this.dataProyekSelected != null)
-                        {
-                            oNewData1.IdProyek = this.dataProyekSelected.Id;
-                        }
-                        oNewData1.CheckboxInclusiveTax = chkinclusive.IsChecked;
-                        oNewData1.CheckboxBerulang = chkannual.IsChecked;
-                        oNewData1.TanggalPengantaran = DateTime.Parse(dtDelivery.Text);
-                        oNewData1.DurationBerulang = double.Parse(txtAnnualFrequency.Text);
-                        oNewData1.TanggalBerulang = DateTime.Parse(dtAnnualdate.Text);
-                        if (this.optionAnnualSelected != null)
-                        {
-                            oNewData1.IdOpsiAnnual = this.optionAnnualSelected.IdOptionAnnual;
-                            oNewData1.Annual = this.optionAnnualSelected.Annual;
-                        }
-                        if (this.petugasSelected != null)
-                        {
-                            oNewData1.IdPetugas = this.petugasSelected.Id;
-                            oNewData1.NamaPetugas = this.petugasSelected.NamaA;
-                        }
-                        if (this.purchaseOrderSelected != null)
-                        {
-                            oNewData1.IdTransaksi = this.purchaseOrderSelected.IdTransaksi;
-                        }
-                         oNewData1.TotalDebitAkunStokProduk = double.Parse(txttotalbeforetax.Text);
-                        oNewData1.TotalKreditAkunPengirimanBeliProduk = double.Parse(txttotalbeforetax.Text);
-                        oNewData1.TotalSebelumPajak = double.Parse(txttotalbeforetax.Text);
-                        oNewData1.TotalPajak = double.Parse(txtTotalTax.Text);
-                        oNewData1.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
-                        oNewData1.RealRecordingTime = DateTime.Now;
-                        if (purchasedeliveryBLL.AddPurchasedelivery(oNewData1) > 0)
-                        {
-                            //  this.ClearForm();
-                            MessageBox.Show("Purchased Delivery successfully added !");
-                        }
-                        else
-                        {
-                            MessageBox.Show("Purchased Delivery failed to add !");
-                        }
+                    }
+                }
+            }
             PurchaseDelivery v = new PurchaseDelivery();
-                Switcher.SwitchNewPurchaseDelivery(v);
-            
+            Switcher.SwitchNewPurchaseDelivery(v);
+
         }
 
         private void StockList_Click(object sender, RoutedEventArgs e)
@@ -529,6 +558,6 @@ namespace Reyuko.App.Views.PurchaseDelivery
         }
     }
 }
-             
-    
+
+
 
