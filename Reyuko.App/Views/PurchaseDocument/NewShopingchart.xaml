@@ -186,17 +186,17 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="190,84,0,0">
-            <TextBlock x:Name="txtemail" FontSize="12.5" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+            <TextBlock x:Name="txtemail" FontSize="12.5" HorizontalAlignment="Left" Height="24" Margin="0,1,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         </Border>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="350,84,0,0">
-            <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
+            <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Margin="0,1,0,0" TextWrapping="Wrap" Width="152"/>
         </Border>
-        <DatePicker x:Name="dtIssued" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,82,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,82,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
+        <DatePicker x:Name="dtIssued" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,84,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,84,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"

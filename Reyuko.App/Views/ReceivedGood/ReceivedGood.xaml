@@ -119,9 +119,9 @@
             </StackPanel>
         </Button>
 
-        <Label Content="Vendor / Id" HorizontalAlignment="Left" FontSize="12.5" Margin="10,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Periode" HorizontalAlignment="Left" FontSize="12.5" Margin="177,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Aging Receivable" HorizontalAlignment="Left" FontSize="12.5" Margin="425,62,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vendor / Id" HorizontalAlignment="Left" FontSize="12.5" Margin="10,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Periode" HorizontalAlignment="Left" FontSize="12.5" Margin="177,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Aging Receivable" HorizontalAlignment="Left" FontSize="12.5" Margin="425,58,0,0" VerticalAlignment="Top"/>
         <Label Content="Vendor Clasification" HorizontalAlignment="Left" FontSize="12.5" Margin="10,122,0,0" VerticalAlignment="Top"/>
         <Label Content="Value Range" HorizontalAlignment="Left" FontSize="12.5" Margin="177,122,0,0" VerticalAlignment="Top"/>
         <Label Content="Recap" HorizontalAlignment="Left" FontSize="12.5" Margin="425,122,0,0" VerticalAlignment="Top"/>
@@ -130,7 +130,7 @@
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="10,86,0,0">
+                        CornerRadius="0" Margin="10,84,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srvendor" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="customer_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -144,9 +144,9 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <DatePicker HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="177,86,0,0" VerticalAlignment="Top" Width="110"/>
-        <DatePicker HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="300,86,0,0" VerticalAlignment="Top" Width="110"/>
-        <ComboBox x:Name="cbAging" HorizontalAlignment="Left" FontSize="12.5" Margin="425,86,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
+        <DatePicker HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="177,84,0,0" VerticalAlignment="Top" Width="110"/>
+        <DatePicker HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="300,84,0,0" VerticalAlignment="Top" Width="110"/>
+        <ComboBox x:Name="cbAging" HorizontalAlignment="Left" FontSize="12.5" Margin="425,84,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
         <ComboBox x:Name="cbVendorClasification" HorizontalAlignment="Left" FontSize="12.5" Margin="10,147,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="CbClasification_SelectionChanged"/>
         <TextBox x:Name="txtvalue" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="177,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="Txtvalue_TextChanged"/>
         <TextBox x:Name="txtRange" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="300,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" TextChanged="TxtRange_TextChanged"/>
@@ -403,7 +403,7 @@
                 </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <CheckBox Content="Recurring" FontSize="12.5" HorizontalAlignment="Left" Margin="590,86,0,0" VerticalAlignment="Top"/>
+        <CheckBox Content="Recurring" FontSize="12.5" HorizontalAlignment="Left" Margin="590,88,0,0" VerticalAlignment="Top"/>
     </Grid>
 
 </UserControl>
