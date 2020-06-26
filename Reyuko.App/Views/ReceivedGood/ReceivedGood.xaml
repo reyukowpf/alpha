@@ -6,10 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.ReceivedGood.ReceivedGood"
-    d:DesignHeight="500"
-    d:DesignWidth="900"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -154,9 +155,9 @@
         <DataGrid
             x:Name="DGReceivedGood"
             Height="Auto"
-            Width="750"
+            Width="1022"
             HorizontalAlignment="Left"
-            Margin="10,189,0,0"
+            Margin="10,189,0,10"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -181,7 +182,7 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn
-                    Width="*"
+                    Width="120"
                     Binding="{Binding NoOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -203,7 +204,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="60"
+                    Width="100"
                     Binding="{Binding TanggalOrder}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -225,7 +226,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="60"
+                    Width="100"
                     Binding="{Binding NoOrderPembeliaan}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -247,7 +248,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="60"
+                    Width="100"
                     Binding="{Binding NoPD}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -269,7 +270,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="80"
+                    Width="100"
                     Binding="{Binding NamaVendor}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -291,7 +292,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="70"
+                    Width="90"
                     Binding="{Binding MataUang}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -313,7 +314,7 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="60"
+                    Width="100"
                     Binding="{Binding Total}"
                     CanUserReorder="False"
                     CanUserResize="False"
@@ -363,7 +364,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Annuality">
+                    Header="  Annuality">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -379,13 +380,13 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn
-                    Width="50"
+                    Width="100"
                     Binding="{Binding AgingReceivable}"
                     CanUserReorder="False"
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="Aging Receivable">
+                    Header="  Aging Receivable">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Left" />
