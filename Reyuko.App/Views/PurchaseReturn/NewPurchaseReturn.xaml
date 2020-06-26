@@ -159,7 +159,7 @@
         <Label Content="Receive Number" FontSize="12.5" HorizontalAlignment="Left" Margin="360,113,0,0" VerticalAlignment="Top"/>
         <Label Content="Cash/Bank" FontSize="12.5" HorizontalAlignment="Left" Margin="680,113,0,0" VerticalAlignment="Top"/>
         <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="10,168,0,0" VerticalAlignment="Top"/>
-        <Label Content="Location" FontSize="12.5" HorizontalAlignment="Left" Margin="350,168,0,0" VerticalAlignment="Top"/>
+        <Label Content="Location" FontSize="12.5" HorizontalAlignment="Left" Margin="360,168,0,0" VerticalAlignment="Top"/>
         <Label Content="Delivery Date" FontSize="12.5" HorizontalAlignment="Left" Margin="10,460,0,0" VerticalAlignment="Top"/>
         <Label Content="Staf / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,515,0,0" VerticalAlignment="Top"/>
         <Label Content="Total Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="380,460,0,0" VerticalAlignment="Top"/>
@@ -169,17 +169,17 @@
         <Label Content="Installments" FontSize="12.5" HorizontalAlignment="Left" Margin="380,590,0,0" VerticalAlignment="Top"/>
         <Label Content="Due Date" FontSize="12.5" HorizontalAlignment="Left" Margin="380,620,0,0" VerticalAlignment="Top"/>
 
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,520,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,550,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,590,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,620,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
-        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,650,0,0"  VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,485,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,515,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,545,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,585,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,615,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="550,645,0,0"  VerticalAlignment="Top" />
 
 
-        <RadioButton  x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="520,168,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
-        <RadioButton x:Name="rbproyek" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="620,168,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
-        <CheckBox x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="680,203,0,0" VerticalAlignment="Top"/>
+        <RadioButton  x:Name="rbdepartmen" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="530,174,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
+        <RadioButton x:Name="rbproyek" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="630,174,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
+        <CheckBox x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="690,199,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
@@ -205,14 +205,14 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="190,82,0,0">
-            <TextBlock x:Name="txtemail" FontSize="12.5" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+            <TextBlock x:Name="txtemail" FontSize="12.5" HorizontalAlignment="Left" Height="24" Margin="0,2,-2,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
         </Border>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="360,82,0,0">
-            <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
+            <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="24" Margin="0,2,0,0" TextWrapping="Wrap" Width="152"/>
         </Border>
         <DatePicker x:Name="dtReceived" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,82,0,0" VerticalAlignment="Top" Width="150"/>
         <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,82,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
@@ -238,9 +238,9 @@
         <ComboBox x:Name="cbReceiveNumber" HorizontalAlignment="Left" Margin="360,139,0,0" FontSize="12.5" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="received_selectedchange"/>
         <ComboBox x:Name="cbCash" HorizontalAlignment="Left" Margin="680,139,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="85" SelectionChanged="cash_selectedchange"/>
         <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="28" Margin="10,193,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-        <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" Margin="350,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
-        <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" Margin="520,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
-        <ComboBox x:Name="cbProyek" HorizontalAlignment="Left" Margin="520,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
+        <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" Margin="360,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
+        <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" Margin="530,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
+        <ComboBox x:Name="cbProyek" HorizontalAlignment="Left" Margin="530,193,0,0" Height="28" FontSize="12.5" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
         <DatePicker x:Name="dtDelivery" HorizontalAlignment="Left" Height="28" Margin="10,485,0,0" FontSize="12.5" VerticalAlignment="Top" Width="150"/>
         <CheckBox x:Name="chkmanual" Content="Manual" HorizontalAlignment="Left" Margin="300,530,0,0" FontSize="12.5" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
@@ -314,7 +314,7 @@
                     CanUserResize="False"
                     CanUserSort="True"
                     FontSize="12.5"
-                    Header="SKU / Name">
+                    Header="   SKU / Name">
                     <DataGridTextColumn.HeaderStyle>
                         <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                             <Setter Property="HorizontalContentAlignment" Value="Left" />
