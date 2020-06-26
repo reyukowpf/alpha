@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 namespace Reyuko.App.Views.PurchaseDocument
 {
     /// <summary>
-    
+
     /// </summary>
     public partial class NewShopingchart : UserControl
     {
@@ -37,6 +37,7 @@ namespace Reyuko.App.Views.PurchaseDocument
         public IEnumerable<Kontak> kontaks { get; set; }
         public Kontak kontakSelected { get; set; }
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
+        public IEnumerable<KodeTransaksi> kodeTransaksi { get; set; }
         private DataMataUang DataMataUangSelected { get; set; }
         public IEnumerable<Dokumen> dokumens { get; set; }
         public IEnumerable<ListOrderBeli> listOrderBelis { get; set; }
@@ -59,6 +60,7 @@ namespace Reyuko.App.Views.PurchaseDocument
             this.LoadEmployee();
             this.LoadStaff();
             this.LoadNoDokumen();
+            this.LoadKode();
             this.LoadCurrency();
             this.LoadLokasi();
             this.LoadAnnual();
@@ -85,6 +87,10 @@ namespace Reyuko.App.Views.PurchaseDocument
             txtAnnualFrequency.Text = "";
             dtAnnual.Text = DateTime.Now.ToShortDateString();
             dtRequired.Text = DateTime.Now.ToShortDateString();
+        }
+        public void LoadKode()
+        {
+
         }
         public void LoadEmployee()
         {
@@ -164,7 +170,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                 cbAnnual.DisplayMemberPath = "Annual";
             }
         }
-        
+
         private void department_selectionchange(object sender, SelectionChangedEventArgs e)
         {
             this.dataDepartemenSelected = null;
@@ -422,7 +428,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                 {
                     sumar += Convert.ToInt32((DGSKUShopingChart.Items[i] as ListOrderBeli).TotalOrder);
                 }
-                   txttotalbeforetax.Text = sumar.ToString();             
+                txttotalbeforetax.Text = sumar.ToString();
             }
         }
 
@@ -497,6 +503,7 @@ namespace Reyuko.App.Views.PurchaseDocument
             shoping.IdUserId = 1;
             shoping.IdPeriodeAkuntansi = 1;
             shoping.RealRecordingTime = DateTime.Now;
+            shoping.Checkaktif = true;
             if (ShopingBLL.AddShopingcharts(shoping) > 0)
             {
                 //  this.ClearForm();
@@ -535,7 +542,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                     }
                 }
             }
-                PurchaseDocument v = new PurchaseDocument();
+            PurchaseDocument v = new PurchaseDocument();
             Switcher.SwitchNewShopingchart(v);
         }
 
@@ -571,14 +578,14 @@ namespace Reyuko.App.Views.PurchaseDocument
             {
                 txtNote1.Visibility = Visibility.Hidden;
             } */
-            
-           /* this.chkproduk.IsChecked = false;
-            {
-                txtNote1.Visibility = Visibility.Hidden;
-            }*/
+
+            /* this.chkproduk.IsChecked = false;
+             {
+                 txtNote1.Visibility = Visibility.Hidden;
+             }*/
         }
     }
 }
-             
-    
+
+
 

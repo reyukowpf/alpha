@@ -20,7 +20,7 @@ using System.Windows.Shapes;
 namespace Reyuko.App.Views.PurchaseDocument
 {
     /// <summary>
-    
+
     /// </summary>
     public partial class NewQuotationRequest : UserControl
     {
@@ -119,7 +119,7 @@ namespace Reyuko.App.Views.PurchaseDocument
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                this.shopingcharts = uow.Shopingchart.GetAll();
+                this.shopingcharts = uow.Shopingchart.GetAll().Where(m => m.Checkaktif == true);
                 cbRequestNo.ItemsSource = this.shopingcharts;
                 cbRequestNo.SelectedValuePath = "IdPermintaanBarang";
                 cbRequestNo.DisplayMemberPath = "NoPermintaanBarang";
@@ -233,7 +233,19 @@ namespace Reyuko.App.Views.PurchaseDocument
                 this.LoadDataSku();
                 txtNote.Text = this.shopingchartSelected.Keterangan;
                 this.LoadDataQuota();
-
+                cbLocation.SelectedValue = this.shopingchartSelected.IdLokasi;
+                dtQuotation.Text = this.shopingchartSelected.TanggaldiBuat.GetValueOrDefault().ToShortDateString();
+                cbCurrency.SelectedValue = this.shopingchartSelected.IdMataUang;
+                srnodokumen.Text = this.shopingchartSelected.NoReferensiDokumen.ToString();
+                cbDepartment.SelectedValue = this.shopingchartSelected.IdDepartemen;
+                cbProyek.SelectedValue = this.shopingchartSelected.IdProyek;
+                chkcomplete.IsChecked = this.shopingchartSelected.CheckboxSelesai.GetValueOrDefault();
+                dtValidaty.Text = this.shopingchartSelected.TanggalDigunakan.GetValueOrDefault().ToShortDateString();
+                dtAnnual.Text = this.shopingchartSelected.TanggalBerulang.GetValueOrDefault().ToShortDateString();
+                srstaff.Text = this.shopingchartSelected.NamaPetugas;
+                chkannual.IsChecked = this.shopingchartSelected.CheckboxBerulang.GetValueOrDefault();
+                cbAnnual.SelectedValue = this.shopingchartSelected.IdOpsiAnnual.ToString();
+                txtAnnualFrequency.Text = this.shopingchartSelected.DurasiBerulang.ToString();
             }
 
         }
@@ -343,15 +355,16 @@ namespace Reyuko.App.Views.PurchaseDocument
             }
         }
 
-      
+
         private void SaveQuotationrequest_Click(object sender, RoutedEventArgs e)
         {
             if (srvendor.Name == "" || txtemail.Name == "" || txthp.Name == "" || dtQuotation.Text == "" || cbCurrency.Text == "" || srnodokumen.Name == "" || txtQuotationNo.Text == "" || cbRequestNo.Name == "" || cbLocation.Text == "" || dtValidaty.Text == "" || cbAnnual.Text == "" || srstaff.Name == "" || txtAnnualFrequency.Text == "" || dtAnnual.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
-            }          
+            }
             QuotationrequestBLL quotationrequestBLL = new QuotationrequestBLL();
+            ShopingchartBLL shopingchartBLL = new ShopingchartBLL();
             Quotationrequest oNewData1 = new Quotationrequest();
             oNewData1.KodeTransaksi = "RQ";
             oNewData1.IdKodeTransaksi = 16;
@@ -428,6 +441,7 @@ namespace Reyuko.App.Views.PurchaseDocument
             oNewData1.TotalPajak = double.Parse(txtTotalTax.Text);
             oNewData1.TotalSetelahPajak = double.Parse(txtAfterTotalTax.Text);
             oNewData1.RealRecordingTime = DateTime.Now;
+            oNewData1.Checkboxaktif = true;
             if (quotationrequestBLL.AddQuotationrequests(oNewData1) > 0)
             {
                 //  this.ClearForm();
@@ -436,6 +450,20 @@ namespace Reyuko.App.Views.PurchaseDocument
             else
             {
                 MessageBox.Show("Quotation Request failed to add !");
+            }
+            if (cbRequestNo.Items.Count > 0)
+            {
+                foreach (var item in cbRequestNo.Items)
+                {
+                    if (item is Shopingchart)
+                    {
+                        Shopingchart oNewData2 = (Shopingchart)item;
+                        oNewData2.Checkaktif = false;
+                        if (shopingchartBLL.EditShopingcharts(oNewData2) == true)
+                        {
+                        }
+                    }
+                }
             }
             PurchaseDocument v = new PurchaseDocument();
             Switcher.SwitchNewQuotationRequest(v);
@@ -636,6 +664,6 @@ namespace Reyuko.App.Views.PurchaseDocument
         }
     }
 }
-             
-    
+
+
 
