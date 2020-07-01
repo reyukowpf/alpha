@@ -1,0 +1,172 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Class="Reyuko.App.Views.ImportantAccount.ImportantAccount"
+    d:DesignHeight="500"
+    d:DesignWidth="800"
+    Background="White"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="200" Click="Accountlvlsetting_click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/setting.png" Height="23" Width="23"/>
+                        <TextBlock Text="Account Level Setting" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="100">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/delete.png" Height="23" Width="23"/>
+                        <TextBlock Text="Delete" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+        
+        <TextBlock
+            Width="327"
+            Height="47"
+            Margin="10,20,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="Important Account"
+            TextWrapping="Wrap" />
+        <Button HorizontalAlignment="Right" Margin="0,12,140,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="Save_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
+                <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="80" Click="Cancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
+                <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <TabControl x:Name="tbImportantAccount" Margin="10,72,0,-10" Background="Transparent">
+            <TabItem Header="Produk" Background="Transparent" FontSize="24">
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <Label Content="Category" FontSize="12.5" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Product Type" FontSize="12.5" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="COGS" HorizontalAlignment="Left" FontSize="12.5" Margin="320,30,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Sales" HorizontalAlignment="Left" FontSize="12.5" Margin="320,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Inventory" HorizontalAlignment="Left" FontSize="12.5" Margin="320,110,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Purchasing Delivery" HorizontalAlignment="Left" FontSize="12.5" Margin="320,150,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Sales Delivery" HorizontalAlignment="Left" FontSize="12.5" Margin="320,190,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Sales Return" HorizontalAlignment="Left" FontSize="12.5" Margin="320,230,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Service" HorizontalAlignment="Left" FontSize="12.5" Margin="320,270,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbCategory" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="130,30,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbCategory_SelectionChanged"/>
+                    <ComboBox x:Name="cbTypeProduk" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="130,70,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbTypeProduk_SelectionChanged"/>
+                    <ComboBox x:Name="cbCOGS" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,30,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbSales" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,70,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbInventory" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,110,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbpurchasedelivery" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,150,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbSalesdelivery" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,190,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbSalesreturn" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,230,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbService" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="450,270,0,0" VerticalAlignment="Top" Width="150"/>
+                 </Grid>
+            </TabItem>
+            <TabItem Header="Currency" FontSize="24" HorizontalAlignment="Left" Width="112">
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <Label Content="Currency" FontSize="12.5" HorizontalAlignment="Left" Margin="10,30,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Account Receivable" FontSize="12.5" HorizontalAlignment="Left" Margin="320,30,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Account Payable" FontSize="12.5" HorizontalAlignment="Left" Margin="320,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Bank Payment" FontSize="12.5" HorizontalAlignment="Left" Margin="320,110,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Cash Payment" FontSize="12.5" HorizontalAlignment="Left" Margin="320,150,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Purchase Down Payment" FontSize="12.5" HorizontalAlignment="Left" Margin="320,190,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Sales Down Payment" FontSize="12.5" HorizontalAlignment="Left" Margin="320,230,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Received Post-Dated Cheque" FontSize="12.5" HorizontalAlignment="Left" Margin="320,270,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Post-Dated Cheque" HorizontalAlignment="Left" FontSize="12.5" Margin="320,310,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="130,30,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbCurrency_SelectionChanged"/>
+                    <ComboBox x:Name="cbAccountReceivable" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,30,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbAccountPayable" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,70,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbBankpayment" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,110,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbCashpayment" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,150,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbPurchasedownpayment" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,190,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbSalesdownpayment" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,230,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbReceivedpostdatecheque" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,270,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbPostdatecheque" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,310,0,0" VerticalAlignment="Top" Width="150"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Tax" FontSize="24">
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <Label Content="Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="10,30,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Account Buy" HorizontalAlignment="Left" FontSize="12.5" Margin="320,30,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Sell Account" HorizontalAlignment="Left" FontSize="12.5" Margin="320,70,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbTax" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="130,30,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbTax_SelectionChanged"/>
+                    <ComboBox x:Name="cbAccountBuy" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,30,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbSellAccount" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,70,0,0" VerticalAlignment="Top" Width="150"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Asset" FontSize="24">
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <Label Content="Category" HorizontalAlignment="Left" FontSize="12.5" Margin="10,30,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Asset Account" HorizontalAlignment="Left" FontSize="12.5" Margin="320,30,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Accumulation Dept Acct" HorizontalAlignment="Left" FontSize="12.5" Margin="320,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Deprectiation" HorizontalAlignment="Left" FontSize="12.5" Margin="320,110,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbAssetCategory" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="130,30,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbAssetCategory_SelectionChanged"/>
+                    <ComboBox x:Name="cbAssetaccount" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,30,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbAkumulasiAccounDept" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,70,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbDeprectiation" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="480,110,0,0" VerticalAlignment="Top" Width="150"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Other Default" FontSize="24">
+                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                    <Label Content="Stock Opname" HorizontalAlignment="Left" FontSize="12.5" Margin="10,30,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Bank Reconciliation" HorizontalAlignment="Left" FontSize="12.5" Margin="10,70,0,0" VerticalAlignment="Top"/>
+                    <Label Content="General Journal" HorizontalAlignment="Left" FontSize="12.5" Margin="10,110,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Retained Earnings" HorizontalAlignment="Left" FontSize="12.5" Margin="10,150,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Current Year Earnings" HorizontalAlignment="Left" FontSize="12.5" Margin="10,190,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbStockOpname" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,30,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbBankreconcialition" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,70,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbGeneraljurnal" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,110,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbEarning" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,150,0,0" VerticalAlignment="Top" Width="150"/>
+                    <ComboBox x:Name="cbCurrentEarning" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,190,0,0" VerticalAlignment="Top" Width="150"/>
+                </Grid>
+            </TabItem>
+           </TabControl>
+
+    </Grid>
+
+</UserControl>

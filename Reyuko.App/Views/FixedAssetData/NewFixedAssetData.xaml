@@ -1,0 +1,115 @@
+﻿<UserControl
+    x:Class="Reyuko.App.Views.FixedAssetData.NewFixedAssetData"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="1000"
+    VerticalAlignment="Top"
+    Background="White"
+    mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+    <Grid>
+        <TextBlock
+            Width="360"
+            Height="42"
+            Margin="50,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="New Fixed Asset Data"
+            TextWrapping="Wrap" />
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="135">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,140,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="Btnsave_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
+                <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="80" Click="Cancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
+                <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Label Content="Name" HorizontalAlignment="Left" FontSize="12.5" Margin="50,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Category" HorizontalAlignment="Left" FontSize="12.5" Margin="50,152,0,0" VerticalAlignment="Top"/>
+        <Label Content="Purchased Date" HorizontalAlignment="Left" FontSize="12.5" Margin="50,192,0,0" VerticalAlignment="Top"/>
+        <Label Content="Buying Price" HorizontalAlignment="Left" FontSize="12.5" Margin="50,232,0,0" VerticalAlignment="Top"/>
+        <Label Content="Salvage" HorizontalAlignment="Left" FontSize="12.5" Margin="50,272,0,0" VerticalAlignment="Top"/>
+        <Label Content="Life" HorizontalAlignment="Left" FontSize="12.5" Margin="50,312,0,0" VerticalAlignment="Top"/>
+        <Label Content="Location" HorizontalAlignment="Left" FontSize="12.5" Margin="50,352,0,0" VerticalAlignment="Top"/>
+        <Label Content="Earned By" HorizontalAlignment="Left" FontSize="12.5" Margin="50,392,0,0" VerticalAlignment="Top"/>
+        <Label Content="Vendor" HorizontalAlignment="Left" FontSize="12.5" Margin="50,432,0,0" VerticalAlignment="Top"/>
+        <Label Content="Account" HorizontalAlignment="Left" FontSize="12.5" Margin="50,472,0,0" VerticalAlignment="Top"/>
+        <Label Content="Asset No." HorizontalAlignment="Left" FontSize="12.5" Margin="50,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Department" HorizontalAlignment="Left" FontSize="12.5" Margin="440,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cut off in First Year" HorizontalAlignment="Left" FontSize="12.5" Margin="440,112,0,0" VerticalAlignment="Top"/>
+        <Label Content="Book Value" HorizontalAlignment="Left" FontSize="12.5" Margin="440,192,0,0" VerticalAlignment="Top"/>
+        <Label Content="Monthly Depr" HorizontalAlignment="Left" FontSize="12.5" Margin="440,232,0,0" VerticalAlignment="Top"/>
+        <Label Content="Upload Picture" HorizontalAlignment="Left" FontSize="12.5" Margin="800,62,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtnoasset" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txtnoasset_TextChanged"/>
+        <TextBox x:Name="txtnamaasset"  HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txtnamaasset_TextChanged"/>
+        <ComboBox x:Name="cbcategoryasset" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,152,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcategory_SelectionChanged"/>
+        <DatePicker x:Name="tglbeli" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="180,192,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="txtHargabeli" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtHargabeli_TextChanged"/>
+        <TextBox x:Name="txtsalvage" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="180,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txtsalvage_TextChanged"/>
+        <Label Content="10" HorizontalAlignment="Left" Margin="180,312,0,0" FontSize="12.5" VerticalAlignment="Top"/>
+        <Label Content="Year" HorizontalAlignment="Left" Margin="195,312,0,0" FontSize="12.5" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cblokasi" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="180,352,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cblokasi_SelectionChanged"/>
+        <ComboBox x:Name="cbearn" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="180,392,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbearn_SelectionChanged"/>
+        <ComboBox x:Name="cbvendor" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="180,432,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbvendor_SelectionChanged"/>
+        <ComboBox x:Name="cbakun" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="180,472,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbakun_SelectionChanged"/>
+        <ComboBox x:Name="cbdepartmen" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="580,72,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbDepartment_SelectionChanged"/>
+        <ComboBox x:Name="cbcutoff" Height="28" HorizontalAlignment="Left" FontSize="12.5" Margin="580,112,0,0" VerticalAlignment="Top" Width="150"/>
+        <CheckBox x:Name="chkafter15" Content="after 15th" HorizontalAlignment="Left" FontSize="12.5" Margin="440,152,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtbook" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="580,192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txtbook_TextChanged"/>
+        <TextBox x:Name="txtmonth" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="580,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="Txtmonth_TextChanged"/>
+        <CheckBox x:Name="chkinclud" Content="Included on Service Assigment" FontSize="12.5" HorizontalAlignment="Left" Margin="440,272,0,0" VerticalAlignment="Top"/>
+        <Button HorizontalAlignment="Left" Margin="900,62,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="50" Click="UploadFile_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/chooseFile1.png" Height="40" Width="40"/>
+            </StackPanel>
+        </Button>
+    </Grid>
+
+</UserControl>

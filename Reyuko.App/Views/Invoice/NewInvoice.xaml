@@ -1,0 +1,496 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Class="Reyuko.App.Views.Invoice.NewInvoice"
+    d:DesignHeight="700"
+    d:DesignWidth="800"
+    VerticalAlignment="Top"
+    FontSize="14"
+    BorderBrush="Black"
+    Background="White"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="130" Click="notes_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/notes.png" Height="23" Width="23"/>
+                        <TextBlock Text="Internal Notes" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="saveasdraft_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/save.png" Height="23" Width="23"/>
+                        <TextBlock Text="Save as Draft" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="110" Click="saveaspdf_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/save.png" Height="23" Width="23"/>
+                        <TextBlock Text="Save as PDF" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="100" Click="duplicate_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/document1.png" Height="30" Width="22"/>
+                        <TextBlock Text="Duplicate" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="playtutorial_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+        <Button HorizontalAlignment="Left" Margin="167,94,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="Customer_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="167,152,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="Dokumen_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Left" Margin="164,615,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="PaymentTerm_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Left" Margin="10,245,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Click="custom_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
+                <TextBlock Text=" Custom" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <TextBlock
+            Width="221"
+            Height="49"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="New Invoice"
+            TextWrapping="Wrap" />
+
+        <Button HorizontalAlignment="Right" Margin="0,12,290,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="60" Click="Saveinvoice_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
+                <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,195,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="90" Click="StockList_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/inventory1.png" Height="20"/>
+                <TextBlock Text=" Stock List" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,130,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="60" Click="Print_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/print.png" Height="20"/>
+                <TextBlock Text=" Print" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}"  VerticalAlignment="Top" Width="70" Click="Cancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
+                <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <CheckBox Content="Unposted" FontSize="12.5" HorizontalAlignment="Right" Margin="0,13,360,0" VerticalAlignment="Top"/>
+
+        <Button HorizontalAlignment="Left" Margin="110,251,0,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="80" Click="Service_Click">
+            <StackPanel Orientation="Horizontal"/>
+        </Button>
+
+        <Label Content="Customer / Id" HorizontalAlignment="Left" FontSize="12.5" Margin="10,64,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Email" HorizontalAlignment="Left" FontSize="12.5" Margin="190,64,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Mobile Phone" HorizontalAlignment="Left" FontSize="12.5" Margin="350,64,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Invoice Date" HorizontalAlignment="Left" FontSize="12.5" Margin="520,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Currency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Document Reference No." HorizontalAlignment="Left" FontSize="12.5" Margin="10,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="Invoice Number" HorizontalAlignment="Left" FontSize="12.5" Margin="190,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="DO Number" HorizontalAlignment="Left" FontSize="12.5" Margin="350,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="SO Number" HorizontalAlignment="Left" FontSize="12.5" Margin="520,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cash/Bank" HorizontalAlignment="Left" FontSize="12.5" Margin="680,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note" HorizontalAlignment="Left" FontSize="12.5" Margin="10,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Location" HorizontalAlignment="Left" FontSize="12.5" Margin="350,184,0,0" VerticalAlignment="Top"/>
+        <Label Content="Delivery Date" HorizontalAlignment="Left" FontSize="12.5" Margin="10,460,0,0" VerticalAlignment="Top"/>
+        <Label Content="Staf / Id" HorizontalAlignment="Left" FontSize="12.5" Margin="10,520,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Frequency" HorizontalAlignment="Left" FontSize="12.5" Margin="185,520,0,0" VerticalAlignment="Top"/>
+        <Label Content="Annual Date" HorizontalAlignment="Left" FontSize="12.5" Margin="185,585,0,0" VerticalAlignment="Top"/>
+        <Label Content="Total Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="450,460,0,0" VerticalAlignment="Top"/>
+        <Label Content="After Total Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="450,490,0,0" VerticalAlignment="Top"/>
+        <Label Content="Paid / Down Payment" HorizontalAlignment="Left" FontSize="12.5" Margin="450,520,0,0" VerticalAlignment="Top"/>
+        <Label Content="Outstanding Balance" HorizontalAlignment="Left" FontSize="12.5" Margin="450,550,0,0" VerticalAlignment="Top"/>
+        <Label Content="Installment / Annual" HorizontalAlignment="Left" FontSize="12.5" Margin="450,600,0,0" VerticalAlignment="Top"/>
+        <Label Content="Installments" HorizontalAlignment="Left" FontSize="12.5" Margin="450,630,0,0" VerticalAlignment="Top"/>
+        <Label Content="Due Date" HorizontalAlignment="Left" FontSize="12.5" Margin="450,660,0,0" VerticalAlignment="Top"/>
+
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,490,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,520,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,550,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,580,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,630,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,660,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Line Stroke="Black" X2="150" Fill="Black" Margin="620,690,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <CheckBox x:Name="chkannual" Content="Annual" HorizontalAlignment="Left" FontSize="12.5" Margin="185,465,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbdepartmen" Content="Department" HorizontalAlignment="Left" FontSize="12.5" Margin="520,184,0,0" VerticalAlignment="Top" Checked="Rbdepartmen_Checked"/>
+        <RadioButton x:Name="rbproyek" Content="Project" HorizontalAlignment="Left" FontSize="12.5" Margin="620,184,0,0" VerticalAlignment="Top" Checked="Rbproyek_Checked"/>
+        <CheckBox  x:Name="chkinclusive" Content="Inclusive Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="680,219,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="10,88,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
+                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,-1,0,-1" VerticalAlignment="Top" ValueMemberPath="NamaA" SelectionChanged="customer_selectedchange">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NamaA}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+            </DockPanel>
+        </Border>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        Width="152"
+                        Height="28"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="190,88,0,0">
+            <TextBlock x:Name="txtemail" FontSize="12.5" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152"/>
+        </Border>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="350,88,0,0">
+            <TextBlock x:Name="txthp" FontSize="12.5" VerticalAlignment="Top" HorizontalAlignment="Left" Height="22" Margin="0,4,0,0" TextWrapping="Wrap" Width="152"/>
+        </Border>
+        <DatePicker x:Name="dtInvoicedate" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="520,88,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbCurrency" HorizontalAlignment="Left" FontSize="12.5" Margin="680,88,0,0" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="currency_selectedchange"/>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="10,149,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
+                <Controls:AutoCompleteBox x:Name="srnodokumen" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NoReferensiDokumen" SelectionChanged="dokumen_selectedchange">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NoReferensiDokumen}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+            </DockPanel>
+        </Border>
+        <TextBox x:Name="txtInvoiceNumber" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="152" TextChanged="TxtInvoiceNumber_TextChanged"/>
+        <ComboBox x:Name="cbDONumber" HorizontalAlignment="Left" Margin="350,149,0,0" FontSize="12.5" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="Deliveryorder_selectedchange"/>
+        <ComboBox x:Name="cbSONumber" HorizontalAlignment="Left" Margin="520,149,0,0" FontSize="12.5" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="Salesorder_selectedchange"/>
+        <ComboBox x:Name="cbCash" HorizontalAlignment="Left" Margin="680,149,0,0" FontSize="12.5" Height="28" VerticalAlignment="Top" Width="85" SelectionChanged="cash_selectionchange"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <ComboBox x:Name="cbLocation" HorizontalAlignment="Left" FontSize="12.5" Margin="350,209,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="lokasi_selectedchange"/>
+        <ComboBox x:Name="cbDepartment" HorizontalAlignment="Left" FontSize="12.5" Margin="520,209,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="department_selectionchange"/>
+        <ComboBox x:Name="cbProyek" HorizontalAlignment="Left" FontSize="12.5" Margin="520,209,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="proyek_selectionchange"/>
+        <DatePicker x:Name="dtDeliverydate" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="10,485,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbAnnual" IsEnabled="{Binding ElementName=chkannual, Path=IsChecked}" HorizontalAlignment="Left" FontSize="12.5" Margin="185,485,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="annual_selectedchange"/>
+        <CheckBox x:Name="chkmanual" Content="Manual" HorizontalAlignment="Left" FontSize="12.5" Margin="370,525,0,0" VerticalAlignment="Top"/>
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="10,545,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
+                <Controls:AutoCompleteBox x:Name="srstaff" BorderBrush="Transparent" FontSize="12.5" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="staff_selectedchange">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NamaA}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
+            </DockPanel>
+        </Border>
+        <TextBox x:Name="txtAnnualFrequency" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="185,545,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtAnnualFrequency_TextChanged"/>
+        <DatePicker x:Name="dtAnnualdate" HorizontalAlignment="Left" Height="28" Margin="185,610,0,0" FontSize="12.5" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotalbeforeTax" Visibility="Hidden" FontSize="12.5" Text=" " HorizontalAlignment="Left" Height="28" Margin="560,539,400,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTotalTax" Text=" " HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="620,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtAfterTotalTax" Text=" " HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="620,490,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtPaid" Text=" " HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="620,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtoutstanding" Text=" " HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="620,550,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtInstallmentannual" Text=" " HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="620,600,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtInstallments" Text=" " HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="620,630,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtDuedate" Text=" " HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="620,660,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <RadioButton x:Name="rbpayment" Content="Payment Terms" FontSize="12.5" HorizontalAlignment="Left" Margin="10,590,0,0" VerticalAlignment="Top" Checked="rbpayment_Checked"/>
+        <RadioButton x:Name="rbcash" Content="Cash" FontSize="12.5" HorizontalAlignment="Left" Margin="120,590,0,0" VerticalAlignment="Top" Checked="rbcash_Checked"/>
+        <ComboBox x:Name="cbPayment" HorizontalAlignment="Left" FontSize="12.5" Margin="10,610,0,0" Height="28" VerticalAlignment="Top" Width="150" SelectionChanged="payment_selectedchange"/>
+        <ComboBox x:Name="cbCash1" HorizontalAlignment="Left" FontSize="12.5" Margin="10,610,0,0" Height="28" VerticalAlignment="Top" Width="150"/>
+        <DataGrid
+            x:Name="DGSKUInvoice"
+            Height="185"
+            Width="780"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            Margin="10,271,0,0"
+            AutoGenerateColumns="False"
+            IsEnabled="{Binding ElementName=Custome, Path=IsChecked}"
+            CanUserAddRows="True"
+            BorderBrush="#d3d3d3"
+            BorderThickness="1"
+            ColumnHeaderHeight="32"
+            FontSize="12.5"
+            Background="White"
+            HeadersVisibility="Column"
+            RowHeight="30"
+            SelectionMode="Single">
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Background" Value="#d3d3d3" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Sku}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="SKU / Name">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Left" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding Jumlah}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Total">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding SatuanDasar}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Unit">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding HargaJual}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Price">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding DiskonProduk}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Discount">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding TotalOrder}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Total">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding Startdate}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Start date">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn
+                    Width="120"
+                    Binding="{Binding Asset}"
+                    CanUserReorder="False"
+                    CanUserResize="False"
+                    CanUserSort="True"
+                    FontSize="12.5"
+                    Header="Asset">
+                    <DataGridTextColumn.HeaderStyle>
+                        <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                            <Setter Property="HorizontalContentAlignment" Value="Left" />
+                            <Setter Property="Background" Value="#d3d3d3" />
+                            <Setter Property="Foreground" Value="White" />
+                        </Style>
+                    </DataGridTextColumn.HeaderStyle>
+                    <DataGridTextColumn.ElementStyle>
+                        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                            <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                            <Setter Property="VerticalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        
+
+    </Grid>
+
+</UserControl>

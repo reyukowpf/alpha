@@ -1,0 +1,93 @@
+﻿<Window
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Class="Reyuko.App.Views.Vendor.Vendorspurchasedelivery"
+    Height="350"
+    Width="450"
+    WindowStyle="None"
+    FontSize="14"
+    Background="White"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <TextBlock
+            Width="267"
+            Height="52"
+            Margin="20,9,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="Vendor"
+            TextWrapping="Wrap" />
+
+        <Button HorizontalAlignment="Right" Margin="0,20,100,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnSave_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
+                <TextBlock Text=" Save" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="0,20,25,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="BtnCancel_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
+                <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <TabControl Margin="20,66,0,-16">
+            <TabItem Header="Contact Data" FontSize="24" HorizontalAlignment="Right" Width="160">
+                <Grid Background="White" Margin="-15,-14,-15,-15">
+                    <Label
+                        Name="InfoMail"
+                        Margin="337,183,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content=""
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label Content="Vendor Clasification" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Vendor ID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Name" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Phone Number" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Email" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbClasification" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,20,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbClasification_SelectionChanged"/>
+                    <TextBox x:Name="txtVendorID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtName" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBox x:Name="txtPhone" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtPhone_TextChanged"/>
+                    <TextBox x:Name="txtEmail" LostFocus="TxtEmail_OnLostFocus" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+
+    </Grid>
+
+</Window>

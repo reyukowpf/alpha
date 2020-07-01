@@ -1,0 +1,1762 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F7D069C6-C2B2-458A-9107-14100F8D631A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Reyuko.App</RootNamespace>
+    <AssemblyName>Reyuko.App</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>D:\New folder %282%29\</PublishUrl>
+    <Install>false</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>2</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>4B3C8CFE916C6132505D0445EFBE4F117E84CEC6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Reyuko.App_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Carbon.Data.Protection, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Data.Protection.1.2.0\lib\netstandard2.0\Carbon.Data.Protection.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Packaging, Version=1.40.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Packaging.1.40.0\lib\netstandard2.0\Carbon.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Storage, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Storage.2.1.0\lib\netstandard2.0\Carbon.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.VersionControl, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.VersionControl.2.1.0\lib\netstandard2.0\Carbon.VersionControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Carbon.Versioning, Version=1.8.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Carbon.Versioning.1.8.1\lib\netstandard2.0\Carbon.Versioning.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonWin32, Version=1.1.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonWin32.1.1.4.2\lib\net20\CommonWin32.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Charts.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="devexpress.xpf.dataaccess.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Diagram.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Docking.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.ExpressionEditor.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.NavBar.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.PropertyGrid.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v18.2, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v18.2.Core, Version=18.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GitHub, Version=1.24.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GitHub.1.24.0\lib\netstandard2.0\GitHub.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.111.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Input.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit.Design, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFToolkit, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="WPFToolkit.Design, Version=3.5.40128.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="BindingProxy.cs" />
+    <Compile Include="Home.xaml.cs">
+      <DependentUpon>Home.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindowViewModel.cs" />
+    <Compile Include="model1.cs" />
+    <Compile Include="model.cs" />
+    <Compile Include="ObjectCollection.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="Switcher.cs" />
+    <Compile Include="Views\AccountBudget\AccountBudget.xaml.cs">
+      <DependentUpon>AccountBudget.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountData\AccountData.xaml.cs">
+      <DependentUpon>AccountData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountData\DeleteAccountLevel.xaml.cs">
+      <DependentUpon>DeleteAccountLevel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountData\NewAccountLevel.xaml.cs">
+      <DependentUpon>NewAccountLevel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountData\NewAccountLevel4.xaml.cs">
+      <DependentUpon>NewAccountLevel4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountingPeriod\AccountingPeriod.xaml.cs">
+      <DependentUpon>AccountingPeriod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AccountingPeriod\NewPeriod.xaml.cs">
+      <DependentUpon>NewPeriod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BankReconsiliation\BankReconsiliation.xaml.cs">
+      <DependentUpon>BankReconsiliation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calender\AnnualInvoice.xaml.cs">
+      <DependentUpon>AnnualInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Calender\Calender.xaml.cs">
+      <DependentUpon>Calender.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashActivities\Giro.xaml.cs">
+      <DependentUpon>Giro.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashActivities\Account.xaml.cs">
+      <DependentUpon>Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashActivities\CashActivities.xaml.cs">
+      <DependentUpon>CashActivities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CashActivities\NewCashActivities.xaml.cs">
+      <DependentUpon>NewCashActivities.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryProduk\CategoryProduk.xaml.cs">
+      <DependentUpon>CategoryProduk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryProduk\CategoryProduks.xaml.cs">
+      <DependentUpon>CategoryProduks.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CategoryProduk\NewCategoryProduk.xaml.cs">
+      <DependentUpon>NewCategoryProduk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Company\Company.xaml.cs">
+      <DependentUpon>Company.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Company\NewCompany.xaml.cs">
+      <DependentUpon>NewCompany.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consigment\Consigment.xaml.cs">
+      <DependentUpon>Consigment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consigment\NewConsigmentReceive.xaml.cs">
+      <DependentUpon>NewConsigmentReceive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consigment\NewConsigmentReturn.xaml.cs">
+      <DependentUpon>NewConsigmentReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consigment\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Consigment\Skureturn.xaml.cs">
+      <DependentUpon>Skureturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactClasification\ContactClasification.xaml.cs">
+      <DependentUpon>ContactClasification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactClasification\NewContactClasification.xaml.cs">
+      <DependentUpon>NewContactClasification.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Currency\Currency.xaml.cs">
+      <DependentUpon>Currency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Currency\NewCurrency.xaml.cs">
+      <DependentUpon>NewCurrency.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Currency\xRateUpdate.xaml.cs">
+      <DependentUpon>xRateUpdate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerGroup\CustomerGroup.xaml.cs">
+      <DependentUpon>CustomerGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerGroup\NewCustomerGroup.xaml.cs">
+      <DependentUpon>NewCustomerGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\Customers.xaml.cs">
+      <DependentUpon>Customers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\NewCustomer.xaml.cs">
+      <DependentUpon>NewCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeliveryOrder\Deliveryorder.xaml.cs">
+      <DependentUpon>Deliveryorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeliveryOrder\NewDeliveryOrder.xaml.cs">
+      <DependentUpon>NewDeliveryOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeliveryOrder\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Department\Department.xaml.cs">
+      <DependentUpon>Department.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Department\NewDepartment.xaml.cs">
+      <DependentUpon>NewDepartment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeprectiationTable\DeprectiationTable.xaml.cs">
+      <DependentUpon>DeprectiationTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DeprectiationTable\NewDeprectiationTable.xaml.cs">
+      <DependentUpon>NewDeprectiationTable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentType\DeleteType.xaml.cs">
+      <DependentUpon>DeleteType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentType\DocumentType.xaml.cs">
+      <DependentUpon>DocumentType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentType\NewDocumentType.xaml.cs">
+      <DependentUpon>NewDocumentType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentconsigmentreceive.xaml.cs">
+      <DependentUpon>Documentconsigmentreceive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\DocumentConsigmentreturn.xaml.cs">
+      <DependentUpon>DocumentConsigmentreturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentcashactivity.xaml.cs">
+      <DependentUpon>Documentcashactivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentorder.xaml.cs">
+      <DependentUpon>Documentorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentquota.xaml.cs">
+      <DependentUpon>Documentquota.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentshoping.xaml.cs">
+      <DependentUpon>Documentshoping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentpurchasedelivery.xaml.cs">
+      <DependentUpon>Documentpurchasedelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentpurchase.xaml.cs">
+      <DependentUpon>Documentpurchase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentsalesorderquotation.xaml.cs">
+      <DependentUpon>Documentsalesorderquotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentsalesorder.xaml.cs">
+      <DependentUpon>Documentsalesorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentinvoice.xaml.cs">
+      <DependentUpon>Documentinvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentdeliveryorder.xaml.cs">
+      <DependentUpon>Documentdeliveryorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documentgood.xaml.cs">
+      <DependentUpon>Documentgood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\Documents.xaml.cs">
+      <DependentUpon>Documents.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Document\NewDocument.xaml.cs">
+      <DependentUpon>NewDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\Employee.xaml.cs">
+      <DependentUpon>Employee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\Employeeshoping.xaml.cs">
+      <DependentUpon>Employeeshoping.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Employee\NewEmployee.xaml.cs">
+      <DependentUpon>NewEmployee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixedAssetCategory\FixedAssetCategory.xaml.cs">
+      <DependentUpon>FixedAssetCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixedAssetCategory\NewFixedAsset.xaml.cs">
+      <DependentUpon>NewFixedAsset.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixedAssetData\FixedAssetData.xaml.cs">
+      <DependentUpon>FixedAssetData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FixedAssetData\NewFixedAssetData.xaml.cs">
+      <DependentUpon>NewFixedAssetData.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneralJournal\GeneralJournal.xaml.cs">
+      <DependentUpon>GeneralJournal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneralJournal\Account.xaml.cs">
+      <DependentUpon>Account.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GeneralJournal\NewGeneralJournal.xaml.cs">
+      <DependentUpon>NewGeneralJournal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GroupProduct\GroupProduct.xaml.cs">
+      <DependentUpon>GroupProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GroupProduct\GroupProducts.xaml.cs">
+      <DependentUpon>GroupProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GroupProduct\NewGroupProduct.xaml.cs">
+      <DependentUpon>NewGroupProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ImportantAccount\ImportantAccount.xaml.cs">
+      <DependentUpon>ImportantAccount.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryAdjusment\InventoryAdjusment.xaml.cs">
+      <DependentUpon>InventoryAdjusment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryAdjusment\NewInventoryAdjusment.xaml.cs">
+      <DependentUpon>NewInventoryAdjusment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventoryAdjusment\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\Invoice.xaml.cs">
+      <DependentUpon>Invoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\NewInvoice.xaml.cs">
+      <DependentUpon>NewInvoice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\Skucustom.xaml.cs">
+      <DependentUpon>Skucustom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\Skuservice.xaml.cs">
+      <DependentUpon>Skuservice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Invoice\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ledger\Ledger.xaml.cs">
+      <DependentUpon>Ledger.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\Location.xaml.cs">
+      <DependentUpon>Location.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\NewLocation.xaml.cs">
+      <DependentUpon>NewLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeasurementUnit\MeasurementUnit.xaml.cs">
+      <DependentUpon>MeasurementUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MeasurementUnit\NewMeasurementUnit.xaml.cs">
+      <DependentUpon>NewMeasurementUnit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotesType\NewNoteType.xaml.cs">
+      <DependentUpon>NewNoteType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NotesType\NotesType.xaml.cs">
+      <DependentUpon>NotesType.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Note\DocumentNo.xaml.cs">
+      <DependentUpon>DocumentNo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Note\InternalNotes.xaml.cs">
+      <DependentUpon>InternalNotes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Note\NewInternalNote.xaml.cs">
+      <DependentUpon>NewInternalNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentTerm\NewPaymentTerm.xaml.cs">
+      <DependentUpon>NewPaymentTerm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PaymentTerm\PaymentTerms.xaml.cs">
+      <DependentUpon>PaymentTerms.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Production\Skuother.xaml.cs">
+      <DependentUpon>Skuother.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\NewProject.xaml.cs">
+      <DependentUpon>NewProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Project\Project.xaml.cs">
+      <DependentUpon>Project.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDelivery\NewPurchaseDelivery.xaml.cs">
+      <DependentUpon>NewPurchaseDelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDelivery\PurchaseDelivery.xaml.cs">
+      <DependentUpon>PurchaseDelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Customer.xaml.cs">
+      <DependentUpon>Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\NewPurchasedOrder.xaml.cs">
+      <DependentUpon>NewPurchasedOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\NewQuotationRequest.xaml.cs">
+      <DependentUpon>NewQuotationRequest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\NewShopingchart.xaml.cs">
+      <DependentUpon>NewShopingchart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\PaymentTerm.xaml.cs">
+      <DependentUpon>PaymentTerm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\PurchaseDocument.xaml.cs">
+      <DependentUpon>PurchaseDocument.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Skupurchaseorder.xaml.cs">
+      <DependentUpon>Skupurchaseorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Skuservicepurchaseorder.xaml.cs">
+      <DependentUpon>Skuservicepurchaseorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Skuservicequotation.xaml.cs">
+      <DependentUpon>Skuservicequotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Skuserviceshopingchart.xaml.cs">
+      <DependentUpon>Skuserviceshopingchart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Skuquotation.xaml.cs">
+      <DependentUpon>Skuquotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseDocument\Skushopingchart.xaml.cs">
+      <DependentUpon>Skushopingchart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseReturn\NewPurchaseReturn.xaml.cs">
+      <DependentUpon>NewPurchaseReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseReturn\PurchaseReturn.xaml.cs">
+      <DependentUpon>PurchaseReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PurchaseReturn\Skuother.xaml.cs">
+      <DependentUpon>Skuother.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\NewReceivedGood.xaml.cs">
+      <DependentUpon>NewReceivedGood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\ReceivedGood.xaml.cs">
+      <DependentUpon>ReceivedGood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\Skuother.xaml.cs">
+      <DependentUpon>Skuother.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\Skureceived.xaml.cs">
+      <DependentUpon>Skureceived.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedGood\Skuservicegood.xaml.cs">
+      <DependentUpon>Skuservicegood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedPostDateChequeIssuance\ChasingCheck.xaml.cs">
+      <DependentUpon>ChasingCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivedPostDateChequeIssuance\ReceivedPostDateChequeIssuance.xaml.cs">
+      <DependentUpon>ReceivedPostDateChequeIssuance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostDateChequeIssuance\ChasingCheck.xaml.cs">
+      <DependentUpon>ChasingCheck.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PostDateChequeIssuance\PostDateChequeIssuance.xaml.cs">
+      <DependentUpon>PostDateChequeIssuance.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\Load.xaml.cs">
+      <DependentUpon>Load.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\MetodePembayaran.xaml.cs">
+      <DependentUpon>MetodePembayaran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\Pos.xaml.cs">
+      <DependentUpon>Pos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\print.xaml.cs">
+      <DependentUpon>print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\quantity.xaml.cs">
+      <DependentUpon>quantity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\totalpembayaran.xaml.cs">
+      <DependentUpon>totalpembayaran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\TtlPembayaran.xaml.cs">
+      <DependentUpon>TtlPembayaran.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pos\updatequantity.xaml.cs">
+      <DependentUpon>updatequantity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Print\Print.xaml.cs">
+      <DependentUpon>Print.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Production\NewProduction.xaml.cs">
+      <DependentUpon>NewProduction.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Production\Production.xaml.cs">
+      <DependentUpon>Production.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Production\FinisProduk.xaml.cs">
+      <DependentUpon>FinisProduk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Production\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produk\NewProduk.xaml.cs">
+      <DependentUpon>NewProduk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produk\Produk.xaml.cs">
+      <DependentUpon>Produk.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Produk\StockReceivedName.xaml.cs">
+      <DependentUpon>StockReceivedName.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivaleAndPayable\NewReceivableAndPayable.xaml.cs">
+      <DependentUpon>NewReceivableAndPayable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReceivaleAndPayable\ReceivableAndPayable.xaml.cs">
+      <DependentUpon>ReceivableAndPayable.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalaryGroup\NewSalaryGroup.xaml.cs">
+      <DependentUpon>NewSalaryGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalaryGroup\SalaryGroup.xaml.cs">
+      <DependentUpon>SalaryGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalaryPayment\Employees.xaml.cs">
+      <DependentUpon>Employees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalaryPayment\NewSalaryPayment.xaml.cs">
+      <DependentUpon>NewSalaryPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalaryPayment\SalaryPayment.xaml.cs">
+      <DependentUpon>SalaryPayment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesReturn\NewSalesReturn.xaml.cs">
+      <DependentUpon>NewSalesReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesReturn\SalesReturn.xaml.cs">
+      <DependentUpon>SalesReturn.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SalesReturn\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\Customer.xaml.cs">
+      <DependentUpon>Customer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\InternalNote.xaml.cs">
+      <DependentUpon>InternalNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\NewSalesOrder.xaml.cs">
+      <DependentUpon>NewSalesOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\NewSalesQuotation.xaml.cs">
+      <DependentUpon>NewSalesQuotation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\PaymentTerm.xaml.cs">
+      <DependentUpon>PaymentTerm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\Sales.xaml.cs">
+      <DependentUpon>Sales.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\Sku.xaml.cs">
+      <DependentUpon>Sku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\Skuservice.xaml.cs">
+      <DependentUpon>Skuservice.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Sales\StockList.xaml.cs">
+      <DependentUpon>StockList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Service\NewService.xaml.cs">
+      <DependentUpon>NewService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Service\Service.xaml.cs">
+      <DependentUpon>Service.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Stocklist\StockList.xaml.cs">
+      <DependentUpon>StockList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockOpname\InventoryChecking.xaml.cs">
+      <DependentUpon>InventoryChecking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockOpname\NewInventoryChecking.xaml.cs">
+      <DependentUpon>NewInventoryChecking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tax\EditTax .xaml.cs">
+      <DependentUpon>EditTax .xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tax\NewTax.xaml.cs">
+      <DependentUpon>NewTax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Tax\Tax.xaml.cs">
+      <DependentUpon>Tax.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TransactionCode\TransactionCode.xaml.cs">
+      <DependentUpon>TransactionCode.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\NewVendors.xaml.cs">
+      <DependentUpon>NewVendors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendor.xaml.cs">
+      <DependentUpon>Vendor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendors.xaml.cs">
+      <DependentUpon>Vendors.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsorder.xaml.cs">
+      <DependentUpon>Vendorsorder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsgood.xaml.cs">
+      <DependentUpon>Vendorsgood.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsquot.xaml.cs">
+      <DependentUpon>Vendorsquot.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorspurchasedelivery.xaml.cs">
+      <DependentUpon>Vendorspurchasedelivery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorspurchase.xaml.cs">
+      <DependentUpon>Vendorspurchase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Vendor\Vendorsreturconsigment.xaml.cs">
+      <DependentUpon>Vendorsreturconsigment.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reyuko.App_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Home.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountBudget\AccountBudget.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountData\AccountData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountData\DeleteAccountLevel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountData\NewAccountLevel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountData\NewAccountLevel4.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountingPeriod\AccountingPeriod.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AccountingPeriod\NewPeriod.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\BankReconsiliation\BankReconsiliation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Calender\AnnualInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Calender\Calender.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashActivities\Giro.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashActivities\Account.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashActivities\CashActivities.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CashActivities\NewCashActivities.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CategoryProduk\CategoryProduk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CategoryProduk\CategoryProduks.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CategoryProduk\NewCategoryProduk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Company\Company.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Company\NewCompany.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Consigment\Consigment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Consigment\NewConsigmentReceive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Consigment\NewConsigmentReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Consigment\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Consigment\Skureturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContactClasification\ContactClasification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContactClasification\NewContactClasification.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Currency\Currency.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Currency\NewCurrency.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Currency\xRateUpdate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerGroup\CustomerGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomerGroup\NewCustomerGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Customer\Customers.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Customer\NewCustomer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeliveryOrder\Deliveryorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeliveryOrder\NewDeliveryOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeliveryOrder\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Department\Department.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Department\NewDepartment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeprectiationTable\DeprectiationTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DeprectiationTable\NewDeprectiationTable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DocumentType\DeleteType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DocumentType\DocumentType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DocumentType\NewDocumentType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentconsigmentreceive.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\DocumentConsigmentreturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentcashactivity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentquota.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentshoping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentpurchasedelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentpurchase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentsalesorderquotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentsalesorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentinvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentdeliveryorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documentgood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\Documents.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Document\NewDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Employee\Employee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Employee\Employeeshoping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Employee\NewEmployee.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FixedAssetCategory\FixedAssetCategory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FixedAssetCategory\NewFixedAsset.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FixedAssetData\FixedAssetData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FixedAssetData\NewFixedAssetData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GeneralJournal\GeneralJournal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GeneralJournal\Account.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GeneralJournal\NewGeneralJournal.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GroupProduct\GroupProduct.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GroupProduct\GroupProducts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\GroupProduct\NewGroupProduct.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ImportantAccount\ImportantAccount.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InventoryAdjusment\InventoryAdjusment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InventoryAdjusment\NewInventoryAdjusment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InventoryAdjusment\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Invoice\Invoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Invoice\NewInvoice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Invoice\Skucustom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Invoice\Skuservice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Invoice\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Ledger\Ledger.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Location\Location.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Location\NewLocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MeasurementUnit\MeasurementUnit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\MeasurementUnit\NewMeasurementUnit.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NotesType\NewNoteType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NotesType\NotesType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Note\DocumentNo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Note\InternalNotes.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Note\NewInternalNote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PaymentTerm\NewPaymentTerm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PaymentTerm\PaymentTerms.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Production\Skuother.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Project\NewProject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Project\Project.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDelivery\NewPurchaseDelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDelivery\PurchaseDelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Customer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\NewPurchasedOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\NewQuotationRequest.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\NewShopingchart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\PaymentTerm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\PurchaseDocument.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Skupurchaseorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Skuservicepurchaseorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Skuservicequotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Skuserviceshopingchart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Skuquotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseDocument\Skushopingchart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseReturn\NewPurchaseReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseReturn\PurchaseReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PurchaseReturn\Skuother.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\NewReceivedGood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\ReceivedGood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\Skuother.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\Skureceived.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedGood\Skuservicegood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedPostDateChequeIssuance\ChasingCheck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivedPostDateChequeIssuance\ReceivedPostDateChequeIssuance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PostDateChequeIssuance\ChasingCheck.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PostDateChequeIssuance\PostDateChequeIssuance.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\Load.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\MetodePembayaran.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\Pos.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\print.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\quantity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\totalpembayaran.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\TtlPembayaran.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pos\updatequantity.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Print\Print.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Production\NewProduction.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Production\Production.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Production\FinisProduk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Production\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Produk\NewProduk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Produk\Produk.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Produk\StockReceivedName.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivaleAndPayable\NewReceivableAndPayable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReceivaleAndPayable\ReceivableAndPayable.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalaryGroup\NewSalaryGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalaryGroup\SalaryGroup.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalaryPayment\Employees.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalaryPayment\NewSalaryPayment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalaryPayment\SalaryPayment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesReturn\NewSalesReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesReturn\SalesReturn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SalesReturn\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\Customer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\InternalNote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\NewSalesOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\NewSalesQuotation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\PaymentTerm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\Sales.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\Sku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\Skuservice.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Sales\StockList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Service\NewService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Service\Service.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Stocklist\StockList.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StockOpname\InventoryChecking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\StockOpname\NewInventoryChecking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tax\EditTax .xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tax\NewTax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Tax\Tax.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\TransactionCode\TransactionCode.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\NewVendors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendors.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsorder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsgood.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsquot.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorspurchasedelivery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorspurchase.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Vendor\Vendorsreturconsigment.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\About.png" />
+    <Resource Include="Icons\Check.png" />
+    <Resource Include="Icons\Home.png" />
+    <Resource Include="Icons\Menu.png" />
+    <Resource Include="Icons\payment.png" />
+    <Resource Include="Icons\Radio1.png" />
+    <Resource Include="Icons\Radio2.png" />
+    <Resource Include="Icons\Sales.png" />
+    <Resource Include="Icons\Settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\contact.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\pos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\accounting_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\black_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\calculate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\calendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\calendar_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\calendar_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\calendar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\chooseFile1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\close3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\contact_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\currency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\customer_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\dashboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\dashboard_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\dashboard_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\detail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\document_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\document_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\document1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\inventory_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\inventory_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\finance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\finance_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\katalog_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\sales_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\sales_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\pembelian_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\pembelian.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\payment_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\produk_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\pos_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\services_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\setting_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\purchasing_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\view_as_chart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\tutorial.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\transaktion_drawer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\transaktion_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\transaktion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\save2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\save3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\search_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reyuko.BLL\Reyuko.BLL.csproj">
+      <Project>{464aef62-bb68-4cd9-abed-ab4ab67c3aa5}</Project>
+      <Name>Reyuko.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reyuko.DAL\Reyuko.DAL.csproj">
+      <Project>{FAACAF94-7826-4282-B1D7-632951C5D71C}</Project>
+      <Name>Reyuko.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reyuko.Utils\Reyuko.Utils.csproj">
+      <Project>{1F0C2E91-2CD1-457B-B7C4-9D0DF6F9A86B}</Project>
+      <Name>Reyuko.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RichTextBoxToolBar\RichTextBoxToolBar.csproj">
+      <Project>{356b108d-e06b-4f21-9422-e89cf740e61f}</Project>
+      <Name>RichTextBoxToolBar</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\reyuko-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\dropdown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\excute.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\fullscreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\green_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\refresh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\inventory1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\posted.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\red_plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\notes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\chooseFile.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>

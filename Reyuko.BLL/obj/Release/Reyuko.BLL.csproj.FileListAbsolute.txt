@@ -1,0 +1,16 @@
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.BLL.dll
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.BLL.pdb
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.DAL.dll
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.Utils.dll
+D:\Reyuko\Reyuko.BLL\bin\Release\EntityFramework.dll
+D:\Reyuko\Reyuko.BLL\bin\Release\Newtonsoft.Json.dll
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.DAL.pdb
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.DAL.dll.config
+D:\Reyuko\Reyuko.BLL\bin\Release\Reyuko.Utils.pdb
+D:\Reyuko\Reyuko.BLL\bin\Release\EntityFramework.xml
+D:\Reyuko\Reyuko.BLL\bin\Release\Newtonsoft.Json.xml
+D:\Reyuko\Reyuko.BLL\obj\Release\Reyuko.BLL.csprojAssemblyReference.cache
+D:\Reyuko\Reyuko.BLL\obj\Release\Reyuko.BLL.csproj.CoreCompileInputs.cache
+D:\Reyuko\Reyuko.BLL\obj\Release\Reyuko.BLL.csproj.CopyComplete
+D:\Reyuko\Reyuko.BLL\obj\Release\Reyuko.BLL.dll
+D:\Reyuko\Reyuko.BLL\obj\Release\Reyuko.BLL.pdb

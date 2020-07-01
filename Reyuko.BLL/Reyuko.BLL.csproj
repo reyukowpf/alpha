@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{464AEF62-BB68-4CD9-ABED-AB4AB67C3AA5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reyuko.BLL</RootNamespace>
+    <AssemblyName>Reyuko.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonWin32, Version=1.1.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonWin32.1.1.4.2\lib\net20\CommonWin32.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseBLL.cs" />
+    <Compile Include="Core\DataGiroBLL.cs" />
+    <Compile Include="Core\RppBLL.cs" />
+    <Compile Include="Core\CashActivityBLL.cs" />
+    <Compile Include="Core\AlamatBLL.cs" />
+    <Compile Include="Core\DataDepartemenBLL.cs" />
+    <Compile Include="Core\DataHartaTetapBLL.cs" />
+    <Compile Include="Core\DataMataUangBLL.cs" />
+    <Compile Include="Core\DataPajakBLL.cs" />
+    <Compile Include="Core\DeliveryOrdersBLL.cs" />
+    <Compile Include="Core\InvoicesBLL.cs" />
+    <Compile Include="Core\PenerimaanBarangBLL.cs" />
+    <Compile Include="Core\PermPenyTransferBarangBLL.cs" />
+    <Compile Include="Core\PurchasedeliveryBLL.cs" />
+    <Compile Include="Core\PurchaseordersBLL.cs" />
+    <Compile Include="Core\PurchasesreturnBLL.cs" />
+    <Compile Include="Core\QuotationrequestBLL.cs" />
+    <Compile Include="Core\ReceivedGoodsBLL.cs" />
+    <Compile Include="Core\SalesOrderBLL.cs" />
+    <Compile Include="Core\SalesquotationBLL.cs" />
+    <Compile Include="Core\DataProyekBLL.cs" />
+    <Compile Include="Core\PembayaranGajiBLL.cs" />
+    <Compile Include="Core\ProductionBLL.cs" />
+    <Compile Include="Core\SalesreturnBLL.cs" />
+    <Compile Include="Core\ShopingchartBLL.cs" />
+    <Compile Include="Core\TransaksiJurnalUmumBLL.cs" />
+    <Compile Include="Core\ReturBarangBLL.cs" />
+    <Compile Include="Core\ProdukBLL.cs" />
+    <Compile Include="Core\InternalNoteBLL.cs" />
+    <Compile Include="Core\DokumenBLL.cs" />
+    <Compile Include="Core\GolonganKontakBLL.cs" />
+    <Compile Include="Core\GrupDiskonRepo.cs" />
+    <Compile Include="Core\GrupProdukBLL.cs" />
+    <Compile Include="Core\KategoriProdukBLL.cs" />
+    <Compile Include="Core\KelompokHartaTetapBLL.cs" />
+    <Compile Include="Core\KlasifikasiAkunBLL.cs" />
+    <Compile Include="Core\KlasifikasiKontakBLL.cs" />
+    <Compile Include="Core\KodeTransaksiBLL.cs" />
+    <Compile Include="Core\KontakBLL.cs" />
+    <Compile Include="Core\LokasiBLL.cs" />
+    <Compile Include="Core\NamaPenyusutanBLL.cs" />
+    <Compile Include="Core\NoteTypeBLL.cs" />
+    <Compile Include="Core\PeriodeAkuntansiBLL.cs" />
+    <Compile Include="Core\RekeningPerkiraanBLL.cs" />
+    <Compile Include="Core\SatuanDasarBLL.cs" />
+    <Compile Include="Core\TermspembayaranBLL.cs" />
+    <Compile Include="Core\TabelPenyusutanBLL.cs" />
+    <Compile Include="Core\TypeDokumenBLL.cs" />
+    <Compile Include="Core\TypeKontakBLL.cs" />
+    <Compile Include="Interface\IDataGiroBLL.cs" />
+    <Compile Include="Interface\IRppBLL.cs" />
+    <Compile Include="Interface\ICashActivityBLL.cs" />
+    <Compile Include="Interface\IAlamatBLL.cs" />
+    <Compile Include="Interface\IDataDepartemenBLL.cs" />
+    <Compile Include="Interface\IDataHartaTetapBLL.cs" />
+    <Compile Include="Interface\IDataMataUangBLL.cs" />
+    <Compile Include="Interface\IDataPajakBLL.cs" />
+    <Compile Include="Interface\IDataProyekBLL.cs" />
+    <Compile Include="Interface\IDeliveryOrdersBLL.cs" />
+    <Compile Include="Interface\IInvoicesBLL.cs" />
+    <Compile Include="Interface\IPermPenyTransferBarangBLL.cs" />
+    <Compile Include="Interface\IPenerimaanBarangBLL.cs" />
+    <Compile Include="Interface\IPurchasedeliveryBLL.cs" />
+    <Compile Include="Interface\IPurchaseordersBLL.cs" />
+    <Compile Include="Interface\IPurchasereturnBLL.cs" />
+    <Compile Include="Interface\IQuotationrequestBLL.cs" />
+    <Compile Include="Interface\IReceivedGoodsBLL.cs" />
+    <Compile Include="Interface\ISalesOrderBLL.cs" />
+    <Compile Include="Interface\ISalesquotationBLL.cs" />
+    <Compile Include="Interface\IPembayaranGajiBLL.cs" />
+    <Compile Include="Interface\IProductionBLL.cs" />
+    <Compile Include="Interface\ISalesreturnBLL.cs" />
+    <Compile Include="Interface\IShopingchartBLL.cs" />
+    <Compile Include="Interface\ITransaksiJurnalUmumBLL.cs" />
+    <Compile Include="Interface\IReturBarangBLL.cs" />
+    <Compile Include="Interface\IProdukBLL.cs" />
+    <Compile Include="Interface\IInternalNoteBLL.cs" />
+    <Compile Include="Interface\IDokumenBLL.cs" />
+    <Compile Include="Interface\IGolonganKontakBLL.cs" />
+    <Compile Include="Interface\IGrupDiskonRepo.cs" />
+    <Compile Include="Interface\IGrupProdukBLL.cs" />
+    <Compile Include="Interface\IKategoriProdukBLL.cs" />
+    <Compile Include="Interface\IKelompokHartaTetapBLL.cs" />
+    <Compile Include="Interface\IKlasifikasiAkunBLL.cs" />
+    <Compile Include="Interface\IKlasifikasiKontakBLL.cs" />
+    <Compile Include="Interface\IKodeTransaksiBLL.cs" />
+    <Compile Include="Interface\IKontakBLL.cs" />
+    <Compile Include="Interface\ILokasiBLL.cs" />
+    <Compile Include="Interface\INamaPenyusutanBLL.cs" />
+    <Compile Include="Interface\INoteTypeBLL.cs" />
+    <Compile Include="Interface\IPeriodeAkuntansiBLL.cs" />
+    <Compile Include="Interface\IRekeningPerkiraanBLL.cs" />
+    <Compile Include="Interface\ISatuanDasarBLL.cs" />
+    <Compile Include="Interface\ITermspembayaranBLL.cs" />
+    <Compile Include="Interface\ITabelPenyustanBLL.cs" />
+    <Compile Include="Interface\ITypeDokumenBLL.cs" />
+    <Compile Include="Interface\ITypeKontakBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reyuko.DAL\Reyuko.DAL.csproj">
+      <Project>{FAACAF94-7826-4282-B1D7-632951C5D71C}</Project>
+      <Name>Reyuko.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reyuko.Utils\Reyuko.Utils.csproj">
+      <Project>{1f0c2e91-2cd1-457b-b7c4-9d0df6f9a86b}</Project>
+      <Name>Reyuko.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

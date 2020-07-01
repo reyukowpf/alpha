@@ -1,0 +1,605 @@
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+C:\Users\adhi\source\repos\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\EntityFramework.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\EntityFramework.xml
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+G:\Project\P Faisal\Reyuko\Internal DutaDigital Team\Compiled\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+C:\Users\priv\Downloads\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+D:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+D:\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+D:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+D:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+D:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+D:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+D:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Prism.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Prism.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\Prism.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+D:\reyuko\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+D:\reyuko\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+D:\reyuko\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+D:\reyuko\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+D:\reyuko\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Prism.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Prism.pdb
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Prism.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+D:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+D:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+D:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Prism.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Prism.pdb
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\Prism.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+E:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+E:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+E:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+E:\reyuko\backup\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Prism.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+D:\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\Prism.pdb
+D:\Reyuko\Reyuko.DAL\bin\Debug\Prism.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+D:\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+E:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Prism.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+E:\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\Prism.pdb
+E:\Reyuko\Reyuko.DAL\bin\Debug\Prism.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+E:\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+E:\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+E:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+E:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+E:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+E:\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+E:\New folder\Reyuko23\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+E:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+E:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+E:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+E:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+E:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\CommonWin32.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+D:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+D:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+D:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+D:\New folder\Reyuko\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\CommonWin32.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\EntityFramework.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\LiveCharts.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\CommonWin32.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\EntityFramework.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\LiveCharts.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll.config
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Reyuko.DAL.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Reyuko.DAL.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\CommonServiceLocator.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\CommonWin32.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\EntityFramework.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\LiveCharts.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\MaterialDesignColors.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Newtonsoft.Json.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.ValueTuple.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Xceed.Wpf.Toolkit.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Reyuko.Utils.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Reyuko.Utils.dll.config
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\CommonWin32.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\EntityFramework.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\LiveCharts.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\LiveCharts.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\LiveCharts.Wpf.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\MaterialDesignColors.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\Newtonsoft.Json.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.Data.SQLite.dll.config
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\System.ValueTuple.xml
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
+D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csprojAssemblyReference.cache
+D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
+D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
+D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
+D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb

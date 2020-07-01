@@ -1,0 +1,195 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    x:Class="Reyuko.App.Views.Service.Service"
+    d:DesignHeight="700"
+    d:DesignWidth="1000"
+    Background="White"
+    mc:Ignorable="d" VerticalAlignment="Top">
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Name="border" BorderThickness="0" BorderBrush="Black" Background="{TemplateBinding Background}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <materialDesign:PopupBox ToggleContent="..." Height="32" FontSize="18" HorizontalAlignment="Right" Margin="0,3,8,0"  VerticalAlignment="Top" Width="40">
+            <StackPanel>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="90" Click="Delete_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/delete.png" Height="23" Width="23"/>
+                        <TextBlock Text="Delete" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+                <Button HorizontalAlignment="Left" Margin="10,10,20,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Width="120" Click="playtutorial_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Reyuko.App;component/Icons/tutorial.png" Height="23" Width="23"/>
+                        <TextBlock Text="Play Tutorial" FontSize="12.5" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </materialDesign:PopupBox>
+        
+        <ListView
+            x:Name="LstService"
+            Width="180"
+            Height="600"
+            Margin="8,100,0,0"
+            HorizontalAlignment="Left" SelectionChanged="LstProduk_SelectionChanged">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel
+                    Height="44"
+                    Margin="0,0,0,0"
+                    Orientation="Horizontal">
+                        <TextBlock
+                        Width="44"
+                        FontSize="12.5"
+                        Height="26"
+                        Margin="0,10,1,8"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding KodeService}"
+                        />
+                        <TextBlock
+                        Grid.Row="2"
+                        Width="121"
+                        FontSize="12.5"    
+                        Margin="0,2,0,10"
+                        TextWrapping="Wrap"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Text="{Binding NamaProduk}"
+                        />
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <TextBlock
+            Width="200"
+            Height="49"
+            Margin="10,10,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="Service"
+            TextWrapping="Wrap" />
+
+        <Button HorizontalAlignment="Right" Margin="0,12,120,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="New_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/new.png" Height="20"/>
+                <TextBlock Text=" New" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Button HorizontalAlignment="Right" Margin="0,12,55,0" Background="Transparent" BorderThickness="0"
+            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="Edit_Click">
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/Reyuko.App;component/Icons/edit.png" Height="20"/>
+                <TextBlock Text=" Edit" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Button>
+
+        <Border BorderBrush="Black"
+                        BorderThickness="1"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="7,64,0,0">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="177">
+                <Controls:AutoCompleteBox x:Name="srserviceproduk" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="118" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk" SelectionChanged="SearchProduk_selectedchange">
+                    <Controls:AutoCompleteBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding NamaProduk}"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </Controls:AutoCompleteBox.ItemTemplate>
+                </Controls:AutoCompleteBox>
+                <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="30,0,0,0"/>
+            </DockPanel>
+        </Border>
+        <ComboBox x:Name="cblistproduk" HorizontalAlignment="Left" FontSize="12.5" Margin="206,64,0,0" Height="28" VerticalAlignment="Top" Width="152"/>
+        <ComboBox x:Name="cbkategori" HorizontalAlignment="Left" FontSize="12.5" Margin="369,64,0,0" Height="28" VerticalAlignment="Top" Width="152" SelectionChanged="ComboBox_SelectionChanged"/>
+
+        <Label Content="Category" HorizontalAlignment="Left" FontSize="12.5" Margin="207,140,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="SKU" HorizontalAlignment="Left" FontSize="12.5" Margin="207,180,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Product Group" HorizontalAlignment="Left" FontSize="12.5" Margin="207,220,0,0" VerticalAlignment="Top"/>
+        <Label Content="COGS" HorizontalAlignment="Left" FontSize="12.5" Margin="207,260,0,0" VerticalAlignment="Top"/>
+        <Label Content="Purchasing Price" HorizontalAlignment="Left" FontSize="12.5" Margin="207,300,0,0" VerticalAlignment="Top"/>
+        <Label Content="Selling Price" HorizontalAlignment="Left" FontSize="12.5" Margin="207,340,0,0" VerticalAlignment="Top"/>
+        <Label Content="Base Unit" HorizontalAlignment="Left" FontSize="12.5" Margin="207,380,0,0" VerticalAlignment="Top"/>
+        <Label Content="Currency" HorizontalAlignment="Left" FontSize="12.5" Margin="207,420,0,0" VerticalAlignment="Top"/>
+        <Label Content="Discount" HorizontalAlignment="Left" FontSize="12.5" Margin="207,460,0,0" VerticalAlignment="Top"/>
+        <Label Content="Discount" HorizontalAlignment="Left" FontSize="12.5" Margin="207,500,0,0" VerticalAlignment="Top"/>
+        <Label Content="Periode" HorizontalAlignment="Left" FontSize="12.5" Margin="207,540,0,0" VerticalAlignment="Top"/>
+        <Label Content="Account" HorizontalAlignment="Left" FontSize="12.5" Margin="514,140,0,0" VerticalAlignment="Top"/>
+        <Label Content="Remarks" HorizontalAlignment="Left" FontSize="12.5" Margin="514,180,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,180,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,220,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,260,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,300,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,340,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,380,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,420,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,460,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,500,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="320,540,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="594,140,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="594,180,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtservice" Text="Service"  FontSize="24" Height="40" Width="150" HorizontalAlignment="Left" Margin="207,100,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtCategory" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtProductGroup" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,223,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtCogs" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtPurchasingprice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtSellingprice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtBaseUnit" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,383,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,423,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtDiscountyes" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,463,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtDiscount" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,503,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtPeriode" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="330,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtPeriode1" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="500,543,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtAccount" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="604,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtRemarks" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="604,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Image x:Name="Image1" HorizontalAlignment="Left" Height="165" Margin="882,140,0,0" VerticalAlignment="Top" Width="170"/>
+        <Button
+                    x:Name="Sales"
+                    Width="200"
+                    FontSize="18"
+                    Height="28"
+                    Margin="207,600,0,0"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top"
+                    Background="Orange"
+                    BorderThickness="0"
+                    Style="{StaticResource MyButton}" Content="Sales" Click="Sales_Click"/>
+
+    </Grid>
+
+</UserControl>

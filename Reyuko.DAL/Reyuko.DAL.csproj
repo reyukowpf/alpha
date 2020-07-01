@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FAACAF94-7826-4282-B1D7-632951C5D71C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Reyuko.DAL</RootNamespace>
+    <AssemblyName>Reyuko.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="CommonWin32, Version=1.1.4.2, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonWin32.1.1.4.2\lib\net20\CommonWin32.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.0.9.7\lib\net45\LiveCharts.dll</HintPath>
+    </Reference>
+    <Reference Include="LiveCharts.Wpf, Version=0.9.7.0, Culture=neutral, PublicKeyToken=0bc1f845d1ebb8df, processorArchitecture=MSIL">
+      <HintPath>..\packages\LiveCharts.Wpf.0.9.7\lib\net45\LiveCharts.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.2.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.2.0\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.6.0.325, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.6.0\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.111.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.111.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.111.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.111.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=3.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.3.6.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\DeliveryorderConfig.cs" />
+    <Compile Include="Config\invoiceConfig.cs" />
+    <Compile Include="Config\ListOrderJualConfig.cs" />
+    <Compile Include="Config\OrderCustomJualConfig.cs" />
+    <Compile Include="Config\OrderJasaJualConfig.cs" />
+    <Compile Include="Config\ListOrderProductionConfig.cs" />
+    <Compile Include="Config\OrderJasabeliConfig.cs" />
+    <Compile Include="Config\ListOrderBeliConfig.cs" />
+    <Compile Include="Config\OrderCustombeliConfig.cs" />
+    <Compile Include="Config\OrderProdukJualConfig.cs" />
+    <Compile Include="Config\OrderProdukbeliConfig.cs" />
+    <Compile Include="Config\OrderProductioncustomConfig.cs" />
+    <Compile Include="Config\OrderFinishedprodukConfig.cs" />
+    <Compile Include="Config\OrderProductioninputConfig.cs" />
+    <Compile Include="Config\RecapConfig.cs" />
+    <Compile Include="Config\RppConfig.cs" />
+    <Compile Include="Config\PurchasedeliveryConfig.cs" />
+    <Compile Include="Config\PurchaseOrderConfig.cs" />
+    <Compile Include="Config\PurchasereturnConfig.cs" />
+    <Compile Include="Config\QuotationrequestConfig.cs" />
+    <Compile Include="Config\ReceivedgoodConfig.cs" />
+    <Compile Include="Config\SalesquotationConfig.cs" />
+    <Compile Include="Config\SalesreturnConfig.cs" />
+    <Compile Include="Config\ShopingchartConfig.cs" />
+    <Compile Include="Config\DropdownPaymentBankKasConfig.cs" />
+    <Compile Include="Config\ListKonsinyasiConfig.cs" />
+    <Compile Include="Config\productionConfig.cs" />
+    <Compile Include="Config\OrderTransaksiCashConfig.cs" />
+    <Compile Include="Config\DataGiroConfig.cs" />
+    <Compile Include="Config\DropdownPaymentCashActivityConfig.cs" />
+    <Compile Include="Config\CashActivityConfig.cs" />
+    <Compile Include="Config\OrderInventoriConfig.cs" />
+    <Compile Include="Config\PermPenyTransferBarangConfig.cs" />
+    <Compile Include="Config\DropdownPPTBarangConfig.cs" />
+    <Compile Include="Config\AlamatConfig.cs" />
+    <Compile Include="Config\DataDepartemenConfig.cs" />
+    <Compile Include="Config\DataHartaTetapConfig.cs" />
+    <Compile Include="Config\PembayaranGajiConfig.cs" />
+    <Compile Include="Config\OrderPembayaranGajiConfig.cs" />
+    <Compile Include="Config\DataMataUangConfig.cs" />
+    <Compile Include="Config\BukuBesarConfig.cs" />
+    <Compile Include="Config\DataPajakConfig.cs" />
+    <Compile Include="Config\DataProyekConfig.cs" />
+    <Compile Include="Config\DefaultAkunMataUangConfig.cs" />
+    <Compile Include="Config\OrderJurnalUmumConfig.cs" />
+    <Compile Include="Config\SalesOrderConfig.cs" />
+    <Compile Include="Config\TransaksiJurnalUmumConfig.cs" />
+    <Compile Include="Config\InternalNoteConfig.cs" />
+    <Compile Include="Config\DokumenConfig.cs" />
+    <Compile Include="Config\GolonganKontakConfig.cs" />
+    <Compile Include="Config\GrupDiskonConfig.cs" />
+    <Compile Include="Config\GrupProdukConfig.cs" />
+    <Compile Include="Config\KategoriProdukConfig.cs" />
+    <Compile Include="Config\DiperolehConfig.cs" />
+    <Compile Include="Config\RadiobuttonrekperConfig.cs" />
+    <Compile Include="Config\RekeningAnggaranConfig.cs" />
+    <Compile Include="Config\ReturBarangConfig.cs" />
+    <Compile Include="Config\PenerimaanBarangConfig.cs" />
+    <Compile Include="Config\KelompokHartaTetapConfig.cs" />
+    <Compile Include="Config\KlasifikasiAkunConfig.cs" />
+    <Compile Include="Config\KlasifikasiKontakConfig.cs" />
+    <Compile Include="Config\KodeTransaksiConfig.cs" />
+    <Compile Include="Config\KontakConfig.cs" />
+    <Compile Include="Config\KursMataUangConfig.cs" />
+    <Compile Include="Config\ListProdukConfig.cs" />
+    <Compile Include="Config\ListDataDepartemenConfig.cs" />
+    <Compile Include="Config\ListDataMataUangConfig.cs" />
+    <Compile Include="Config\ListDataPajakConfig.cs" />
+    <Compile Include="Config\ListKontakConfig.cs" />
+    <Compile Include="Config\ListLokasiConfig.cs" />
+    <Compile Include="Config\LokasiConfig.cs" />
+    <Compile Include="Config\OptionAnnualConfig.cs" />
+    <Compile Include="Config\NamaPenyusutanConfig.cs" />
+    <Compile Include="Config\NoteTypeConfig.cs" />
+    <Compile Include="Config\PeriodeAkuntasiConfig.cs" />
+    <Compile Include="Config\RekeningPerkiraanConfig.cs" />
+    <Compile Include="Config\SatuanDasarConfig.cs" />
+    <Compile Include="Config\TabelPenyusutanConfig.cs" />
+    <Compile Include="Config\produkConfig.cs" />
+    <Compile Include="Config\TermspembayaranConfig.cs" />
+    <Compile Include="Config\TypeDokumenConfig.cs" />
+    <Compile Include="Config\HargaPokokConfig.cs" />
+    <Compile Include="Config\TypelistConfig.cs" />
+    <Compile Include="Config\TypeProdukConfig.cs" />
+    <Compile Include="Config\TypeKontakConfig.cs" />
+    <Compile Include="DBTransaction.cs" />
+    <Compile Include="Domain\Deliveryorders.cs" />
+    <Compile Include="Domain\invoice.cs" />
+    <Compile Include="Domain\ListOrderJual.cs" />
+    <Compile Include="Domain\OrderCustomJual.cs" />
+    <Compile Include="Domain\OrderCustomBeli.cs" />
+    <Compile Include="Domain\OrderJasaJual.cs" />
+    <Compile Include="Domain\ListOrderProduction.cs" />
+    <Compile Include="Domain\OrderJasaBeli.cs" />
+    <Compile Include="Domain\ListOrderBeli.cs" />
+    <Compile Include="Domain\OrderProdukJual.cs" />
+    <Compile Include="Domain\OrderProdukBeli.cs" />
+    <Compile Include="Domain\OrderProductioncustom.cs" />
+    <Compile Include="Domain\OrderFinishedproduk.cs" />
+    <Compile Include="Domain\OrderProductioninput.cs" />
+    <Compile Include="Domain\Recap.cs" />
+    <Compile Include="Domain\Rpp.cs" />
+    <Compile Include="Domain\PurchaseDelivery.cs" />
+    <Compile Include="Domain\PurchaseOrder.cs" />
+    <Compile Include="Domain\Purchasereturn.cs" />
+    <Compile Include="Domain\Quotationrequest.cs" />
+    <Compile Include="Domain\Receivedgood.cs" />
+    <Compile Include="Domain\Salesquotation.cs" />
+    <Compile Include="Domain\Salesreturn.cs" />
+    <Compile Include="Domain\Shopingchart.cs" />
+    <Compile Include="Domain\DropdownBankKas.cs" />
+    <Compile Include="Domain\ListKonsinyasi.cs" />
+    <Compile Include="Domain\production.cs" />
+    <Compile Include="Domain\OrderTransaksiCash.cs" />
+    <Compile Include="Domain\DataGiro.cs" />
+    <Compile Include="Domain\DropdownPaymentCashActivity.cs" />
+    <Compile Include="Domain\CashActivity.cs" />
+    <Compile Include="Domain\OrderInventori.cs" />
+    <Compile Include="Domain\PermPenyTransferBarang.cs" />
+    <Compile Include="Domain\DropdownPPTBarang.cs" />
+    <Compile Include="Domain\Alamat.cs" />
+    <Compile Include="Domain\DataCustom.cs" />
+    <Compile Include="Domain\DataDepartemen.cs" />
+    <Compile Include="Domain\BukuBesar.cs" />
+    <Compile Include="Domain\DataMataUang.cs" />
+    <Compile Include="Domain\DataPajak.cs" />
+    <Compile Include="Domain\DataProyek.cs" />
+    <Compile Include="Domain\DefaultAkunMataUang.cs" />
+    <Compile Include="Domain\DataHartaTetap.cs" />
+    <Compile Include="Domain\Diperoleh.cs" />
+    <Compile Include="Domain\OrderJurnalUmum.cs" />
+    <Compile Include="Domain\PembayaranGaji.cs" />
+    <Compile Include="Domain\OrderPembayaranGaji.cs" />
+    <Compile Include="Domain\SalesOrder.cs" />
+    <Compile Include="Domain\TransaksiJurnalUmum.cs" />
+    <Compile Include="Domain\Radiobuttonrekper.cs" />
+    <Compile Include="Domain\RekeningAnggaran.cs" />
+    <Compile Include="Domain\ReturBarang.cs" />
+    <Compile Include="Domain\PenerimaanBarang.cs" />
+    <Compile Include="Domain\Dokumen.cs" />
+    <Compile Include="Domain\GolonganKontak.cs" />
+    <Compile Include="Domain\GrupDiskon.cs" />
+    <Compile Include="Domain\GrupProduk.cs" />
+    <Compile Include="Domain\KategoriProduk.cs" />
+    <Compile Include="Domain\KelompokHartaTetap.cs" />
+    <Compile Include="Domain\KlasifikasiAkun.cs" />
+    <Compile Include="Domain\KlasifikasiKontak.cs" />
+    <Compile Include="Domain\KodeTransaksi.cs" />
+    <Compile Include="Domain\Kontak.cs" />
+    <Compile Include="Domain\KursMataUang.cs" />
+    <Compile Include="Domain\ListKontak.cs" />
+    <Compile Include="Domain\ListDataDepartemen.cs" />
+    <Compile Include="Domain\ListProduk.cs" />
+    <Compile Include="Domain\ListDataMataUang.cs" />
+    <Compile Include="Domain\ListDataPajak.cs" />
+    <Compile Include="Domain\ListLokasi.cs" />
+    <Compile Include="Domain\Lokasi.cs" />
+    <Compile Include="Domain\InternalNote.cs" />
+    <Compile Include="Domain\OptionAnnual.cs" />
+    <Compile Include="Domain\NamaPenyusutan.cs" />
+    <Compile Include="Domain\NoteType.cs" />
+    <Compile Include="Domain\PeriodeAkuntansi.cs" />
+    <Compile Include="Domain\RekeningPerkiraan.cs" />
+    <Compile Include="Domain\SatuanDasar.cs" />
+    <Compile Include="Domain\TabelPenyusutan.cs" />
+    <Compile Include="Domain\produk.cs" />
+    <Compile Include="Domain\Termspemabayaran.cs" />
+    <Compile Include="Domain\TypeDokumen.cs" />
+    <Compile Include="Domain\HargaPokok.cs" />
+    <Compile Include="Domain\Typelist.cs" />
+    <Compile Include="Domain\TypeProduk.cs" />
+    <Compile Include="Domain\TypeKontak.cs" />
+    <Compile Include="Interface\IDeliveryorderRepo.cs" />
+    <Compile Include="Interface\IOrderCustomJualRepo.cs" />
+    <Compile Include="Interface\IOrderFinishedprodukRepo.cs" />
+    <Compile Include="Interface\IListOrderJualRepo.cs" />
+    <Compile Include="Interface\IOrderCustomBeliRepo.cs" />
+    <Compile Include="Interface\IOrderJasaJualRepo.cs" />
+    <Compile Include="Interface\IListOrderProductionRepo.cs" />
+    <Compile Include="Interface\IOrderJasaBeliRepo.cs" />
+    <Compile Include="Interface\IListOrderBeliRepo.cs" />
+    <Compile Include="Interface\IOrderProdukJualRepo.cs" />
+    <Compile Include="Interface\IOrderProdukBeliRepo.cs" />
+    <Compile Include="Interface\IOrderProductioncustomRepo.cs" />
+    <Compile Include="Interface\IOrderProductioninputRepo.cs" />
+    <Compile Include="Interface\IRecapRepo.cs" />
+    <Compile Include="Interface\IRppRepo.cs" />
+    <Compile Include="Interface\IPurchasedeliveryRepo.cs" />
+    <Compile Include="Interface\IPurchaseOrderRepo.cs" />
+    <Compile Include="Interface\IPurchasereturnRepo.cs" />
+    <Compile Include="Interface\IQuotationrequestRepo.cs" />
+    <Compile Include="Interface\ISalesquotationRepo.cs" />
+    <Compile Include="Interface\ISalesreturnRepo.cs" />
+    <Compile Include="Interface\IShopingchartRepo.cs" />
+    <Compile Include="Interface\IDropdownBankKasRepo.cs" />
+    <Compile Include="Interface\IListKonsinyasiRepo.cs" />
+    <Compile Include="Interface\IproductionRepo.cs" />
+    <Compile Include="Interface\IOrderTransaksiCashRepo.cs" />
+    <Compile Include="Interface\IDataGiroRepo.cs" />
+    <Compile Include="Interface\IDropdownPaymentCashActivityRepo.cs" />
+    <Compile Include="Interface\ICashActivityRepo.cs" />
+    <Compile Include="Interface\IOrderInventoriRepo.cs" />
+    <Compile Include="Interface\IPermPenyTransferBarangRepo.cs" />
+    <Compile Include="Interface\IDropdownPPTBarangRepo.cs" />
+    <Compile Include="Interface\IAlamatRepo.cs" />
+    <Compile Include="Interface\IReceivedgoodRepo.cs" />
+    <Compile Include="Interface\ISalesOrderRepo.cs" />
+    <Compile Include="Interface\ITypelistRepo.cs" />
+    <Compile Include="Interface\PembayaranGajiRepo.cs" />
+    <Compile Include="Interface\IOrderPembayaranGajiRepo.cs" />
+    <Compile Include="Interface\IDataDepartemenRepo.cs" />
+    <Compile Include="Interface\IDataMataUangRepo.cs" />
+    <Compile Include="Interface\IBukuBesarRepo.cs" />
+    <Compile Include="Interface\IinvoiceRepo.cs" />
+    <Compile Include="Interface\IDataPajakRepo.cs" />
+    <Compile Include="Interface\IDataProyekRepo.cs" />
+    <Compile Include="Interface\IDBTransaction.cs" />
+    <Compile Include="Interface\IDefaultAkunMataUangRepo.cs" />
+    <Compile Include="Interface\IDataHartaTetapRepo.cs" />
+    <Compile Include="Interface\IDiperolehRepo.cs" />
+    <Compile Include="Interface\IOrderJurnalUmumRepo.cs" />
+    <Compile Include="Interface\ITransaksiJurnalUmumRepo.cs" />
+    <Compile Include="Interface\IRadiobuttonrekperRepo.cs" />
+    <Compile Include="Interface\IRekeningAnggaranRepo.cs" />
+    <Compile Include="Interface\IReturBarangRepo.cs" />
+    <Compile Include="Interface\IPenerimaanBarangRepo.cs" />
+    <Compile Include="Interface\IRekeningPerkiraanRepo.cs" />
+    <Compile Include="Interface\ITypeProdukRepo.cs" />
+    <Compile Include="Interface\IInternalNoteRepo.cs" />
+    <Compile Include="Interface\IDokumenRepo.cs" />
+    <Compile Include="Interface\IGolonganKontakRepo.cs" />
+    <Compile Include="Interface\IGrupDiskonRepo.cs" />
+    <Compile Include="Interface\IGrupProdukRepo.cs" />
+    <Compile Include="Interface\IKategoriProdukRepo.cs" />
+    <Compile Include="Interface\IKelompokHartaTetapRepo.cs" />
+    <Compile Include="Interface\IKlasifikasiAkunRepo.cs" />
+    <Compile Include="Interface\IKlasifikasiKontakRepo.cs" />
+    <Compile Include="Interface\IKodeTransaksiRepo.cs" />
+    <Compile Include="Interface\IKontakRepo.cs" />
+    <Compile Include="Interface\IKursMataUangRepo.cs" />
+    <Compile Include="Interface\IListProdukRepo.cs" />
+    <Compile Include="Interface\IListDataDepartementRepo.cs" />
+    <Compile Include="Interface\IListDataMataUangRepo.cs" />
+    <Compile Include="Interface\IListDataPajakRepo.cs" />
+    <Compile Include="Interface\IListKontakRepo.cs" />
+    <Compile Include="Interface\IListLokasiRepo.cs" />
+    <Compile Include="Interface\ILokasiRepo.cs" />
+    <Compile Include="Interface\IOptionAnnualRepo.cs" />
+    <Compile Include="Interface\INamaPenyusutanRepo.cs" />
+    <Compile Include="Interface\INoteTypeRepo.cs" />
+    <Compile Include="Interface\IPeriodeAkuntansiRepo.cs" />
+    <Compile Include="Interface\IRepository.cs" />
+    <Compile Include="Interface\ISatuanDasarRepo.cs" />
+    <Compile Include="Interface\ITabelPenyusutanRepo.cs" />
+    <Compile Include="Interface\IprodukRepo.cs" />
+    <Compile Include="Interface\ITermspembayaranRepo.cs" />
+    <Compile Include="Interface\ITypeDokumenRepo.cs" />
+    <Compile Include="Interface\IHargaPokokRepo.cs" />
+    <Compile Include="Interface\ITypeKontakRepo.cs" />
+    <Compile Include="Interface\IUnitOfWork.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DeliveryorderRepo.cs" />
+    <Compile Include="Repositories\OrderCustomJualRepo.cs" />
+    <Compile Include="Repositories\OrderFinishedprodukRepo.cs" />
+    <Compile Include="Repositories\ListOrderJualRepo.cs" />
+    <Compile Include="Repositories\OrderCustomBeliRepo.cs" />
+    <Compile Include="Repositories\OrderJasaJualRepo.cs" />
+    <Compile Include="Repositories\ListOrderProductionRepo.cs" />
+    <Compile Include="Repositories\OrderJasaBeliRepo.cs" />
+    <Compile Include="Repositories\ListOrderBeliRepo.cs" />
+    <Compile Include="Repositories\OrderProdukJualRepo.cs" />
+    <Compile Include="Repositories\OrderProdukBeliRepo.cs" />
+    <Compile Include="Repositories\OrderProductioncustomRepo.cs" />
+    <Compile Include="Repositories\OrderProductioninputRepo.cs" />
+    <Compile Include="Repositories\RecapRepo.cs" />
+    <Compile Include="Repositories\RppRepo.cs" />
+    <Compile Include="Repositories\PurchasedeliveryRepo.cs" />
+    <Compile Include="Repositories\PurchaseOrderRepo.cs" />
+    <Compile Include="Repositories\PurchasereturnRepo.cs" />
+    <Compile Include="Repositories\QuotationrequestRepo.cs" />
+    <Compile Include="Repositories\ReceivedgoodRepo.cs" />
+    <Compile Include="Repositories\SalesquotationRepo.cs" />
+    <Compile Include="Repositories\SalesreturnRepo.cs" />
+    <Compile Include="Repositories\ShopingchartRepo.cs" />
+    <Compile Include="Repositories\DropdownBankKasRepo.cs" />
+    <Compile Include="Repositories\ListKonsinyasiRepo.cs" />
+    <Compile Include="Repositories\productionRepo.cs" />
+    <Compile Include="Repositories\OderTransaksiCashRepo.cs" />
+    <Compile Include="Repositories\DataGiroRepo.cs" />
+    <Compile Include="Repositories\DropdownPaymentCashActivityRepo.cs" />
+    <Compile Include="Repositories\CashActivityRepo.cs" />
+    <Compile Include="Repositories\OrderInventoriRepo.cs" />
+    <Compile Include="Repositories\PermPenyTransferBarangRepo.cs" />
+    <Compile Include="Repositories\DropdownPPTBarangRepo.cs" />
+    <Compile Include="Repositories\AlamatRepo.cs" />
+    <Compile Include="Repositories\PembayaranGajiRepo.cs" />
+    <Compile Include="Repositories\OrderPembayaranGajiRepo.cs" />
+    <Compile Include="Repositories\DataDepartemenRepo.cs" />
+    <Compile Include="Repositories\DataMataUangRepo.cs" />
+    <Compile Include="Repositories\BukuBesarRepo.cs" />
+    <Compile Include="Repositories\invoiceRepo.cs" />
+    <Compile Include="Repositories\DataPajakRepo.cs" />
+    <Compile Include="Repositories\DataProyekRepo.cs" />
+    <Compile Include="Repositories\DefaultAkunMataUangRepo.cs" />
+    <Compile Include="Repositories\DataHartaTetapRepo.cs" />
+    <Compile Include="Repositories\DiperolehRepo.cs" />
+    <Compile Include="Repositories\OrderJurnalUmumRepo.cs" />
+    <Compile Include="Repositories\SalesOrderRepo.cs" />
+    <Compile Include="Repositories\TransaksiJurnalUmumRepo.cs" />
+    <Compile Include="Repositories\RadiobuttonrekperRepo.cs" />
+    <Compile Include="Repositories\RekeningAnggaranRepo.cs" />
+    <Compile Include="Repositories\ReturBarangRepo.cs" />
+    <Compile Include="Repositories\PenerimaanBarangRepo.cs" />
+    <Compile Include="Repositories\RekeningPerkiraanRepo.cs" />
+    <Compile Include="Repositories\TypelistRepo.cs" />
+    <Compile Include="Repositories\TypeProdukRepo.cs" />
+    <Compile Include="Repositories\InternalNoteRepo.cs" />
+    <Compile Include="Repositories\DokumenRepo.cs" />
+    <Compile Include="Repositories\GolonganKontakRepo.cs" />
+    <Compile Include="Repositories\GrupDiskonRepo.cs" />
+    <Compile Include="Repositories\GrupProdukRepo.cs" />
+    <Compile Include="Repositories\KategoriProdukRepo.cs" />
+    <Compile Include="Repositories\KelompokHartaTetapRepo.cs" />
+    <Compile Include="Repositories\KlasifikasiAkunRepo.cs" />
+    <Compile Include="Repositories\KlasifikasiKontakRepo.cs" />
+    <Compile Include="Repositories\KodeTransaksiRepo.cs" />
+    <Compile Include="Repositories\KontakRepo.cs" />
+    <Compile Include="Repositories\KursMataUangRepo.cs" />
+    <Compile Include="Repositories\ListProdukRepo.cs" />
+    <Compile Include="Repositories\ListDataDepartemenRepo.cs" />
+    <Compile Include="Repositories\ListDataMataUangRepo.cs" />
+    <Compile Include="Repositories\ListDataPajakRepo.cs" />
+    <Compile Include="Repositories\ListKontakRepo.cs" />
+    <Compile Include="Repositories\ListLokasiRepo.cs" />
+    <Compile Include="Repositories\LokasiRepo.cs" />
+    <Compile Include="Repositories\OptionAnnualRepo.cs" />
+    <Compile Include="Repositories\NamaPenyusutanRepo.cs" />
+    <Compile Include="Repositories\NoteTypeRepo.cs" />
+    <Compile Include="Repositories\PeriodeAkuntansiRepo.cs" />
+    <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Repositories\SatuanDasarRepo.cs" />
+    <Compile Include="Repositories\TabelPenyusutanRepo.cs" />
+    <Compile Include="Repositories\produkRepo.cs" />
+    <Compile Include="Repositories\TermspembayaranRepo.cs" />
+    <Compile Include="Repositories\TypeDokumenRepo.cs" />
+    <Compile Include="Repositories\HargaPokokRepo.cs" />
+    <Compile Include="Repositories\TypeKontakRepo.cs" />
+    <Compile Include="ReyukoContext.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Reyuko.Utils\Reyuko.Utils.csproj">
+      <Project>{1F0C2E91-2CD1-457B-B7C4-9D0DF6F9A86B}</Project>
+      <Name>Reyuko.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.111.0\build\net46\System.Data.SQLite.Core.targets')" />
+</Project>

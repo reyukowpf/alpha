@@ -1,0 +1,1324 @@
+﻿<UserControl
+    x:Class="Reyuko.App.Views.Customer.NewCustomer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="500"
+    d:DesignWidth="900"
+    VerticalAlignment="Top"
+    Background="White"
+    FontSize="14"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <Style x:Key="MyButton" TargetType="Button">
+            <Setter Property="OverridesDefaultStyle" Value="True" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border
+                            Name="border"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="Black"
+                            BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Opacity" Value="0.8" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+
+
+    <Grid>
+        <TextBlock
+            Width="267"
+            Height="44"
+            Margin="20,9,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            FontFamily="Segoe"
+            FontSize="36"
+            FontStyle="Normal"
+            Text="New Customer"
+            TextWrapping="Wrap" />
+        <TextBlock
+            x:Name="errormessage"
+            Width="247"
+            Height="20"
+            Margin="67,0,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Foreground="#FFE5572C"
+            OpacityMask="Crimson" />
+
+        <Button
+            x:Name="other"
+            Width="33"
+            Height="24"
+            Margin="0,3,10,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            BorderThickness="0"
+            Content="..."
+            FontSize="18"
+            FontWeight="Bold"
+            Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" />
+
+        <Button
+            Width="60"
+            Margin="0,10,140,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            BorderThickness="0"
+            Click="BtnSave_Click"
+            Style="{StaticResource MyButton}">
+            <StackPanel Orientation="Horizontal">
+                <Image Height="20" Source="/Reyuko.App;component/Icons/save.png" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="12.5"
+                    Text=" Save" />
+            </StackPanel>
+        </Button>
+        <Button
+            Width="70"
+            Margin="0,10,55,0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            Background="Transparent"
+            BorderThickness="0"
+            Click="BtnCancel_Click"
+            Style="{StaticResource MyButton}">
+            <StackPanel Orientation="Horizontal">
+                <Image Height="20" Source="/Reyuko.App;component/Icons/close.png" />
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontSize="12.5"
+                    Text=" Cancel" />
+            </StackPanel>
+        </Button>
+
+        <TabControl Margin="20,58,0,-8" Background="Transparent">
+            <TabItem FontSize="24" Header="Contact Data" Background="White">
+                <Grid Margin="-15,-14,-15,-15" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Margin="10,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Customer Clasification"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Customer ID"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Name"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Phone Number"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Email"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Gender"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,260,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Country"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,300,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Address"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,400,0,-7"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="City"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,440,0,-47"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="State"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,480,0,-87"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Zip Code"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,520,0,-127"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Map Location"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Position"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Customer Group"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Tax ID"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Credit Limit"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Bank Name"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Bank Account"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,260,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Account Name"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,300,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Note"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="820,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Photo"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <ComboBox
+                        x:Name="cbClasification"
+                        Width="150"
+                        Height="28"
+                        Margin="182,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbClasification_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtCustomerID"
+                        Width="150"
+                        Height="28"
+                        Margin="182,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtCustomerID_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtName"
+                        Width="150"
+                        Height="28"
+                        Margin="182,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtName_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPhone"
+                        Width="150"
+                        Height="28"
+                        Margin="182,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPhone_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtEmail"
+                        Width="150"
+                        Height="28"
+                        Margin="182,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        LostFocus="TxtEmail_OnLostFocus"
+                        TextWrapping="Wrap" />
+                    <RadioButton
+                        x:Name="rdMale"
+                        Width="64"
+                        Height="25"
+                        Margin="182,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Male"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <RadioButton
+                        x:Name="rdFemale"
+                        Width="64"
+                        Height="25"
+                        Margin="262,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Female"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <ComboBox
+                        x:Name="cbCountry"
+                        Width="150"
+                        Height="28"
+                        Margin="182,260,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbCountry_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtAddress"
+                        Width="150"
+                        Height="90"
+                        Margin="182,300,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtAddress_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtCity"
+                        Width="150"
+                        Height="28"
+                        Margin="182,400,0,-15"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtCity_TextChanged"
+                        TextWrapping="Wrap" />
+                    <ComboBox
+                        x:Name="cbState"
+                        Width="150"
+                        Height="28"
+                        Margin="182,440,0,-55"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbState_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtZip"
+                        Width="150"
+                        Height="28"
+                        Margin="182,480,0,-95"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtZip_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtMap"
+                        Width="150"
+                        Height="28"
+                        Margin="182,520,0,-135"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtMap_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPosition"
+                        Width="150"
+                        Height="28"
+                        Margin="600,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPosition_TextChanged"
+                        TextWrapping="Wrap" />
+                    <ComboBox
+                        x:Name="cbCustomerGroup"
+                        Width="150"
+                        Height="28"
+                        Margin="600,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbCustomerGroup_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtTaxID"
+                        Width="150"
+                        Height="28"
+                        Margin="600,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtTaxID_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtCredit"
+                        Width="150"
+                        Height="28"
+                        Margin="600,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtCredit_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtBankName"
+                        Width="150"
+                        Height="28"
+                        Margin="600,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtBankName_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtBankAccount"
+                        Width="150"
+                        Height="28"
+                        Margin="600,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtBankAccount_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtAccountName"
+                        Width="150"
+                        Height="28"
+                        Margin="600,260,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtAccountName_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtNote"
+                        Width="150"
+                        Height="103"
+                        Margin="600,300,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtNote_TextChanged"
+                        TextWrapping="Wrap" />
+                    <Button
+                        x:Name="btnUploadPhoto"
+                        Width="150"
+                        Margin="830,232,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="BtnUploadPhoto_Click"
+                        Content="Upload Photo"
+                        FontSize="18"
+                        RenderTransformOrigin="0.187,-1.12" />
+                    <Image
+                        x:Name="imgPhoto"
+                        Width="160"
+                        Height="171"
+                        Margin="820,45,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Stretch="Fill" />
+                    <Label
+                        Name="InfoMail"
+                        Margin="337,183,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content=""
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                </Grid>
+            </TabItem>
+            <TabItem
+                x:Name="tabPIC1"
+                FontSize="24"
+                Header="PIC 1">
+                <Grid Margin="-15,-14,-15,-15" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Name="InfoMail1"
+                        Margin="337,105,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content=""
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Name"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Phone Number"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Email"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Gender"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Country"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Address"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,320,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="City"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,360,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="State"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,400,0,-7"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Zip Code"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,440,0,-47"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Map Location"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        x:Name="lblPositionPIC1"
+                        Margin="450,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Position"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Remarks"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="820,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Photo"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <TextBox
+                        x:Name="txtNamePIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtNamePIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPhonePIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPhonePIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtEmailPIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        LostFocus="TxtEmail1_OnLostFocus"
+                        TextWrapping="Wrap"/>
+                    <RadioButton
+                        x:Name="rdMalePIC1"
+                        Width="64"
+                        Height="25"
+                        Margin="183,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Male"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <RadioButton
+                        x:Name="rdFemalePIC1"
+                        Width="64"
+                        Height="25"
+                        Margin="263,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Female"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <ComboBox
+                        x:Name="cbCountryPIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbCountryPIC1_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtAddressPIC1"
+                        Width="150"
+                        Height="90"
+                        Margin="183,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtAddressPIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtCityPIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,320,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtCityPIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <ComboBox
+                        x:Name="cbStatePIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,360,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbStatePIC1_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtZipPIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,400,0,-15"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtZipPIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtMapPIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="183,440,0,-55"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtMapPIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPositionPIC1"
+                        Width="150"
+                        Height="28"
+                        Margin="600,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPositionPIC1_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtNotePIC1"
+                        Width="150"
+                        Height="90"
+                        Margin="600,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextWrapping="Wrap" />
+                    <Image
+                        x:Name="imgPhotoPIC1"
+                        Width="160"
+                        Height="171"
+                        Margin="820,50,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Stretch="Fill" />
+                    <Button
+                        x:Name="btnUploadPhotoPIC1"
+                        Width="150"
+                        Margin="830,235,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="BtnUploadPhotoPIC1_Click"
+                        Content="Upload Photo"
+                        FontSize="18"
+                        RenderTransformOrigin="0.187,-1.12" />
+
+                </Grid>
+            </TabItem>
+            <TabItem
+                x:Name="tabPIC2"
+                FontSize="24"
+                Header="PIC 2">
+                <Grid Margin="-15,-14,-15,-99" Background="White">
+                    <Label
+                        Name="InfoMail2"
+                        Margin="337,105,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content=""
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Name"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Phone Number"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Email"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        x:Name="lblGenderPIC2"
+                        Margin="10,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Gender"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Country"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Address"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,320,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="City"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,360,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="State"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,400,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Zip Code"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,440,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Map Location"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        x:Name="lblPositionPIC2"
+                        Margin="450,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Position"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Remarks"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="820,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Photo"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <TextBox
+                        x:Name="txtNamePIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtNamePIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPhonePIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPhonePIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtEmailPIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        LostFocus="TxtEmail2_OnLostFocus"
+                        TextWrapping="Wrap" />
+                    <RadioButton
+                        x:Name="rdMalePIC2"
+                        Width="64"
+                        Height="25"
+                        Margin="180,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Male"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <RadioButton
+                        x:Name="rdFemalePIC2"
+                        Width="64"
+                        Height="25"
+                        Margin="260,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Female"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <ComboBox
+                        x:Name="cbCountryPIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbCountryPIC2_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtAddressPIC2"
+                        Width="150"
+                        Height="90"
+                        Margin="180,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtAddressPIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtCityPIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,320,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtCityPIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <ComboBox
+                        x:Name="cbStatePIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,360,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbStatePIC2_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtZipPIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,400,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtZipPIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtMapPIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="180,440,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtMapPIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPositionPIC2"
+                        Width="150"
+                        Height="28"
+                        Margin="600,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPositionPIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtNotePIC2"
+                        Width="150"
+                        Height="90"
+                        Margin="600,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtNotePIC2_TextChanged"
+                        TextWrapping="Wrap" />
+                    <Image
+                        x:Name="imgPhotoPIC2"
+                        Width="160"
+                        Height="171"
+                        Margin="820,50,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Stretch="Fill" />
+                    <Button
+                        x:Name="btnUploadPhotoPIC2"
+                        Width="150"
+                        Margin="830,235,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="BtnUploadPhotoPIC2_Click"
+                        Content="Upload Photo"
+                        FontSize="18"
+                        RenderTransformOrigin="0.187,-1.12" />
+
+                </Grid>
+            </TabItem>
+            <TabItem
+                x:Name="tabPIC3"
+                FontSize="24"
+                Header="PIC 3">
+                <Grid Margin="-15,-14,-15,-15" Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Label
+                        Name="InfoMail3"
+                        Margin="337,105,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content=""
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Name"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Phone Number"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Email"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        x:Name="lblGenderPIC3"
+                        Margin="10,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Gender"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Country"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Address"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,320,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="City"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,360,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="State"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,400,0,-7"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Zip Code"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="10,440,0,-47"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Map Location"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        x:Name="lblPositionPIC3"
+                        Margin="450,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Position"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="450,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Remarks"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <Label
+                        Margin="820,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Photo"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <TextBox
+                        x:Name="txtNamePIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtNamePIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPhonePIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPhonePIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtEmailPIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,100,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        LostFocus="TxtEmail3_OnLostFocus"
+                        TextWrapping="Wrap" />
+                    <RadioButton
+                        x:Name="rdMalePIC3"
+                        Width="64"
+                        Height="25"
+                        Margin="181,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Male"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <RadioButton
+                        x:Name="rdFemalePIC3"
+                        Width="64"
+                        Height="25"
+                        Margin="261,140,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Content="Female"
+                        FontFamily="Segoe"
+                        FontSize="12.5" />
+                    <ComboBox
+                        x:Name="cbCountryPIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,180,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbCountryPIC3_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtAddressPIC3"
+                        Width="150"
+                        Height="90"
+                        Margin="181,220,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtAddressPIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtCityPIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,320,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtCityPIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <ComboBox
+                        x:Name="cbStatePIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,360,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        SelectionChanged="CbStatePIC3_SelectionChanged" />
+                    <TextBox
+                        x:Name="txtZipPIC3"
+                        Width="150"
+                        Margin="181,400,0,-15"
+                        HorizontalAlignment="Left"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtZipPIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtMapPIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="181,440,0,-55"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtMapPIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtPositionPIC3"
+                        Width="150"
+                        Height="28"
+                        Margin="600,20,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtPositionPIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <TextBox
+                        x:Name="txtNotePIC3"
+                        Width="150"
+                        Height="90"
+                        Margin="600,60,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="Segoe"
+                        FontSize="12.5"
+                        TextChanged="TxtNotePIC3_TextChanged"
+                        TextWrapping="Wrap" />
+                    <Image
+                        x:Name="imgPhotoPIC3"
+                        Width="160"
+                        Height="171"
+                        Margin="820,50,-96,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Stretch="Fill" />
+                    <Button
+                        x:Name="btnUploadPhotoPIC3"
+                        Width="150"
+                        Margin="830,235,0,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Click="BtnUploadPhotoPIC3_Click"
+                        Content="Upload Photo"
+                        FontSize="18"
+                        RenderTransformOrigin="0.187,-1.12" />
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+
+    </Grid>
+
+</UserControl>
