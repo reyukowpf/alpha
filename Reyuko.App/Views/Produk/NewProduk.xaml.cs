@@ -771,21 +771,7 @@ namespace Reyuko.App.Views.Produk
             }
         }
 
-        private void TxtStock_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string tString = txtStock.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (!char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Must Have Numeric");
-                    txtStock.Text = "";
-                    return;
-                }
 
-            }
-        }
 
         private void TxtMinStock_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -888,21 +874,7 @@ namespace Reyuko.App.Views.Produk
             
         }
 
-        private void TxtProductName_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            string tString = txtProductName.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Harus Diisi Character");
-                    txtProductName.Text = "";
-                    return;
-                }
-
-            }
-        }
+        
     }
 
 }
