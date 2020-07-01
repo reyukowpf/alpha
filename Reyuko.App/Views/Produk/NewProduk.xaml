@@ -5,11 +5,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
     x:Class="Reyuko.App.Views.Produk.NewProduk"
-    d:DesignHeight="650"
-    d:DesignWidth="1000"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top" >
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -60,9 +60,9 @@
             </StackPanel>
         </Button>
         
-        <TabControl Margin="10,58,0,-8">
+        <TabControl Margin="10,58,10,40">
             <TabItem Header="General" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-15,-15">
+                <Grid Background="Transparent" Margin="-15,-14,-15,7">
                     <Button HorizontalAlignment="Left" Margin="307,24,0,0" Background="Transparent" BorderThickness="0"
                     Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="Category_Click">
                         <StackPanel Orientation="Horizontal">
@@ -107,7 +107,7 @@
                     <Label Content="Weight" FontSize="12.5" HorizontalAlignment="Left" Margin="667,180,0,0" VerticalAlignment="Top" />
                     <Label Content="Upload Image" FontSize="12.5" HorizontalAlignment="Left" Margin="667,300,0,0" VerticalAlignment="Top" />
                     <ComboBox x:Name="cbCategory" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,20,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcategory_change"/>
-                    <TextBox x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSKU_TextChanged"/>
+                    <TextBox x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSKU_TextChanged"/>
                     <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
@@ -135,7 +135,7 @@
                     <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,260,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcurrency_Selectchange" />
                     <ComboBox x:Name="cbBaseUnit" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,300,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbbaseunit_selectchange"/>
                     <TextBox x:Name="txtMinimumOrder" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtMinimumOrder_TextChanged"/>
-                    <CheckBox x:Name="chkdiskon" Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top"/>
+                    <CheckBox x:Name="chkdiskon" Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="14,380,0,0" VerticalAlignment="Top"/>
                     <CheckBox Content="Overwrite Selling Price" FontSize="12.5" HorizontalAlignment="Left" Margin="127,380,0,0" VerticalAlignment="Top"/>
                     <TextBox x:Name="txtDiscount" IsEnabled="{Binding ElementName=chkdiskon, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtDiscount_TextChanged" />
                     <DatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="147,460,0,0" VerticalAlignment="Top" FontSize="12.5" Width="120"/>

@@ -545,12 +545,103 @@ namespace Reyuko.App.Views.Produk
 
         private void saveproduk_Click(object sender, RoutedEventArgs e)
         {
-            if (cbCategory.Text == "" || txtProductName.Text == "" || txtSellingPrice.Text == "" || cbCurrency.Text == "" || cbBaseUnit.Text == "" || txtMinimumOrder.Text == "" || Date1.Text == "" || Date2.Text == "" || cbProductType.Text == "" || cbUnitCost.Text == "" || txtLength.Text == "" || txtWide.Text == "" || txtTall.Text == "" || txtWeight.Text == ""
-                || cbVendorPrimary.Text == ""|| txtRemarksVendor.Text == "")
+            // Fill Category
+            if (cbCategory.Text == "" )
             {
-                MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("please select Category Product", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+            // Fill SKU
+            if (txtSKU.Text == "")
+            {
+                MessageBox.Show("please fill SKU field", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill Group Product
+            if (srgroupproduk.Text == "")
+            {
+                MessageBox.Show("please insert Group Product", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Fill Product Name
+            if (txtProductName.Text == "")
+            {
+                MessageBox.Show("please fill Product Name", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill Selling Price
+            if (txtSellingPrice.Text == "")
+            {
+                MessageBox.Show("please fill Selling Price", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Fill Currency
+            if (cbCurrency.Text == "")
+            {
+                MessageBox.Show("please select Currency", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Fill Base Unit
+            if (cbBaseUnit.Text == "")
+            {
+                MessageBox.Show("please select Base Unit", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Fill Minimum Order
+            if (txtMinimumOrder.Text == "")
+            {
+                MessageBox.Show("please fill Minimum Order", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Fill Stock
+            if (txtStock.Text == "")
+            {
+                MessageBox.Show("please insert Stock", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill Minimum Stock
+            if (txtMinStock.Text == "")
+            {
+                MessageBox.Show("please fill MinStock", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill Product Type
+            if (cbProductType.Text == "")
+            {
+                MessageBox.Show("please select Product Type", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill cbUnitCost
+            if (cbUnitCost.Text == "")
+            {
+                MessageBox.Show("please select Unit Cost", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill Remark
+            if (txtRemarks.Text == "")
+            {
+                MessageBox.Show("please fill Remark of Product", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            // Fill Product Dimension
+            if (txtLength.Text == "" || txtWide.Text == "" || txtTall.Text == "" || txtWeight.Text == "" )
+            {
+                MessageBox.Show("please fill valid product dimension", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+ 
+
+
+
+
+
+
+
             ProdukBLL ProdukBLL = new ProdukBLL();
             if (this.produkForm.isEdit == false)
             {
