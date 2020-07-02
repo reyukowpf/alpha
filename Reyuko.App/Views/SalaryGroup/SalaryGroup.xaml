@@ -6,10 +6,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    d:DesignHeight="500"
-    d:DesignWidth="800"
+    d:DesignHeight="668"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="668">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -32,38 +33,40 @@
     </UserControl.Resources>
 
 
-    <Grid>
+    <Grid Margin="0,0,10,10">
         <ListView
             x:Name="LISalaryGroup"
-            Width="200"
-            Height="600"
-            Margin="8,97,0,0"
+            Width="280"
+            Margin="10,97,0,0"
             HorizontalAlignment="Left"
             SelectionChanged="LISalaryGroup_SelectionChanged"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel
+                    <Grid>
+                        <StackPanel
                         Height="46"
                         Margin="0,0,0,0"
                         Orientation="Horizontal">
+                            <Canvas>
+                                <Image Source="/Reyuko.App;component/Icons/Blueball.png" Height="44"></Image>
+                                <TextBlock Foreground="AntiqueWhite" Text="M" Height="44" FontSize="18" FontWeight="Bold" Margin="14,9,0,0"></TextBlock>
+                            </Canvas>
+
+
+
+
+                        </StackPanel>
                         <TextBlock
                             Width="165"
                             Height="26"
-                            Margin="0,10,1,8"
+                            Margin="50,10,1,8"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             Text="{Binding NamaGolongan}" />
-                        <!--<TextBlock
-                            Grid.Row="2"
-                            Width="121"
-                            Margin="0,2,0,10"
-                            TextWrapping="Wrap">
-                            <TextBlock Text="{Binding NamaCustomerGroup}" /><LineBreak />
-                            
-                        </TextBlock>-->
+                    </Grid>
 
-                    </StackPanel>
+
 
                 </DataTemplate>
             </ListView.ItemTemplate>
@@ -113,28 +116,28 @@
                 <TextBlock Text=" Edit" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Label Content="Position Group Name" FontSize="12.5" HorizontalAlignment="Left" Margin="224,97,0,0" VerticalAlignment="Top"/>
-        <Label Content="Basic Salary" HorizontalAlignment="Left" FontSize="12.5" Margin="224,137,0,0" VerticalAlignment="Top"/>
-        <Label Content="Allowance" HorizontalAlignment="Left" FontSize="12.5" Margin="224,177,0,0" VerticalAlignment="Top"/>
-        <Label Content="Overtime / Hour" HorizontalAlignment="Left" FontSize="12.5" Margin="224,217,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="224,257,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="374,97,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="374,137,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="374,177,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="374,217,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="374,257,0,0" VerticalAlignment="Top"/>
-        <TextBlock x:Name="txtPositionGroupName" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="384,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtBasicSalary" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="384,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtAllowance" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="384,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtOvertime" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="384,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <TextBlock x:Name="txtTax" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="384,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label Content="Position Group Name" FontSize="12.5" HorizontalAlignment="Left" Margin="333,97,0,0" VerticalAlignment="Top"/>
+        <Label Content="Basic Salary" HorizontalAlignment="Left" FontSize="12.5" Margin="333,137,0,0" VerticalAlignment="Top"/>
+        <Label Content="Allowance" HorizontalAlignment="Left" FontSize="12.5" Margin="333,177,0,0" VerticalAlignment="Top"/>
+        <Label Content="Overtime / Hour" HorizontalAlignment="Left" FontSize="12.5" Margin="333,217,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="333,257,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="480,97,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="480,137,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="480,177,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="480,217,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="480,257,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="txtPositionGroupName" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="490,100,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtBasicSalary" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="490,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtAllowance" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="490,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtOvertime" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="490,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <TextBlock x:Name="txtTax" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="490,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
         <Border BorderBrush="Black"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="10,64,0,0">
-            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="190">
-                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="160" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="279">
+                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="250" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
                     <Controls:AutoCompleteBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">

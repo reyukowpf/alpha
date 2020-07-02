@@ -65,7 +65,7 @@
     VerticalAlignment="Center"
     HorizontalContentAlignment="Stretch"
     VerticalContentAlignment="Stretch"
-    d:DesignHeight="700"
+    d:DesignHeight="720"
     d:DesignWidth="1240"
     ActiveGlowColor="{x:Null}"
     Background="White"

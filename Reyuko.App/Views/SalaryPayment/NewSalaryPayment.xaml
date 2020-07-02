@@ -6,11 +6,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.SalaryPayment.NewSalaryPayment"
-    Height="750"
-    d:DesignWidth="1120"
+    xmlns:local="clr-namespace:Reyuko.App"
+    d:DesignHeight="688"
+    d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="688">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -137,7 +138,7 @@
             RowHeight="30"
             SelectionMode="Single"
             AutoGenerateColumns="False"
-            CanUserAddRows="True">
+            CanUserAddRows="True" Width="1022" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="HorizontalContentAlignment" Value="Center" />

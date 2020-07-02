@@ -4,8 +4,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Height="300"
-    Width="450"
+    Height="266"
+    Width="415"
     FontSize="14"
     ResizeMode="NoResize"
     WindowStyle="None"
@@ -35,8 +35,8 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
-        <Button HorizontalAlignment="Right" Margin="0,12,100,0" Background="Transparent" BorderThickness="0"
+    <Grid Margin="8,0,8,8">
+        <Button HorizontalAlignment="Right" Margin="0,12,130,0" Background="Transparent" BorderThickness="0"
              Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnSave_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
@@ -44,28 +44,28 @@
             </StackPanel>
         </Button>
 
-        <Button HorizontalAlignment="Right" Margin="0,12,20,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Right" Margin="0,12,50,0" Background="Transparent" BorderThickness="0"
              Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="BtnCancel_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
                 <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Label Content="Posisi Group Name" HorizontalAlignment="Left" FontSize="12.5" Margin="50,50,0,0" VerticalAlignment="Top"/>
-        <Label Content="Basic Salary" HorizontalAlignment="Left" FontSize="12.5" Margin="49,90,0,0" VerticalAlignment="Top"/>
-        <Label Content="Allowance" HorizontalAlignment="Left" FontSize="12.5" Margin="49,130,0,0" VerticalAlignment="Top"/>
-        <Label Content="Overtime / Hour" HorizontalAlignment="Left" FontSize="12.5" Margin="49,170,0,0" VerticalAlignment="Top"/>
-        <Label Content="Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="49,210,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="180,50,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="180,90,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="180,130,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="180,170,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="180,210,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPositionGroupName" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtPositionGroupName_TextChanged"/>
-        <TextBox x:Name="txtBasicSalary" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtBasicSalary_TextChanged"/>
-        <TextBox x:Name="txtAllowance" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtAllowance_TextChanged"/>
-        <TextBox x:Name="txtOvertime" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="190,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtOvertime_TextChanged"/>
-        <CheckBox x:Name="chkTax" Content="Include / Exclude Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="190,218,0,0" VerticalAlignment="Top"/>
+        <Label Content="Posisi Group Name" HorizontalAlignment="Left" FontSize="12.5" Margin="20,50,0,0" VerticalAlignment="Top"/>
+        <Label Content="Basic Salary" HorizontalAlignment="Left" FontSize="12.5" Margin="19,90,0,0" VerticalAlignment="Top"/>
+        <Label Content="Allowance" HorizontalAlignment="Left" FontSize="12.5" Margin="19,130,0,0" VerticalAlignment="Top"/>
+        <Label Content="Overtime / Hour" HorizontalAlignment="Left" FontSize="12.5" Margin="19,170,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tax" HorizontalAlignment="Left" FontSize="12.5" Margin="19,210,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="150,50,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="150,90,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="150,130,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="150,170,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="150,210,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPositionGroupName" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="160,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" TextChanged="TxtPositionGroupName_TextChanged"/>
+        <TextBox x:Name="txtBasicSalary" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" TextChanged="TxtBasicSalary_TextChanged"/>
+        <TextBox x:Name="txtAllowance" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" TextChanged="TxtAllowance_TextChanged"/>
+        <TextBox x:Name="txtOvertime" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="160,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="207" TextChanged="TxtOvertime_TextChanged"/>
+        <CheckBox x:Name="chkTax" Content="Include / Exclude Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="160,218,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 
