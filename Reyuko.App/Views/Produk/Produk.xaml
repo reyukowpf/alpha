@@ -62,7 +62,7 @@
 
         <ListView
             x:Name="LstProduct"
-            Width="180"
+            Width="193"
             Height="Auto"
             Margin="8,100,0,42"
             VerticalAlignment="Stretch" HorizontalAlignment="Left" SelectionChanged="LstProduk_SelectionChanged">
@@ -72,10 +72,15 @@
                         Height="46"
                         Margin="0,0,0,0"
                         Orientation="Horizontal" >
+                        <Canvas>
+                            <Image Source="/Reyuko.App;component/Icons/Blueball.png" Height="44"></Image>
+                            <!--<TextBlock x:Name="ticon" Foreground="AntiqueWhite" Text="{Binding NamaGolongan, Converter={StaticResource StringSubstringConverter}, ConverterParameter='5'}" Height="44" FontSize="18" FontWeight="Bold" Margin="14,9,0,0"></TextBlock>-->
+                            <TextBlock x:Name="ticon" Background="Transparent" FontSize="18" FontWeight="Bold" Foreground="White" Text="{Binding NamaProduk}"  TextTrimming="WordEllipsis" Margin="13,10,0,0" Width="17"/>
+                        </Canvas>
                         <TextBlock
                             Grid.Row="2"
                             Width="165"
-                            Margin="0,2,0,10"
+                            Margin="50,2,0,10"
                             TextWrapping="Wrap"><InlineUIContainer>
                                 <TextBlock Text="{Binding NamaProduk}" />
                             </InlineUIContainer><LineBreak /></TextBlock>
@@ -112,12 +117,12 @@
             </StackPanel>
         </Button>
 
-        <Border BorderBrush="Black"
+        <Border BorderBrush="DarkGray"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="7,64,0,0">
-            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="177">
+            <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="192">
                 <Controls:AutoCompleteBox x:Name="srproduk" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="118" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk" SelectionChanged="SearchProduk_selectedchange">
                     <Controls:AutoCompleteBox.ItemTemplate>
                         <DataTemplate>

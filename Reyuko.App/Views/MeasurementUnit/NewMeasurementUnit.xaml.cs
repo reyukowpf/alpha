@@ -151,18 +151,18 @@ namespace Reyuko.App.Views.MeasurementUnit
 
         private void TxtUnitCode_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtUnitCode.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (!char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Must be Numeric");
-                    txtUnitCode.Text = "";
-                    return;
-                }
+            //string tString = txtUnitCode.Text;
+            //if (tString.Trim() == "") return;
+            //for (int i = 0; i < tString.Length; i++)
+            //{
+            //    if (!char.IsNumber(tString[i]))
+            //    {
+            //        MessageBox.Show("Must be Numeric");
+            //        txtUnitCode.Text = "";
+            //        return;
+            //    }
 
-            }
+            //}
         }
 
         private void TxtUnitTotal_TextChanged(object sender, TextChangedEventArgs e)
@@ -183,34 +183,34 @@ namespace Reyuko.App.Views.MeasurementUnit
 
         private void TxtUnitName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtUnitName.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Must Have Character");
-                    txtUnitName.Text = "";
-                    return;
-                }
+            //string tString = txtUnitName.Text;
+            //if (tString.Trim() == "") return;
+            //for (int i = 0; i < tString.Length; i++)
+            //{
+            //    if (char.IsNumber(tString[i]))
+            //    {
+            //        MessageBox.Show("Must Have Character");
+            //        txtUnitName.Text = "";
+            //        return;
+            //    }
 
-            }
+            //}
         }
 
         private void TxtUnitDetail_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtUnitDetail.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Must Have Character");
-                    txtUnitDetail.Text = "";
-                    return;
-                }
+            //string tString = txtUnitDetail.Text;
+            //if (tString.Trim() == "") return;
+            //for (int i = 0; i < tString.Length; i++)
+            //{
+            //    if (char.IsNumber(tString[i]))
+            //    {
+            //        MessageBox.Show("Must Have Character");
+            //        txtUnitDetail.Text = "";
+            //        return;
+            //    }
 
-            }
+            //}
         }
 
         private void TxtNote_TextChanged(object sender, TextChangedEventArgs e)

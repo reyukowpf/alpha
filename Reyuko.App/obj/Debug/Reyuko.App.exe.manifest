@@ -546,14 +546,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2948568">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2949080">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>9xQDSwEuzSgXosYuGDaeuPJ0VivHAFbPUN7mNFYNeiA=</dsig:DigestValue>
+        <dsig:DigestValue>w07aWh1aTVNVQfKBtpbRDlsSGjO8z1KqQDlaCZ5iGvM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

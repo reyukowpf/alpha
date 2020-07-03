@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Height="420"
-    Width="400"
+    Width="357.741"
     FontSize="14"
     WindowStyle="None"
     BorderBrush="Black"
@@ -34,7 +34,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid Margin="8,0,8,8">
         <Button HorizontalAlignment="Right" Margin="0,12,100,0" Background="Transparent" BorderThickness="0"
            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="BtnSave_Click">
             <StackPanel Orientation="Horizontal">
@@ -50,25 +50,25 @@
                 <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Label Content="Unit Type" FontSize="12.5" HorizontalAlignment="Left" Margin="50,80,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unit Code" FontSize="12.5" HorizontalAlignment="Left" Margin="50,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unit Name" FontSize="12.5" HorizontalAlignment="Left" Margin="50,160,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unit Total" FontSize="12.5" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unit Detail" FontSize="12.5" HorizontalAlignment="Left" Margin="50,240,0,0" VerticalAlignment="Top"/>
-        <Label Content="Note" HorizontalAlignment="Left" FontSize="12.5" Margin="50,280,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="160,80,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="160,120,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="160,160,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="160,200,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="160,240,0,0" VerticalAlignment="Top"/>
-        <Label Content=":" HorizontalAlignment="Left" Margin="160,280,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="chkUnitDasar" Content="Base Unit" FontSize="12.5" HorizontalAlignment="Left" Margin="50,40,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="CBTipeUnit" HorizontalAlignment="Left" FontSize="12.5" Height="28"  Margin="170,80,0,0" VerticalAlignment="Top" Width="170"/>
-        <TextBox x:Name="txtUnitCode" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtUnitCode_TextChanged"/>
-        <TextBox x:Name="txtUnitName" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtUnitName_TextChanged"/>
-        <TextBox x:Name="txtUnitTotal" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtUnitTotal_TextChanged"/>
-        <TextBox x:Name="txtUnitDetail" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtUnitDetail_TextChanged"/>
-        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="122" FontSize="12.5" Margin="170,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtNote_TextChanged"/>
+        <Label Content="Unit Type" FontSize="12.5" HorizontalAlignment="Left" Margin="16,80,0,0" VerticalAlignment="Top"/>
+        <Label Content="Unit Code" FontSize="12.5" HorizontalAlignment="Left" Margin="16,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Unit Name" FontSize="12.5" HorizontalAlignment="Left" Margin="16,160,0,0" VerticalAlignment="Top"/>
+        <Label Content="Unit Total" FontSize="12.5" HorizontalAlignment="Left" Margin="16,200,0,0" VerticalAlignment="Top"/>
+        <Label Content="Unit Detail" FontSize="12.5" HorizontalAlignment="Left" Margin="16,240,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note" HorizontalAlignment="Left" FontSize="12.5" Margin="16,280,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="92,80,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="92,120,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="92,160,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="92,200,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="92,240,0,0" VerticalAlignment="Top"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="92,280,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="chkUnitDasar" Content="Base Unit" FontSize="12.5" HorizontalAlignment="Left" Margin="16,40,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="CBTipeUnit" HorizontalAlignment="Left" FontSize="12.5" Height="28"  Margin="116,80,0,0" VerticalAlignment="Top" Width="204"/>
+        <TextBox x:Name="txtUnitCode" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="116,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TxtUnitCode_TextChanged"/>
+        <TextBox x:Name="txtUnitName" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="116,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TxtUnitName_TextChanged"/>
+        <TextBox x:Name="txtUnitTotal" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="116,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TxtUnitTotal_TextChanged"/>
+        <TextBox x:Name="txtUnitDetail" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="116,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TxtUnitDetail_TextChanged"/>
+        <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="122" FontSize="12.5" Margin="116,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="204" TextChanged="TxtNote_TextChanged"/>
     </Grid>
 
 </Window>
