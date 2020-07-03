@@ -560,9 +560,7 @@ namespace Reyuko.App.Views.Customer
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (cbClasification.Text == "" || txtCustomerID.Text == "" || txtName.Text == "" || txtPhone.Text == "" || txtEmail.Text == "" || cbCountry.Text == "" || txtAddress.Text == "" || txtCity.Text == "" || cbState.Text == "" || txtZip.Text == "" || txtMap.Text == "" || txtPosition.Text == "" || cbCustomerGroup.Text == "" || txtTaxID.Text == "" || txtCredit.Text == "" || txtBankName.Text == "" || txtBankAccount.Text == "" || txtAccountName.Text == "" || txtNote.Text == ""
-                 || txtNamePIC1.Text == "" || txtPhonePIC1.Text == "" || txtEmailPIC1.Text == "" || cbCountryPIC1.Text == "" || txtAddressPIC1.Text == "" || txtCityPIC1.Text == "" || cbStatePIC1.Text == "" || txtZipPIC1.Text == "" || txtMapPIC1.Text == "" || txtPositionPIC1.Text == "" || txtNotePIC1.Text == "" || txtNamePIC2.Text == "" || txtPhonePIC2.Text == "" || txtEmailPIC2.Text == "" || cbCountryPIC2.Text == "" || txtAddressPIC2.Text == "" || txtCityPIC2.Text == "" || cbStatePIC2.Text == ""
-                 || txtZipPIC2.Text == "" || txtMapPIC2.Text == "" || txtPositionPIC2.Text == "" || txtNotePIC2.Text == "" || txtNamePIC3.Text == "" || txtPhonePIC3.Text == "" || txtEmailPIC3.Text == "" || cbCountryPIC3.Text == "" || txtAddressPIC3.Text == "" || txtCityPIC3.Text == "" || cbStatePIC3.Text == "" || txtZipPIC3.Text == "" || txtMapPIC3.Text == "" || txtPositionPIC3.Text == "" || txtNotePIC3.Text == "")
+            if (cbClasification.Text == "" || txtCustomerID.Text == "" || txtName.Text == "" || txtPhone.Text == "" || txtEmail.Text == "" || cbCountry.Text == "" || txtAddress.Text == "" || txtCity.Text == "" || cbState.Text == "" || txtZip.Text == "" || txtMap.Text == "" || txtPosition.Text == "" || cbCustomerGroup.Text == "" || txtTaxID.Text == "" || txtCredit.Text == "" || txtBankName.Text == "" || txtBankAccount.Text == "" || txtAccountName.Text == "" || txtNote.Text == "" )
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -1342,18 +1340,7 @@ namespace Reyuko.App.Views.Customer
 
         private void TxtMapPIC3_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtMapPIC3.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (!char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Must be Numeric");
-                    txtMapPIC3.Text = "";
-                    return;
-                }
 
-            }
         }
 
         private void TxtPositionPIC3_TextChanged(object sender, TextChangedEventArgs e)

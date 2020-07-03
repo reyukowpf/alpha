@@ -16,7 +16,7 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.JumlahStok)
                 .HasColumnName("jumlah_stok");
-
+                
             this.Property(m => m.BatasStokMin)
                 .HasColumnName("batas_stok_min");
 
@@ -177,7 +177,7 @@ namespace Reyuko.DAL.Config
 
             this.Property(m => m.SatuanDasar)
            .HasColumnName("satuan_dasar");
-
+            
             this.Property(m => m.MinPemesanan)
            .HasColumnName("min_pemesanan");
 

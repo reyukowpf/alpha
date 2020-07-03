@@ -5,11 +5,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
     x:Class="Reyuko.App.Views.Produk.NewProduk"
-    d:DesignHeight="688"
+    d:DesignHeight="700"
     d:DesignWidth="1040"
     FontSize="14"
+    Loaded="saas"
     Background="White"
-    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="688">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -43,7 +44,7 @@
             FontStyle="Normal"
             Text="New Product"
             TextWrapping="Wrap" />
-       
+
         <Button HorizontalAlignment="Right" Margin="0,12,110,0" Background="Transparent" BorderThickness="0"
              Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="saveproduk_Click">
             <StackPanel Orientation="Horizontal">
@@ -59,24 +60,28 @@
                 <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        
-        <TabControl Margin="10,58,10,10">
+
+        <TabControl Margin="10,58,10,40" VerticalAlignment="Stretch">
             <TabItem Header="General" FontSize="24">
-                <Grid Background="Transparent" Margin="-15,-14,-3,5">
-                    <Button HorizontalAlignment="Left" Margin="307,24,0,0" Background="Transparent" BorderThickness="0"
-                    Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="Category_Click">
+                <Grid Background="Transparent" Margin="-9,-14,-9,-4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="83*"/>
+                        <ColumnDefinition Width="433*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button HorizontalAlignment="Left" Margin="141,24,0,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="Category_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Left" Margin="307,105,0,0" Background="Transparent" BorderThickness="0"
-                        Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="GroupProduk_Click">
+                    <Button HorizontalAlignment="Left" Margin="141,105,0,0" Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="GroupProduk_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Left" Margin="625,64,0,0" Background="Transparent" BorderThickness="0"
-                    Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="Stock_Click">
+                    <Button HorizontalAlignment="Left" Margin="459,64,0,0" Background="Transparent" BorderThickness="0"
+                    Style="{StaticResource MyButton}" x:Name="btnstok" IsEnabled="{Binding ElementName=chkmanagestok, Path=IsChecked}" VerticalAlignment="Top" Width="20" Click="Stock_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
                         </StackPanel>
@@ -93,28 +98,28 @@
                     <Label Content="Minimum Order" FontSize="12.5" HorizontalAlignment="Left" Margin="10,340,0,0" VerticalAlignment="Top"/>
                     <Label Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,420,0,0" VerticalAlignment="Top"/>
                     <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="10,460,0,0" VerticalAlignment="Top" />
-                    <Label Content="Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="347,60,0,0" VerticalAlignment="Top" />
-                    <Label Content="Min Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="347,100,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Purchasing Price" FontSize="12.5" HorizontalAlignment="Left" Margin="347,140,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Product Type" FontSize="12.5" HorizontalAlignment="Left" Margin="347,180,0,0" VerticalAlignment="Top" />
-                    <Label Content="Unit Cost Type" FontSize="12.5" HorizontalAlignment="Left" Margin="347,220,0,0" VerticalAlignment="Top" />
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="347,260,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="347,400,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Product Dimension" FontSize="12.5" HorizontalAlignment="Left" Margin="667,20,0,0" VerticalAlignment="Top" />
-                    <Label Content="Length" FontSize="12.5" HorizontalAlignment="Left" Margin="667,60,0,0" VerticalAlignment="Top" />
-                    <Label Content="Wide" FontSize="12.5" HorizontalAlignment="Left" Margin="667,100,0,0" VerticalAlignment="Top" />
-                    <Label Content="Tall" FontSize="12.5" HorizontalAlignment="Left" Margin="667,140,0,0" VerticalAlignment="Top" />
-                    <Label Content="Weight" FontSize="12.5" HorizontalAlignment="Left" Margin="667,180,0,0" VerticalAlignment="Top" />
-                    <Label Content="Upload Image" FontSize="12.5" HorizontalAlignment="Left" Margin="667,300,0,0" VerticalAlignment="Top" />
-                    <ComboBox x:Name="cbCategory" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,20,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcategory_change"/>
-                    <TextBox x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSKU_TextChanged"/>
-                    <Border BorderBrush="Black"
+                    <Label Content="Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="181,60,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Min Stock" FontSize="12.5" HorizontalAlignment="Left" Margin="181,100,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Purchasing Price" FontSize="12.5" HorizontalAlignment="Left" Margin="181,140,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Product Type" FontSize="12.5" HorizontalAlignment="Left" Margin="181,180,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Unit Cost Type" FontSize="12.5" HorizontalAlignment="Left" Margin="181,220,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="181,260,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Tax" FontSize="12.5" HorizontalAlignment="Left" Margin="181,400,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Label Content="Product Dimension" FontSize="12.5" HorizontalAlignment="Left" Margin="501,20,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Length" FontSize="12.5" HorizontalAlignment="Left" Margin="501,60,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Wide" FontSize="12.5" HorizontalAlignment="Left" Margin="501,100,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Tall" FontSize="12.5" HorizontalAlignment="Left" Margin="501,140,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Weight" FontSize="12.5" HorizontalAlignment="Left" Margin="501,180,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <Label Content="Upload Image" FontSize="12.5" HorizontalAlignment="Left" Margin="501,300,0,0" VerticalAlignment="Top" Grid.Column="1" />
+                    <ComboBox x:Name="cbCategory" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,20,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcategory_change" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtSKU" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSKU_TextChanged" Grid.ColumnSpan="2"/>
+                    <Border BorderBrush="DarkGray"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        CornerRadius="0" Margin="147,100,0,0">
-                                <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
-                            <Controls:AutoCompleteBox x:Name="srgroupproduk" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaGrupProduk" SelectionChanged="cb_selection_changegrup">
+                        CornerRadius="0" Margin="147,100,0,0" Grid.ColumnSpan="2">
+                        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
+                            <Controls:AutoCompleteBox x:Name="srgroupproduk" FontSize="14" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="123" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaGrupProduk" SelectionChanged="cb_selection_changegrup">
                                 <Controls:AutoCompleteBox.ItemTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
@@ -123,79 +128,216 @@
                                     </DataTemplate>
                                 </Controls:AutoCompleteBox.ItemTemplate>
                             </Controls:AutoCompleteBox>
+                            <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3,0,0,0"/>
+                        </DockPanel>
+                    </Border>
+                    <Border BorderBrush="Black"
+                        BorderThickness="1" Visibility="Hidden"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        CornerRadius="0" Margin="181,100,0,0" Grid.Column="1">
+                        <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
+                            <Controls:AutoCompleteBox x:Name="srid" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="IdProduk" Visibility="Hidden">
+                                <Controls:AutoCompleteBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding IdProduk}"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </Controls:AutoCompleteBox.ItemTemplate>
+                            </Controls:AutoCompleteBox>
                             <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
                         </DockPanel>
                     </Border>
-                    <TextBox x:Name="txtProductName" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtProductName_TextChanged" />
-                    <TextBlock x:Name="txtCogs" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-                    <TextBlock x:Name="txtStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-                    <TextBox x:Name="txtMinStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,100,0,0" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-                    <TextBlock x:Name="txtPurchasingPrice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
-                    <TextBox x:Name="txtSellingPrice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSellingPrice_TextChanged" />
-                    <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,260,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcurrency_Selectchange" />
-                    <ComboBox x:Name="cbBaseUnit" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,300,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbbaseunit_selectchange"/>
-                    <TextBox x:Name="txtMinimumOrder" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtMinimumOrder_TextChanged"/>
+                    <TextBox x:Name="txtProductName" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,140,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtProductName_TextChanged" Grid.ColumnSpan="2" />
+                    <TextBlock x:Name="txtCogs" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.ColumnSpan="2" />
+                    <TextBlock x:Name="txtStock" IsEnabled="{Binding ElementName=chkmanagestok, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="301,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1" />
+                    <TextBox x:Name="txtMinStock" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="301,100,0,0" TextAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1" />
+                    <TextBlock x:Name="txtPurchasingPrice" IsEnabled="{Binding ElementName=chkmanagestok, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="301,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1" />
+                    <TextBox x:Name="txtSellingPrice" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSellingPrice_TextChanged" Grid.ColumnSpan="2" />
+                    <ComboBox x:Name="cbCurrency" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,260,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbcurrency_Selectchange" Grid.ColumnSpan="2" />
+                    <ComboBox x:Name="cbBaseUnit" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,300,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbbaseunit_selectchange" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtMinimumOrder" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtMinimumOrder_TextChanged" Grid.ColumnSpan="2"/>
                     <CheckBox x:Name="chkdiskon" Content="Discount" FontSize="12.5" HorizontalAlignment="Left" Margin="10,380,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Overwrite Selling Price" FontSize="12.5" HorizontalAlignment="Left" Margin="127,380,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="txtDiscount" IsEnabled="{Binding ElementName=chkdiskon, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtDiscount_TextChanged" />
-                    <DatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="147,460,0,0" VerticalAlignment="Top" FontSize="12.5" Width="120"/>
-                    <DatePicker x:Name="Date2" HorizontalAlignment="Left" Margin="287,460,0,0" VerticalAlignment="Top" FontSize="12.5" Width="120"/>
-                    <CheckBox Content="CbManageStock" HorizontalAlignment="Left" FontSize="12.5" Margin="347,20,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cbProductType" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="467,180,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbTipeproduk_selectchange"/>
-                    <ComboBox x:Name="cbUnitCost" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="467,220,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbunitcost_selectionchange"/>
-                    <TextBox x:Name="txtRemarks" HorizontalAlignment="Left" Height="90" FontSize="12.5" Margin="467,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <CheckBox x:Name="chktaxable" Content="Taxable" HorizontalAlignment="Left" FontSize="12.5" Margin="347,360,0,0" VerticalAlignment="Top"/>
-                    <CheckBox Content="Price Inclusive Tax" IsEnabled="{Binding ElementName=chktaxable, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Margin="447,360,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cbTax" IsEnabled="{Binding ElementName=chktaxable, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="467,400,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbtax_selectchange"/>
-                    <TextBox x:Name="txtLength" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="767,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtLength_TextChanged"/>
-                    <TextBox x:Name="txtWide" HorizontalAlignment="Left" Height="28" Margin="767,100,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtWide_TextChanged"/>
-                    <TextBox x:Name="txtTall" HorizontalAlignment="Left" Height="28" Margin="767,140,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtTall_TextChanged"/>
-                    <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="28" Margin="767,180,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtWeight_TextChanged"/>
-                    <CheckBox x:Name="ChkInactive" Content="Inactive" HorizontalAlignment="Left" FontSize="12.5" Margin="667,240,0,0" VerticalAlignment="Top"/>
-                    <Button HorizontalAlignment="Left" Margin="670,330,0,0" FontSize="12.5" Background="Transparent" BorderThickness="0"
-                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileA_Click">
+                    <CheckBox x:Name="chkover" Content="Overwrite Selling Price" FontSize="12.5" HorizontalAlignment="Left" Margin="127,380,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtDiscount" Text="0" IsEnabled="{Binding ElementName=chkdiskon, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="147,420,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtDiscount_TextChanged" Grid.ColumnSpan="2" />
+                    <DatePicker x:Name="Date1" HorizontalAlignment="Left" Margin="147,460,0,0" VerticalAlignment="Top" FontSize="12.5" Width="120" Grid.ColumnSpan="2"/>
+                    <DatePicker x:Name="Date2" HorizontalAlignment="Left" Margin="121,460,0,0" VerticalAlignment="Top" FontSize="12.5" Width="120" Grid.Column="1"/>
+                    <CheckBox x:Name="chkmanagestok" Content="Manage Stock" HorizontalAlignment="Left" FontSize="12.5" Margin="188,25,0,0" VerticalAlignment="Top" Checked="CheckBox_Checked" Grid.Column="1"/>
+                    <ComboBox x:Name="cbProductType" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="301,180,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbTipeproduk_selectchange" Grid.Column="1"/>
+                    <ComboBox x:Name="cbUnitCost" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="301,220,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbunitcost_selectionchange" Grid.Column="1"/>
+                    <TextBox x:Name="txtRemarks" HorizontalAlignment="Left" Height="90" FontSize="12.5" Margin="301,260,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" Grid.Column="1"/>
+                    <CheckBox x:Name="chktaxable" Content="Taxable" HorizontalAlignment="Left" FontSize="12.5" Margin="181,360,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <CheckBox x:Name="chkinclusive" Content="Price Inclusive Tax" IsEnabled="{Binding ElementName=chktaxable, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Margin="281,360,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <ComboBox x:Name="cbTax" IsEnabled="{Binding ElementName=chktaxable, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="301,400,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="Cbtax_selectchange" Grid.Column="1"/>
+                    <TextBox x:Name="txtLength" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="601,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtLength_TextChanged" Grid.Column="1"/>
+                    <TextBox x:Name="txtWide" HorizontalAlignment="Left" Height="28" Margin="601,100,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtWide_TextChanged" Grid.Column="1"/>
+                    <TextBox x:Name="txtTall" HorizontalAlignment="Left" Height="28" Margin="601,140,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtTall_TextChanged" Grid.Column="1"/>
+                    <TextBox x:Name="txtWeight" HorizontalAlignment="Left" Height="28" Margin="601,180,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtWeight_TextChanged" Grid.Column="1"/>
+                    <CheckBox x:Name="ChkInactive" Content="Inactive" HorizontalAlignment="Left" FontSize="12.5" Margin="501,240,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+                    <Button HorizontalAlignment="Left" Margin="504,330,0,0" FontSize="12.5" Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileA_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/chooseFile1.png" Height="40" Width="40"/>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Left" Margin="720,330,0,0" Background="Transparent" BorderThickness="0"
-                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileB_Click">
+                    <Button HorizontalAlignment="Left" Margin="554,330,0,0" Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileB_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/chooseFile1.png" Height="40" Width="40"/>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Left" Margin="770,330,0,0" Background="Transparent" BorderThickness="0"
-                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileC_Click">
+                    <Button HorizontalAlignment="Left" Margin="604,330,0,0" Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileC_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/chooseFile1.png" Height="40" Width="40"/>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Left" Margin="820,330,0,0" Background="Transparent" BorderThickness="0"
-                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileD_Click">
+                    <Button HorizontalAlignment="Left" Margin="654,330,0,0" Background="Transparent" BorderThickness="0"
+                        Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" VerticalAlignment="Top" Height="35" Width="45" Click="UploadFileD_Click" Grid.Column="1">
                         <StackPanel Orientation="Horizontal">
                             <Image Source="/Reyuko.App;component/Icons/chooseFile1.png" Height="40" Width="40"/>
                         </StackPanel>
                     </Button>
+                    <DataGrid
+                        x:Name="DGSKUPurchaseDelivery"
+                         Visibility="Hidden"
+                        Height="262"
+                        Width="1022"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Left"
+                        Margin="10,229,0,0"
+                        AutoGenerateColumns="False"
+                        Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        BorderThickness="0"
+                        CanUserResizeRows="False"
+                        ColumnHeaderHeight="32"
+                        FontSize="12.5"
+                        GridLinesVisibility="None"
+                        HeadersVisibility="Column"
+                        IsReadOnly="True"
+                        RowDetailsVisibilityMode="Visible"
+                        RowHeight="30"
+                        SelectionMode="Single" Grid.ColumnSpan="2">
+                        <DataGrid.Resources>
+                            <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                                <Setter Property="Background" Value="#d3d3d3" />
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </DataGrid.Resources>
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="80"
+                                Binding="{Binding Jumlah}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="Total">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="80"
+                                Binding="{Binding HargaBeli}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="Price">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="80"
+                                Binding="{Binding TotalOrder}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="Total">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                            <DataGridTextColumn
+                                Width="80"
+                                Binding="{Binding TotalPajak}"
+                                CanUserReorder="False"
+                                CanUserResize="False"
+                                CanUserSort="True"
+                                FontSize="12.5"
+                                Header="Tax">
+                                <DataGridTextColumn.HeaderStyle>
+                                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                        <Setter Property="Background" Value="#d3d3d3" />
+                                        <Setter Property="Foreground" Value="White" />
+                                    </Style>
+                                </DataGridTextColumn.HeaderStyle>
+                                <DataGridTextColumn.ElementStyle>
+                                    <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                        <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+                                </DataGridTextColumn.ElementStyle>
+                            </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
             </TabItem>
             <TabItem Header="Vendor" FontSize="24">
                 <Grid Background="Transparent" Margin="-15,-14,-15,-15">
                     <Label Content="Vendor Primary" FontSize="12.5" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="380,20,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="400,20,0,0" VerticalAlignment="Top"/>
                     <Label Content="Vendor 2" FontSize="12.5" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="380,120,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="400,120,0,0" VerticalAlignment="Top"/>
                     <Label Content="Vendor 3" FontSize="12.5" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="380,220,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="400,220,0,0" VerticalAlignment="Top"/>
                     <Label Content="Vendor 4" FontSize="12.5" HorizontalAlignment="Left" Margin="10,320,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="380,320,0,0" VerticalAlignment="Top"/>
-                    <ComboBox x:Name="cbVendorPrimary" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,20,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbVendorprimary_Change"/>
-                    <TextBox x:Name="txtRemarksVendor" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
-                    <ComboBox x:Name="cbVendor2" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,120,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbVendor2_Change"/>
-                    <TextBox x:Name="txtRemarksVendor2" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
-                    <ComboBox x:Name="cbVendor3" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,220,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbVendor3_Change"/>
-                    <TextBox x:Name="txtRemarksVendor3" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
-                    <ComboBox x:Name="cbVendor4" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,320,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbVendor4_Change"/>
-                    <TextBox x:Name="txtRemarksVendor4" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178"/>
+                    <Label Content="Remarks" FontSize="12.5" HorizontalAlignment="Left" Margin="400,320,0,0" VerticalAlignment="Top"/>
+                    <ComboBox x:Name="cbVendorPrimary" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,20,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="CbVendorprimary_Change"/>
+                    <TextBox x:Name="txtRemarksVendor" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                    <ComboBox x:Name="cbVendor2" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,120,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="CbVendor2_Change"/>
+                    <TextBox x:Name="txtRemarksVendor2" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                    <ComboBox x:Name="cbVendor3" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,220,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="CbVendor3_Change"/>
+                    <TextBox x:Name="txtRemarksVendor3" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
+                    <ComboBox x:Name="cbVendor4" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="180,320,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="CbVendor4_Change"/>
+                    <TextBox x:Name="txtRemarksVendor4" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="500,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300"/>
                 </Grid>
             </TabItem>
 

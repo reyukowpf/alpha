@@ -50,7 +50,8 @@
                         Orientation="Horizontal">
                             <Canvas>
                                 <Image Source="/Reyuko.App;component/Icons/Blueball.png" Height="44"></Image>
-                                <TextBlock Foreground="AntiqueWhite" Text="M" Height="44" FontSize="18" FontWeight="Bold" Margin="14,9,0,0"></TextBlock>
+                                <!--<TextBlock x:Name="ticon" Foreground="AntiqueWhite" Text="{Binding NamaGolongan, Converter={StaticResource StringSubstringConverter}, ConverterParameter='5'}" Height="44" FontSize="18" FontWeight="Bold" Margin="14,9,0,0"></TextBlock>-->
+                                <TextBlock x:Name="ticon" Background="Transparent" FontSize="18" FontWeight="Bold" Foreground="White" Text="{Binding NamaGolongan}"  TextTrimming="CharacterEllipsis" Margin="13,10,0,0" Width="17"/>
                             </Canvas>
 
 
@@ -72,7 +73,7 @@
             </ListView.ItemTemplate>
 
         </ListView>
-        <TextBlock
+        <TextBlock x:Name="tSalary"
             Width="231"
             Height="49"
             Margin="10,10,0,0"

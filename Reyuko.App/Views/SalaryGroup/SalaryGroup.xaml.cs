@@ -42,6 +42,7 @@ namespace Reyuko.App.Views.SalaryGroup
             this.LoadGolonganKontak("");
         }
 
+
         private void ClearForm()
         {
             this.GolonganKontakSelected = null;
@@ -50,6 +51,7 @@ namespace Reyuko.App.Views.SalaryGroup
             txtAllowance.Text = "0";
             txtOvertime.Text = "0";
             txtTax.Text = "";
+     
         }
 
         public void LoadGolonganKontak(string groupName)
@@ -116,6 +118,8 @@ namespace Reyuko.App.Views.SalaryGroup
         {
 
         }
+
+
 
         private void LISalaryGroup_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

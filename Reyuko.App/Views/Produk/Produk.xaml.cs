@@ -122,6 +122,10 @@ namespace Reyuko.App.Views.Produk
                         LblNamaProduk.Content = this.produk.NamaProduk;
                         txtCategory.Text = this.produk.ProdukKategori;
                         txtSKU.Text = this.produk.SKU;
+                        if (this.produk.CheckboxManageStok == true)
+                            txtManageStock.Text = "Yes";
+                        else if (this.produk.CheckboxManageStok == false)
+                            txtManageStock.Text = "No";
                         txtProductGroup.Text = this.produk.NamaGroupProduk;
                         txtCogs.Text = this.produk.HargaPokokAverage.GetValueOrDefault(0).ToString();
                         txtPurchasingprice.Text = this.produk.HargaBeli.GetValueOrDefault(0).ToString();

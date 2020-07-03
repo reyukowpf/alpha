@@ -65,7 +65,7 @@ namespace Reyuko.DAL.Domain
         public bool? CheckboxDiskonProduk { get; set; }
         public bool? CheckboxUbahHarga { get; set; }
         public string DiskonProdukPersen { get; set; }
-        public DateTime? TanggalMulaiDiskonProduk { get; set; }
+        public  DateTime? TanggalMulaiDiskonProduk { get; set; }
         public DateTime? TanggalBerakhirDiskonProduk { get; set; }
         public bool? CheckboxManageStok { get; set; }
         public int? IdLokasi { get; set; }

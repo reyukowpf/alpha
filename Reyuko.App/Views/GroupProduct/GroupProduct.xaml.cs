@@ -144,34 +144,34 @@ namespace Reyuko.App.Views.GroupProduct
 
         private void TxtGroupName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtGroupName.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Harus Diisi Character");
-                    txtGroupName.Text = "";
-                    return;
-                }
+            //string tString = txtGroupName.Text;
+            //if (tString.Trim() == "") return;
+            //for (int i = 0; i < tString.Length; i++)
+            //{
+            //    if (char.IsNumber(tString[i]))
+            //    {
+            //        MessageBox.Show("Harus Diisi Character");
+            //        txtGroupName.Text = "";
+            //        return;
+            //    }
 
-            }
+            //}
         }
 
         private void TxtSKU_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtSKU.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Harus Diisi Character");
-                    txtSKU.Text = "";
-                    return;
-                }
+            //string tString = txtSKU.Text;
+            //if (tString.Trim() == "") return;
+            //for (int i = 0; i < tString.Length; i++)
+            //{
+            //    if (char.IsNumber(tString[i]))
+            //    {
+            //        MessageBox.Show("Harus Diisi Character");
+            //        txtSKU.Text = "";
+            //        return;
+            //    }
 
-            }
+            //}
         }
     }
 }

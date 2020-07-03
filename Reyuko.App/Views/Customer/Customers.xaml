@@ -6,11 +6,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     x:Class="Reyuko.App.Views.Customer.Customers"
-    d:DesignHeight="600"
-    d:DesignWidth="800"
-    VerticalAlignment="Top"
+    d:DesignHeight="688"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="688">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -87,10 +87,10 @@
         <ListView
             x:Name="LiDataCustomer"
             Width="180"
-            Height="620"
-            VerticalAlignment="Top"
-            Margin="10,100,0,0"
-            HorizontalAlignment="Left" SelectionChanged="LiDataCustomer_SelectionChanged">
+            Height="Auto"
+            
+            Margin="10,100,0,28"
+            HorizontalAlignment="Left" SelectionChanged="LiDataCustomer_SelectionChanged" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel
@@ -118,7 +118,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <TreeView x:Name="tvcustomer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Width="180" Height="620">
+        <TreeView x:Name="tvcustomer" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,100,0,0" Width="180" Height="578">
         </TreeView>
         <TextBlock
             Width="206"
@@ -157,24 +157,24 @@
         <RadioButton x:Name="all" Content="All" HorizontalAlignment="Left" FontSize="12.5" Margin="557,66,0,0" VerticalAlignment="Top" Checked="All_Checked"/>
         <RadioButton x:Name="mainonly" Content="Main Contact Only" HorizontalAlignment="Left" FontSize="12.5" Margin="607,66,0,0" VerticalAlignment="Top" Checked="Mainonly_Checked"/>
 
-        <TabControl Margin="224,100,0,0">
+        <TabControl Margin="206,100,8,28" HorizontalAlignment="Stretch" Background="Transparent" VerticalAlignment="Stretch">
             <TabItem Header="Contact Data" FontSize="24">
-                <Grid Background="White" Margin="-15,-14,-15,-15">
+                <Grid Background="Transparent" Margin="-9,-14,-4,20">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    <Label x:Name="LblCustomerName" Content="Sukro" FontSize="24" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="LblCustomerName" FontSize="24" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                     <Label Content="Type" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,60,0,0" VerticalAlignment="Top" Height="26"/>
-                    <Label Content="Customer ID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,100,0,0" VerticalAlignment="Top" Height="26"/>
-                    <Label Content="Phone Number" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,140,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Email" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Gender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,220,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Country" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,260,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Address" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,300,0,0" VerticalAlignment="Top"/>
-                    <Label Content="City" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,393,0,0" VerticalAlignment="Top"/>
-                    <Label Content="State" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,433,0,0" VerticalAlignment="Top"/>
-                    <Label Content="Zip Code" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,473,0,-31" VerticalAlignment="Top"/>
-                    <Label Content="Map Location" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,513,0,-71" VerticalAlignment="Top"/>
+                    <Label Content="Customer ID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,92,0,0" VerticalAlignment="Top" Height="26"/>
+                    <Label Content="Phone Number" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,126,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Email" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,159,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Gender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,193,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Country" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,227,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Address" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,262,0,0" VerticalAlignment="Top"/>
+                    <Label Content="City" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top"/>
+                    <Label Content="State" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Zip Code" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,424,0,0" VerticalAlignment="Top"/>
+                    <Label Content="Map Location" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="10,459,0,0" VerticalAlignment="Top"/>
                     <Label Content="Position" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="400,60,0,0" VerticalAlignment="Top"/>
                     <Label Content="Customer Group" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="400,100,0,0" VerticalAlignment="Top"/>
                     <Label Content="Tax ID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top"/>
@@ -184,16 +184,16 @@
                     <Label Content="Account Name" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="400,300,0,0" VerticalAlignment="Top"/>
                     <Label Content="Remarks" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Margin="400,340,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,60,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,100,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,140,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,180,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,220,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,260,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,300,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,393,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,433,0,0" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,473,0,-33" VerticalAlignment="Top"/>
-                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,513,0,-73" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,92,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,126,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,159,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,193,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,227,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,262,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,355,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,390,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,424,0,0" VerticalAlignment="Top"/>
+                    <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="140,459,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="530,60,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="530,100,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="530,140,0,0" VerticalAlignment="Top"/>
@@ -203,16 +203,16 @@
                     <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="530,300,0,0" VerticalAlignment="Top"/>
                     <Label Content=":" FontFamily="Segoe" FontSize="14" HorizontalAlignment="Left" Margin="530,340,0,0" VerticalAlignment="Top"/>
                     <TextBlock x:Name="txtType" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtCustomerID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtPhone" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtEmail" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtGender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtCountry" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,261,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtAddress" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="150,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtCity" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,394,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtState" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,434,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtZip" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,474,0,-39" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-                    <TextBlock x:Name="txtMap" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,514,0,-79" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtCustomerID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtPhone" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtEmail" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtGender" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtCountry" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,228,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtAddress" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="80" Margin="150,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtCity" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,356,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtState" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtZip" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,425,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+                    <TextBlock x:Name="txtMap" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="150,460,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279"/>
                     <TextBlock x:Name="txtPosition" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="544,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                     <TextBlock x:Name="txtCustomerGroup" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="544,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
                     <TextBlock x:Name="txtTaxID" FontFamily="Segoe" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="544,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>

@@ -81,10 +81,10 @@
         <Label Content="Discount" HorizontalAlignment="Left" FontSize="12.5" Margin="20,350,0,0" VerticalAlignment="Top"/>
         <Label Content="Periode" HorizontalAlignment="Left" FontSize="12.5" Margin="20,400,0,0" VerticalAlignment="Top" />
         <Label Content="Upload Image" HorizontalAlignment="Left" FontSize="12.5" Margin="20,440,0,0" VerticalAlignment="Top" />
-        <TextBox x:Name="txtGroupName" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtGroupName_TextChanged" />
-        <TextBox x:Name="txtSKU" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtSKU_TextChanged"/>
-        <ComboBox x:Name="cbCategory" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,170,0,0" VerticalAlignment="Top" Width="150" SelectionChanged="CbCategory_SelectionChanged"/>
-        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="70" FontSize="12.5" Margin="170,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" />
+        <TextBox x:Name="txtGroupName" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,70,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" TextChanged="TxtGroupName_TextChanged" />
+        <TextBox x:Name="txtSKU" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" TextChanged="TxtSKU_TextChanged"/>
+        <ComboBox x:Name="cbCategory" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="170,170,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="CbCategory_SelectionChanged"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="70" FontSize="12.5" Margin="170,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" />
         <CheckBox x:Name="chkDiscount" Content="Discount" FontSize="12.5"  HorizontalAlignment="Left" Margin="20,310,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtDiscount" IsEnabled="{Binding ElementName=chkDiscount, Path=IsChecked}" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="170,350,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtDiscount_TextChanged"/>
         <DatePicker x:Name="dtTanggalMulaiDiskon" HorizontalAlignment="Left" FontSize="12.5" Margin="170,400,0,0" VerticalAlignment="Top" Width="100"/>

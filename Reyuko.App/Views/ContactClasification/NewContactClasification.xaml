@@ -4,7 +4,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Height="470"
+    Height="452.628"
     Width="600"
     FontSize="14"
     WindowStyle="None"
@@ -35,7 +35,7 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid Margin="0,0,0,-2">
         <TextBlock
             Width="292"
             Height="42"
@@ -74,14 +74,14 @@
         <CheckBox x:Name="ChkPosition" Content="Position" HorizontalAlignment="Left" FontSize="12.5" Margin="500,96,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ChkTransaction" Content="Transaction" HorizontalAlignment="Left" FontSize="12.5" Margin="175,136,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ChkOutstanding" Content="Outstanding" HorizontalAlignment="Left" FontSize="12.5" Margin="270,136,0,0" VerticalAlignment="Top"/>
-        <CheckBox x:Name="ChkPIC1" Content="PIC 1" HorizontalAlignment="Left" Margin="50,216,0,0" FontSize="12.5" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ChkPIC1" Content="PIC 1" HorizontalAlignment="Left" Margin="50,216,0,0" FontSize="12.5" VerticalAlignment="Top" Checked="ChkPIC1_Checked"/>
         <TextBox x:Name="txtPIC1" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="175,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" TextChanged="TxtPIC1_TextChanged"/>
         <CheckBox x:Name="ChkPIC2" Content="PIC 2" HorizontalAlignment="Left" FontSize="12.5" Margin="50,256,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPIC2" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="175,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" TextChanged="TxtPIC2_TextChanged"/>
         <CheckBox x:Name="ChkPIC3" Content="PIC 3" HorizontalAlignment="Left" FontSize="12.5" Margin="50,296,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPIC3" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="175,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" TextChanged="TxtPIC3_TextChanged"/>
         <TextBox x:Name="txtNote" HorizontalAlignment="Left" Height="95" FontSize="12.5" Margin="175,336,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" TextChanged="TxtNote_TextChanged"/>
-        <CheckBox x:Name="ChkGenderPIC1" Content="Gender" HorizontalAlignment="Left" FontSize="12.5" Margin="400,216,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="ChkGenderPIC1" Content="Gender" HorizontalAlignment="Left" FontSize="12.5" Margin="400,216,0,0" VerticalAlignment="Top" />
         <CheckBox x:Name="ChkPositionPIC1" Content="Position" HorizontalAlignment="Left" FontSize="12.5" Margin="500,216,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ChkGenderPIC2" Content="Gender" HorizontalAlignment="Left" FontSize="12.5" Margin="400,256,0,0" VerticalAlignment="Top"/>
         <CheckBox x:Name="ChkPositionPIC2" Content="Position" HorizontalAlignment="Left" FontSize="12.5" Margin="500,256,0,0" VerticalAlignment="Top"/>

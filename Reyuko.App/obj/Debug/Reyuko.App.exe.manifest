@@ -546,14 +546,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2938840">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2948568">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+AaH3Wzcm7CV7VAL0AOHxcMQqSaUqmSFWJks8+H68lo=</dsig:DigestValue>
+        <dsig:DigestValue>9xQDSwEuzSgXosYuGDaeuPJ0VivHAFbPUN7mNFYNeiA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -570,14 +570,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.DAL.dll" size="549376">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.DAL.dll" size="550912">
       <assemblyIdentity name="Reyuko.DAL" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>6BmRHKOi8VLyjuEbBAOI/NxKyx+L29/Sa+ZoPv2TcNs=</dsig:DigestValue>
+        <dsig:DigestValue>7sXdBvoTJQYUCLbayjoKEobxTshINV5aa7lmpWRVRls=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

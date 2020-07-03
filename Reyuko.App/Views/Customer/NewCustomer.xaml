@@ -4,12 +4,11 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="500"
-    d:DesignWidth="900"
-    VerticalAlignment="Top"
-    Background="White"
+    d:DesignHeight="688"
+    d:DesignWidth="1040"
     FontSize="14"
-    mc:Ignorable="d">
+    Background="White"
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="688">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -109,9 +108,9 @@
             </StackPanel>
         </Button>
 
-        <TabControl Margin="20,58,0,-8" Background="Transparent">
+        <TabControl Margin="10,58,10,10" Background="Transparent">
             <TabItem FontSize="24" Header="Contact Data" Background="White">
-                <Grid Margin="-15,-14,-15,-15" Background="White">
+                <Grid Margin="-15,-14,-4,-4" Background="White">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
@@ -391,9 +390,9 @@
                         TextWrapping="Wrap" />
                     <TextBox
                         x:Name="txtMap"
-                        Width="150"
+                        Width="282"
                         Height="28"
-                        Margin="182,520,0,-135"
+                        Margin="182,520,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         FontFamily="Segoe"

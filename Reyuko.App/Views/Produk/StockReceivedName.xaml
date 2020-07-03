@@ -76,17 +76,17 @@
         <Label Content="Purchasing Price" FontSize="12.5" HorizontalAlignment="Left" Margin="210,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Received Number" FontSize="12.5" HorizontalAlignment="Left" Margin="395,130,0,0" VerticalAlignment="Top"/>
         <Label Content="Note" FontSize="12.5" HorizontalAlignment="Left" Margin="30,190,0,0" VerticalAlignment="Top"/>
-        <Border BorderBrush="Black"
+        <Border BorderBrush="DarkGray"
                         BorderThickness="1"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
                         CornerRadius="0" Margin="30,95,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
-                <Controls:AutoCompleteBox x:Name="srcustomer" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="125" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaProduk">
+                <Controls:AutoCompleteBox x:Name="srvendor" FontSize="12.5" FontFamily="Segoe" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="125" Margin="-1,-1,0,-1" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="srvendor_Change">
                     <Controls:AutoCompleteBox.ItemTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock Text="{Binding NamaPelanggan}"/>
+                                <TextBlock Text="{Binding NamaA}"/>
                             </StackPanel>
                         </DataTemplate>
                     </Controls:AutoCompleteBox.ItemTemplate>
@@ -94,9 +94,9 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"/>
             </DockPanel>
         </Border>
-        <ComboBox x:Name="CBLocation" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="210,95,0,0" VerticalAlignment="Top" Width="170"/>
-        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Margin="395,95,0,0" VerticalAlignment="Top" Height="28" Width="150"/>
-        <ComboBox x:Name="CBCash" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="560,95,0,0" VerticalAlignment="Top" Width="100"/>
+        <ComboBox x:Name="CBLocation" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="210,95,0,0" VerticalAlignment="Top" Width="170" SelectionChanged="cblokasi_Change"/>
+        <DatePicker x:Name="tgl" HorizontalAlignment="Left" FontSize="12.5" Margin="395,95,0,0" VerticalAlignment="Top" Height="28" Width="150"/>
+        <ComboBox x:Name="CBCash" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="560,95,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cbcash_Change"/>
         <TextBox x:Name="txtTotalUnit" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="30,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtTotalUnit_TextChanged"/>
         <TextBox x:Name="txtPurchasingprice" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="210,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtPurchasingprice_TextChanged"/>
         <TextBox x:Name="txtReceivednumber" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="395,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextChanged="TxtReceivednumber_TextChanged"/>

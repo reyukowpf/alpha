@@ -19,11 +19,12 @@ using Microsoft.Win32;
 using System.IO;
 using Path = System.IO.Path;
 using Reyuko.Utils.Common;
+using System.Runtime.CompilerServices;
 
 namespace Reyuko.App.Views.Produk
 {
     /// <summary>
-    
+
     /// </summary>
     public partial class NewProduk : UserControl
     {
@@ -34,14 +35,21 @@ namespace Reyuko.App.Views.Produk
             Switcher.pageSwitchernewproduk = this;
             this.Init();
         }
+
+        public NewProduk(string kiriman)
+        {
+            this.kiriman = kiriman;
+        }
+
         public void Navigate(UserControl nextPage)
         {
             this.Content = nextPage;
         }
-
+        public StockReceivedName stockReceived;
 
         public object UserControl { get; internal set; }
         private Produk produkForm;
+       // public IEnumerable<ReceivedProduk> receivedProduks { get; set; }
         public IEnumerable<KategoriProduk> kategoriProduks { get; set; }
         public KategoriProduk kategoriProdukSelected { get; set; }
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
@@ -54,6 +62,7 @@ namespace Reyuko.App.Views.Produk
         private IEnumerable<GrupProduk> grupProduks { get; set; }
         public GrupProduk GrupProdukSelected { get; set; }
         public IEnumerable<produk> produks { get; set; }
+       // public ReceivedProduk receivedProdukSelected;
         public produk produkselected { get; set; }
         public IEnumerable<TypeProduk> typeProduks { get; set; }
         public TypeProduk typeProdukSelected { get; set; }
@@ -61,6 +70,8 @@ namespace Reyuko.App.Views.Produk
         public Kontak kontakSelected { get; set; }
         private DataPajak dataPajakSelected { get; set; }
         public bool isEdit = false;
+        private string kiriman;
+
         private string UploadFileA { get; set; }
         private string UploadFileB { get; set; }
         private string UploadFileC { get; set; }
@@ -83,7 +94,7 @@ namespace Reyuko.App.Views.Produk
                 this.LoadProduk();
         }
 
-        
+
 
         private void ClearForm()
         {
@@ -143,6 +154,33 @@ namespace Reyuko.App.Views.Produk
             }
         }
 
+        public void LoadStok()
+        {
+            using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
+            {
+                this.produks = uow.produk.GetAll().Where(m => m.AKtif == true);
+                DGSKUPurchaseDelivery.ItemsSource = this.produks;
+                int sum = 0;
+                for (int i = 0; i < DGSKUPurchaseDelivery.Items.Count; i++)
+                {
+                    sum = Convert.ToInt32((DGSKUPurchaseDelivery.Items[i] as produk).IdProduk);
+                }
+                srid.Text = sum.ToString();
+                int suma = 0;
+                for (int i = 0; i < DGSKUPurchaseDelivery.Items.Count; i++)
+                {
+                    suma = Convert.ToInt32((DGSKUPurchaseDelivery.Items[i] as produk).JumlahStok);
+                }
+                txtStock.Text = suma.ToString();
+                int sumar = 0;
+                for (int i = 0; i < DGSKUPurchaseDelivery.Items.Count; i++)
+                {
+                    sumar = Convert.ToInt32((DGSKUPurchaseDelivery.Items[i] as produk).HargaBeli);
+                }
+                txtPurchasingPrice.Text = sumar.ToString();
+            }
+        }
+
         public void LoadTipeproduk()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -153,6 +191,7 @@ namespace Reyuko.App.Views.Produk
                 cbProductType.DisplayMemberPath = "NamaTypeProduk";
             }
         }
+
         private void LoadCurrency()
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
@@ -178,12 +217,12 @@ namespace Reyuko.App.Views.Produk
         {
             using (var uow = new UnitOfWork(AppConfig.Current.ContextName))
             {
-                 this.hargaPokoks = uow.HargaPokok.GetAll();
-                 cbUnitCost.ItemsSource = this.hargaPokoks;
-                 cbUnitCost.SelectedValuePath = "IdTipeHargaPokok";
-                 cbUnitCost.DisplayMemberPath = "TipeHargaPokok";
+                this.hargaPokoks = uow.HargaPokok.GetAll();
+                cbUnitCost.ItemsSource = this.hargaPokoks;
+                cbUnitCost.SelectedValuePath = "IdTipeHargaPokok";
+                cbUnitCost.DisplayMemberPath = "TipeHargaPokok";
             }
-           
+
         }
 
         private void LoadTax()
@@ -256,6 +295,8 @@ namespace Reyuko.App.Views.Produk
                 txtMinimumOrder.Text = this.produkForm.listprodukSelected.MinPemesanan.ToString();
                 chkdiskon.IsChecked = this.produkForm.listprodukSelected.CheckboxDiskonProduk;
                 txtDiscount.Text = this.produkForm.listprodukSelected.DiskonProdukPersen;
+                chkover.IsChecked = this.produkForm.listprodukSelected.CheckboxUbahHarga;
+                chkmanagestok.IsChecked = this.produkForm.listprodukSelected.CheckboxManageStok;
                 Date1.Text = this.produkForm.listprodukSelected.TanggalMulaiDiskonProduk.GetValueOrDefault().ToShortDateString();
                 Date2.Text = this.produkForm.listprodukSelected.TanggalBerakhirDiskonProduk.GetValueOrDefault().ToShortDateString();
                 txtStock.Text = this.produkForm.listprodukSelected.JumlahStok.ToString();
@@ -265,13 +306,15 @@ namespace Reyuko.App.Views.Produk
                 cbUnitCost.SelectedValuePath = this.produkForm.listprodukSelected.TipeHargaPokok;
                 txtRemarks.Text = this.produkForm.listprodukSelected.Keterangan;
                 cbTax.SelectedValue = this.produkForm.listprodukSelected.IdPajak;
+                chktaxable.IsChecked = this.produkForm.listprodukSelected.CheckboxPajak;
+                chkinclusive.IsChecked = this.produkForm.listprodukSelected.CheckBoxInclusiveTax;
                 txtLength.Text = this.produkForm.listprodukSelected.Panjang;
                 txtWide.Text = this.produkForm.listprodukSelected.Lebar;
                 txtTall.Text = this.produkForm.listprodukSelected.Tinggi;
                 txtWeight.Text = this.produkForm.listprodukSelected.Berat;
                 ChkInactive.IsChecked = this.produkForm.listprodukSelected.CheckBoxTidakAktif;
                 if (!string.IsNullOrEmpty(this.produkForm.listprodukSelected.UploadImage0))
-                cbVendorPrimary.SelectedValue = this.produkForm.listprodukSelected.IdKontak;
+                    cbVendorPrimary.SelectedValue = this.produkForm.listprodukSelected.IdKontak;
                 cbVendor2.SelectedValue = this.produkForm.listprodukSelected.IdKontak;
                 cbVendor3.SelectedValue = this.produkForm.listprodukSelected.IdKontak;
                 cbVendor4.SelectedValue = this.produkForm.listprodukSelected.IdKontak;
@@ -297,6 +340,10 @@ namespace Reyuko.App.Views.Produk
             if (srgroupproduk.SelectedItem != null)
             {
                 this.GrupProdukSelected = (GrupProduk)srgroupproduk.SelectedItem;
+                chkdiskon.IsChecked = this.GrupProdukSelected.CheckboxDiskon;
+                txtDiscount.Text = this.GrupProdukSelected.DiskonPersen.ToString();
+                Date1.Text = this.GrupProdukSelected.TanggalMulaiDiskon.GetValueOrDefault().ToShortDateString();
+                Date2.Text = this.GrupProdukSelected.TanggalAkhirDiskon.GetValueOrDefault().ToShortDateString();
             }
         }
         private void Cbcurrency_Selectchange(object sender, SelectionChangedEventArgs e)
@@ -481,22 +528,35 @@ namespace Reyuko.App.Views.Produk
             }
             oData.MinPemesanan = double.Parse(txtMinimumOrder.Text);
             oData.CheckboxDiskonProduk = chkdiskon.IsChecked;
+            oData.CheckboxUbahHarga = chkover.IsChecked;
+            if(chkdiskon.IsChecked == false)
+            {
+                oData.DiskonProdukPersen = "0";
+            }
             oData.DiskonProdukPersen = txtDiscount.Text;
             oData.TanggalMulaiDiskonProduk = DateTime.Parse(Date1.Text);
             oData.TanggalBerakhirDiskonProduk = DateTime.Parse(Date2.Text);
-            oData.JumlahStok = double.Parse(txtStock.Text);
             oData.BatasStokMin = int.Parse(txtMinStock.Text);
-            oData.HargaBeli = double.Parse(txtPurchasingPrice.Text);
             if (this.typeProdukSelected != null)
             {
                 oData.IdTipeProduk = this.typeProdukSelected.Id;
                 oData.TipeProduk = this.typeProdukSelected.NamaTypeProduk;
+                oData.IdAkunHargaPokok = this.typeProdukSelected.IdAkunHargaPokok;
+                oData.IdAkunPenjualan = this.typeProdukSelected.IdAkunPenjualan;
+                oData.IdAkunPersediaan = this.typeProdukSelected.IdAkunPersediaan;
+                oData.IdAkunPengirimanBeli = this.typeProdukSelected.IdAkunPengirimanBeli;
+                oData.IdAkunPengirimanJual = this.typeProdukSelected.IdAkunPengirimanJual;
+                oData.IdAkunReturPenjualan = this.typeProdukSelected.IdAkunReturPenjualan;
+                oData.IdAkunJasa = this.typeProdukSelected.IdAkunService;
+
             }
             if (this.hargaPokokSelected != null)
             {
                 oData.TipeHargaPokok = hargaPokokSelected.TipeHargaPokok;
             }
             oData.Keterangan = txtRemarks.Text;
+            oData.CheckboxPajak = chktaxable.IsChecked;
+            oData.CheckBoxInclusiveTax = chkinclusive.IsChecked;
             if (this.dataPajakSelected != null)
             {
                 oData.IdPajak = this.dataPajakSelected.Id;
@@ -546,18 +606,18 @@ namespace Reyuko.App.Views.Produk
         private void saveproduk_Click(object sender, RoutedEventArgs e)
         {
             if (cbCategory.Text == "" || txtProductName.Text == "" || txtSellingPrice.Text == "" || cbCurrency.Text == "" || cbBaseUnit.Text == "" || txtMinimumOrder.Text == "" || Date1.Text == "" || Date2.Text == "" || cbProductType.Text == "" || cbUnitCost.Text == "" || txtLength.Text == "" || txtWide.Text == "" || txtTall.Text == "" || txtWeight.Text == ""
-                || cbVendorPrimary.Text == ""|| txtRemarksVendor.Text == "")
+                || cbVendorPrimary.Text == "" || txtRemarksVendor.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
             ProdukBLL ProdukBLL = new ProdukBLL();
-            if (this.produkForm.isEdit == false)
+            if (this.chkmanagestok.IsChecked == false)
             {
                 if (ProdukBLL.AddProduk(this.GetData()) > 0)
                 {
                     this.ClearForm();
-                    MessageBox.Show("Product added successfully !");
+                    MessageBox.Show("Product successfully added !");
                     this.produkForm.LoadProduk("");
                 }
                 else
@@ -567,18 +627,126 @@ namespace Reyuko.App.Views.Produk
             }
             else
             {
-                if (ProdukBLL.EditProduk(this.GetData()) == true)
+                if (DGSKUPurchaseDelivery.Items.Count > 0)
                 {
-                    this.ClearForm();
-                    MessageBox.Show("Product successfully changed !");
-                    this.produkForm.LoadProduk("");
-                }
-                else
-                {
-                    MessageBox.Show("Product failed to change !");
+                    foreach (var item in DGSKUPurchaseDelivery.Items)
+                    {
+                        if (item is produk)
+                        {
+                            produk oData = (produk)item;
+                            if (this.kategoriProdukSelected != null)
+                            {
+                                oData.IdProdukKategori = this.kategoriProdukSelected.Id;
+                                oData.ProdukKategori = this.kategoriProdukSelected.ProdukKategori;
+                            }
+                            oData.SKU = txtSKU.Text;
+                            if (this.GrupProdukSelected != null)
+                            {
+                                oData.IdGroupProduk = this.GrupProdukSelected.Id;
+                                oData.NamaGroupProduk = this.GrupProdukSelected.NamaGrupProduk;
+                            }
+                            oData.NamaProduk = txtProductName.Text;
+                            oData.HargaJual = double.Parse(txtSellingPrice.Text);
+                            if (this.DataMataUangSelected != null)
+                            {
+                                oData.IdMataUang = this.DataMataUangSelected.Id;
+                                oData.MataUang = this.DataMataUangSelected.NamaMataUang;
+                            }
+                            oData.HargaBeli = double.Parse(txtPurchasingPrice.Text);
+                            oData.JumlahStok = double.Parse(txtStock.Text);
+                            if (this.satuanDasarSelected != null)
+                            {
+                                oData.IdSatuanDasar = this.satuanDasarSelected.Id;
+                                oData.SatuanDasar = this.satuanDasarSelected.NamaSatuan;
+                            }
+                            oData.MinPemesanan = double.Parse(txtMinimumOrder.Text);
+                            oData.CheckboxDiskonProduk = chkdiskon.IsChecked;
+                            oData.CheckboxUbahHarga = chkover.IsChecked;
+                            if (chkdiskon.IsChecked == false)
+                            {
+                                oData.DiskonProdukPersen = "0";
+                            }
+                            oData.DiskonProdukPersen = txtDiscount.Text;
+                            oData.TanggalMulaiDiskonProduk = DateTime.Parse(Date1.Text);
+                            oData.TanggalBerakhirDiskonProduk = DateTime.Parse(Date2.Text);
+                            oData.BatasStokMin = int.Parse(txtMinStock.Text);
+                            if (this.typeProdukSelected != null)
+                            {
+                                oData.IdTipeProduk = this.typeProdukSelected.Id;
+                                oData.TipeProduk = this.typeProdukSelected.NamaTypeProduk;
+                                oData.IdAkunHargaPokok = this.typeProdukSelected.IdAkunHargaPokok;
+                                oData.IdAkunPenjualan = this.typeProdukSelected.IdAkunPenjualan;
+                                oData.IdAkunPersediaan = this.typeProdukSelected.IdAkunPersediaan;
+                                oData.IdAkunPengirimanBeli = this.typeProdukSelected.IdAkunPengirimanBeli;
+                                oData.IdAkunPengirimanJual = this.typeProdukSelected.IdAkunPengirimanJual;
+                                oData.IdAkunReturPenjualan = this.typeProdukSelected.IdAkunReturPenjualan;
+                                oData.IdAkunJasa = this.typeProdukSelected.IdAkunService;
+
+                            }
+                            if (this.hargaPokokSelected != null)
+                            {
+                                oData.TipeHargaPokok = hargaPokokSelected.TipeHargaPokok;
+                            }
+                            oData.Keterangan = txtRemarks.Text;
+                            oData.CheckboxPajak = chktaxable.IsChecked;
+                            oData.CheckBoxInclusiveTax = chkinclusive.IsChecked;
+                            if (this.dataPajakSelected != null)
+                            {
+                                oData.IdPajak = this.dataPajakSelected.Id;
+                                oData.Pajak = this.dataPajakSelected.KodePajak;
+                                oData.PersentasePajak = double.Parse(dataPajakSelected.Persentase.ToString());
+                                oData.IdAkunPajak = int.Parse(dataPajakSelected.IdAkunJual.ToString());
+                            }
+                            oData.Panjang = txtLength.Text;
+                            oData.Lebar = txtWide.Text;
+                            oData.Tinggi = txtTall.Text;
+                            oData.Berat = txtWeight.Text;
+                            oData.CheckBoxTidakAktif = ChkInactive.IsChecked;
+                            oData.UploadImage0 = this.UploadFileA;
+                            oData.UploadImage1 = this.UploadFileB;
+                            oData.UploadImage2 = this.UploadFileC;
+                            oData.UploadImage3 = this.UploadFileD;
+                            if (this.kontakSelected != null)
+                            {
+                                oData.IdKontak = this.kontakSelected.Id;
+                                oData.SuplierA = this.kontakSelected.NamaA;
+                            }
+                            if (this.kontakSelected != null)
+                            {
+                                oData.IdKontak = this.kontakSelected.Id;
+                                oData.SuplierB = this.kontakSelected.NamaB;
+                            }
+                            if (this.kontakSelected != null)
+                            {
+                                oData.IdKontak = this.kontakSelected.Id;
+                                oData.SuplierC = this.kontakSelected.NamaC;
+                            }
+                            if (this.kontakSelected != null)
+                            {
+                                oData.IdKontak = this.kontakSelected.Id;
+                                oData.SuplierD = this.kontakSelected.NamaD;
+                            }
+                            oData.KeteranganSuplierA = txtRemarksVendor.Text;
+                            oData.KeteranganSuplierB = txtRemarksVendor2.Text;
+                            oData.KeteranganSuplierC = txtRemarksVendor3.Text;
+                            oData.KeteranganSuplierD = txtRemarksVendor4.Text;
+                            oData.AKtif = false;
+                            if (ProdukBLL.EditProduk(oData) == true)
+                            {
+                                
+                                MessageBox.Show("Product added successfully !");
+                                this.produkForm.LoadProduk("");
+                            }
+                            else
+                            {
+                               MessageBox.Show("Product failed to add !");
+                            }
+                        }
+                    }
                 }
             }
-            Produk v = new Produk();
+             
+        Produk v = new Produk();
             Switcher.Switchnewproduk(v);
         }
 
@@ -586,6 +754,11 @@ namespace Reyuko.App.Views.Produk
         {
             Produk v = new Produk();
             Switcher.Switchnewproduk(v);
+        }
+
+        private void saas(object sender, EventArgs e)
+        {
+            txtStock.Text = StockReceivedName.kiriman;
         }
 
         private void Category_Click(object sender, RoutedEventArgs e)
@@ -627,7 +800,7 @@ namespace Reyuko.App.Views.Produk
 
             if (!isWindowOpen)
             {
-                StockReceivedName newStock = new StockReceivedName();
+               StockReceivedName newStock = new StockReceivedName(this);
                 newStock.Show();
             }
         }
@@ -797,20 +970,41 @@ namespace Reyuko.App.Views.Produk
             
         }
 
+        
         private void TxtProductName_TextChanged(object sender, TextChangedEventArgs e)
         {
-            string tString = txtProductName.Text;
-            if (tString.Trim() == "") return;
-            for (int i = 0; i < tString.Length; i++)
-            {
-                if (char.IsNumber(tString[i]))
-                {
-                    MessageBox.Show("Harus Diisi Character");
-                    txtProductName.Text = "";
-                    return;
-                }
+        //    string tString = txtProductName.Text;
+        //    if (tString.Trim() == "") return;
+        //    for (int i = 0; i < tString.Length; i++)
+        //    {
+        //        if (char.IsNumber(tString[i]))
+        //        {
+        //            MessageBox.Show("Harus Diisi Character");
+        //            txtProductName.Text = "";
+        //            return;
+        //        }
 
+        //    }
+       }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            if(chkmanagestok.IsChecked == true)
+            {
+                txtStock.Visibility = Visibility.Visible;
+                txtPurchasingPrice.Visibility = Visibility.Visible;
+                btnstok.Visibility = Visibility.Visible;
             }
+            else if(chkmanagestok.IsChecked == false)
+            {
+                txtStock.Visibility = Visibility.Hidden;
+                txtPurchasingPrice.Visibility = Visibility.Hidden;
+                btnstok.Visibility = Visibility.Hidden;
+            }
+        }
+
+        private void txtid_TextChanged(object sender, TextChangedEventArgs e)
+        {
         }
     }
 

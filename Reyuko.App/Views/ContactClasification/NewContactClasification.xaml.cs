@@ -109,6 +109,7 @@ namespace Reyuko.App.Views.ContactClasification
             }
         }
 
+
         private KlasifikasiKontak GetData()
         {
             KlasifikasiKontak oData = new KlasifikasiKontak();
@@ -143,7 +144,7 @@ namespace Reyuko.App.Views.ContactClasification
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            if (CbContactType.Text == "" || txtKlasifikasiKontak.Text == "" || txtPIC1.Text == "" || txtPIC2.Text == "" || txtPIC3.Text == "" || txtNote.Text == "")
+            if (CbContactType.Text == "" || txtKlasifikasiKontak.Text == "" || txtNote.Text == "")
             {
                 MessageBox.Show("please fill in the blank fields", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -216,6 +217,10 @@ namespace Reyuko.App.Views.ContactClasification
         private void TxtNote_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void ChkPIC1_Checked(object sender, RoutedEventArgs e)
+        {
         }
     }
 }
