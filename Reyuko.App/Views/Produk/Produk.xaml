@@ -91,7 +91,7 @@
         </ListView>
         <TextBlock
             Width="200"
-            Height="49"
+            Height="41"
             Margin="10,10,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"

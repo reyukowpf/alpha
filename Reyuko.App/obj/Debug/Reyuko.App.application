@@ -7,14 +7,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Reyuko.App.exe.manifest" size="57177">
+    <dependentAssembly dependencyType="install" codebase="Reyuko.App.exe.manifest" size="133610">
       <assemblyIdentity name="Reyuko.App.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>b3VtY8kteCXbcV3KHiyvkwAuUX6Xu+P2fxc6OnRQu+k=</dsig:DigestValue>
+        <dsig:DigestValue>yBLQ/zgW7IxXFwTv8DuSHV1h/Cs+XNZuG8epUfFvNlc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

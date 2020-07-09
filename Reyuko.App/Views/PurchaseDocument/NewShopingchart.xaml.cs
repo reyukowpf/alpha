@@ -1,4 +1,5 @@
-﻿using Reyuko.BLL.Core;
+﻿using DevExpress.Mvvm.Native;
+using Reyuko.BLL.Core;
 using Reyuko.DAL;
 using Reyuko.DAL.Domain;
 using Reyuko.Utils;
@@ -37,6 +38,8 @@ namespace Reyuko.App.Views.PurchaseDocument
         public IEnumerable<Kontak> kontaks { get; set; }
         public IEnumerable<produk> produks { get; set; }
         public produk produkSelected;
+        public produk produkSelected1;
+        public produk produkSelected2;
         public Kontak kontakSelected { get; set; }
         private IEnumerable<DataMataUang> dataMataUangs { get; set; }
         public IEnumerable<KodeTransaksi> kodeTransaksi { get; set; }
@@ -90,6 +93,7 @@ namespace Reyuko.App.Views.PurchaseDocument
             txtAnnualFrequency.Text = "";
             dtAnnual.Text = DateTime.Now.ToShortDateString();
             dtRequired.Text = DateTime.Now.ToShortDateString();
+           
         }
         public void LoadKode()
         {
@@ -272,35 +276,6 @@ namespace Reyuko.App.Views.PurchaseDocument
                 txtdiskon1.Text = ((float.Parse(txtprice.Text.ToString()) * float.Parse(txtdiskon.Text.ToString()) / 100)).ToString();
             }
         }
-        public OrderProdukBeli GetData()
-        {
-            OrderProdukBeli oData = new OrderProdukBeli();
-            if (this.produkSelected != null)
-            {
-                oData.IdProduk = this.produkSelected.IdProduk;
-                oData.ProdukKategori = this.produkSelected.ProdukKategori;
-                oData.Sku = this.produkSelected.SKU;
-                oData.SatuanDasar = this.produkSelected.SatuanDasar;
-                oData.IdPajak = this.produkSelected.IdPajak;
-                oData.NamaPajak = this.produkSelected.Pajak;
-                oData.PersentasePajak = this.produkSelected.PersentasePajak;
-                oData.HargaBeli = this.produkSelected.HargaBeli;
-                oData.IdAkunPajakProduk = this.produkSelected.IdAkunPajak;
-                oData.NamaProduk = this.produkSelected.NamaProduk;
-                oData.IdTypeProduk = this.produkSelected.IdTipeProduk;
-                oData.TypeProduk = this.produkSelected.TipeProduk;
-                oData.AkunPersediaan = this.produkSelected.IdAkunPersediaan;
-                oData.AkunPengirimanBeli = this.produkSelected.IdAkunPengirimanBeli;
-            }
-            oData.TotalPajakProduk = double.Parse(txttotaltax.Text);
-            oData.IdTransaksi = int.Parse(txttota.Text);
-            oData.DiskonProduk = double.Parse(txtdiskon1.Text);
-            oData.TotalProduk = double.Parse(txttotal.Text);
-            oData.TotalOrderProduk = double.Parse(txttotal1.Text);
-            oData.Checkboxaktif = true;
-            return oData;
-        }
-        
         private void txttotal_TextChanged(object sender, TextChangedEventArgs e)
         {
             string tString = txttotal.Text;
@@ -334,42 +309,9 @@ namespace Reyuko.App.Views.PurchaseDocument
             txttotal1.Text = ((float.Parse(txttotalservice.Text.ToString()) * float.Parse(txtprice.Text.ToString())) - (float.Parse(txtdiskon.Text.ToString()) / 100 * float.Parse(txtprice.Text.ToString())) * float.Parse(txttotalservice.Text.ToString())).ToString();
             txttotaltax.Text = (float.Parse(txttotal1.Text.ToString()) * float.Parse(txttax.Text.ToString())).ToString();
         }
-        public OrderJasaBeli GetData1()
-        {
-            OrderJasaBeli oData = new OrderJasaBeli();
-            if (this.produkSelected != null)
-            {
-                oData.IdProduk = this.produkSelected.IdProduk;
-                oData.Sku = this.produkSelected.SKU;
-                oData.NamaJasa = this.produkSelected.NamaProduk;
-                oData.HargaJasa = this.produkSelected.HargaBeli;
-                oData.PersentasePajak = this.produkSelected.PersentasePajak;
-                oData.IdAkunPajakJasa = this.produkSelected.IdAkunPajak;
-                oData.IdPajak = this.produkSelected.IdPajak;
-                oData.NamaPajak = this.produkSelected.Pajak;
-                oData.IdAkunJasa = this.produkSelected.IdAkunJasa;
-            }
-            oData.DiskonJasa = double.Parse(txtdiskon1.Text);
-            oData.TotalJasa = int.Parse(txttotalservice.Text);
-            oData.IdTransaksi = int.Parse(txttota.Text);
-            oData.TotalOrderJasa = double.Parse(txttotal1.Text);
-            oData.TotalPajakJasa = double.Parse(txttotaltax.Text);
-            oData.Checkboxaktif = true;
-            return oData;
-        }
+      
 
-        public OrderCustomBeli GetData2()
-        {
-            OrderCustomBeli oData = new OrderCustomBeli();
-            oData.NamaCustom = txtnama.Text;
-            oData.HargaCustom = double.Parse(txtprice.Text);
-            oData.IdTransaksi = int.Parse(txttota.Text);
-            oData.JumlahCustom = int.Parse(txttotalcustom.Text);
-            oData.TotalCustom = double.Parse(txttotal1.Text);
-            oData.Checkboxaktif = true;
-            return oData;
-        }
-
+      
         private void txtharga_TextChanged(object sender, TextChangedEventArgs e)
         {
             string tString = txtharga.Text;
@@ -391,17 +333,42 @@ namespace Reyuko.App.Views.PurchaseDocument
             if (e.Key == System.Windows.Input.Key.Enter)
             {
                 // your event handler here
-                    ShopingchartBLL shopingBLL = new ShopingchartBLL();
-                    if (shopingBLL.AddOrderProdukbeli(this.GetData()) > 0)
+                if (srsku.Text == "" || txttotal.Text == "")
+                {
+                    e.Handled = false;
+                }
+                ShopingchartBLL shopingBLL = new ShopingchartBLL();
+                OrderProdukBeli oData = new OrderProdukBeli();
+                if (this.produkSelected != null)
+                {
+                    oData.IdProduk = this.produkSelected.IdProduk;
+                    oData.ProdukKategori = this.produkSelected.ProdukKategori;
+                    oData.Sku = this.produkSelected.SKU;
+                    oData.SatuanDasar = this.produkSelected.SatuanDasar;
+                    oData.IdPajak = this.produkSelected.IdPajak;
+                    oData.NamaPajak = this.produkSelected.Pajak;
+                    oData.PersentasePajak = this.produkSelected.PersentasePajak;
+                    oData.HargaBeli = this.produkSelected.HargaBeli;
+                    oData.IdAkunPajakProduk = this.produkSelected.IdAkunPajak;
+                    oData.NamaProduk = this.produkSelected.NamaProduk;
+                    oData.IdTypeProduk = this.produkSelected.IdTipeProduk;
+                    oData.TypeProduk = this.produkSelected.TipeProduk;
+                    oData.AkunPersediaan = this.produkSelected.IdAkunPersediaan;
+                    oData.AkunPengirimanBeli = this.produkSelected.IdAkunPengirimanBeli;
+                }
+                
+                oData.TotalPajakProduk = double.Parse(txttotaltax.Text);
+                oData.IdTransaksi = int.Parse(txttota.Text);
+                oData.DiskonProduk = double.Parse(txtdiskon1.Text);
+                oData.TotalProduk = double.Parse(txttotal.Text);
+                oData.TotalOrderProduk = double.Parse(txttotal1.Text);
+                oData.Checkboxaktif = true;
+                if (shopingBLL.AddOrderProdukbeli(oData) > 0)
                     {
+                    this.ClearForm1();
                         MessageBox.Show("Add Order Buy Product successfully added !");
                         this.LoadDataSku();
-                        txttotal.Visibility = Visibility.Collapsed;
-                        txtunit.Visibility = Visibility.Collapsed;
-                        txtbudget.Visibility = Visibility.Collapsed;
-                        gg.Visibility = Visibility.Collapsed;
-                        srsku.Visibility = Visibility.Collapsed;
-                    }
+                }
                     else
                     {
                         MessageBox.Show("Add Order Buy Product failed to add !");
@@ -410,26 +377,66 @@ namespace Reyuko.App.Views.PurchaseDocument
 
             }
         }
+
+        private void ClearForm1()
+        {
+            srsku.Text = "";
+            txttotal.Text = "";
+            txtunit.Text = "";
+            txtbudget.Text = "";
+        }
+        private void ClearForm2()
+        {
+            srsku.Text = "";
+            txttotalservice.Text = "";
+            txtunit.Text = "";
+            txtbudget.Text = "";
+        }
+        private void ClearForm3()
+        {
+            txtnama.Text = "";
+            txtharga.Text = "";
+            txttotalcustom.Text = "";
+            txtunit.Text = "";
+            txtbudget.Text = "";
+        }
+
         private void TextBoxservice_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == System.Windows.Input.Key.Enter)
             {
-                // your event handler here
                 ShopingchartBLL shopingchartBLL = new ShopingchartBLL();
-                if (shopingchartBLL.AddOrderJasabeli(this.GetData1()) > 0)
+                OrderJasaBeli oData = new OrderJasaBeli();
+                if (this.produkSelected != null)
                 {
+                    oData.IdProduk = this.produkSelected.IdProduk;
+                    oData.Sku = this.produkSelected.SKU;
+                    oData.NamaJasa = this.produkSelected.NamaProduk;
+                    oData.HargaJasa = this.produkSelected.HargaBeli;
+                    oData.PersentasePajak = this.produkSelected.PersentasePajak;
+                    oData.IdAkunPajakJasa = this.produkSelected.IdAkunPajak;
+                    oData.IdPajak = this.produkSelected.IdPajak;
+                    oData.NamaPajak = this.produkSelected.Pajak;
+                    oData.IdAkunJasa = this.produkSelected.IdAkunJasa;
+                }
+                oData.DiskonJasa = double.Parse(txtdiskon1.Text);
+                oData.TotalJasa = int.Parse(txttotalservice.Text);
+                oData.IdTransaksi = int.Parse(txttota.Text);
+                oData.TotalOrderJasa = double.Parse(txttotal1.Text);
+                oData.TotalPajakJasa = double.Parse(txttotaltax.Text);
+                oData.Checkboxaktif = true;
+                if (shopingchartBLL.AddOrderJasabeli(oData) > 0)
+                {
+                    this.ClearForm2();
                     MessageBox.Show("Add Order Buy Service successfully added !");
                     this.LoadDataSku();
-                    txttotalservice.Visibility = Visibility.Collapsed;
-                    txtunit.Visibility = Visibility.Collapsed;
-                    txtbudget.Visibility = Visibility.Collapsed;
-                    gg.Visibility = Visibility.Collapsed;
-                    srsku.Visibility = Visibility.Collapsed;
                 }
                 else
                 {
                     MessageBox.Show("Add Order Buy Service failed to add !");
                 }
+                // your event handler here
+
                 e.Handled = true;
 
             }
@@ -439,18 +446,28 @@ namespace Reyuko.App.Views.PurchaseDocument
         {
             if (e.Key == System.Windows.Input.Key.Enter)
             {
+                if (txtnama.Text == "" || txttotalcustom.Text == "")
+                {
+                    e.Handled = false; 
+                    MessageBox.Show("the first row cannot empty", ("Form Validation"), MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
                 // your event handler here
                 ShopingchartBLL shopingBLL = new ShopingchartBLL();
-                if (shopingBLL.AddOrderProdukbeli(this.GetData()) > 0)
+                OrderCustomBeli oService = new OrderCustomBeli();
+                oService.NamaCustom = txtnama.Text;
+                oService.HargaCustom = double.Parse(txtharga.Text);
+                oService.IdTransaksi = int.Parse(txttota.Text);
+                oService.JumlahCustom = int.Parse(txttotalcustom.Text);
+                oService.TotalCustom = double.Parse(txttotal1.Text);
+                oService.Checkboxaktif = true;
+
+                if (shopingBLL.AddOrderCustombeli(oService) > 0)
                 {
+                    this.ClearForm3();
                     MessageBox.Show("Add Order Buy Custom successfully added !");
                     this.LoadDataSku();
-                    txttotal.Visibility = Visibility.Collapsed;
-                    txtunit.Visibility = Visibility.Collapsed;
-                    txtbudget.Visibility = Visibility.Collapsed;
-                    gg.Visibility = Visibility.Collapsed;
-                    srsku.Visibility = Visibility.Collapsed;
-                }
+                 }
                 else
                 {
                     MessageBox.Show("Add Order Buy Custom failed to add !");
@@ -464,10 +481,13 @@ namespace Reyuko.App.Views.PurchaseDocument
         {
             txttotal.Visibility = Visibility.Visible;
             txtunit.Visibility = Visibility.Visible;
+            txtnama.Visibility = Visibility.Hidden;
             txtbudget.Visibility = Visibility.Visible;
             gg.Visibility = Visibility.Visible;
             srsku.Visibility = Visibility.Visible;
             txttotalservice.Visibility = Visibility.Hidden;
+            txtharga.Visibility = Visibility.Hidden;
+            txttotalcustom.Visibility = Visibility.Hidden;
         }
 
         private void service_Click(object sender, RoutedEventArgs e)
@@ -478,9 +498,21 @@ namespace Reyuko.App.Views.PurchaseDocument
             txtbudget.Visibility = Visibility.Visible;
             gg.Visibility = Visibility.Visible;
             srsku.Visibility = Visibility.Visible;
+            txtnama.Visibility = Visibility.Hidden;
+            txttotalcustom.Visibility = Visibility.Hidden;
+            txtharga.Visibility = Visibility.Hidden;
         }
         private void custom_Click(object sender, RoutedEventArgs e)
         {
+            txttotalservice.Visibility = Visibility.Hidden;
+            txttotal.Visibility = Visibility.Hidden;
+            txtunit.Visibility = Visibility.Hidden;
+            txtbudget.Visibility = Visibility.Visible;
+            gg.Visibility = Visibility.Hidden;
+            srsku.Visibility = Visibility.Hidden;
+            txtnama.Visibility = Visibility.Visible;
+            txttotalcustom.Visibility = Visibility.Visible;
+            txtharga.Visibility = Visibility.Visible;
         }
 
         private void Print_Click(object sender, RoutedEventArgs e)
@@ -712,6 +744,7 @@ namespace Reyuko.App.Views.PurchaseDocument
                     if (item is ListOrderBeli)
                     {
                         ListOrderBeli oNewData1 = (ListOrderBeli)item;
+                        produk oproduk = new produk();
                         oNewData1.Tanggal = DateTime.Parse(dtIssued.Text);
                         if (this.lokasiSelected != null)
                         {
@@ -726,9 +759,9 @@ namespace Reyuko.App.Views.PurchaseDocument
                         {
                             oNewData1.IdProyek = this.dataProyekSelected.Id;
                         }
-                        oNewData1.IdTransaksi = shoping.IdPermintaanBarang;
+                        oNewData1.IdTransaksi = shoping.IdPermintaanBarang;           
                         oNewData1.Checkboxaktif = false;
-                        if (shopingBLL.EditOrderProdukBeli(oNewData1, shoping) == true)
+                        if (shopingBLL.EditOrderProdukBeli(oNewData1, shoping, oproduk) == true)
                         {
                         }
                     }

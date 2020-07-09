@@ -10,6 +10,6 @@ namespace Reyuko.BLL.Interface
         int AddOrderProdukbeli(OrderProdukBeli oData);
         int AddOrderJasabeli(OrderJasaBeli oData);
         int AddOrderCustombeli(OrderCustomBeli oData);
-        bool EditOrderProdukBeli(ListOrderBeli oData, Shopingchart oDatas);
+        bool EditOrderProdukBeli(ListOrderBeli oData, Shopingchart oDatas, produk oDatap);
     }
 }
