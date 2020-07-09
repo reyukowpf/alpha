@@ -9,11 +9,11 @@
     xmlns:System="clr-namespace:System;assembly=mscorlib"
     xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
     x:Class="Reyuko.App.Views.Note.NewInternalNote"
-    Height="730"
-    d:DesignWidth="1100"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -75,32 +75,32 @@
             </StackPanel>
         </Button>
 
-        <Button HorizontalAlignment="Left" Margin="167,92,0,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Left" Margin="167,88,0,0" Background="Transparent" BorderThickness="0"
            Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
             </StackPanel>
         </Button>
-        <Button HorizontalAlignment="Left" Margin="690,152,0,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Left" Margin="690,148,0,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="20" Click="NoDokumen_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/black_plus.png" Height="15"/>
             </StackPanel>
         </Button>
 
-        <Label Content="Customer / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Note Type" HorizontalAlignment="Left" FontSize="12.5" Margin="190,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Reference Number" HorizontalAlignment="Left" FontSize="12.5" Margin="360,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Note Date" HorizontalAlignment="Left" FontSize="12.5" Margin="530,62,0,0" VerticalAlignment="Top"/>
-        <Label Content="Note Title" HorizontalAlignment="Left" FontSize="12.5" Margin="10,122,0,0" VerticalAlignment="Top"/>
-        <Label Content="Reminder Date" HorizontalAlignment="Left" FontSize="12.5" Margin="360,122,0,0" VerticalAlignment="Top"/>
-        <Label Content="Document Reference No." HorizontalAlignment="Left" FontSize="12.5" Margin="530,122,0,0" VerticalAlignment="Top"/>
-        <Label Content="Staff / ID" HorizontalAlignment="Left" FontSize="12.5" Margin="720,122,0,0" VerticalAlignment="Top"/>
+        <Label Content="Customer / Id" FontSize="12.5" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Note Type" HorizontalAlignment="Left" FontSize="12.5" Margin="190,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Reference Number" HorizontalAlignment="Left" FontSize="12.5" Margin="360,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Note Date" HorizontalAlignment="Left" FontSize="12.5" Margin="530,58,0,0" VerticalAlignment="Top"/>
+        <Label Content="Note Title" HorizontalAlignment="Left" FontSize="12.5" Margin="10,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Reminder Date" HorizontalAlignment="Left" FontSize="12.5" Margin="360,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Document Reference No." HorizontalAlignment="Left" FontSize="12.5" Margin="530,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="Staff / ID" HorizontalAlignment="Left" FontSize="12.5" Margin="720,118,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="10,86,0,0">
+                CornerRadius="0" Margin="10,82,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="152">
                 <Controls:AutoCompleteBox x:Name="srkontak" FontSize="12.5" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA" SelectionChanged="cb_selection_change">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -118,7 +118,7 @@
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="360,86,0,0">
+                CornerRadius="0" Margin="360,82,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="noreference" FontSize="12.5" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -132,18 +132,18 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <ComboBox x:Name="cbdepartment" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="720,86,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="department_selectionchange"/>
-        <DatePicker x:Name="dtNotedate" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="530,86,0,0" VerticalAlignment="Top" Width="150"/>
-        <RadioButton x:Name="Departmen1" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="720,62,0,0" VerticalAlignment="Top" Checked="Departmen_Checked"/>
-        <RadioButton x:Name="Project" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="820,62,0,0" VerticalAlignment="Top" Checked="Proyek_Checked"/>
-        <DatePicker x:Name="dtReminder" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="360,147,0,0" VerticalAlignment="Top" Width="150"/>
-        <TextBox x:Name="txtNoteTitle" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="10,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
-        <ComboBox x:Name="cbNoteType" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,86,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="note_selectionchange"/>
+        <ComboBox x:Name="cbdepartment" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="720,82,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="department_selectionchange"/>
+        <DatePicker x:Name="dtNotedate" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="530,82,0,0" VerticalAlignment="Top" Width="150"/>
+        <RadioButton x:Name="Departmen1" Content="Department" FontSize="12.5" HorizontalAlignment="Left" Margin="720,58,0,0" VerticalAlignment="Top" Checked="Departmen_Checked"/>
+        <RadioButton x:Name="Project" Content="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="820,58,0,0" VerticalAlignment="Top" Checked="Proyek_Checked"/>
+        <DatePicker x:Name="dtReminder" HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="360,143,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox x:Name="txtNoteTitle" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="10,143,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330"/>
+        <ComboBox x:Name="cbNoteType" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,82,0,0" VerticalAlignment="Top" Width="152" SelectionChanged="note_selectionchange"/>
         <Border BorderBrush="Black"
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="530,147,0,0">
+                CornerRadius="0" Margin="530,143,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="noreferencedokumen" FontSize="12.5" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -161,7 +161,7 @@
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="720,147,0,0">
+                CornerRadius="0" Margin="720,143,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="152">
                 <Controls:AutoCompleteBox x:Name="staf" FontSize="12.5" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -175,11 +175,15 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <DockPanel LastChildFill="True" Margin="0,193,0,-22">
+        <DockPanel LastChildFill="True" Margin="10,185,10,10">
             <ToolBarTray DockPanel.Dock="Top">
                 <rtb:RichTextBoxToolBar x:Name="_rttb1" />
             </ToolBarTray>
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="709*"/>
+                    <ColumnDefinition Width="331*"/>
+                </Grid.ColumnDefinitions>
                 <RichTextBox x:Name="_rtb"
                          VerticalAlignment="Stretch"
                          HorizontalAlignment="Stretch"
@@ -188,7 +192,7 @@
                          ScrollViewer.VerticalScrollBarVisibility="Hidden"
                          SpellCheck.IsEnabled="True"
                          AcceptsReturn="True"
-                         AcceptsTab="True" />
+                         AcceptsTab="True" Grid.ColumnSpan="2" />
                 <RichTextBox 
                          VerticalAlignment="Stretch"
                          HorizontalAlignment="Stretch"
@@ -197,8 +201,8 @@
                          ScrollViewer.VerticalScrollBarVisibility="Hidden"
                          SpellCheck.IsEnabled="True"
                          AcceptsReturn="True"
-                         AcceptsTab="True" />
-                <StackPanel Orientation="Horizontal"/>
+                         AcceptsTab="True" Grid.ColumnSpan="2" />
+                <StackPanel Orientation="Horizontal" Grid.ColumnSpan="2"/>
             </Grid>
         </DockPanel>
 

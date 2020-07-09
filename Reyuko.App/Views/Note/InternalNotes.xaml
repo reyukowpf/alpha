@@ -8,11 +8,11 @@
     xmlns:sys="clr-namespace:System;assembly=mscorlib"
     xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
     x:Class="Reyuko.App.Views.Note.InternalNotes"
-    d:DesignHeight="730"
-    d:DesignWidth="820"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" VerticalAlignment="Top">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -92,9 +92,8 @@
 
         <DataGrid
                 x:Name="DGInternalNote"
-                Height="333"
                 MinWidth="400"
-                Margin="10,200,0,196"
+                Margin="10,178,22,10"
                 AutoGenerateColumns="False"
                 Background="{x:Null}"
                 BorderBrush="{x:Null}"
@@ -277,16 +276,16 @@
         </DataGrid>
 
 
-        <Label Content="Contact Name" FontSize="12.5" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Notes Type" FontSize="12.5" HorizontalAlignment="Left" Margin="190,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="Reference No" FontSize="12.5" HorizontalAlignment="Left" Margin="360,62,0,0" VerticalAlignment="Top" Height="26"/>
-        <Label Content="User ID" FontSize="12.5" HorizontalAlignment="Left" Margin="10,122,0,0" VerticalAlignment="Top"/>
-        <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="190,122,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact Name" FontSize="12.5" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Notes Type" FontSize="12.5" HorizontalAlignment="Left" Margin="190,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="Reference No" FontSize="12.5" HorizontalAlignment="Left" Margin="360,58,0,0" VerticalAlignment="Top" Height="26"/>
+        <Label Content="User ID" FontSize="12.5" HorizontalAlignment="Left" Margin="10,113,0,0" VerticalAlignment="Top"/>
+        <Label Content="Periode" FontSize="12.5" HorizontalAlignment="Left" Margin="190,113,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black"
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="10,86,0,0">
+                CornerRadius="0" Margin="10,82,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srkontak" FontSize="12.5" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaKontak">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -304,7 +303,7 @@
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="360,86,0,0">
+                CornerRadius="0" Margin="360,82,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="srnoreference" FontSize="12.5" BorderBrush="Transparent" HorizontalAlignment="Center" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -322,7 +321,7 @@
                 BorderThickness="1"
                 HorizontalAlignment="Left"
                 VerticalAlignment="Top"
-                CornerRadius="0" Margin="10,147,0,0">
+                CornerRadius="0" Margin="10,138,0,0">
             <DockPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,0,0,0" Height="26" Width="150">
                 <Controls:AutoCompleteBox x:Name="sruser" FontSize="12.5" HorizontalAlignment="Center" BorderBrush="Transparent" Height="28" Width="120" Margin="-1,0,0,0" VerticalAlignment="Center" ValueMemberPath="NamaA">
                     <Controls:AutoCompleteBox.ItemTemplate>
@@ -336,12 +335,12 @@
                 <Image DockPanel.Dock="Left" Source="/Reyuko.App;component/Icons/search.png" Height="20" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0"/>
             </DockPanel>
         </Border>
-        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,147,0,0" VerticalAlignment="Top" Width="150"/>
-        <DatePicker HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="360,147,0,0" VerticalAlignment="Top" Width="150"/>
-        <ComboBox x:Name="cbNoteType" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,86,0,0" VerticalAlignment="Top" Width="152"/>
-        <ComboBox x:Name="cbDeprtament" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="530,86,0,0" VerticalAlignment="Top" Width="160"/>
-        <RadioButton Content="Department" x:Name="Departmen1" FontSize="12.5" HorizontalAlignment="Left" Margin="530,62,0,0" VerticalAlignment="Top" Checked="Departmen_Checked"/>
-        <RadioButton Content="Project" x:Name="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="630,62,0,0" VerticalAlignment="Top" Checked="Proyek_Checked"/>
+        <DatePicker HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,138,0,0" VerticalAlignment="Top" Width="150"/>
+        <DatePicker HorizontalAlignment="Left" Height="28" FontSize="12.5" Margin="360,138,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox x:Name="cbNoteType" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="190,82,0,0" VerticalAlignment="Top" Width="152"/>
+        <ComboBox x:Name="cbDeprtament" HorizontalAlignment="Left" FontSize="12.5" Height="28" Margin="530,82,0,0" VerticalAlignment="Top" Width="160"/>
+        <RadioButton Content="Department" x:Name="Departmen1" FontSize="12.5" HorizontalAlignment="Left" Margin="530,58,0,0" VerticalAlignment="Top" Checked="Departmen_Checked"/>
+        <RadioButton Content="Project" x:Name="Project" FontSize="12.5" HorizontalAlignment="Left" Margin="630,58,0,0" VerticalAlignment="Top" Checked="Proyek_Checked"/>
     </Grid>
 
 </UserControl>

@@ -5,11 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-   d:DesignHeight="500"
-    d:DesignWidth="800"
-    VerticalAlignment="Top"
+    d:DesignHeight="700"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d" >
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -35,7 +35,7 @@
         <TextBlock
             Width="273"
             Height="52"
-            Margin="30,20,0,0"
+            Margin="30,12,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontFamily="Segoe"
@@ -79,9 +79,7 @@
         </Button>
         <DataGrid
             x:Name="DGDocumentType"
-            Height="Auto"
-            MinWidth="400"
-            Margin="30,77,0,-10"
+            Margin="10,77,10,37"
             AutoGenerateColumns="False"
             Background="{x:Null}"
             BorderBrush="{x:Null}"
@@ -94,7 +92,10 @@
             IsReadOnly="True"
             RowDetailsVisibilityMode="Visible"
             RowHeight="30"
+            Height="582"
+            VerticalAlignment="Top"
             SelectionMode="Single">
+
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="HorizontalContentAlignment" Value="Center" />
@@ -171,7 +172,7 @@
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
-              </DataGrid.Columns>
+            </DataGrid.Columns>
         </DataGrid>
 
 

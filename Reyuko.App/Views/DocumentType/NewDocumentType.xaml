@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Height="220"
-    Width="500"
+    Width="453.922"
     FontSize="14"
     WindowStyle="None"
     ResizeMode="NoResize"
@@ -35,11 +35,11 @@
         </Style>
     </Window.Resources>
 
-    <Grid>
+    <Grid Margin="0,0,-2,0">
         <TextBlock
             Width="265"
             Height="45"
-            Margin="40,9,0,0"
+            Margin="9,9,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             FontFamily="Segoe"
@@ -48,7 +48,7 @@
             Text="Document Type"
             TextWrapping="Wrap" />
 
-        <Button HorizontalAlignment="Right" Margin="0,23,109,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Right" Margin="0,23,100,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="60" Click="Save_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/save.png" Height="20"/>
@@ -56,17 +56,17 @@
             </StackPanel>
         </Button>
 
-        <Button HorizontalAlignment="Right" Margin="0,23,29,0" Background="Transparent" BorderThickness="0"
+        <Button HorizontalAlignment="Right" Margin="0,23,20,0" Background="Transparent" BorderThickness="0"
             Style="{StaticResource MyButton}" VerticalAlignment="Top" Width="70" Click="Cancel_Click">
             <StackPanel Orientation="Horizontal">
                 <Image Source="/Reyuko.App;component/Icons/close.png" Height="20"/>
                 <TextBlock Text=" Cancel" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <Label Content="Document Type" FontSize="12.5" HorizontalAlignment="Left" Margin="49,79,0,0" VerticalAlignment="Top"/>
-        <Label Content="Description" FontSize="12.5" HorizontalAlignment="Left" Margin="48,119,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtDocumentType" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="168,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtDocumentType_TextChanged_1"/>
-        <TextBox x:Name="txtDescription" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="168,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170" TextChanged="TxtDescription_TextChanged"/>
+        <Label Content="Document Type" FontSize="12.5" HorizontalAlignment="Left" Margin="18,79,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" FontSize="12.5" HorizontalAlignment="Left" Margin="17,119,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtDocumentType" FontSize="12.5" HorizontalAlignment="Left" Height="28" Margin="137,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" TextChanged="TxtDocumentType_TextChanged_1"/>
+        <TextBox x:Name="txtDescription" HorizontalAlignment="Left" Height="80" Margin="137,119,0,0" FontSize="12.5" TextWrapping="Wrap" VerticalAlignment="Top" Width="212" TextChanged="TxtDescription_TextChanged"/>
 
     </Grid>
 
