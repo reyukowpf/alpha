@@ -1,0 +1,16 @@
+﻿<Window x:Class="Reyuko.App.Views.Printing.Printing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Reyuko.App.Views.Printing"
+        mc:Ignorable="d"
+        Title="Printing" Height="450" Width="800">
+    <Grid>
+        <Button Click="Print_Click" HorizontalAlignment="Left" Margin="672,29,0,0" VerticalAlignment="Top" Width="75">
+            <materialDesign:PackIcon Kind="Printer"></materialDesign:PackIcon>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="155,185,0,0" TextWrapping="Wrap" Text="Printing " VerticalAlignment="Top"/>
+    </Grid>
+</Window>

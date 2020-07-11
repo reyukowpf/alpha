@@ -61,10 +61,10 @@
         </Button>
         <DataGrid
             x:Name="DGMeasurementUnit"
-            Height="Auto"
+            Height="1080"
             MinWidth="400"
             Width="Auto"
-            Margin="8,67,8,40"
+            Margin="8,67,8,0"
             AutoGenerateColumns="False"
             Background="Transparent"
 

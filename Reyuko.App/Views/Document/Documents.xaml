@@ -8,11 +8,11 @@
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:local="clr-namespace:Reyuko.App.Views.Document"
     x:Class="Reyuko.App.Views.Document.Documents"
-    d:DesignHeight="700"
+    d:DesignHeight="1080"
     d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="1080">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="{x:Type Button}">
             <Setter Property="OverridesDefaultStyle" Value="True" />

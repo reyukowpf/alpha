@@ -106,23 +106,8 @@ namespace Reyuko.App.Views.Note
         {
             //NewInternalNote v = new NewInternalNote(this);
             //Switcher.Switchnote(v);
-            this.isEdit = false;
-            bool isWindowOpen = false;
 
-            foreach (Window w in Application.Current.Windows)
-            {
-                if (w is NewInternalNote)
-                {
-                    isWindowOpen = true;
-                    w.Activate();
-                }
-            }
 
-            if (!isWindowOpen)
-            {
-                NewInternalNote period = new NewInternalNote(this);
-                period.Show();
-            }
 
         }
 

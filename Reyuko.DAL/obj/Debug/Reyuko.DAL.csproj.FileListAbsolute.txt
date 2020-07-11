@@ -603,3 +603,5 @@ D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CoreCompileInputs.cache
 D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.csproj.CopyComplete
 D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.dll
 D:\Reyuko\alpha\Reyuko.DAL\obj\Debug\Reyuko.DAL.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\Printing.NET.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.DAL\bin\Debug\IPrint.dll

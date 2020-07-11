@@ -5259,3 +5259,7 @@ D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\bin\Debug\de\DevExpress.Xpf
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\bin\Debug\es\DevExpress.Xpf.RichEdit.v18.2.resources.dll
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\bin\Debug\ja\DevExpress.Xpf.RichEdit.v18.2.resources.dll
 D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\bin\Debug\ru\DevExpress.Xpf.RichEdit.v18.2.resources.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Printing\Printing.g.cs
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\bin\Debug\Printing.NET.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\obj\Debug\Views\Printing\Printing.baml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.App\bin\Debug\IPrint.dll

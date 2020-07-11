@@ -533,3 +533,5 @@ D:\Reyuko\alpha\Reyuko.BLL\obj\Debug\Reyuko.BLL.csproj.CoreCompileInputs.cache
 D:\Reyuko\alpha\Reyuko.BLL\obj\Debug\Reyuko.BLL.csproj.CopyComplete
 D:\Reyuko\alpha\Reyuko.BLL\obj\Debug\Reyuko.BLL.dll
 D:\Reyuko\alpha\Reyuko.BLL\obj\Debug\Reyuko.BLL.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.BLL\bin\Debug\Printing.NET.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\Reyuko.BLL\bin\Debug\IPrint.dll

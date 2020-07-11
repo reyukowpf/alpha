@@ -5,11 +5,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Input.Toolkit"
     x:Class="Reyuko.App.Views.Produk.NewProduk"
-    d:DesignHeight="700"
+    d:DesignHeight="1080"
     d:DesignWidth="1040"
     FontSize="14"
     Background="White"
-    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="700">
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="1080">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />

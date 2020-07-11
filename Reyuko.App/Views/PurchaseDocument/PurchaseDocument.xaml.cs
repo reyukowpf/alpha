@@ -17,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace Reyuko.App.Views.PurchaseDocument
 {
     /// <summary>
@@ -225,21 +226,34 @@ namespace Reyuko.App.Views.PurchaseDocument
 
         private void Print_Click(object sender, RoutedEventArgs e)
         {
-            bool isWindowOpen = false;
+            //bool isWindowOpen = false;
 
-            foreach (Window w in Application.Current.Windows)
+            //foreach (Window w in Application.Current.Windows)
+            //{
+            //    if (w is Print.Print)
+            //    {
+            //        isWindowOpen = true;
+            //        w.Activate();
+            //    }
+            //}
+
+            //if (!isWindowOpen)
+            //{
+            //    Print.Print print = new Print.Print();
+            //    print.Show();
+            //}
+            try
             {
-                if (w is Print.Print)
+                this.IsEnabled = false;
+                PrintDialog printDialog = new PrintDialog();
+                if (printDialog.ShowDialog() == true)
                 {
-                    isWindowOpen = true;
-                    w.Activate();
+                    printDialog.PrintVisual(this, "PurchasedDocument");
                 }
             }
-
-            if (!isWindowOpen)
+            finally
             {
-                Print.Print print = new Print.Print();
-                print.Show();
+                this.IsEnabled = true;
             }
         }
 

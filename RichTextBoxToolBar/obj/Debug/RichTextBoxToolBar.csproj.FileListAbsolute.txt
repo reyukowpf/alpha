@@ -249,3 +249,10 @@ D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.CoreCompi
 D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.csproj.CopyComplete
 D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.dll
 D:\Reyuko\alpha\RichTextBoxToolBar\obj\Debug\RichTextBoxToolBar.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\MaterialDesignColors.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\Printing.NET.dll
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\MaterialDesignColors.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\Project\Visual Studio\Reyuko\WPF\alpha\RichTextBoxToolBar\bin\Debug\IPrint.dll

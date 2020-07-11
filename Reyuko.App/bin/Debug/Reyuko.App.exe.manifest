@@ -1722,6 +1722,18 @@
     </dependentAssembly>
   </dependency>
   <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="IPrint.dll" size="30720">
+      <assemblyIdentity name="IPrint" version="1.0.1.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>Jgp/KcXP7kZWKTgdntLCmZGBLR21o8SjM+OoP26L8+U=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="LiveCharts.dll" size="152064">
       <assemblyIdentity name="LiveCharts" version="0.9.7.0" publicKeyToken="0BC1F845D1EBB8DF" language="neutral" processorArchitecture="msil" />
       <hash>
@@ -1746,26 +1758,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignColors.dll" size="284672">
-      <assemblyIdentity name="MaterialDesignColors" version="1.2.0.325" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignColors.dll" size="299520">
+      <assemblyIdentity name="MaterialDesignColors" version="1.2.6.1513" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>qHigYxrBQ80hp+HjH5ICw1Kam7xAl1uRvZOK3aabC1g=</dsig:DigestValue>
+        <dsig:DigestValue>l27qRWdlbVNqY0Szg0+VjyueJ0AblMZDaBdwQ31avGg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignThemes.Wpf.dll" size="6233600">
-      <assemblyIdentity name="MaterialDesignThemes.Wpf" version="2.6.0.325" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MaterialDesignThemes.Wpf.dll" size="7420928">
+      <assemblyIdentity name="MaterialDesignThemes.Wpf" version="3.1.3.1513" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>U2x6A8U+qpV7YXbagSsGEpAOD0v1fclNHdACQ8LnOf0=</dsig:DigestValue>
+        <dsig:DigestValue>ATpCuMb/op4hmO7U+vYWgke2VQpMTtXYICOh2CoI4n4=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1806,14 +1818,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2957784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Printing.NET.dll" size="35840">
+      <assemblyIdentity name="Printing.NET" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>ZorRUveD6Tr0B3oNPls+jcC5n/bd1wLRYiebkEIcyT8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Reyuko.App.exe" size="2960344">
       <assemblyIdentity name="Reyuko.App" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>T1lgKIRQknpOBAxffK4JR7nHi7ClYKEFcx6Swa0litw=</dsig:DigestValue>
+        <dsig:DigestValue>TryYRRhqR3oncotwLJTKbojz2/3bgHJtIwH0x+CAZpU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -1861,7 +1885,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MHFGnK0PYFyL7EZizJAveW5U/5sbcMb3Vd0+iq15GQA=</dsig:DigestValue>
+        <dsig:DigestValue>gkpJkJB50Fe7QLOfIwpm/1H9RkK7rYmF0+JBUEKQn+c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

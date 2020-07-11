@@ -5,11 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    d:DesignHeight="500"
-    d:DesignWidth="800"
-    VerticalAlignment="Top"
+     d:DesignHeight="1080"
+    d:DesignWidth="1040"
+    FontSize="14"
     Background="White"
-    mc:Ignorable="d" >
+    mc:Ignorable="d" HorizontalAlignment="Left" VerticalAlignment="Top" Width="1040" Height="1080">
     <UserControl.Resources>
         <Style x:Key="MyButton" TargetType="Button">
             <Setter Property="OverridesDefaultStyle" Value="True" />
@@ -32,7 +32,7 @@
     </UserControl.Resources>
 
 
-    <Grid Margin="0,0,0,0">
+    <Grid Margin="0,0,0,0" Height="1080">
 
         <TextBlock
             Width="365"
@@ -77,7 +77,7 @@
                 <TextBlock Text=" Edit" FontSize="12.5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </StackPanel>
         </Button>
-        <TreeView x:Name="TvContactClasification" HorizontalAlignment="Left" Height="632" Margin="22,73,0,-20" VerticalAlignment="Top" Width="206"
+        <TreeView x:Name="TvContactClasification" HorizontalAlignment="Left" Height="997" Margin="22,73,0,0" VerticalAlignment="Top" Width="206"
                   SelectedItemChanged="TvContactClasification_SelectedItemChanged"
                   >
             <!--<TreeViewItem Header="Customer" IsExpanded="True">
